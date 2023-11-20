@@ -139,6 +139,53 @@ class SPlexInstance:
             print(f"New clusters: {clusters}")
             unassigned.remove(candidate[0])
 
+        ########## TURN THE CLUSTERS INTO S-PLEXES ##########
+        # We have to count the number of edges within the s-plex
+        for clust in clusters:
+            n_nodes = len(clust)
+            cluster_neighbours = {node:[] for node in clust}
+            for node in clust:
+                cluster_neighbours[node] = [x for x in self.neighbors_given_graph[node] if x in clust]
+            print(f"Cluster {clust}:\nNeighbours list {cluster_neighbours}")
+
+            # Now we need the order of each node in the subgraph
+            count_neighbours = {key:len(value) for key,value in cluster_neighbours.items()}
+            print(f"Number of neighbours for each node is {count_neighbours}")
+
+            # List of nodes which do not have order for the s-plex assumption
+            nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+            print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+            
+            # Now we create a list of potential edges to add where we only consider pairs where at least one of the nodes is a unsatisfactory one
+            # Now we add edges with minimum cost at every iteration
+            potential_edges = []
+            # This is quite inefficient as more checks than necessary
+            for ind, node_i in enumerate(clust):
+                for node_j in clust[ind+1 : ]:
+                    if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied:
+                        if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
+                            potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
+            potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
+            print(f"Potential edges: {potential_edges}")
+
+            while nodes_not_satisfied:
+                candidate_edge = potential_edges.pop(0)
+                node_i = candidate_edge[0][0]
+                node_j = candidate_edge[0][1]
+                cluster_neighbours[node_i].append(node_j)
+                cluster_neighbours[node_j].append(node_i)
+                count_neighbours[node_i] += 1
+                count_neighbours[node_j] += 1
+                nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+                print(f"Adding edge between ({node_i}, {node_j})")
+                print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+
+        
+        # Return a solution
+
+
+
+
 if __name__ == '__main__':
     from pymhlib.demos.common import run_optimization, data_dir
     parser = get_settings_parser()
