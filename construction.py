@@ -79,16 +79,6 @@ class SPlexInstance:
         print("sorted nodes")
         print(sorted_nodes)
         
-        """
-        selected_nodes = []
-        for i,(node,_) in enumerate(sorted_nodes):
-            if [x for x in self.neighbors_given_graph[node] if x in selected_nodes] == []:
-                selected_nodes.append(sorted_nodes.pop(i))
-
-                if len(selected_nodes) == k:
-                    break
-        """
-        
         # To enforce that selected initial nodes should not be neighbours
         selected_nodes = []
         neighbors_selected_nodes = [] # List containing the neighbours of the nodes selected thus far
@@ -106,30 +96,7 @@ class SPlexInstance:
         print("sorted nodes left")
         print(sorted_nodes)
 
-        # Separate the nodes into the different clusters
-        """clusters = []
-        for node in selected_nodes:
-            clusters.append([node[0]])
-
-        print("clusters")
-        print(clusters)
-        while len(sorted_nodes):
-            (candidate, _) = sorted_nodes.pop(0) # inefficient, O(n), maybe change from list to deque for O(1) access
-            best_cluster = []
-            best_weight_to_cluster = 0
-            for cluster in clusters:
-                print(self.neighbors_given_graph[candidate])
-                weight_to_cluster = 0
-                for neigbour in [x for x in self.neighbors_given_graph[candidate] if x in cluster]:
-                    weight_to_cluster += self.weights[candidate][neigbour]
-                print(cluster)
-                print(weight_to_cluster)
-                if weight_to_cluster > best_weight_to_cluster:
-                    best_weight_to_cluster = weight_to_cluster
-                    best_cluster = cluster
-            best_cluster.append(candidate)
-        print(clusters)
-        """
+        ########## ASSIGN THE NODES TO THE CLUSTERS ##########
         clusters = []
         for node in selected_nodes:
             clusters.append([node[0]])
@@ -137,37 +104,40 @@ class SPlexInstance:
 
         unassigned = [x[0] for x in sorted_nodes]
         while len(unassigned):
-            
-            # Compute distance of each node to each cluster
-            node_to_cluster_dist = []
+            # Compute similarity of each node to each cluster
+            node_cluster_most_similar = [] # Stores for each node what cluster it is more "similar to"
             for node in unassigned:
-                print(node)
-                node_max_dist = 0 # Contains maximum distance found between a node and a cluster
-                best_clust = None
-
+                node_best_clust = None                  # Stores most similar cluster to node being considered
+                node_highest_similarity = float('-inf') # Stores the similarity with the most similar cluster thus far
+                
+                # Compute the similarity between the node and each cluster
                 for ind, clust in enumerate(clusters):
-                    node_dist = 0
-                    for elem in clust:
-                        node_dist += self.weights_given_graph[node, elem]
-                    
-                    if node_dist > node_max_dist:
-                        node_max_dist = node_dist
-                        best_clust = ind
+                    node_similarity = 0
+                    disjoint = 1   # If node is disjoint from cluster we want dist to it to remain -inf
 
-                # Append node, what is its best cluster (to be assigned to) and the distance of that node to its cluster (for now only sum of present edges)
-                node_to_cluster_dist.append([node, best_clust, node_max_dist])
+                    for elem in clust:
+                        if self.weights_given_graph[node, elem] != 0: 
+                            node_similarity += self.weights_given_graph[node, elem] 
+                            disjoint = 0 # If at least one edge was found it means it is not disjoint from clust
+                        else:
+                            node_similarity -= self.weights[node, elem]
+                    
+                    if node_similarity > node_highest_similarity and disjoint == 0:
+                        node_highest_similarity = node_similarity
+                        node_best_clust = ind
+
+                # Store to what cluster it is more similar to
+                node_cluster_most_similar.append([node, node_best_clust, node_highest_similarity])
             
-            # Now a list of nodes with distance to all clusters
-            candidate = max(node_to_cluster_dist, key=lambda x:x[2]) # Extract node with maximum [node, best_cluster, node_max_dist]
-            if candidate[1] is None: # Means we have a disjoint node and we create a new cluster for it since it will be by itself
+            # Extract node with maximum similarity to a cluster & Assign it
+            candidate = max(node_cluster_most_similar, key=lambda x:x[2]) 
+            if candidate[1] is None: # Disjoint node
                 clusters.append([candidate[0]])
             else:
                 clusters[candidate[1]].append(candidate[0])
-                
+
             print(f"New clusters: {clusters}")
             unassigned.remove(candidate[0])
-
-
 
 if __name__ == '__main__':
     from pymhlib.demos.common import run_optimization, data_dir
