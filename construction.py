@@ -78,7 +78,8 @@ class SPlexInstance:
 
         print("sorted nodes")
         print(sorted_nodes)
-
+        
+        """
         selected_nodes = []
         for i,(node,_) in enumerate(sorted_nodes):
             if [x for x in self.neighbors_given_graph[node] if x in selected_nodes] == []:
@@ -86,13 +87,27 @@ class SPlexInstance:
 
                 if len(selected_nodes) == k:
                     break
+        """
+        
+        # To enforce that selected initial nodes should not be neighbours
+        selected_nodes = []
+        neighbors_selected_nodes = [] # List containing the neighbours of the nodes selected thus far
+        for i,(node,_) in enumerate(sorted_nodes):
+            if node not in neighbors_selected_nodes:
+                selected_nodes.append(sorted_nodes.pop(i))
+                neighbors_selected_nodes += self.neighbors_given_graph[node]
 
+                if len(selected_nodes) == k:
+                    break
+        print(f"Non neighbouring selected nodes: {selected_nodes}")
+            
         print("k selected nodes")
         print(selected_nodes)
         print("sorted nodes left")
         print(sorted_nodes)
 
-        clusters = []
+        # Separate the nodes into the different clusters
+        """clusters = []
         for node in selected_nodes:
             clusters.append([node[0]])
 
@@ -114,6 +129,45 @@ class SPlexInstance:
                     best_cluster = cluster
             best_cluster.append(candidate)
         print(clusters)
+        """
+        clusters = []
+        for node in selected_nodes:
+            clusters.append([node[0]])
+        print(f"Initial clusters:\n{clusters}")
+
+        unassigned = [x[0] for x in sorted_nodes]
+        while len(unassigned):
+            
+            # Compute distance of each node to each cluster
+            node_to_cluster_dist = []
+            for node in unassigned:
+                print(node)
+                node_max_dist = 0 # Contains maximum distance found between a node and a cluster
+                best_clust = None
+
+                for ind, clust in enumerate(clusters):
+                    node_dist = 0
+                    for elem in clust:
+                        node_dist += self.weights_given_graph[node, elem]
+                    
+                    if node_dist > node_max_dist:
+                        node_max_dist = node_dist
+                        best_clust = ind
+
+                # Append node, what is its best cluster (to be assigned to) and the distance of that node to its cluster (for now only sum of present edges)
+                node_to_cluster_dist.append([node, best_clust, node_max_dist])
+            
+            # Now a list of nodes with distance to all clusters
+            candidate = max(node_to_cluster_dist, key=lambda x:x[2]) # Extract node with maximum [node, best_cluster, node_max_dist]
+            if candidate[1] is None: # Means we have a disjoint node and we create a new cluster for it since it will be by itself
+                clusters.append([candidate[0]])
+            else:
+                clusters[candidate[1]].append(candidate[0])
+                
+            print(f"New clusters: {clusters}")
+            unassigned.remove(candidate[0])
+
+
 
 if __name__ == '__main__':
     from pymhlib.demos.common import run_optimization, data_dir
