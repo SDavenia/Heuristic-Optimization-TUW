@@ -140,8 +140,22 @@ class SPlexInstance:
             unassigned.remove(candidate[0])
 
         ########## TURN THE CLUSTERS INTO S-PLEXES ##########
-        # We have to count the number of edges within the s-plex
+        # We have to count the number of edges within the s-plex and add some where required
+        
+        # A solution is represented by the number of edges which have been changed from the original graph.
+        solution_edges = []  # Use a list of sets to identify duplicates such as (i, j) and (j, i)
+        
         for clust in clusters:
+
+            # Include in solution the edges we removed to create the clusters:
+            for node in clust:
+                non_cluster_neighbours = [x for x in self.neighbors_given_graph[node] if x not in clust]
+                if non_cluster_neighbours:
+                    edges_removed = [set([node, x]) for x in non_cluster_neighbours]
+                    print(f"For node {node} we removed edges {edges_removed}")
+                    solution_edges += edges_removed
+                    
+
             n_nodes = len(clust)
             cluster_neighbours = {node:[] for node in clust}
             for node in clust:
@@ -163,7 +177,7 @@ class SPlexInstance:
                 # This is quite inefficient as more checks than necessary
                 for ind, node_i in enumerate(clust):
                     for node_j in clust[ind+1 : ]:
-                        if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied:
+                        if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied: # only consider edges between unsatisfied nodes.
                             if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
                                 potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
                 potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
@@ -179,10 +193,15 @@ class SPlexInstance:
                     count_neighbours[node_j] += 1
                     nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
                     print(f"Adding edge between ({node_i}, {node_j})")
+                    solution_edges.append(set([node_i, node_j]))  # Append additional edges we inserted
                     print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
 
-        
-        # Return a solution
+        # Now we have to add to the solution the edges we removed from the original graph, i.e. the ones between clusters
+
+        # Return a solution by removing duplicate
+        unique_solutions = list(set(map(frozenset, solution_edges)))
+        unique_solutions = [set(fs) for fs in unique_solutions]
+        print(f"Solution edges: {unique_solutions}")
 
 
 
