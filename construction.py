@@ -70,7 +70,7 @@ class SPlexInstance:
     Attributes:
         - k: a count of nodes to choose from the sorted list of weigts of adjacent edges for the construction
     """
-    def construct(self, s, k):
+    def construct(self, k):
         sorted_nodes = []
         for n, neighbors in enumerate(self.weights_given_graph[1:], start=1):
             sorted_nodes.append([n,numpy.sum(neighbors)])
@@ -158,27 +158,28 @@ class SPlexInstance:
             
             # Now we create a list of potential edges to add where we only consider pairs where at least one of the nodes is a unsatisfactory one
             # Now we add edges with minimum cost at every iteration
-            potential_edges = []
-            # This is quite inefficient as more checks than necessary
-            for ind, node_i in enumerate(clust):
-                for node_j in clust[ind+1 : ]:
-                    if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied:
-                        if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
-                            potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
-            potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
-            print(f"Potential edges: {potential_edges}")
+            if len(nodes_not_satisfied) != 0:
+                potential_edges = []
+                # This is quite inefficient as more checks than necessary
+                for ind, node_i in enumerate(clust):
+                    for node_j in clust[ind+1 : ]:
+                        if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied:
+                            if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
+                                potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
+                potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
+                print(f"Potential edges: {potential_edges}")
 
-            while nodes_not_satisfied:
-                candidate_edge = potential_edges.pop(0)
-                node_i = candidate_edge[0][0]
-                node_j = candidate_edge[0][1]
-                cluster_neighbours[node_i].append(node_j)
-                cluster_neighbours[node_j].append(node_i)
-                count_neighbours[node_i] += 1
-                count_neighbours[node_j] += 1
-                nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
-                print(f"Adding edge between ({node_i}, {node_j})")
-                print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+                while nodes_not_satisfied:
+                    candidate_edge = potential_edges.pop(0)
+                    node_i = candidate_edge[0][0]
+                    node_j = candidate_edge[0][1]
+                    cluster_neighbours[node_i].append(node_j)
+                    cluster_neighbours[node_j].append(node_i)
+                    count_neighbours[node_i] += 1
+                    count_neighbours[node_j] += 1
+                    nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+                    print(f"Adding edge between ({node_i}, {node_j})")
+                    print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
 
         
         # Return a solution
@@ -192,5 +193,5 @@ if __name__ == '__main__':
     parser.add_argument("inputfile")
     args = parser.parse_args()
     spi = SPlexInstance(args.inputfile)
-    spi.construct(s=1,k=3)
+    spi.construct(k=3)
     #run_optimization('Minimum Vertex Cover', VertexCoverInstance, VertexCoverSolution, data_dir + "frb40-19-1.mis")
