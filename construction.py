@@ -97,10 +97,10 @@ class SPlexInstance:
         print(sorted_nodes)
 
         ########## ASSIGN THE NODES TO THE CLUSTERS ##########
-        clusters = []
+        self.clusters = []
         for node in selected_nodes:
-            clusters.append([node[0]])
-        print(f"Initial clusters:\n{clusters}")
+            self.clusters.append([node[0]])
+        print(f"Initial clusters:\n{self.clusters}")
 
         unassigned = [x[0] for x in sorted_nodes]
         while len(unassigned):
@@ -111,7 +111,7 @@ class SPlexInstance:
                 node_highest_similarity = float('-inf') # Stores the similarity with the most similar cluster thus far
                 
                 # Compute the similarity between the node and each cluster
-                for ind, clust in enumerate(clusters):
+                for ind, clust in enumerate(self.clusters):
                     node_similarity = 0
                     disjoint = 1   # If node is disjoint from cluster we want dist to it to remain -inf
 
@@ -132,11 +132,11 @@ class SPlexInstance:
             # Extract node with maximum similarity to a cluster & Assign it
             candidate = max(node_cluster_most_similar, key=lambda x:x[2]) 
             if candidate[1] is None: # Disjoint node
-                clusters.append([candidate[0]])
+                self.clusters.append([candidate[0]])
             else:
-                clusters[candidate[1]].append(candidate[0])
+                self.clusters[candidate[1]].append(candidate[0])
 
-            print(f"New clusters: {clusters}")
+            print(f"New clusters: {self.clusters}")
             unassigned.remove(candidate[0])
 
         ########## TURN THE CLUSTERS INTO S-PLEXES ##########
@@ -145,7 +145,7 @@ class SPlexInstance:
         # A solution is represented by the number of edges which have been changed from the original graph.
         solution_edges = []  # Use a list of sets to identify duplicates such as (i, j) and (j, i)
         
-        for clust in clusters:
+        for clust in self.clusters:
 
             # Include in solution the edges we removed to create the clusters:
             for node in clust:
@@ -199,12 +199,16 @@ class SPlexInstance:
         # Now we have to add to the solution the edges we removed from the original graph, i.e. the ones between clusters
 
         # Return a solution by removing duplicate
-        unique_solutions = list(set(map(frozenset, solution_edges)))
-        unique_solutions = [set(fs) for fs in unique_solutions]
-        print(f"Solution edges: {unique_solutions}")
-
-
-
+        self.unique_solutions = list(set(map(frozenset, solution_edges)))
+        self.unique_solutions = [set(fs) for fs in self.unique_solutions]
+        print(f"Solution edges: {self.unique_solutions}")
+        return self.unique_solutions
+    
+    def getClusters(self):
+        return self.clusters
+    
+    def getSolution(self):
+        return self.unique_solutions
 
 if __name__ == '__main__':
     from pymhlib.demos.common import run_optimization, data_dir
