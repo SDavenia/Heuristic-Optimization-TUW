@@ -18,6 +18,8 @@ from pymhlib.demos.graphs import create_or_read_simple_graph
 import numpy
 import bisect
 
+from utilities import Utilities
+
 parser = get_settings_parser()
 
 
@@ -38,32 +40,13 @@ class SPlexInstance:
 
     def __init__(self, filename):
         """Create or read graph with given name."""
-        lines = 0
-        with open(filename, "r") as infile:
-            graph_params = infile.readline().split()
-            self.s = int(graph_params[0])
-            self.n = int(graph_params[1])
-            self.m = int(graph_params[2])
-            self.weights = numpy.zeros((self.n + 1, self.n + 1), numpy.int8) # add 1 because input file starts nodes with 1 (not 0)
-            self.weights_given_graph = numpy.zeros((self.n + 1, self.n + 1), numpy.int8) # add 1 because input file starts nodes with 1 (not 0)
-            self.neighbors_given_graph = dict.fromkeys(range(1,self.n + 1))
-            for k, _ in self.neighbors_given_graph.items(): 
-                self.neighbors_given_graph[k] = []
-            for line in infile.readlines():
-                (a,b,e,w) = [int(x) for x in line.split()]
-                self.weights[a][b] = w
-                self.weights[b][a] = w
-                if e == 1:
-                    self.weights_given_graph[a][b] = w
-                    self.weights_given_graph[b][a] = w
-                    self.neighbors_given_graph[a].append(b)
-                    self.neighbors_given_graph[b].append(a)
-                    
-            print(self.neighbors_given_graph)
-            print("given graph weight matrix")
-            print(self.weights_given_graph)
-            print("weight matrix:")
-            print(self.weights)
+        graph = self.common = Utilities.importFile(filename=filename)
+        self.s = graph["s"]
+        self.n = graph["n"]
+        self.m = graph["m"]
+        self.weights = graph["weights"]
+        self.weights_given_graph = graph["weights_given_graph"]
+        self.neighbors_given_graph = graph["neighbors_given_graph"]
 
     """construction heuristic
     
