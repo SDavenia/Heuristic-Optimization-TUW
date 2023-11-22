@@ -1,45 +1,74 @@
-"""Demo application solving the minimum vertex cover problem.
+"""A general variable neighborhood search class which can also be used for plain local search, VND, GRASP, IG etc.
 
-Given an undirected simple graph, find a minimum subset of the vertices so that from each edge in the graph at
-least one of its end points is in this subset.
+It extends the more general scheduler module/class by distinguishing between construction heuristics, local
+improvement methods and shaking methods.
 """
 
-import random
-from typing import Any, Tuple
-from itertools import combinations
-import heapq
-import networkx as nx
+from typing import List
+import time
 
-from pymhlib.solution import SetSolution, TObj
+from pymhlib.scheduler import Method, Scheduler
 from pymhlib.settings import get_settings_parser
-from pymhlib.scheduler import Result
-from pymhlib.demos.graphs import create_or_read_simple_graph
+from pymhlib.solution import Solution
+from SplexSolution import SPlexSolution
+from SPlexInstance import SPlexInstance
+from local_search import LocalSearchInstance
 
-import numpy
-import bisect
-
-from construction import SPlexInstance
 
 parser = get_settings_parser()
 
+class VND(Scheduler):
+    """A general variable descent (VND).
 
+    Attributes
+        - sol: solution object, in which final result will be returned
+        - meths_ch: list of construction heuristic methods
+        - meths_li: list of local improvement methods
+    """
 
-class VNDInstance:
-    def __init__(self, filename, k):
-        self.constructionInstance = SPlexInstance(filename=filename)
-        self.constructionInstance.construct()
-        self.x = self.constructionInstance.getClusters()
-        
-    def n1(self):
-        exit()
+    to_maximise = False
 
-    def start(self):
-        print(self.x)
+    def __init__(self, sol: Solution, meths_li: List[Method], own_settings: dict = None, consider_initial_sol=True):
+        """Initialization.
+
+        :param sol: solution to be improved
+        :param meths_li: list of local improvement methods
+        """
+        super().__init__(sol, meths_li, own_settings=own_settings, consider_initial_sol=consider_initial_sol)
+        self.meths_li = meths_li
+
+    def vnd(self, sol: Solution) -> bool:
+        """Perform variable neighborhood descent (VND) on given solution.
+
+        :returns: true if a global termination condition is fulfilled, else False.
+        """
+        sol2 = sol.copy()
+        while True:
+            for m in self.next_method(self.meths_li):
+                res = self.perform_method(m, sol2)
+                if sol2.is_better(sol):
+                    sol.copy_from(sol2)
+                    if res.terminate:
+                        return True
+                    break
+                if res.terminate:
+                    return True
+                if res.changed:
+                    sol2.copy_from(sol)
+            else:  # local optimum reached
+                return False
+
+    def run(self) -> None:
+        """Actually performs the VND."""
+        sol = self.incumbent.copy()
+        self.vnd(sol)
 
 if __name__ == '__main__':
-    from pymhlib.demos.common import run_optimization, data_dir
     parser = get_settings_parser()
     parser.add_argument("inputfile")
     args = parser.parse_args()
-    vndi = VNDInstance(filename=args.inputfile, k=3)
-    vndi.start()
+    spi = SPlexInstance(args.inputfile)
+    spi_sol = SPlexSolution(spi)
+    spi_sol.construct_randomized(k=3, alpha=1, beta=1)
+    vnd = VND(spi_sol, [Method("move1_nhour", LocalSearchInstance.move1_nhour, 0)])
+    vnd.run()

@@ -27,21 +27,20 @@ class LocalSearchInstance:
         self.initial_clusters = clusters
         
         
-    @staticmethod
-    def move1_nhour(clusters):
+    def move1_nhour(self, _par, result):
         """
         Define it as a generator that gives one element from the neighbourhood at a time
         """
         # Consider moving each node to each possible cluster
-        n_nodes = sum([len(clust) for clust in clusters])
-        n_clusters = len(clusters)
+        n_nodes = sum([len(clust) for clust in _par])
+        n_clusters = len(_par)
 
         # Consider moving each node to each possible cluster
-        for ind, clust in enumerate(clusters):
+        for ind, clust in enumerate(_par):
             for node in clust:
-                for ind2, clust2 in enumerate(clusters):
+                for ind2, clust2 in enumerate(_par):
                     if ind != ind2:
-                        proposed_solution = copy.deepcopy(clusters)
+                        proposed_solution = copy.deepcopy(_par)
                         proposed_solution[ind].remove(node)  # Remove node from its cluster
                         proposed_solution[ind2].append(node) # Add node to proposed cluster
                         yield(proposed_solution)
