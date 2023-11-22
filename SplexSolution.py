@@ -8,6 +8,8 @@ from operator import itemgetter
 import random
 import numpy
 
+from copy import deepcopy as dcopy
+
 class SPlexSolution(Solution):
     """
     A solution of the s-plex editing problem.
@@ -24,6 +26,7 @@ class SPlexSolution(Solution):
     
     def __init__(self, inst: SPlexInstance):
         super().__init__()
+        self.inst = inst
         self.s = inst.s
         self.weights = inst.weights
         self.weights_given_graph = inst.weights_given_graph
@@ -79,14 +82,20 @@ class SPlexSolution(Solution):
         print(f"VALID SOLUTION")
         return True
 
-
-
-
     def copy(self):
-        raise NotImplementedError
-
-    def copy_from(self):
-        raise NotImplementedError
+        sol = SPlexSolution(self.inst)
+        sol.copy_from(self)
+        return sol
+    
+    def copy_from(self, other: "SPlexSolution"):
+        super().copy_from(other)
+        self.clusters = dcopy(other.clusters)
+        self.current_neighbours = dcopy(other.current_neighbours)
+        self.edges_modified = dcopy(other.edges_modified)
+        self.s = dcopy(other.s)
+        self.initial_neighbors = dcopy(other.initial_neighbors)
+        self.weights = dcopy(other.weights)
+        self.weights_given_graph = dcopy(other.weights_given_graph)
     
     def initialize(self):
         """
