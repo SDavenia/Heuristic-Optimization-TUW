@@ -40,6 +40,7 @@ ehthumbs.db
 Thumbs.db
 Basic/.DS_Store
 .vscode/
+__pycache__
 
 # Images and text #
 ##################

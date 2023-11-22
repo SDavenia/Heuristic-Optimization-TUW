@@ -91,4 +91,19 @@ class Utilities:
         unique_solutions = [set(fs) for fs in unique_solutions]
         print(f"Solution edges: {unique_solutions}")
         return unique_solutions
+    
+    @staticmethod
+    def write_solution(filename, solution, header):
+        """
+        Takes as input a 
+            - filename where to write solution (in a form like "instance_type/instance_name.txt")
+            - unique_solution: to write to file
+        Writes a file containing a header which is the instance name and the number of edges in solution.
+        This file is written to solutions/instance_type/instance_name.txt
+        """
+        with open(filename, 'w') as file_:
+            file_.write(header + "\n")
+            for item in solution:
+                item = str(item).replace("[", "").replace("]", "").replace(",", "")
+                file_.write(item + '\n')
 

@@ -17,6 +17,7 @@ from pymhlib.demos.graphs import create_or_read_simple_graph
 
 import numpy
 import bisect
+import re
 
 from utilities import Utilities
 
@@ -47,6 +48,10 @@ class SPlexInstance:
         self.weights = graph["weights"]
         self.weights_given_graph = graph["weights_given_graph"]
         self.neighbors_given_graph = graph["neighbors_given_graph"]
+        
+        # Extract problem instance which we will have to write in solution file.
+        pattern = r'.*/(.*?)\..*$'
+        self.problem_instance = re.sub(pattern, r'\1', filename)
 
     """construction heuristic
     
@@ -86,7 +91,7 @@ class SPlexInstance:
         print(f"Initial clusters:\n{self.clusters}")
 
         unassigned = [x[0] for x in sorted_nodes]
-        while len(unassigned):
+        while unassigned:
             # Compute similarity of each node to each cluster
             node_cluster_most_similar = [] # Stores for each node what cluster it is more "similar to"
             for node in unassigned:
@@ -183,7 +188,7 @@ class SPlexInstance:
 
         # Return a solution by removing duplicate
         self.unique_solutions = list(set(map(frozenset, solution_edges)))
-        self.unique_solutions = [set(fs) for fs in self.unique_solutions]
+        self.unique_solutions = [sorted(list(fs)) for fs in self.unique_solutions]
         print(f"Solution edges: {self.unique_solutions}")
         return self.unique_solutions
     
@@ -192,6 +197,9 @@ class SPlexInstance:
     
     def getSolution(self):
         return self.unique_solutions
+    
+    def write_solution(self, filename):
+        Utilities.write_solution(filename, self.unique_solutions, self.problem_instance)
 
 if __name__ == '__main__':
     from pymhlib.demos.common import run_optimization, data_dir
@@ -200,4 +208,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
     spi = SPlexInstance(args.inputfile)
     spi.construct(k=3)
+    print(f"Unique solution edges are {spi.unique_solutions}")
+    spi.write_solution("trial.txt")
     #run_optimization('Minimum Vertex Cover', VertexCoverInstance, VertexCoverSolution, data_dir + "frb40-19-1.mis")
