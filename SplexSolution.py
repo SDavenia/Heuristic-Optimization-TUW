@@ -12,6 +12,13 @@ class SPlexSolution(Solution):
     """
     A solution of the s-plex editing problem.
     It contains the following attributes
+        - s: plex order desired
+        - weights: instance weights
+        - weights_given_graph: weights of edges already present.
+        - initial_neighbors: initial neighbourhood list for the nodes
+        - current_neighbors: neighborhood list given the current solution
+        - clusters: set of clusters of the solution.
+        - edges_modified: solution representation, contains what edges were removed/added from the initial list
     """
     to_maximise = False
     
@@ -21,6 +28,7 @@ class SPlexSolution(Solution):
         self.weights = inst.weights
         self.weights_given_graph = inst.weights_given_graph
         self.initial_neighbors = inst.neighbors_given_graph
+        self.current_neighbours = self.initial_neighbors
 
         # edges_modified contains the solution which will be written to file.
         # clusters is used to help as it is often used for the neighbourhood structures as well.
@@ -31,21 +39,59 @@ class SPlexSolution(Solution):
         cost = 0
         for edge in self.edges_modified:
             cost += self.weights[edge[0], edge[1]]
+        print(f"The given solution has cost: {cost}")
         return cost
     
     def __repr__(self):
-        return str("hello")
+        raise NotImplementedError
     
+    def update_current_neighbours(self):
+        """
+        It updates the values of current_neighbours given the current solution.
+        """
+        self.current_neighbours = self.initial_neighbors.copy()
+        #print(f"We applied these modifications in our solution {self.edges_modified}")
+        for edge in self.edges_modified:
+            if edge[1] in self.initial_neighbors[edge[0]]:  #The edge was present initially, so we removed it
+                self.current_neighbours[edge[1]].remove(edge[0])
+                self.current_neighbours[edge[0]].remove(edge[1])
+            else:                                           #The edge was NOT present initially, so we added it
+                self.current_neighbours[edge[1]].append(edge[0])
+                self.current_neighbours[edge[0]].append(edge[1])
+        #print(f"Our solution contains these neighbours\n\t{self.current_neighbours}")
+
+
     def check(self):
+        # We check if all our clusters are s-plexes and if there are no edges between them
+        for clust in self.clusters:
+            # First of all we check if there are external edges (to the cluster)
+            for element in clust:
+                element_neighbours = self.current_neighbours[element]
+                if any([x not in clust for x in element_neighbours]): # means that there is an edge to a non-cluster element
+                    return False
+
+            # Now we compute the order of each node in the cluster and compare it
+            n_clust = len(clust)
+            counts = [len(value) for key,value in self.current_neighbours.items() if key in clust]
+            #print(f"I have these counts: {counts}")
+            if any([x < n_clust - self.s for x in counts]):
+                return False
+        print(f"VALID SOLUTION")
         return True
 
+
+
+
     def copy(self):
-        return "a"
+        raise NotImplementedError
 
     def copy_from(self):
-        return "s"
+        raise NotImplementedError
     
     def initialize(self):
+        """
+        Reset the solution
+        """
         self.clusters = []
         self.edges_modified = []
     
@@ -62,7 +108,7 @@ class SPlexSolution(Solution):
                 next
             sorted_nodes.append([n,numpy.sum(neighbors)])
         list.sort(sorted_nodes, key= lambda x:x[1], reverse= True)
-        print(f"Sorted nodes:\n{sorted_nodes}")
+        #print(f"Sorted nodes:\n{sorted_nodes}")
 
         # Select k nodes for initial clusters enforcing that they should not be neighbours
         selected_nodes = []
@@ -96,7 +142,7 @@ class SPlexSolution(Solution):
         # Compute initial similarity to each cluster for each node
         for node in node_similarity_to_cluster.keys():
             node_similarity_to_cluster[node] = [self.weights[node, clust[0]] if self.weights_given_graph[node, clust[0]] != 0 else -self.weights[node, clust[0]] for clust in self.clusters]
-        print(f"Initial nodes smilarities to clusters:\n\t{node_similarity_to_cluster}")
+        #print(f"Initial nodes smilarities to clusters:\n\t{node_similarity_to_cluster}")
         # Now assign nodes based on similarity
         """
         THIS ONE CONSIDERS BEST ASSIGNMENT FOR EACH NODE and chooses among those above threshold at random
@@ -131,23 +177,23 @@ class SPlexSolution(Solution):
             node_min = {min(value) for value in node_similarity_to_cluster.values()}
             cmax = max(node_max) 
             cmin = min(node_min)
-            print(f"Cmax: {cmax}, Cmin: {cmin}")
+            #print(f"Cmax: {cmax}, Cmin: {cmin}")
             threshold = cmin + beta*(cmax - cmin)
 
             # Consider all pairings of node-cluster which are above the threshold
             RCL_pairs = [(key, element) for key, values in node_similarity_to_cluster.items() for element in values if element >= threshold]
-            print(f"Result threshold {threshold} pairs: {RCL_pairs}")
+            #print(f"Result threshold {threshold} pairs: {RCL_pairs}")
             if beta == 1:
                 node_assigned = max(node_similarity_to_cluster, key=lambda k: max(node_similarity_to_cluster[k]))  # Node with highest similarity chosen deterministically (first in list)
                 cluster_assigned, _ = max(enumerate(node_similarity_to_cluster[node_assigned]), key=itemgetter(1))
             else:
                 pair_assigned = RCL_pairs.pop(random.randint(0, len(RCL_pairs)-1))
                 node_assigned = pair_assigned[0]
-                print(f"NODE {node_similarity_to_cluster[node_assigned]}")
+                #print(f"NODE {node_similarity_to_cluster[node_assigned]}")
                 cluster_assigned = [index for index, value in enumerate(node_similarity_to_cluster[node_assigned]) if value == pair_assigned[1]][0] #[0] To remove duplicates if present
 
 
-            print(f"Assigning node {node_assigned} to cluster {cluster_assigned}")
+            #print(f"Assigning node {node_assigned} to cluster {cluster_assigned}")
             self.clusters[cluster_assigned].append(node_assigned)
             del node_similarity_to_cluster[node_assigned]
             for node in node_similarity_to_cluster.keys():
@@ -169,7 +215,7 @@ class SPlexSolution(Solution):
                 non_cluster_neighbours = [x for x in self.initial_neighbors[node] if x not in clust]
                 if non_cluster_neighbours:
                     edges_removed = [set([node, x]) for x in non_cluster_neighbours]
-                    print(f"For node {node} we removed edges {edges_removed}")
+                    #print(f"For node {node} we removed edges {edges_removed}")
                     solution_edges += edges_removed
                     
 
@@ -177,15 +223,15 @@ class SPlexSolution(Solution):
             cluster_neighbours = {node:[] for node in clust}
             for node in clust:
                 cluster_neighbours[node] = [x for x in self.initial_neighbors[node] if x in clust]
-            print(f"Cluster {clust}:\nNeighbours list {cluster_neighbours}")
+            #print(f"Cluster {clust}:\nNeighbours list {cluster_neighbours}")
 
             # Now we need the order of each node in the subgraph
             count_neighbours = {key:len(value) for key,value in cluster_neighbours.items()}
-            print(f"Number of neighbours for each node is {count_neighbours}")
+            #print(f"Number of neighbours for each node is {count_neighbours}")
 
             # List of nodes which do not have order for the s-plex assumption
             nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
-            print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+            #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
             
             # Now we create a list of potential edges to add where we only consider pairs where at least one of the nodes is a unsatisfactory one
             # Now we add edges with minimum cost at every iteration
@@ -198,7 +244,7 @@ class SPlexSolution(Solution):
                             if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
                                 potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
                 potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
-                print(f"Potential edges: {potential_edges}")
+                #print(f"Potential edges: {potential_edges}")
 
                 while nodes_not_satisfied:
                     candidate_edge = potential_edges.pop(0)
@@ -209,9 +255,9 @@ class SPlexSolution(Solution):
                     count_neighbours[node_i] += 1
                     count_neighbours[node_j] += 1
                     nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
-                    print(f"Adding edge between ({node_i}, {node_j})")
+                    #print(f"Adding edge between ({node_i}, {node_j})")
                     solution_edges.append(set([node_i, node_j]))  # Append additional edges we inserted
-                    print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+                    #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
 
         # Now we have to add to the solution the edges we removed from the original graph, i.e. the ones between clusters
 
@@ -230,12 +276,12 @@ class SPlexSolution(Solution):
         """
         # Select initial clusters and extract unassigned nodes
         unassigned_nodes = self.construct_set_initial(k, alpha)
-        
         # Assign all nodes to some cluster
         self.construct_assign_nodes(k, beta, unassigned_nodes)
-
         # Convert the decided clusters into an s-plex        
         self.construct_splex()
+        self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
+
 
 
         
@@ -255,3 +301,5 @@ if __name__ == '__main__':
     spi_sol = SPlexSolution(spi)
     spi_sol.construct_randomized(k=3, alpha=1, beta=1)
     # spi_sol.construct_deterministic(k=3)
+    spi_sol.check()
+    spi_sol.calc_objective()
