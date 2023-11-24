@@ -307,41 +307,71 @@ class SPlexSolution(Solution):
         best_sol = self.copy()
         better_found = False
 
-        initial_clusters = dcopy(self.clusters)
-        for node in [x for clust in initial_clusters for x in clust]:
-            self.clusters = dcopy(initial_clusters)
-            # print(f"Working with node: {node}")
-            initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find in what cluster it is
-            current_cluster = initial_cluster
-            # So now we move node to dest_clust in every iteration
-            for dest_clust in range(len(self.clusters)):
-                if dest_clust != initial_cluster: 
-                    # print(f"Moving node {node} from {self.clusters[current_cluster]} to {self.clusters[dest_clust]}")
-                    self.clusters[current_cluster].remove(node)
-                    self.clusters[dest_clust].append(node)
-                    current_cluster = dest_clust
-                    #print(f"Now we have clusters:\n\t{self.clusters}")
-                    # Need to complete the s-plexes with these clusters and evaluate them
-                    # This amounts to having to recompute the s-plex for the cluster we moved to
-                    #   as the one we moved from is guaranteed to still be an s-plex 
-                    
-                    # Reset and recompute 
-                    # (NOT NECESSARY WILL HAVE TO IMPROVE THIS LATER USING DELTA EVAL)
-                    # You only have to update the new ones -> WORK ON THIS
-                    self.edges_modified = []
-                    self.update_current_neighbours()
-                    #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
-                    #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
-                    self.construct_all_splex()
-                    self.update_current_neighbours()
-                    # print(f"The edges modified are now:\n\t{self.edges_modified}")
+        if step_function in ['best', 'first']:
+            initial_clusters = dcopy(self.clusters)
+            for node in [x for clust in initial_clusters for x in clust]:
+                self.clusters = dcopy(initial_clusters)
+                # print(f"Working with node: {node}")
+                initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find in what cluster it is
+                current_cluster = initial_cluster
+                # So now we move node to dest_clust in every iteration
+                for dest_clust in range(len(self.clusters)):
+                    if dest_clust != initial_cluster: 
+                        # print(f"Moving node {node} from {self.clusters[current_cluster]} to {self.clusters[dest_clust]}")
+                        self.clusters[current_cluster].remove(node)
+                        self.clusters[dest_clust].append(node)
+                        current_cluster = dest_clust
+                        #print(f"Now we have clusters:\n\t{self.clusters}")
+                        # Need to complete the s-plexes with these clusters and evaluate them
+                        # This amounts to having to recompute the s-plex for the cluster we moved to
+                        #   as the one we moved from is guaranteed to still be an s-plex 
+                        
+                        # Reset and recompute 
+                        # (NOT NECESSARY WILL HAVE TO IMPROVE THIS LATER USING DELTA EVAL)
+                        # You only have to update the new ones -> WORK ON THIS
+                        self.edges_modified = []
+                        self.update_current_neighbours()
+                        #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
+                        #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
+                        self.construct_all_splex()
+                        self.update_current_neighbours()
+                        # print(f"The edges modified are now:\n\t{self.edges_modified}")
 
-                    #print(f"The best solution has value {best_sol.calc_objective()}")
-                    #print(f"Our solution has values {self.calc_objective()}")   
-                    if self.calc_objective() < best_sol.calc_objective():
-                        # Means we found a better solution
-                        print(f"We found a better solution")
+                        #print(f"The best solution has value {best_sol.calc_objective()}")
+                        #print(f"Our solution has values {self.calc_objective()}")   
+                        if self.calc_objective() < best_sol.calc_objective():
+                            # Means we found a better solution
+                            better_found = True
+                            best_sol = self.copy()
+                            if step_function == 'first':
+                                return better_found
+            return better_found # Output if we are using 'best' as step function
 
+        elif step_function == 'random':
+            # Pick a node at random and move it to another cluster at random and see if it improved
+            initial_clusters = dcopy(self.clusters)
+            node = random.randint(1, len([x for clust in initial_clusters for x in clust]))
+            dest_clust = random.randint()
+            initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0]
+            while dest_clust != initial_cluster: # Generate until you obtain a new cluster diff than initial one
+                dest_clust = random.randint()
+            
+            # Move the node to the new cluster and recompute the s-plexes.
+            self.clusters[initial_cluster].remove(node)
+            self.clusters[dest_clust].append(node)
+
+            self.edges_modified = []
+            self.update_current_neighbours()
+            #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
+            #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
+            self.construct_all_splex()
+            self.update_current_neighbours()
+
+            if self.calc_objective() < best_sol.calc_objective():
+                best_sol = self.copy()
+                return True
+            else:
+                return False           
 
 
 
