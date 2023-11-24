@@ -18,13 +18,13 @@ class SPlexSolution(Solution):
         - weights: instance weights
         - weights_given_graph: weights of edges already present.
         - initial_neighbors: initial neighbourhood list for the nodes
-        - current_neighbors: neighborhood list given the current solution
+        - current_neighbours: neighborhood list given the current solution
         - clusters: set of clusters of the solution.
         - edges_modified: solution representation, contains what edges were removed/added from the initial list
     """
     to_maximise = False
     
-    def __init__(self, inst: SPlexInstance):
+    def __init__(self, inst: SPlexInstance = None):
         super().__init__()
         self.inst = inst
         self.s = inst.s
@@ -231,8 +231,10 @@ class SPlexSolution(Solution):
         """
         for node in clust:
             non_cluster_neighbours = [x for x in self.initial_neighbors[node] if x not in clust]
+            print(f"Node is {node} and it has non cluster neighbours:\n\t{non_cluster_neighbours}")
             # Add to solution the edges between clusters (which have been removed)
             if non_cluster_neighbours:
+                print("THERE ARE NON CLUSTER NEIGHBOURS")
                 edges_removed = [set([node, x]) for x in non_cluster_neighbours]
                 #print(f"For node {node} we removed edges {edges_removed}")
                 self.edges_modified += edges_removed
@@ -296,8 +298,109 @@ class SPlexSolution(Solution):
     def construct_deterministic(self, k):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
 
+    def update_current_neighbours1(self):
+        """
+        It updates the values of current_neighbours given the current solution.
+        """
+        self.current_neighbours = self.initial_neighbors.copy()
+        print(f"We applied these modifications in our solution {self.edges_modified}")
+        for edge in self.edges_modified:
+            print(f"You modified edge: {edge}")
+            if edge[1] in self.initial_neighbors[edge[0]]:  #The edge was present initially, so we removed it
+                self.current_neighbours[edge[1]].remove(edge[0])
+                self.current_neighbours[edge[0]].remove(edge[1])
+            else:                                           #The edge was NOT present initially, so we added it
+                self.current_neighbours[edge[1]].append(edge[0])
+                self.current_neighbours[edge[0]].append(edge[1])
+        #print(f"Our solution contains these neighbours\n\t{self.current_neighbours}")
 
-            
+
+
+    def ls_move1node(self, step_function = "best") -> bool:
+        """
+        LOCAL SEARCH MOVE ONE NODE
+        Performs one iteration of local search using the moving of one node from one cluster to another
+        Returns True if an improevd solution is found
+        """
+        # Make sure we have the neighbours for the current solution
+        self.update_current_neighbours()
+
+        # Store the initial solution in here
+        best_sol = self.copy()
+        better_found = False
+
+        # Count number of nodes and clusters
+        n_nodes = sum([len(clust) for clust in self.clusters])
+        n_clusters = len(self.clusters)
+
+        # Consider moving each node to a possible cluster, approach this cleverly!
+        # ind1,clust1 is the old cluster of node
+        # ind2,clust2 is the new cluster of node
+
+        for ind1, clust1 in enumerate(dcopy(self.clusters)):
+            # Consider each possible node
+            for node in clust1:
+                # Move to all other clusters
+                for ind2, clust2 in enumerate(dcopy(self.clusters)):
+                    if (ind1 != ind2):
+                        #print(f"Moving node {node} from {clust1} to {clust2}")
+                        
+                        # Remove from old cluster and update edges accordingly
+                        self.clusters[ind1].remove(node)
+                        for old_nhour in self.clusters[ind1]:
+                            edge = [old_nhour, node] if old_nhour < node else [node, old_nhour]
+                            if edge in self.edges_modified: # means it was added previously
+                                self.edges_modified.remove(edge)
+                            else:
+                                self.edges_modified.append(edge)
+                            
+                        #print(f"Now solutions edges are:\n\t{self.edges_modified}")
+                        self.update_current_neighbours()
+                        #print(f"Now current neighbours are:\n\t{self.current_neighbours}")
+
+                        # Now we have to rebuild the s-plex for the new cluster
+                        # First of all remove from edges_modified the previously added edges
+                        #print(f"We have edges_modified:\n\t{self.edges_modified}")
+                        for ind_nhour1, new_nhour1 in enumerate(self.clusters[ind2]):
+                            for new_nhour2 in self.clusters[ind2][ind_nhour1+1:]:
+                                edge = [new_nhour1, new_nhour2] if new_nhour1 < new_nhour2 else [new_nhour2, new_nhour1]
+                                #print(f"Removing Edge is: {edge}")
+                                if edge in self.edges_modified:
+                                    self.edges_modified.remove(edge)
+                        #print(f"We have edges_modified:\n\t{self.edges_modified}")
+                        
+                        self.clusters[ind2].append(node)
+                        print(f"We have clusters:\n\t{self.clusters}")
+                        print(f"We have edges_modified:\n\t{self.edges_modified}")
+                        print(f"We have neighbours:\n\t{self.current_neighbours}")
+
+                        #self.update_current_neighbours1() # IT IS RESETTNG
+                        print(f"\n\n\n")
+                        
+                        
+                        
+                        # Now we have to recreate the s-plex for the new cluster.
+                        
+                        
+                        #self.construct_splex(self.clusters[ind2])
+                        #self.update_current_neighbours()
+                        
+                        #print(f"Now we have that {node} is in {clust2} and not in {clust2}")
+                        #print(f"Now solution edges are\n\t{self.edges_modified}")
+                        return
+
+                        
+                        
+
+
+
+
+
+
+        
+
+
+
 
 if __name__ == '__main__':
     parser = get_settings_parser()
@@ -309,3 +412,4 @@ if __name__ == '__main__':
     # spi_sol.construct_deterministic(k=3)
     spi_sol.check()
     spi_sol.calc_objective()
+    spi_sol.ls_move1node()
