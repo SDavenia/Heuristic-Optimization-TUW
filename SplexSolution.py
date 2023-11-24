@@ -36,7 +36,7 @@ class SPlexSolution(Solution):
         # edges_modified contains the solution which will be written to file.
         # clusters is used to help as it is often used for the neighbourhood structures as well.
         self.clusters = []
-        self.edges_modified = []
+        self.edges_modified = [] # Actual solution to the problem.
 
     def calc_objective(self)->int:
         cost = 0
@@ -103,6 +103,7 @@ class SPlexSolution(Solution):
         """
         self.clusters = []
         self.edges_modified = []
+        self.update_current_neighbours()
     
     def construct_set_initial(self, k, alpha):
         """
@@ -212,22 +213,31 @@ class SPlexSolution(Solution):
                     node_similarity_to_cluster[node][cluster_assigned] -= self.weights[node, node_assigned]
         print(f"Final clusters:\n\t{self.clusters}")
 
-    def construct_splex(self):
-        # We have to count the number of edges within the s-plex and add some where required
-        # A solution is represented by the number of edges which have been changed from the original graph.
-
-        solution_edges = []  # Use a list of sets to identify duplicates such as (i, j) and (j, i)
+    def construct_all_splex(self):
+        """
+        Construct s-plex for all the clusters
+        """
         for clust in self.clusters:
+            self.construct_splex(clust)
+        
+        # Remove duplicates
+        self.edges_modified = list(set(map(frozenset, self.edges_modified)))
+        self.edges_modified = [sorted(list(fs)) for fs in self.edges_modified]
+        print(f"Solution edges: {self.edges_modified}")
 
-            # Include in solution the edges we removed to create the clusters:
-            for node in clust:
-                non_cluster_neighbours = [x for x in self.initial_neighbors[node] if x not in clust]
-                if non_cluster_neighbours:
-                    edges_removed = [set([node, x]) for x in non_cluster_neighbours]
-                    #print(f"For node {node} we removed edges {edges_removed}")
-                    solution_edges += edges_removed
+    def construct_splex(self, clust):
+        """
+        Construct splex for the given cluster
+        """
+        for node in clust:
+            non_cluster_neighbours = [x for x in self.initial_neighbors[node] if x not in clust]
+            # Add to solution the edges between clusters (which have been removed)
+            if non_cluster_neighbours:
+                edges_removed = [set([node, x]) for x in non_cluster_neighbours]
+                #print(f"For node {node} we removed edges {edges_removed}")
+                self.edges_modified += edges_removed
                     
-
+            # Now we ensure that we make the cluster into a desired s-plex
             n_nodes = len(clust)
             cluster_neighbours = {node:[] for node in clust}
             for node in clust:
@@ -265,16 +275,8 @@ class SPlexSolution(Solution):
                     count_neighbours[node_j] += 1
                     nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
                     #print(f"Adding edge between ({node_i}, {node_j})")
-                    solution_edges.append(set([node_i, node_j]))  # Append additional edges we inserted
+                    self.edges_modified.append(set([node_i, node_j]))  # Append additional edges we inserted
                     #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
-
-        # Now we have to add to the solution the edges we removed from the original graph, i.e. the ones between clusters
-
-        # Return a solution by removing duplicate
-        self.edges_modified = list(set(map(frozenset, solution_edges)))
-        self.edges_modified = [sorted(list(fs)) for fs in self.edges_modified]
-        print(f"Solution edges: {self.edges_modified}")
-
     
     def construct_randomized(self, k, alpha, beta):
         """ 
@@ -288,13 +290,8 @@ class SPlexSolution(Solution):
         # Assign all nodes to some cluster
         self.construct_assign_nodes(k, beta, unassigned_nodes)
         # Convert the decided clusters into an s-plex        
-        self.construct_splex()
+        self.construct_all_splex()
         self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
-
-
-
-        
-
     
     def construct_deterministic(self, k):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
