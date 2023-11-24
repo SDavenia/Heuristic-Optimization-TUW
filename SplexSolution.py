@@ -42,7 +42,7 @@ class SPlexSolution(Solution):
         cost = 0
         for edge in self.edges_modified:
             cost += self.weights[edge[0], edge[1]]
-        print(f"The given solution has cost: {cost}")
+        # print(f"The given solution has cost: {cost}")
         return cost
     
     def __repr__(self):
@@ -222,7 +222,7 @@ class SPlexSolution(Solution):
         # Remove duplicates
         self.edges_modified = list(set(map(frozenset, self.edges_modified)))
         self.edges_modified = [sorted(list(fs)) for fs in self.edges_modified]
-        print(f"Solution edges: {self.edges_modified}")
+        #print(f"Solution edges: {self.edges_modified}")
 
     def construct_splex(self, clust):
         """
@@ -237,7 +237,7 @@ class SPlexSolution(Solution):
                 edges_removed = [set([node, x]) for x in non_cluster_neighbours]
                 #print(f"For node {node} we removed edges {edges_removed}")
                 self.edges_modified += edges_removed
-                    
+
             # Now we ensure that we make the cluster into a desired s-plex
             n_nodes = len(clust)
             cluster_neighbours = {node:[] for node in clust}
@@ -303,87 +303,44 @@ class SPlexSolution(Solution):
         Performs one iteration of local search using the moving of one node from one cluster to another
         Returns True if an improevd solution is found
         """
-        # Make sure we have the neighbours for the current solution
-        # print(f"Upon entering the LS procedure we have these neighbours:\n\t{self.current_neighbours}")
-        self.update_current_neighbours()
-        # print(f"After first update we have these nieghbours:\n\t{self.current_neighbours}")
-
         # Store the initial solution in here
         best_sol = self.copy()
         better_found = False
 
-        # Count number of nodes and clusters
-        n_nodes = sum([len(clust) for clust in self.clusters])
-        n_clusters = len(self.clusters)
-
-        # Consider moving each node to a possible cluster, approach this cleverly!
-        # ind1,clust1 is the old cluster of node
-        # ind2,clust2 is the new cluster of node
         initial_clusters = dcopy(self.clusters)
-        for ind1, clust1 in enumerate(initial_clusters):
-            for node in clust1:
-                for ind2, clust2 in enumerate(initial_clusters):
-                    if ind1 != ind2: 
-                        print(f"Moving node {node} from {clust1} to {clust2}")
-                        self.clusters[ind1].remove(node)
-                        self.clusters[ind2].append(node)
-                        print(f"Now we have clusters:\n\t{self.clusters}")
+        for node in [x for clust in initial_clusters for x in clust]:
+            self.clusters = dcopy(initial_clusters)
+            # print(f"Working with node: {node}")
+            initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find in what cluster it is
+            current_cluster = initial_cluster
+            # So now we move node to dest_clust in every iteration
+            for dest_clust in range(len(self.clusters)):
+                if dest_clust != initial_cluster: 
+                    # print(f"Moving node {node} from {self.clusters[current_cluster]} to {self.clusters[dest_clust]}")
+                    self.clusters[current_cluster].remove(node)
+                    self.clusters[dest_clust].append(node)
+                    current_cluster = dest_clust
+                    #print(f"Now we have clusters:\n\t{self.clusters}")
+                    # Need to complete the s-plexes with these clusters and evaluate them
+                    # This amounts to having to recompute the s-plex for the cluster we moved to
+                    #   as the one we moved from is guaranteed to still be an s-plex 
+                    
+                    # Reset and recompute 
+                    # (NOT NECESSARY WILL HAVE TO IMPROVE THIS LATER USING DELTA EVAL)
+                    # You only have to update the new ones -> WORK ON THIS
+                    self.edges_modified = []
+                    self.update_current_neighbours()
+                    #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
+                    #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
+                    self.construct_all_splex()
+                    self.update_current_neighbours()
+                    # print(f"The edges modified are now:\n\t{self.edges_modified}")
 
-                        # Reset and recompute (NOT NECESSARY WILL HAVE TO IMPROVE THIS LATER)
-                        self.edges_modified = []
-                        self.update_current_neighbours()
-                        # print(f"Before the update our neighbours are:\n\t{self.current_neighbours}")
-                        self.construct_all_splex()
-                        self.update_current_neighbours()
-                        print(f"The edges modified are now:\n\t{self.edges_modified}")
-                        #print(f"After the update our neighbours are:\n\t{self.current_neighbours}")
-                        self.calc_objective()
-
-                        return
-
-                        
-                        """# Remove from old cluster and update edges accordingly
-                        self.clusters[ind1].remove(node)
-                        for old_nhour in self.clusters[ind1]:
-                            edge = [old_nhour, node] if old_nhour < node else [node, old_nhour]
-                            if edge in self.edges_modified: # means it was added previously
-                                self.edges_modified.remove(edge)
-                            else:
-                                self.edges_modified.append(edge)
-                            
-                        #print(f"Now solutions edges are:\n\t{self.edges_modified}")
-                        self.update_current_neighbours()
-                        #print(f"Now current neighbours are:\n\t{self.current_neighbours}")
-
-                        # Now we have to rebuild the s-plex for the new cluster
-                        # First of all remove from edges_modified the previously added edges
-                        #print(f"We have edges_modified:\n\t{self.edges_modified}")
-                        for ind_nhour1, new_nhour1 in enumerate(self.clusters[ind2]):
-                            for new_nhour2 in self.clusters[ind2][ind_nhour1+1:]:
-                                edge = [new_nhour1, new_nhour2] if new_nhour1 < new_nhour2 else [new_nhour2, new_nhour1]
-                                #print(f"Removing Edge is: {edge}")
-                                if edge in self.edges_modified:
-                                    self.edges_modified.remove(edge)
-                        #print(f"We have edges_modified:\n\t{self.edges_modified}")
-                        
-                        self.clusters[ind2].append(node)
-                        print(f"We have clusters:\n\t{self.clusters}")
-                        print(f"We have edges_modified:\n\t{self.edges_modified}")
-                        print(f"We have neighbours:\n\t{self.current_neighbours}")
-
-                        #self.update_current_neighbours1() # IT IS RESETTNG
-                        print(f"\n\n\n")
-                        return"""
-
-                        
-                        
-
-
-
-
-
-
-        
+                    #print(f"The best solution has value {best_sol.calc_objective()}")
+                    #print(f"Our solution has values {self.calc_objective()}")   
+                    if self.calc_objective() < best_sol.calc_objective():
+                        # Means we found a better solution
+                        print(f"We found a better solution")
 
 
 
@@ -398,5 +355,5 @@ if __name__ == '__main__':
     # print(f"Our greedy solution has these edges as solution:\n\t{spi_sol.current_neighbours}")
     # spi_sol.construct_deterministic(k=3)
     # spi_sol.check()
-    spi_sol.calc_objective()
+    # spi_sol.calc_objective()
     spi_sol.ls_move1node()
