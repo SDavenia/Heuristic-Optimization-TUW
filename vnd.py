@@ -8,7 +8,7 @@ from typing import List
 import time
 
 from pymhlib.scheduler import Method, Scheduler
-from pymhlib.settings import get_settings_parser
+from pymhlib.settings import get_settings_parser, settings, parse_settings
 from pymhlib.solution import Solution
 from SplexSolution import SPlexSolution
 from SPlexInstance import SPlexInstance
@@ -34,7 +34,7 @@ class VND(Scheduler):
         :param sol: solution to be improved
         :param meths_li: list of local improvement methods
         """
-        super().__init__(sol, meths_li, own_settings=own_settings, consider_initial_sol=consider_initial_sol)
+        super().__init__(sol, meths_li, own_settings, consider_initial_sol)
         self.meths_li = meths_li
 
     def vnd(self, sol: Solution) -> bool:
@@ -65,10 +65,13 @@ class VND(Scheduler):
 
 if __name__ == '__main__':
     parser = get_settings_parser()
+
+    if not settings.__dict__: parse_settings(args='')
+
     parser.add_argument("inputfile")
     args = parser.parse_args()
     spi = SPlexInstance(args.inputfile)
     spi_sol = SPlexSolution(spi)
     spi_sol.construct_randomized(k=3, alpha=1, beta=1)
-    vnd = VND(spi_sol, [Method("move1_nhour", LocalSearchInstance.move1_nhour, 0)])
+    vnd = VND(spi_sol, [Method("move1_nhour", LocalSearchInstance.move1_nhour, spi_sol.edges_modified)])
     vnd.run()

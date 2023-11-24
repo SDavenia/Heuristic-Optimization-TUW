@@ -26,8 +26,9 @@ class LocalSearchInstance:
     def __init__(self, clusters):
         self.initial_clusters = clusters
         
-        
-    def move1_nhour(self, _par, result):
+
+    @staticmethod 
+    def move1_nhour(sol, _par, result):
         """
         Define it as a generator that gives one element from the neighbourhood at a time
         """

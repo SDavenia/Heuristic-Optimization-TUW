@@ -46,7 +46,7 @@ class SPlexSolution(Solution):
         return cost
     
     def __repr__(self):
-        raise NotImplementedError
+        return f"Solution edges: {self.edges_modified}"
     
     def update_current_neighbours(self):
         """
