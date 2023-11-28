@@ -108,7 +108,7 @@ class SPlexSolution(Solution):
         self.edges_modified = []
         self.update_current_neighbours()
     
-    def construct_set_initial(self, k, alpha):
+    def construct_set_initial(self, k, alpha, cluster_size_cap):
         """
         Selects the initial k nodes for the clusters with a level of randomization alpha
         Returns sorted_nodes which is required for the construction
@@ -129,6 +129,8 @@ class SPlexSolution(Solution):
 
         while(len(selected_nodes) != k):
             CL = [x for x in sorted_nodes if x[0] not in neighbors_selected_nodes]
+            if not CL:
+                break
             cmax = CL[0][1]
             cmin = CL[-1][1]
             threshold = cmin + alpha * (cmax - cmin)
@@ -141,7 +143,7 @@ class SPlexSolution(Solution):
                 selected_node = RCL.pop(random.randint(0, len(RCL)-1)) # Choose at random a node from the candidate list.
             sorted_nodes = [x for x in sorted_nodes if x[0] != selected_node]
             selected_nodes.append(selected_node)
-            neighbors_selected_nodes += self.initial_neighbors[selected_node] # Add neighours of that node to it
+            neighbors_selected_nodes += self.initial_neighbors[selected_node][:int(cluster_size_cap)] # Add neighours of that node to it
 
         print(f"Selected nodes: {selected_nodes}")
         # Initialize the clusters
@@ -149,7 +151,7 @@ class SPlexSolution(Solution):
             self.clusters.append([node])
         return sorted_nodes
     
-    def construct_assign_nodes(self, k, beta, unassigned_nodes):
+    def construct_assign_nodes(self, k, beta, unassigned_nodes, max_cluster_size):
         node_similarity_to_cluster = {x[0]:[float('-inf')] * k for x in unassigned_nodes} # Dictionary with node: (dist_clust_1, ..., dist_clust_k)
         
         # Compute initial similarity to each cluster for each node
@@ -185,6 +187,8 @@ class SPlexSolution(Solution):
                 else:
                     node_similarity_to_cluster[node][cluster_assigned] -= self.weights[node, node_assigned]
         """
+
+        all_ranks = []
         while node_similarity_to_cluster:
             node_max = {max(value) for value in node_similarity_to_cluster.values()} # Highest similarity for each node
             node_min = {min(value) for value in node_similarity_to_cluster.values()}
@@ -199,30 +203,46 @@ class SPlexSolution(Solution):
             #print(f"Result threshold {threshold} pairs: {RCL_pairs}")
             if beta == 1:
                 node_assigned = max(node_similarity_to_cluster, key=lambda k: max(node_similarity_to_cluster[k]))  # Node with highest similarity chosen deterministically (first in list)
-                cluster_assigned, _ = max(enumerate(node_similarity_to_cluster[node_assigned]), key=itemgetter(1))
+                best_clusters = sorted(enumerate(node_similarity_to_cluster[node_assigned]), key=itemgetter(1), reverse=True)
+                all_ranks += [(x[0], x[1], node_assigned) for x in best_clusters]
             else:
                 pair_assigned = RCL_pairs.pop(random.randint(0, len(RCL_pairs)-1))
                 node_assigned = pair_assigned[0]
                 #print(f"NODE {node_similarity_to_cluster[node_assigned]}")
                 cluster_assigned = [index for index, value in enumerate(node_similarity_to_cluster[node_assigned]) if value == pair_assigned[1]][0] #[0] To remove duplicates if present
 
+            if beta == 1:
+                del node_similarity_to_cluster[node_assigned]
 
-            #print(f"Assigning node {node_assigned} to cluster {cluster_assigned}")
-            self.clusters[cluster_assigned].append(node_assigned)
-            del node_similarity_to_cluster[node_assigned]
-            for node in node_similarity_to_cluster.keys():
-                if self.weights_given_graph[node, node_assigned] != 0:
-                    node_similarity_to_cluster[node][cluster_assigned] = numpy.add(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
-                else:
-                    node_similarity_to_cluster[node][cluster_assigned] = numpy.subtract(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
-                    
+            else:
+                #print(f"Assigning node {node_assigned} to cluster {cluster_assigned}")
+                self.clusters[cluster_assigned].append(node_assigned)
+                del node_similarity_to_cluster[node_assigned]
+                for node in node_similarity_to_cluster.keys():
+                    if self.weights_given_graph[node, node_assigned] != 0:
+                        node_similarity_to_cluster[node][cluster_assigned] = numpy.add(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
+                    else:
+                        node_similarity_to_cluster[node][cluster_assigned] = numpy.subtract(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
+        unassigned = [x[0] for x in unassigned_nodes]
+        if beta == 1:
+            all_ranks = [(x[2], x[0]) for x in sorted(all_ranks, key=itemgetter(1), reverse=True)]
+            for node, cluster in all_ranks:
+                if (node in unassigned) and len(self.clusters[cluster]) < max_cluster_size:
+                    self.clusters[cluster].append(node)
+                    unassigned.remove(node)
+        assert(unassigned == [])
+
+             
+
         print(f"Final clusters:\n\t{self.clusters}")
 
     def construct_all_splex(self):
         """
         Construct s-plex for all the clusters
         """
-        for clust in self.clusters:
+        for i,clust in enumerate(self.clusters):
+            print(i)
+            print(len(clust))
             self.construct_splex(clust)
         
         # Remove duplicates
@@ -293,7 +313,7 @@ class SPlexSolution(Solution):
     
 
 
-    def construct_randomized(self, k, alpha, beta):
+    def construct_randomized(self, k, alpha= 1, beta= 1, cluster_size_cap= 1):
         """ 
         Construction algorithm to build a solution:
             - k: number of clusters to obtain
@@ -301,15 +321,19 @@ class SPlexSolution(Solution):
             - beta: specifies degree of randomization when selecting next node to add to cluster
         """
         # Select initial clusters and extract unassigned nodes
-        unassigned_nodes = self.construct_set_initial(k, alpha)
+        unassigned_nodes = self.construct_set_initial(k, alpha, cluster_size_cap)
         # Assign all nodes to some cluster
-        self.construct_assign_nodes(k, beta, unassigned_nodes)
+        self.construct_assign_nodes(k, beta, unassigned_nodes, cluster_size_cap)
         # Convert the decided clusters into an s-plex        
         self.construct_all_splex()
         self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
     
     def construct_deterministic(self, k):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
+
+    def local_search_move1node(self, par = None, result = Result()) -> None:
+        print(par)
+        result.changed = self.ls_move1node(par)
 
     def ls_move1node(self, step_function = "best") -> bool:
         """
