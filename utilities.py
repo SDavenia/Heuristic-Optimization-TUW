@@ -31,9 +31,10 @@ class Utilities:
         Takes as input a 
             - filename where to write solution (in a form like "instance_type/instance_name.txt")
             - unique_solution: to write to file
-        Writes a file containing a header which is the instance name and the number of edges in solution.
+        Writes a file containing a header which should be the instance name and the number of edges in solution.
         This file is written to solutions/instance_type/instance_name.txt
         """
+        filename = 'solutions/' + filename
         with open(filename, 'w') as file_:
             file_.write(header + "\n")
             for item in solution:
