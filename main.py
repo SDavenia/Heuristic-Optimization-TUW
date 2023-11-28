@@ -34,7 +34,11 @@ def rand_construction(solution: SPlexSolution):
     pass
 
 def local_seach(solution: SPlexSolution):
-    pass
+    k = 100
+    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"first")], 
+                        [])
+    vnd.run()
 
 def grasp(solution: SPlexSolution):
     pass
@@ -42,7 +46,8 @@ def grasp(solution: SPlexSolution):
 def vnd(solution: SPlexSolution):
     k = 100
     vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
-                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"first")], [])
+                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"first")], 
+                        [])
     vnd.run()
 
 def gvns(solution: SPlexSolution):
