@@ -12,8 +12,6 @@ from pymhlib.settings import get_settings_parser, settings, parse_settings
 from pymhlib.solution import Solution
 from SplexSolution import SPlexSolution
 from SPlexInstance import SPlexInstance
-from local_search import LocalSearchInstance
-
 
 parser = get_settings_parser()
 

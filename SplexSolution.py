@@ -82,7 +82,7 @@ class SPlexSolution(Solution):
             #print(f"I have these counts: {counts}")
             if any([x < n_clust - self.s for x in counts]):
                 return False
-        print(f"VALID SOLUTION")
+        #print(f"VALID SOLUTION")
         return True
 
     def copy(self):
@@ -145,7 +145,7 @@ class SPlexSolution(Solution):
             selected_nodes.append(selected_node)
             neighbors_selected_nodes += self.initial_neighbors[selected_node][:int(cluster_size_cap)] # Add neighours of that node to it
 
-        print(f"Selected nodes: {selected_nodes}")
+        #print(f"Selected nodes: {selected_nodes}")
         # Initialize the clusters
         for node in selected_nodes:
             self.clusters.append([node])
@@ -232,15 +232,13 @@ class SPlexSolution(Solution):
                     unassigned.remove(node)
             assert(unassigned == [])
 
-        print(f"Final clusters:\n\t{self.clusters}")
+        #print(f"Final clusters:\n\t{self.clusters}")
 
     def construct_all_splex(self):
         """
         Construct s-plex for all the clusters
         """
-        for i,clust in enumerate(self.clusters):
-            print(i)
-            print(len(clust))
+        for clust in self.clusters:
             self.construct_splex(clust)
         
         # Remove duplicates
@@ -330,7 +328,6 @@ class SPlexSolution(Solution):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
-        print(par)
         result.changed = self.ls_move1node(par)
 
     def ls_move1node(self, step_function = "best") -> bool:
@@ -357,7 +354,7 @@ class SPlexSolution(Solution):
                         self.clusters[current_cluster].remove(node)
                         self.clusters[dest_clust].append(node)
                         current_cluster = dest_clust
-                        print(f"Now we have clusters:\n\t{self.clusters}")
+                        #print(f"Now we have clusters:\n\t{self.clusters}")
                         # Need to complete the s-plexes with these clusters and evaluate them
                         # This amounts to having to recompute the s-plex for the cluster we moved to
                         #   as the one we moved from is guaranteed to still be an s-plex 
@@ -371,7 +368,7 @@ class SPlexSolution(Solution):
                         #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
                         self.construct_all_splex()
                         self.update_current_neighbours()
-                        print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+                        #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
 
                         #print(f"The best solution has value {best_sol.calc_objective()}")
                         #print(f"Our solution has values {self.calc_objective()}")   
@@ -393,11 +390,11 @@ class SPlexSolution(Solution):
             initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0]
             while dest_clust == initial_cluster: # Generate until you obtain a new cluster diff than initial one
                 dest_clust = random.randint(0, len(self.clusters)-1)
-            print(f"Moving node {node} to cluster {self.clusters[dest_clust]}")
+            #print(f"Moving node {node} to cluster {self.clusters[dest_clust]}")
             # Move the node to the new cluster and recompute the s-plexes.
             self.clusters[initial_cluster].remove(node)
             self.clusters[dest_clust].append(node)
-            print(f"Now we have clusters:\n\t{self.clusters}")
+            #print(f"Now we have clusters:\n\t{self.clusters}")
 
             self.edges_modified = []
             self.update_current_neighbours()
@@ -405,7 +402,7 @@ class SPlexSolution(Solution):
             #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
             self.construct_all_splex()
             self.update_current_neighbours()
-            print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+            #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
 
             if self.calc_objective() < best_sol.calc_objective():
                 best_sol = self.copy()
@@ -432,13 +429,13 @@ class SPlexSolution(Solution):
                     self.clusters.remove(clust1)
                     self.clusters.remove(clust2)
                     self.clusters.append(clust1 + clust2)
-                    print(f"Now we have clusters: {self.clusters}")
+                    #print(f"Now we have clusters: {self.clusters}")
                     
                     self.edges_modified = []
                     self.update_current_neighbours()
                     self.construct_all_splex()
                     self.update_current_neighbours()
-                    print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+                    #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
 
                     #print(f"The best solution has value {best_sol.calc_objective()}")
                     #print(f"Our solution has values {self.calc_objective()}")   
@@ -461,13 +458,13 @@ class SPlexSolution(Solution):
             self.clusters.remove(clust1)
             self.clusters.remove(clust2)
             self.clusters.append(clust1 + clust2)
-            print(f"Now we have clusters: {self.clusters}")
+            #print(f"Now we have clusters: {self.clusters}")
 
             self.edges_modified = []
             self.update_current_neighbours()
             self.construct_all_splex()
             self.update_current_neighbours()
-            print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+            #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
             if self.calc_objective() < best_sol.calc_objective():
                 best_sol = self.copy()
                 return True
