@@ -11,6 +11,16 @@ import numpy
 from copy import deepcopy as dcopy
 from utilities import Utilities
 
+import sys, os
+
+# Disable
+def blockPrint():
+    sys.stdout = open(os.devnull, 'w')
+
+# Restore
+def enablePrint():
+    sys.stdout = sys.__stdout__
+
 class SPlexSolution(Solution):
     """
     A solution of the s-plex editing problem.
@@ -342,7 +352,7 @@ class SPlexSolution(Solution):
             initial_clusters = dcopy(self.clusters)
             initial_edges_modified = dcopy(self.edges_modified)
             initial_value = self.calc_objective() # Needed for how delta is evaluated and how we move through
-            print(f"Initialization took {time.time() - time1}s")
+            #print(f"Initialization took {time.time() - time1}s")
             
             for node in range(1, len(self.weights)):
                 time2 = time.time()
@@ -351,7 +361,7 @@ class SPlexSolution(Solution):
                 self.edges_modified = dcopy(initial_edges_modified)
                 initial_clust = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find what cluster node belongs to 
                 current_clust = initial_clust
-                print(f"First deep copies took {time.time() - time2}s")
+                #print(f"First deep copies took {time.time() - time2}s")
 
                 for dest_clust in range(len(self.clusters)): # index for which cluster we are working on
                     if dest_clust != initial_clust:
@@ -372,7 +382,7 @@ class SPlexSolution(Solution):
                                 edge = [node, old_node] if node < old_node else [old_node, node]
                                 delta += self.weights[edge[0], edge[1]]
                                 self.edges_modified.append(edge)
-                        print(f"Preliminary manipulation 1 took {time.time() - time4}")
+                        # print(f"Preliminary manipulation 1 took {time.time() - time4}")
 
 
                         time5 = time.time()
@@ -382,7 +392,7 @@ class SPlexSolution(Solution):
                             if edge in self.edges_modified:
                                 delta -= self.weights[edge[0], edge[1]]
                                 self.edges_modified.remove(edge)
-                        print(f"Preliminary manipulation 2 took {time.time() - time5}")
+                        # print(f"Preliminary manipulation 2 took {time.time() - time5}")
                         
                         time6 = time.time()
                         # Remove from solution all edges between nodes in the new cluster which were added to make s-plex as we have to rebuild it
@@ -392,8 +402,8 @@ class SPlexSolution(Solution):
                                 if edge in self.edges_modified:
                                     delta -= self.weights[edge[0], edge[1]]
                                     self.edges_modified.remove(edge)
-                        print(f"Preliminary manipulation 3 took {time.time() - time6}")
-                        print(f"Preliminary manipulations took {time.time() - time3}")
+                        # print(f"Preliminary manipulation 3 took {time.time() - time6}")
+                        # print(f"Preliminary manipulations took {time.time() - time3}")
                         
                         time7 = time.time()
                         # Append new node
@@ -450,8 +460,7 @@ class SPlexSolution(Solution):
                                 #delta += self.weights[edge[0], edge[1]]
                                 #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
 
-                        print(f"Building the s-plex took {time.time() - time7}")
-                        return
+                        # print(f"Building the s-plex took {time.time() - time7}")
                         #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
                         #print(f"Computed with delta evaluation our solution has value: {delta_baseline + delta}")
                         self.update_current_neighbours()
@@ -467,7 +476,7 @@ class SPlexSolution(Solution):
                         delta_baseline = delta_baseline + delta
 
             self.copy_from(best_sol)
-            return False
+            return better_found
         elif step_function == 'random':
             delta = 0
             
@@ -596,7 +605,7 @@ class SPlexSolution(Solution):
         if step_function in ['best', 'first']:
             time1 = time.time()
             initial_clusters = dcopy(self.clusters)
-            print(f"Initialization took {time.time() - time1}s")
+            #print(f"Initialization took {time.time() - time1}s")
             
             for node in range(1, len(self.weights)):
                 time2 = time.time()
@@ -604,7 +613,7 @@ class SPlexSolution(Solution):
                 # print(f"Working with node: {node}")
                 initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find in what cluster it is
                 current_cluster = initial_cluster
-                print(f"First deep copies took {time.time() - time2}s")
+                #print(f"First deep copies took {time.time() - time2}s")
                 # return
                 # So now we move node to dest_clust in every iteration
                 for dest_clust in range(len(self.clusters)):
@@ -628,11 +637,10 @@ class SPlexSolution(Solution):
                         #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
                         time5 = time.time()
                         self.construct_all_splex()
-                        print(f"Constructing the s-plex took {time.time() - time5}")
+                        #print(f"Constructing the s-plex took {time.time() - time5}")
                         self.update_current_neighbours()
                         # print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
-                        print(f"Building whole solution took {time.time() - time3}")
-                        return
+                        #print(f"Building whole solution took {time.time() - time3}")
                         # print(f"The best solution has value {best_sol.calc_objective()}")
                         if self.calc_objective() < best_sol.calc_objective():
                             # Means we found a better solution
@@ -672,14 +680,13 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
-    
 
     def ls_swap2nodes(self, step_function = 'best') -> bool:
-        "Performs local search where the neighbour of one solution is given as the solution but with two clusters being joined together"
+        "Performs local search where the neighbour of one solution is given as the solution but with two nodes swapped"
         best_sol = self.copy()
         better_found = False
         initial_clusters = dcopy(self.clusters)
-        
+
         # Consider all pairs of nodes and swap them
         if step_function in ['best', 'first']:
             for node1 in range(1, len(self.weights)):
@@ -706,6 +713,8 @@ class SPlexSolution(Solution):
                             best_sol = self.copy()
                             if step_function == 'first':
                                 return better_found
+            self.copy_from(best_sol)
+            return better_found
         elif step_function == 'random':
             # Pick a node at random and move it to another cluster at random and see if it improved
             node1 = random.randint(1, len(self.weights))
@@ -774,6 +783,8 @@ class SPlexSolution(Solution):
                         best_sol = self.copy()
                         if step_function == 'first':
                             return better_found
+            self.copy_from(best_sol)
+            return better_found
         
         elif step_function == 'random':
             # Select two clusters at random and join them 
@@ -808,18 +819,37 @@ if __name__ == '__main__':
     spi = SPlexInstance(args.inputfile)
     spi_sol = SPlexSolution(spi)
     spi_sol.construct_randomized(k=100, alpha=1, beta=1)
-    for clust in spi_sol.clusters:
-        print(f"Cluster has lenght {len(clust)}")
-    print(f"Greedy solution has value: {spi_sol.calc_objective()}")
-
+    #for clust in spi_sol.clusters:
+    #    print(f"Cluster has lenght {len(clust)}")
+    print(f"Greedy solution has value: {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
+    # print(f"We are given clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
     # print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
-    print(f"Did we find a better solution: {spi_sol.ls_swap2nodes(step_function='best')}")
-    #print(f"Did we find a better solution: {spi_sol.ls_move1node_faster(step_function='best')}")
-    #print(f"Our improved solution has value {spi_sol.calc_objective()}")
+    #print(f"Non-delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
+    #print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
+    time_start = time.time()
+    print(f"Delta LS: Did we find a better solution: {spi_sol.ls_join_clusters(step_function='best')}")
+    print(f"It has value {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
+    print(f"It took {time.time() - time_start}")
+    # print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
     # print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
     #Utilities.write_solution('trial.txt', spi_sol.edges_modified, spi_sol.problem_instance)
-
-    # spi_sol.ls_join_clusters()
-    # spi_sol.ls_split_clusters()
     
+    """spi = SPlexInstance(args.inputfile)
+    spi_sol = SPlexSolution(spi)
+    spi_sol.construct_randomized(k=100, alpha=1, beta=1)
+    #for clust in spi_sol.clusters:
+    #    print(f"Cluster has lenght {len(clust)}")
+    print(f"Greedy solution has value: {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
+    # print(f"We are given clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
+    # print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
+    #print(f"Non-delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
+    #print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
+    time_start = time.time()
+    print(f"Delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
+    print(f"It has value {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
+    print(f"It took {time.time() - time_start}")
+    # spi_sol.ls_join_clusters()
+    # spi_sol.ls_split_clusters()"""
+    
+
 
