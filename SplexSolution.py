@@ -309,7 +309,7 @@ class SPlexSolution(Solution):
     
 
 
-    def construct_randomized(self, k, alpha= 1, beta= 1, cluster_size_cap= 1):
+    def construct_randomized(self, k, alpha= 1, beta= 1, cluster_size_cap= 30):
         """ 
         Construction algorithm to build a solution:
             - k: number of clusters to obtain
@@ -324,7 +324,7 @@ class SPlexSolution(Solution):
         self.construct_all_splex()
         self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
     
-    def construct_deterministic(self, k):
+    def construct_deterministic(self, k, cluster_size_cap= 30):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
