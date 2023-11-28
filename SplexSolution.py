@@ -129,6 +129,8 @@ class SPlexSolution(Solution):
 
         while(len(selected_nodes) != k):
             CL = [x for x in sorted_nodes if x[0] not in neighbors_selected_nodes]
+            if not CL:
+                break
             cmax = CL[0][1]
             cmin = CL[-1][1]
             threshold = cmin + alpha * (cmax - cmin)
@@ -245,49 +247,49 @@ class SPlexSolution(Solution):
                 #print(f"For node {node} we removed edges {edges_removed}")
                 self.edges_modified += edges_removed
 
-            # Now we ensure that we make the cluster into a desired s-plex
-            n_nodes = len(clust)
-            cluster_neighbours = {node:[] for node in clust}
-            for node in clust:
-                cluster_neighbours[node] = [x for x in self.initial_neighbors[node] if x in clust]
-            #print(f"Cluster {clust}:\nNeighbours list {cluster_neighbours}")
+        # Now we ensure that we make the cluster into a desired s-plex
+        n_nodes = len(clust)
+        cluster_neighbours = {node:[] for node in clust}
+        for node in clust:
+            cluster_neighbours[node] = [x for x in self.initial_neighbors[node] if x in clust]
+        #print(f"Cluster {clust}:\nNeighbours list {cluster_neighbours}")
 
-            # Now we need the order of each node in the subgraph
-            count_neighbours = {key:len(value) for key,value in cluster_neighbours.items()}
-            #print(f"Number of neighbours for each node is {count_neighbours}")
+        # Now we need the order of each node in the subgraph
+        count_neighbours = {key:len(value) for key,value in cluster_neighbours.items()}
+        #print(f"Number of neighbours for each node is {count_neighbours}")
 
-            # List of nodes which do not have order for the s-plex assumption
-            nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
-            #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
-            
-            # Now we create a list of potential edges to add where we only consider pairs where at least one of the nodes is a unsatisfactory one
-            # Now we add edges with minimum cost at every iteration
-            if len(nodes_not_satisfied) != 0:
-                potential_edges = []
-                # This is quite inefficient as more checks than necessary
-                for ind, node_i in enumerate(clust):
-                    for node_j in clust[ind+1 : ]:
-                        if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied: # only consider edges between unsatisfied nodes.
-                            if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
-                                potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
-                potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
-                #print(f"Potential edges: {potential_edges}")
+        # List of nodes which do not have order for the s-plex assumption
+        nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+        #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+        
+        # Now we create a list of potential edges to add where we only consider pairs where at least one of the nodes is a unsatisfactory one
+        # Now we add edges with minimum cost at every iteration
+        if len(nodes_not_satisfied) != 0:
+            potential_edges = []
+            # This is quite inefficient as more checks than necessary
+            for ind, node_i in enumerate(clust):
+                for node_j in clust[ind+1 : ]:
+                    if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied: # only consider edges between unsatisfied nodes.
+                        if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
+                            potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
+            potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
+            #print(f"Potential edges: {potential_edges}")
 
-                while nodes_not_satisfied:
-                    candidate_edge = potential_edges.pop(0)
-                    node_i = candidate_edge[0][0]
-                    node_j = candidate_edge[0][1]
-                    cluster_neighbours[node_i].append(node_j)
-                    cluster_neighbours[node_j].append(node_i)
-                    count_neighbours[node_i] += 1
-                    count_neighbours[node_j] += 1
-                    nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
-                    #print(f"Adding edge between ({node_i}, {node_j})")
-                    self.edges_modified.append(set([node_i, node_j]))  # Append additional edges we inserted
-                    # Added afterwards for delta-evaluation
-                    edge = [node_i, node_j] if node_i < node_j else [node_j, node_i]
-                    delta += self.weights[edge[0], edge[1]]
-                    #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+            while nodes_not_satisfied:
+                candidate_edge = potential_edges.pop(0)
+                node_i = candidate_edge[0][0]
+                node_j = candidate_edge[0][1]
+                cluster_neighbours[node_i].append(node_j)
+                cluster_neighbours[node_j].append(node_i)
+                count_neighbours[node_i] += 1
+                count_neighbours[node_j] += 1
+                nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+                #print(f"Adding edge between ({node_i}, {node_j})")
+                self.edges_modified.append(set([node_i, node_j]))  # Append additional edges we inserted
+                # Added afterwards for delta-evaluation
+                edge = [node_i, node_j] if node_i < node_j else [node_j, node_i]
+                delta += self.weights[edge[0], edge[1]]
+                #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
         if return_delta:
             return delta
     
@@ -461,15 +463,20 @@ if __name__ == '__main__':
     args = parser.parse_args()
     spi = SPlexInstance(args.inputfile)
     spi_sol = SPlexSolution(spi)
-    spi_sol.construct_randomized(k=3, alpha=1, beta=1)
-    print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
+    spi_sol.construct_randomized(k=100, alpha=1, beta=1)
+    for clust in spi_sol.clusters:
+        print(f"Cluster has lenght {len(clust)}")
+    print(f"Solution is valid: {spi_sol.check()}")
+    print(f"Solution has value: {spi_sol.calc_objective()}")
+
+    # print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
 
     #print(f"Did we find a better solution: {spi_sol.ls_move1node(step_function='random')}")
     #print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
     #Utilities.write_solution('trial.txt', spi_sol.edges_modified, spi_sol.problem_instance)
 
     # spi_sol.ls_join_clusters()
-    spi_sol.ls_split_clusters()
+    # spi_sol.ls_split_clusters()
     
 
 
