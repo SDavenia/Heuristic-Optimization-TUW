@@ -14,7 +14,7 @@ from pymhlib.demos.graphs import create_or_read_simple_graph
 import numpy
 import bisect
 
-from construction import SPlexInstance
+from SPlexInstance import SPlexInstance
 
 parser = get_settings_parser()
 

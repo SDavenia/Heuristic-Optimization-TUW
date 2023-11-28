@@ -1,6 +1,6 @@
 from pymhlib.solution import Solution, TObj
 from pymhlib.settings import get_settings_parser
-
+from pymhlib.scheduler import Result
 
 from SPlexInstance import SPlexInstance
 
@@ -187,7 +187,8 @@ class SPlexSolution(Solution):
             cmax = max(node_max) 
             cmin = min(node_min)
             #print(f"Cmax: {cmax}, Cmin: {cmin}")
-            threshold = cmin + beta*(cmax - cmin)
+            threshold = numpy.add(cmin, numpy.multiply(beta, numpy.subtract(cmax,cmin)))
+
 
             # Consider all pairings of node-cluster which are above the threshold
             RCL_pairs = [(key, element) for key, values in node_similarity_to_cluster.items() for element in values if element >= threshold]
@@ -207,9 +208,10 @@ class SPlexSolution(Solution):
             del node_similarity_to_cluster[node_assigned]
             for node in node_similarity_to_cluster.keys():
                 if self.weights_given_graph[node, node_assigned] != 0:
-                    node_similarity_to_cluster[node][cluster_assigned] += self.weights[node, node_assigned]
+                    node_similarity_to_cluster[node][cluster_assigned] = numpy.add(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
                 else:
-                    node_similarity_to_cluster[node][cluster_assigned] -= self.weights[node, node_assigned]
+                    node_similarity_to_cluster[node][cluster_assigned] = numpy.subtract(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
+                    
         print(f"Final clusters:\n\t{self.clusters}")
 
     def construct_all_splex(self):
