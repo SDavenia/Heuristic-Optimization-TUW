@@ -569,7 +569,7 @@ class SPlexSolution(Solution):
 
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
-        result.changed = self.ls_move1node(par)
+        result.changed = self.ls_move1node_faster(par)
 
     def ch_construct_randomized(self, par, result):
         self.construct_randomized(k=par, alpha=0.5, beta=0.5, cluster_size_cap=(self.inst.n/par)*25)
@@ -592,7 +592,7 @@ class SPlexSolution(Solution):
             initial_clusters = dcopy(self.clusters)
             print(f"Initialization took {time.time() - time1}s")
             
-            for node in range(1, len(spi_sol.weights)):
+            for node in range(1, len(self.weights)):
                 time2 = time.time()
                 self.clusters = dcopy(initial_clusters)
                 # print(f"Working with node: {node}")
@@ -793,8 +793,6 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
-
-
 
 if __name__ == '__main__':
     parser = get_settings_parser()
