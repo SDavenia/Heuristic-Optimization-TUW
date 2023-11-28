@@ -223,16 +223,14 @@ class SPlexSolution(Solution):
                         node_similarity_to_cluster[node][cluster_assigned] = numpy.add(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
                     else:
                         node_similarity_to_cluster[node][cluster_assigned] = numpy.subtract(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
-        unassigned = [x[0] for x in unassigned_nodes]
         if beta == 1:
+            unassigned = [x[0] for x in unassigned_nodes]
             all_ranks = [(x[2], x[0]) for x in sorted(all_ranks, key=itemgetter(1), reverse=True)]
             for node, cluster in all_ranks:
                 if (node in unassigned) and len(self.clusters[cluster]) < max_cluster_size:
                     self.clusters[cluster].append(node)
                     unassigned.remove(node)
-        assert(unassigned == [])
-
-             
+            assert(unassigned == [])
 
         print(f"Final clusters:\n\t{self.clusters}")
 
