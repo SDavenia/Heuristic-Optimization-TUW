@@ -40,8 +40,9 @@ def grasp(solution: SPlexSolution):
     pass
 
 def vnd(solution: SPlexSolution):
-    rand_construction(solution)
-    vnd = GVNS(solution,[], [Method("local_search_move1node", SPlexSolution.local_search_move1node,"best")], [])
+    k = 100
+    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"first")], [])
     vnd.run()
 
 def gvns(solution: SPlexSolution):
@@ -70,4 +71,4 @@ if __name__ == '__main__':
     run(settings, sol)
     runtime = time.time() - start_time
     score = sol.calc_objective()
-    print(f"Runtime: {runtime}\nScore: {score}\n Solution check: {sol.check()}")
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {sol.check()}")
