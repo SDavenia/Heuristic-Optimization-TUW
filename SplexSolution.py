@@ -571,6 +571,12 @@ class SPlexSolution(Solution):
     def local_search_move1node(self, par = None, result = Result()) -> None:
         result.changed = self.ls_move1node_faster(par)
 
+    def local_search_swap2nodes(self, par = None, result = Result()) -> None:
+        result.changed = self.ls_swap2nodes(par)
+
+    def local_search_join_clusters(self, par = None, result = Result()) -> None:
+        result.changed = self.ls_join_clusters(par)
+
     def ch_construct_randomized(self, par, result):
         self.construct_randomized(k=par, alpha=0.5, beta=0.5, cluster_size_cap=(self.inst.n/par)*25)
 
