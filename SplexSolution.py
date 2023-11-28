@@ -9,6 +9,7 @@ import random
 import numpy
 
 from copy import deepcopy as dcopy
+from utilities import Utilities
 
 class SPlexSolution(Solution):
     """
@@ -37,6 +38,9 @@ class SPlexSolution(Solution):
         # clusters is used to help as it is often used for the neighbourhood structures as well.
         self.clusters = []
         self.edges_modified = [] # Actual solution to the problem.
+
+        # Needed for writing to file
+        self.problem_instance = inst.problem_instance
 
     def calc_objective(self)->int:
         cost = 0
@@ -399,6 +403,7 @@ if __name__ == '__main__':
     # spi_sol.calc_objective()
     print(f"Did we find a better solution: {spi_sol.ls_move1node(step_function='random')}")
     print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
+    Utilities.write_solution('trial.txt', spi_sol.edges_modified, spi_sol.problem_instance)
     #print(f"Did we find a better solution: {spi_sol.ls_move1node_delta_eval()}")
     #print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
     # spi_sol.ls_move1node_delta_eval()
