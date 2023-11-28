@@ -46,7 +46,9 @@ def grasp(solution: SPlexSolution):
 def vnd(solution: SPlexSolution):
     k = 100
     vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
-                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"best")], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"best"), 
+                         Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes,"best"), 
+                         Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters,"best")], 
                         [])
     vnd.run()
 
