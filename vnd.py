@@ -62,6 +62,7 @@ class VND(Scheduler):
         """Actually performs the VND."""
         sol = self.incumbent.copy()
         self.vnd(sol)
+        print(sol.calc_objective())
 
 if __name__ == '__main__':
     parser = get_settings_parser()
@@ -72,6 +73,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     spi = SPlexInstance(args.inputfile)
     spi_sol = SPlexSolution(spi)
-    spi_sol.construct_randomized(k=3, alpha=1, beta=1)
-    vnd = VND(spi_sol, [Method("move1_nhour", LocalSearchInstance.move1_nhour, spi_sol.edges_modified)])
+    k = 100
+    spi_sol.construct_randomized(k=k, alpha=1, beta=1, cluster_size_cap= (spi.n/k)*25)
+    vnd = VND(spi_sol, [Method("local_search_move1node", SPlexSolution.local_search_move1node,"first")])
     vnd.run()
