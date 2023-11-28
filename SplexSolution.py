@@ -673,13 +673,14 @@ class SPlexSolution(Solution):
         best_sol = self.copy()
         better_found = False
         initial_clusters = dcopy(self.clusters)
+        
         # Consider all pairs of nodes and swap them
         if step_function in ['best', 'first']:
-            for ind1, node1 in list(range(1, len(self.weights))):
-                for ind2, node2 in list(range(ind1 + 1, len(self.weights))):
+            for node1 in range(1, len(self.weights)):
+                for node2 in range(node1 + 1, len(self.weights)):
                     self.clusters = dcopy(initial_clusters)
-                    clust_1 = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # What cluster the first node is in.
-                    clust_2 = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # What cluster the second node is in.
+                    clust_1 = [index for index, sublist in enumerate(self.clusters) if node1 in sublist][0] # What cluster the first node is in.
+                    clust_2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the second node is in.
                     if clust_1 != clust_2:
                         self.clusters[clust_1].remove(node1)
                         self.clusters[clust_2].remove(node2)
@@ -806,7 +807,7 @@ if __name__ == '__main__':
     print(f"Greedy solution has value: {spi_sol.calc_objective()}")
 
     # print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
-    print(f"Did we find a better solution: {spi_sol.ls_move1node_faster(step_function='best')}")
+    print(f"Did we find a better solution: {spi_sol.ls_swap2nodes(step_function='best')}")
     #print(f"Did we find a better solution: {spi_sol.ls_move1node_faster(step_function='best')}")
     #print(f"Our improved solution has value {spi_sol.calc_objective()}")
     # print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
