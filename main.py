@@ -48,10 +48,10 @@ def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
     best_score = float("inf")
     best_solution = None
     for i in range(iterations):
-        print(f"GRAPS iteration {i} of {iterations}")
+        print(f"GRASP iteration {i+1} of {iterations}")
         new_solution = solution.copy()
         ls = GVNS(new_solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
-                        [Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
+                        [Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step)], 
                         [])
         ls.run()
         new_score = new_solution.calc_objective()
