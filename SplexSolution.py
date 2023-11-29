@@ -986,7 +986,66 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
+    
+    def ls_join_clusters(self, step_function = 'best') -> bool:
+        """
+        Performs local search where the neighbour of one solution is given as the solution but with two clusters being joined together
+        """
+        best_sol = self.copy()
+        better_found = False
 
+        initial_clusters = dcopy(self.clusters)
+        
+        if step_function in ['best', 'first']:
+            # Consider all possible pairs of clusters to be joined together
+            for ind1, clust1 in enumerate(initial_clusters):
+                for ind2, clust2 in enumerate(initial_clusters[ind1+1:]):
+                    self.clusters = dcopy(initial_clusters) # For simplicity
+                    self.clusters.remove(clust1)
+                    self.clusters.remove(clust2)
+                    self.clusters.append(clust1 + clust2)
+                    #print(f"Now we have clusters: {self.clusters}")                
+                    self.edges_modified = []
+                    # self.update_current_neighbours()
+                    self.construct_all_splex()
+                    # self.update_current_neighbours()
+                    #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+
+                    #print(f"The best solution has value {best_sol.calc_objective()}")
+                    #print(f"Our solution has values {self.calc_objective()}")   
+                    if self.calc_objective() < best_sol.calc_objective():
+                        # Means we found a better solution
+                        better_found = True
+                        best_sol = self.copy()
+                        if step_function == 'first':
+                            return better_found
+            self.copy_from(best_sol)
+            return better_found
+        elif step_function == 'random':
+            # Select two clusters at random and join them 
+            ind1 = random.randint(0, len(self.clusters)-1)
+            ind2 = random.randint(0, len(self.clusters)-1)
+            while ind1 == ind2:
+                ind2 = random.randint(0, len(self.clusters)-1)
+            clust1 = self.clusters[ind1]
+            clust2 = self.clusters[ind2]
+
+            self.clusters.remove(clust1)
+            self.clusters.remove(clust2)
+            self.clusters.append(clust1 + clust2)
+            #print(f"Now we have clusters: {self.clusters}")
+
+            self.edges_modified = []
+            # self.update_current_neighbours()
+            self.construct_all_splex()
+            # self.update_current_neighbours()
+            #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+            if self.calc_objective() < best_sol.calc_objective():
+                best_sol = self.copy()
+                return True
+            else:
+                self.copy_from(best_sol)
+                return False
 
 if __name__ == '__main__':
     parser = get_settings_parser()
@@ -1000,7 +1059,7 @@ if __name__ == '__main__':
     print(f"Greedy solution has value: {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
 
     time_start = time.time()
-    print(f"move1node_simplified: Did we find a better solution: {spi_sol.ls_move1node_simplified(step_function='best')}")
+    print(f"move1node_simplified: Did we find a better solution: {spi_sol.ls_join_clusters(step_function='best')}")
     print(f"It has value {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
     print(f"It took {time.time() - time_start}")
 
