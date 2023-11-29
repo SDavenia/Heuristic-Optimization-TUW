@@ -121,7 +121,8 @@ class SPlexSolution(Solution):
     def construct_set_initial(self, k, alpha, cluster_size_cap):
         """
         Selects the initial k nodes for the clusters with a level of randomization alpha
-        Returns sorted_nodes which is required for the construction
+        Returns sorted_nodes which is required for the construction.
+        cluster_size_cap 
         """        
 
         # Obtain a list of nodes with weight of their edges, and sort in decreasing order
@@ -153,7 +154,7 @@ class SPlexSolution(Solution):
                 selected_node = RCL.pop(random.randint(0, len(RCL)-1)) # Choose at random a node from the candidate list.
             sorted_nodes = [x for x in sorted_nodes if x[0] != selected_node]
             selected_nodes.append(selected_node)
-            neighbors_selected_nodes += self.initial_neighbors[selected_node][:int(cluster_size_cap)] # Add neighours of that node to it
+            neighbors_selected_nodes += self.initial_neighbors[selected_node][:int(cluster_size_cap)] # Add neighours of that node to it while also capping the first 50
 
         #print(f"Selected nodes: {selected_nodes}")
         # Initialize the clusters
@@ -319,7 +320,7 @@ class SPlexSolution(Solution):
     
 
 
-    def construct_randomized(self, k, alpha= 1, beta= 1, cluster_size_cap= 30):
+    def construct_randomized(self, k, alpha= 1, beta= 1, cluster_size_cap = 30):
         """ 
         Construction algorithm to build a solution:
             - k: number of clusters to obtain
@@ -352,24 +353,24 @@ class SPlexSolution(Solution):
             initial_clusters = dcopy(self.clusters)
             initial_edges_modified = dcopy(self.edges_modified)
             initial_value = self.calc_objective() # Needed for how delta is evaluated and how we move through
-            #print(f"Initialization took {time.time() - time1}s")
+            # print(f"Initialization took {time.time() - time1}s")
             
             for node in range(1, len(self.weights)):
-                time2 = time.time()
+                # time2 = time.time()
                 delta_baseline = initial_value
                 self.clusters = dcopy(initial_clusters)
                 self.edges_modified = dcopy(initial_edges_modified)
                 initial_clust = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find what cluster node belongs to 
                 current_clust = initial_clust
-                #print(f"First deep copies took {time.time() - time2}s")
+                # print(f"First deep copies took {time.time() - time2}s")
 
                 for dest_clust in range(len(self.clusters)): # index for which cluster we are working on
                     if dest_clust != initial_clust:
-                        time3 = time.time()
+                        # time3 = time.time()
                         delta = 0 # To store changes made by the local move
                         self.clusters[current_clust].remove(node)
 
-                        time4 = time.time()
+                        # time4 = time.time()
                         # Remove from solution all edges between node and elements in old cluster which were added to make s-plex
                         for old_node in self.clusters[current_clust]:
                             edge = [node, old_node] if node < old_node else [old_node, node]
@@ -385,7 +386,7 @@ class SPlexSolution(Solution):
                         # print(f"Preliminary manipulation 1 took {time.time() - time4}")
 
 
-                        time5 = time.time()
+                        # time5 = time.time()
                         # Remove from solution all edges between node and elements in new cluster which were added to isolate it
                         for new_node in self.clusters[dest_clust]:
                             edge = [node, new_node] if node < new_node else [new_node, node]
@@ -394,7 +395,7 @@ class SPlexSolution(Solution):
                                 self.edges_modified.remove(edge)
                         # print(f"Preliminary manipulation 2 took {time.time() - time5}")
                         
-                        time6 = time.time()
+                        # time6 = time.time()
                         # Remove from solution all edges between nodes in the new cluster which were added to make s-plex as we have to rebuild it
                         for ind1, new_node1 in enumerate(self.clusters[dest_clust]):
                             for ind2, new_node2 in enumerate(self.clusters[dest_clust]):
@@ -405,13 +406,13 @@ class SPlexSolution(Solution):
                         # print(f"Preliminary manipulation 3 took {time.time() - time6}")
                         # print(f"Preliminary manipulations took {time.time() - time3}")
                         
-                        time7 = time.time()
+                        # time7 = time.time()
                         # Append new node
                         self.clusters[dest_clust].append(node)
                         current_clust = dest_clust
                         self.update_current_neighbours()
-                        # print(f"Now we have clusters:\n\t{self.clusters}")
-                        # print(f"We start with these edges:\n\t{self.edges_modified}")
+                        #print(f"Now we have clusters:\n\t{self.clusters}")
+                        #print(f"We start with these edges:\n\t{self.edges_modified}")
                         
                         # Now we rebuild the s-plex for that cluster by only adding edges within
                         n_nodes = len(self.clusters[dest_clust])
@@ -461,9 +462,10 @@ class SPlexSolution(Solution):
                                 #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
 
                         # print(f"Building the s-plex took {time.time() - time7}")
+                        # return 
                         #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
                         #print(f"Computed with delta evaluation our solution has value: {delta_baseline + delta}")
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours() DONT THINK THIS IS NEEDED
 
                         if delta + delta_baseline < best_sol_value:
                             # Means we found a better solution
@@ -521,7 +523,7 @@ class SPlexSolution(Solution):
             self.clusters[dest_clust].append(node)
             current_clust = dest_clust
             self.update_current_neighbours()
-            print(f"RANDOM: Now we have clusters:\n\t{self.clusters}")
+            # print(f"RANDOM: Now we have clusters:\n\t{self.clusters}")
             # print(f"We start with these edges:\n\t{self.edges_modified}")
             
             # Now we rebuild the s-plex for that cluster by only adding edges within
@@ -573,9 +575,237 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
-    
 
 
+    def ls_move1node_simplified(self, step_function = "best") -> bool:
+        """
+        Performs one iteration of local search using the moving of one node from one cluster to another
+        Returns True if an improevd solution is found.
+        Instead of re-building the s-plex we move to it only ensures that the node is made into an s-plex for the cluster
+        """
+        best_sol = self.copy()
+        best_sol_value = self.calc_objective()
+        better_found = False
+        
+        if step_function in ['best', 'first']:
+            initial_clusters = dcopy(self.clusters)
+            initial_edges_modified = dcopy(self.edges_modified)
+            initial_value = self.calc_objective() # Needed for how delta is evaluated and how we move through
+            
+            for node in range(1, len(self.weights)):
+                # time2 = time.time()
+                delta_baseline = initial_value
+                self.clusters = dcopy(initial_clusters)
+                self.edges_modified = dcopy(initial_edges_modified)
+                initial_clust = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find what cluster node belongs to 
+                current_clust = initial_clust
+                #print(f"First deep copies took {time.time() - time2}s")
+
+                for dest_clust in range(len(self.clusters)): # index for which cluster we are working on
+                    if dest_clust != initial_clust:
+                        # time3 = time.time()
+                        delta = 0 # To store changes made by the local move
+                        self.clusters[current_clust].remove(node)
+
+                        # time4 = time.time()
+                        # Remove from solution all edges between node and elements in old cluster which were added to make s-plex
+                        for old_node in self.clusters[current_clust]:
+                            edge = [node, old_node] if node < old_node else [old_node, node]
+                            if edge in self.edges_modified:
+                                delta -= self.weights[edge[0], edge[1]]
+                                self.edges_modified.remove(edge)
+
+                            # Add to solution all edges which were in the original graph between node and old elements
+                            elif old_node in self.initial_neighbors[node]:
+                                edge = [node, old_node] if node < old_node else [old_node, node]
+                                delta += self.weights[edge[0], edge[1]]
+                                self.edges_modified.append(edge)
+                        # print(f"Preliminary manipulation 1 took {time.time() - time4}")
+
+
+                        #time5 = time.time()
+                        # Remove from solution all edges between node and elements in new cluster which were added to isolate it
+                        for new_node in self.clusters[dest_clust]:
+                            edge = [node, new_node] if node < new_node else [new_node, node]
+                            if edge in self.edges_modified:
+                                delta -= self.weights[edge[0], edge[1]]
+                                self.edges_modified.remove(edge)
+                        #print(f"Preliminary manipulation 2 took {time.time() - time5}")
+                        
+                        #time7 = time.time()
+                        # Append new node
+                        self.clusters[dest_clust].append(node)
+                        current_clust = dest_clust
+                        self.update_current_neighbours()
+                        # print(f"Now we have clusters:\n\t{self.clusters}")
+                        # print(f"We start with these edges:\n\t{self.edges_modified}")
+
+                        # Now we have to check and ensure the s-plex assumption is satisfied after adding new node.
+                        # So we have to add edges again but without rebuilding the previous ones
+                        
+                        # Now we rebuild the s-plex for that cluster by only adding edges within
+
+                        n_nodes = len(self.clusters[dest_clust])
+                        cluster_neighbours = {x:[] for x in self.clusters[dest_clust]}
+
+                        # Build a dictionary with node and its cluster neighbours
+                        # print(f"NEW CLUSTER: {self.clusters[dest_clust]}")
+                        # print(f"Initial neighbours: {self.initial_neighbors}")
+                        for clust_node in self.clusters[dest_clust]:
+                            cluster_neighbours[clust_node] = [x for x in self.initial_neighbors[clust_node] if x in self.clusters[dest_clust]]
+                        #print(f"Cluster {self.clusters[dest_clust]}:\nNeighbours list {cluster_neighbours}")
+                        
+                        # Count number of neighbours for each
+                        count_neighbours = {key:len(value) for key,value in cluster_neighbours.items()}
+                        nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+                        #print(f"Number of neighbours for each node is {count_neighbours}")
+                        #print(f"Neighbours not satisfying assumption are {nodes_not_satisfied}")
+                        
+                        # Consider list of potential edges to add
+                        if len(nodes_not_satisfied) != 0:
+                            potential_edges = []
+                            # This is quite inefficient as more checks than necessary
+                            for ind, node_i in enumerate(self.clusters[dest_clust]):
+                                for node_j in self.clusters[dest_clust][ind+1 : ]:
+                                    if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied: # only consider edges between unsatisfied nodes.
+                                        if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
+                                            edge_to_append = [node_i, node_j] if node_i < node_j else [node_j, node_i]
+                                            potential_edges.append([edge_to_append ,self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
+                            potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
+                            # print(f"Potential edges: {potential_edges}")
+
+                            while nodes_not_satisfied:
+                                candidate_edge = potential_edges.pop(0)
+                                node_i = candidate_edge[0][0]
+                                node_j = candidate_edge[0][1]
+                                cluster_neighbours[node_i].append(node_j)
+                                cluster_neighbours[node_j].append(node_i)
+                                count_neighbours[node_i] += 1
+                                count_neighbours[node_j] += 1
+                                nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+                                #print(f"Adding edge between ({node_i}, {node_j})")
+                                self.edges_modified.append(candidate_edge[0])  # Append additional edges we inserted
+                                delta += self.weights[node_i, node_j]
+                                # Added afterwards for delta-evaluation
+                                #edge = [node_i, node_j] if node_i < node_j else [node_j, node_i]
+                                #delta += self.weights[edge[0], edge[1]]
+                                #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+
+                        #print(f"Building the s-plex took {time.time() - time7}")
+                        #print(f"Total time is {time.time() - time2}")
+                        #return
+                        #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
+                        #print(f"Computed with delta evaluation our solution has value: {delta_baseline + delta}")
+                        # self.update_current_neighbours()
+
+                        if delta + delta_baseline < best_sol_value:
+                            # Means we found a better solution
+                            better_found = True
+                            best_sol = self.copy()
+                            best_sol_value = self.calc_objective()
+                            if step_function == 'first':
+                                return better_found
+     
+                        delta_baseline = delta_baseline + delta
+
+            self.copy_from(best_sol)
+            return better_found
+        elif step_function == 'random':
+            delta = 0
+            
+            # Pick a node at random and move it to another cluster at random and see if it improved
+            node = random.randint(1, len([x for clust in self.clusters for x in clust]))
+            dest_clust = random.randint(0, len(self.clusters)-1)
+            initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0]
+            current_clust = initial_cluster
+            while dest_clust == initial_cluster: # Generate until you obtain a new cluster diff than initial one
+                dest_clust = random.randint(0, len(self.clusters)-1)
+            
+            self.clusters[current_clust].remove(node)
+            # Remove from solution all edges between node and elements in old cluster which were added to make s-plex
+            for old_node in self.clusters[current_clust]:
+                edge = [node, old_node] if node < old_node else [old_node, node]
+                if edge in self.edges_modified:
+                    self.edges_modified.remove(edge)
+                    delta = delta - self.weights[edge[0], edge[1]]
+
+                # Add to solution all edges which were in the original graph between node and old elements
+                elif old_node in self.initial_neighbors[node]:
+                    edge = [node, old_node] if node < old_node else [old_node, node]
+                    self.edges_modified.append(edge)
+                    delta = delta + self.weights[edge[0], edge[1]]
+
+            # Remove from solution all edges between node and elements in new cluster which were added to isolate it
+            for new_node in self.clusters[dest_clust]:
+                edge = [node, new_node] if node < new_node else [new_node, node]
+                if edge in self.edges_modified:
+                    self.edges_modified.remove(edge)
+                    delta = delta - self.weights[edge[0], edge[1]]
+            
+            # Remove from solution all edges between nodes in the new cluster which were added to make s-plex as we have to rebuild it
+            for ind1, new_node1 in enumerate(self.clusters[dest_clust]):
+                for ind2, new_node2 in enumerate(self.clusters[dest_clust]):
+                    edge = [new_node1, new_node2] if new_node1 < new_node2 else [new_node2, new_node1]
+                    if edge in self.edges_modified:
+                        self.edges_modified.remove(edge)
+                        delta = delta - self.weights[edge[0], edge[1]]
+
+            # Append new node
+            self.clusters[dest_clust].append(node)
+            current_clust = dest_clust
+            self.update_current_neighbours()
+            # print(f"RANDOM: Now we have clusters:\n\t{self.clusters}")
+            # print(f"We start with these edges:\n\t{self.edges_modified}")
+            
+            # Now we rebuild the s-plex for that cluster by only adding edges within
+            n_nodes = len(self.clusters[dest_clust])
+            cluster_neighbours = {x:[] for x in self.clusters[dest_clust]}
+
+            # Build a dictionary with node and its cluster neighbours
+            #print(f"NEW CLUSTER: {self.clusters[dest_clust]}")
+            #print(f"Initial neighbours: {self.initial_neighbors}")
+            for clust_node in self.clusters[dest_clust]: ### CONTROLLA DA QUA
+                cluster_neighbours[clust_node] = [x for x in self.initial_neighbors[clust_node] if x in self.clusters[dest_clust]]
+            #print(f"Cluster {self.clusters[dest_clust]}:\nNeighbours list {cluster_neighbours}")
+            
+            # Count number of neighbours for each
+            count_neighbours = {key:len(value) for key,value in cluster_neighbours.items()}
+            nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+            #print(f"Number of neighbours for each node is {count_neighbours}")
+            #print(f"Neighbours not satisfying assumption are {nodes_not_satisfied}")
+            
+            # Consider list of potential edges to add
+            if len(nodes_not_satisfied) != 0:
+                potential_edges = []
+                # This is quite inefficient as more checks than necessary
+                for ind, node_i in enumerate(self.clusters[dest_clust]):
+                    for node_j in self.clusters[dest_clust][ind+1 : ]:
+                        if node_i in nodes_not_satisfied or node_j in nodes_not_satisfied: # only consider edges between unsatisfied nodes.
+                            if self.weights_given_graph[node_i, node_j] == 0: # means it is not in the given graph
+                                edge_to_append = [node_i, node_j] if node_i < node_j else [node_j, node_i]
+                                potential_edges.append([edge_to_append ,self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
+                potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
+                # print(f"Potential edges: {potential_edges}")
+
+                while nodes_not_satisfied:
+                    candidate_edge = potential_edges.pop(0)
+                    node_i = candidate_edge[0][0]
+                    node_j = candidate_edge[0][1]
+                    cluster_neighbours[node_i].append(node_j)
+                    cluster_neighbours[node_j].append(node_i)
+                    count_neighbours[node_i] += 1
+                    count_neighbours[node_j] += 1
+                    nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
+                    #print(f"Adding edge between ({node_i}, {node_j})")
+                    self.edges_modified.append(candidate_edge[0])  # Append additional edges we inserted
+                    delta = delta + self.weights[candidate_edge[0][0], candidate_edge[0][1]]
+
+            if delta < 0:
+                best_sol = self.copy()
+                return True
+            else:
+                self.copy_from(best_sol)
+                return False
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
         result.changed = self.ls_move1node_faster(par)
@@ -599,26 +829,23 @@ class SPlexSolution(Solution):
         best_sol = self.copy()
         better_found = False
 
-        iter = 0
-        start_time = time.time()
-
         if step_function in ['best', 'first']:
-            time1 = time.time()
+            # time1 = time.time()
             initial_clusters = dcopy(self.clusters)
-            #print(f"Initialization took {time.time() - time1}s")
+            # print(f"Initialization took {time.time() - time1}s")
             
             for node in range(1, len(self.weights)):
-                time2 = time.time()
+                # time2 = time.time()
                 self.clusters = dcopy(initial_clusters)
                 # print(f"Working with node: {node}")
                 initial_cluster = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find in what cluster it is
                 current_cluster = initial_cluster
-                #print(f"First deep copies took {time.time() - time2}s")
+                # print(f"First deep copies took {time.time() - time2}s")
                 # return
                 # So now we move node to dest_clust in every iteration
                 for dest_clust in range(len(self.clusters)):
                     if dest_clust != initial_cluster: 
-                        time3 = time.time()
+                        # time3 = time.time()
                         # print(f"Moving node {node} from {self.clusters[current_cluster]} to {self.clusters[dest_clust]}")
                         self.clusters[current_cluster].remove(node)
                         self.clusters[dest_clust].append(node)
@@ -635,12 +862,13 @@ class SPlexSolution(Solution):
                         self.update_current_neighbours()
                         #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
                         #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
-                        time5 = time.time()
+                        # time5 = time.time()
                         self.construct_all_splex()
                         #print(f"Constructing the s-plex took {time.time() - time5}")
                         self.update_current_neighbours()
                         # print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
                         #print(f"Building whole solution took {time.time() - time3}")
+                        # return 
                         # print(f"The best solution has value {best_sol.calc_objective()}")
                         if self.calc_objective() < best_sol.calc_objective():
                             # Means we found a better solution
@@ -827,29 +1055,11 @@ if __name__ == '__main__':
     #print(f"Non-delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
     #print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
     time_start = time.time()
-    print(f"Delta LS: Did we find a better solution: {spi_sol.ls_join_clusters(step_function='best')}")
-    print(f"It has value {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
-    print(f"It took {time.time() - time_start}")
     # print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
     # print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
     #Utilities.write_solution('trial.txt', spi_sol.edges_modified, spi_sol.problem_instance)
-    
-    """spi = SPlexInstance(args.inputfile)
-    spi_sol = SPlexSolution(spi)
-    spi_sol.construct_randomized(k=100, alpha=1, beta=1)
-    #for clust in spi_sol.clusters:
-    #    print(f"Cluster has lenght {len(clust)}")
-    print(f"Greedy solution has value: {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
-    # print(f"We are given clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
-    # print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
-    #print(f"Non-delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
-    #print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
-    time_start = time.time()
-    print(f"Delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
+
+    print(f"Delta LS: Did we find a better solution: {spi_sol.ls_move1node_simplified(step_function='best')}")
     print(f"It has value {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
     print(f"It took {time.time() - time_start}")
-    # spi_sol.ls_join_clusters()
-    # spi_sol.ls_split_clusters()"""
-    
-
 
