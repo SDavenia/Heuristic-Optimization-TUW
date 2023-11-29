@@ -341,6 +341,7 @@ class SPlexSolution(Solution):
     
     def construct_deterministic(self, k, cluster_size_cap= 30):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
+        return self.construct_randomized(k, alpha=1, beta=1, cluster_size_cap=cluster_size_cap) # or something similar where alpha is a probabilistic parameter
     
     def ls_move1node_faster(self, step_function = "best") -> bool:
         """
