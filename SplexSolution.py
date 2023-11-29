@@ -825,7 +825,10 @@ class SPlexSolution(Solution):
         result.changed = self.ls_join_clusters(par)
 
     def ch_construct_randomized(self, par, result):
-        self.construct_randomized(k=par, alpha=0.5, beta=0.5, cluster_size_cap=(self.inst.n/par)*25)
+        self.construct_randomized(k=par, alpha=0.5, beta=0.5, cluster_size_cap=(self.inst.n/par)*25)    
+    
+    def ch_construct(self, par, result):
+        self.construct_randomized(k=par, alpha=1, beta=1, cluster_size_cap=(self.inst.n/par)*25)
 
     def ls_move1node(self, step_function = "best") -> bool:
         """
