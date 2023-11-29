@@ -79,6 +79,7 @@ class SPlexSolution(Solution):
 
     def check(self):
         # We check if all our clusters are s-plexes and if there are no edges between them
+        self.update_current_neighbours() # Ensure we are on the right updates
         for clust in self.clusters:
             # First of all we check if there are external edges (to the cluster)
             for element in clust:
@@ -257,11 +258,10 @@ class SPlexSolution(Solution):
         self.edges_modified = [sorted(list(fs)) for fs in self.edges_modified]
         #print(f"Solution edges: {self.edges_modified}")
 
-    def construct_splex(self, clust, return_delta = False):
+    def construct_splex(self, clust):
         """
         Construct splex for the given cluster
         """
-        delta = 0
         for node in clust:
             non_cluster_neighbours = [x for x in self.initial_neighbors[node] if x not in clust]
             # print(f"Node is {node} and it has non cluster neighbours:\n\t{non_cluster_neighbours}")
@@ -289,6 +289,7 @@ class SPlexSolution(Solution):
         
         # Now we create a list of potential edges to add where we only consider pairs where at least one of the nodes is a unsatisfactory one
         # Now we add edges with minimum cost at every iteration
+        # print(f"Cluster:\n\t{clust}")
         if len(nodes_not_satisfied) != 0:
             potential_edges = []
             # This is quite inefficient as more checks than necessary
@@ -299,6 +300,8 @@ class SPlexSolution(Solution):
                             potential_edges.append([[node_i, node_j],self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
             potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
             #print(f"Potential edges: {potential_edges}")
+            #print(f"Nodes not satisfied:\n\t{nodes_not_satisfied}")
+            #print(f"Count of neighbours:\n\t{count_neighbours}\nAnd we need {n_nodes} - {self.s}")
 
             while nodes_not_satisfied:
                 candidate_edge = potential_edges.pop(0)
@@ -311,12 +314,13 @@ class SPlexSolution(Solution):
                 nodes_not_satisfied = [x for x in count_neighbours.keys() if count_neighbours[x] < n_nodes - self.s]
                 #print(f"Adding edge between ({node_i}, {node_j})")
                 self.edges_modified.append(set([node_i, node_j]))  # Append additional edges we inserted
-                # Added afterwards for delta-evaluation
                 edge = [node_i, node_j] if node_i < node_j else [node_j, node_i]
-                delta += self.weights[edge[0], edge[1]]
                 #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
-        if return_delta:
-            return delta
+                
+                # Have to update potential edges to only consider the nodes which are yet not satisfied
+                potential_edges = [item for item in potential_edges if item[0][0] in nodes_not_satisfied or item[0][1] in nodes_not_satisfied]
+                # print(f"Potential edges: {potential_edges}")
+
     
 
 
@@ -333,7 +337,7 @@ class SPlexSolution(Solution):
         self.construct_assign_nodes(k, beta, unassigned_nodes, cluster_size_cap)
         # Convert the decided clusters into an s-plex        
         self.construct_all_splex()
-        self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
+        # self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
     
     def construct_deterministic(self, k, cluster_size_cap= 30):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
@@ -410,7 +414,7 @@ class SPlexSolution(Solution):
                         # Append new node
                         self.clusters[dest_clust].append(node)
                         current_clust = dest_clust
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours()
                         #print(f"Now we have clusters:\n\t{self.clusters}")
                         #print(f"We start with these edges:\n\t{self.edges_modified}")
                         
@@ -421,7 +425,7 @@ class SPlexSolution(Solution):
                         # Build a dictionary with node and its cluster neighbours
                         #print(f"NEW CLUSTER: {self.clusters[dest_clust]}")
                         #print(f"Initial neighbours: {self.initial_neighbors}")
-                        for clust_node in self.clusters[dest_clust]: ### CONTROLLA DA QUA
+                        for clust_node in self.clusters[dest_clust]: 
                             cluster_neighbours[clust_node] = [x for x in self.initial_neighbors[clust_node] if x in self.clusters[dest_clust]]
                         #print(f"Cluster {self.clusters[dest_clust]}:\nNeighbours list {cluster_neighbours}")
                         
@@ -456,22 +460,22 @@ class SPlexSolution(Solution):
                                 #print(f"Adding edge between ({node_i}, {node_j})")
                                 self.edges_modified.append(candidate_edge[0])  # Append additional edges we inserted
                                 delta += self.weights[node_i, node_j]
-                                # Added afterwards for delta-evaluation
-                                #edge = [node_i, node_j] if node_i < node_j else [node_j, node_i]
-                                #delta += self.weights[edge[0], edge[1]]
-                                #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+                                # Have to update potential edges to only consider the nodes which are yet not satisfied
+                                potential_edges = [item for item in potential_edges if item[0][0] in nodes_not_satisfied or item[0][1] in nodes_not_satisfied]
 
                         # print(f"Building the s-plex took {time.time() - time7}")
                         # return 
                         #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
                         #print(f"Computed with delta evaluation our solution has value: {delta_baseline + delta}")
-                        # self.update_current_neighbours() DONT THINK THIS IS NEEDED
+                        #t1 = time.time()
+                        #self.update_current_neighbours() # DONT THINK THIS IS NEEDED
+                        # print(f"Update takes: {time.time() - t1}")
 
                         if delta + delta_baseline < best_sol_value:
                             # Means we found a better solution
                             better_found = True
                             best_sol = self.copy()
-                            best_sol_value = self.calc_objective()
+                            best_sol_value = delta + delta_basline
                             if step_function == 'first':
                                 return better_found
      
@@ -522,7 +526,7 @@ class SPlexSolution(Solution):
             # Append new node
             self.clusters[dest_clust].append(node)
             current_clust = dest_clust
-            self.update_current_neighbours()
+            # self.update_current_neighbours()
             # print(f"RANDOM: Now we have clusters:\n\t{self.clusters}")
             # print(f"We start with these edges:\n\t{self.edges_modified}")
             
@@ -533,7 +537,7 @@ class SPlexSolution(Solution):
             # Build a dictionary with node and its cluster neighbours
             #print(f"NEW CLUSTER: {self.clusters[dest_clust]}")
             #print(f"Initial neighbours: {self.initial_neighbors}")
-            for clust_node in self.clusters[dest_clust]: ### CONTROLLA DA QUA
+            for clust_node in self.clusters[dest_clust]: 
                 cluster_neighbours[clust_node] = [x for x in self.initial_neighbors[clust_node] if x in self.clusters[dest_clust]]
             #print(f"Cluster {self.clusters[dest_clust]}:\nNeighbours list {cluster_neighbours}")
             
@@ -568,6 +572,9 @@ class SPlexSolution(Solution):
                     #print(f"Adding edge between ({node_i}, {node_j})")
                     self.edges_modified.append(candidate_edge[0])  # Append additional edges we inserted
                     delta = delta + self.weights[candidate_edge[0][0], candidate_edge[0][1]]
+                    # Have to update potential edges to only consider the nodes which are yet not satisfied
+                    potential_edges = [item for item in potential_edges if item[0][0] in nodes_not_satisfied or item[0][1] in nodes_not_satisfied]
+
 
             if delta < 0:
                 best_sol = self.copy()
@@ -596,7 +603,7 @@ class SPlexSolution(Solution):
                 # time2 = time.time()
                 delta_baseline = initial_value
                 self.clusters = dcopy(initial_clusters)
-                self.edges_modified = dcopy(initial_edges_modified)
+                self.edges_modified = dcopy(initial_edges_modified) # Moved at the end for small efficiency gain
                 initial_clust = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # Find what cluster node belongs to 
                 current_clust = initial_clust
                 #print(f"First deep copies took {time.time() - time2}s")
@@ -636,7 +643,7 @@ class SPlexSolution(Solution):
                         # Append new node
                         self.clusters[dest_clust].append(node)
                         current_clust = dest_clust
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours()
                         # print(f"Now we have clusters:\n\t{self.clusters}")
                         # print(f"We start with these edges:\n\t{self.edges_modified}")
 
@@ -686,10 +693,8 @@ class SPlexSolution(Solution):
                                 #print(f"Adding edge between ({node_i}, {node_j})")
                                 self.edges_modified.append(candidate_edge[0])  # Append additional edges we inserted
                                 delta += self.weights[node_i, node_j]
-                                # Added afterwards for delta-evaluation
-                                #edge = [node_i, node_j] if node_i < node_j else [node_j, node_i]
-                                #delta += self.weights[edge[0], edge[1]]
-                                #print(f"Nodes which do not satisfy are {nodes_not_satisfied}")
+                                # Have to update potential edges to only consider the nodes which are yet not satisfied
+                                potential_edges = [item for item in potential_edges if item[0][0] in nodes_not_satisfied or item[0][1] in nodes_not_satisfied]
 
                         #print(f"Building the s-plex took {time.time() - time7}")
                         #print(f"Total time is {time.time() - time2}")
@@ -702,7 +707,7 @@ class SPlexSolution(Solution):
                             # Means we found a better solution
                             better_found = True
                             best_sol = self.copy()
-                            best_sol_value = self.calc_objective()
+                            best_sol_value = delta + delta_baseline
                             if step_function == 'first':
                                 return better_found
      
@@ -753,7 +758,7 @@ class SPlexSolution(Solution):
             # Append new node
             self.clusters[dest_clust].append(node)
             current_clust = dest_clust
-            self.update_current_neighbours()
+            # self.update_current_neighbours()
             # print(f"RANDOM: Now we have clusters:\n\t{self.clusters}")
             # print(f"We start with these edges:\n\t{self.edges_modified}")
             
@@ -764,7 +769,7 @@ class SPlexSolution(Solution):
             # Build a dictionary with node and its cluster neighbours
             #print(f"NEW CLUSTER: {self.clusters[dest_clust]}")
             #print(f"Initial neighbours: {self.initial_neighbors}")
-            for clust_node in self.clusters[dest_clust]: ### CONTROLLA DA QUA
+            for clust_node in self.clusters[dest_clust]: 
                 cluster_neighbours[clust_node] = [x for x in self.initial_neighbors[clust_node] if x in self.clusters[dest_clust]]
             #print(f"Cluster {self.clusters[dest_clust]}:\nNeighbours list {cluster_neighbours}")
             
@@ -785,7 +790,7 @@ class SPlexSolution(Solution):
                                 edge_to_append = [node_i, node_j] if node_i < node_j else [node_j, node_i]
                                 potential_edges.append([edge_to_append ,self.weights[node_i, node_j]]) # [[node_i, node_j], weight]
                 potential_edges.sort(key=lambda x:x[1]) # Sort in decreasing order
-                # print(f"Potential edges: {potential_edges}")
+                
 
                 while nodes_not_satisfied:
                     candidate_edge = potential_edges.pop(0)
@@ -799,6 +804,9 @@ class SPlexSolution(Solution):
                     #print(f"Adding edge between ({node_i}, {node_j})")
                     self.edges_modified.append(candidate_edge[0])  # Append additional edges we inserted
                     delta = delta + self.weights[candidate_edge[0][0], candidate_edge[0][1]]
+                    # Have to update potential edges to only consider the nodes which are yet not satisfied
+                    potential_edges = [item for item in potential_edges if item[0][0] in nodes_not_satisfied or item[0][1] in nodes_not_satisfied]
+
 
             if delta < 0:
                 best_sol = self.copy()
@@ -859,13 +867,13 @@ class SPlexSolution(Solution):
                         # (NOT NECESSARY WILL HAVE TO IMPROVE THIS LATER USING DELTA EVAL)
                         # You only have to update the new ones -> WORK ON THIS
                         self.edges_modified = []
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours()
                         #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
                         #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
                         # time5 = time.time()
                         self.construct_all_splex()
                         #print(f"Constructing the s-plex took {time.time() - time5}")
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours()
                         # print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
                         #print(f"Building whole solution took {time.time() - time3}")
                         # return 
@@ -895,11 +903,11 @@ class SPlexSolution(Solution):
             #print(f"Now we have clusters:\n\t{self.clusters}")
 
             self.edges_modified = []
-            self.update_current_neighbours()
+            # self.update_current_neighbours()
             #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
             #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
             self.construct_all_splex()
-            self.update_current_neighbours()
+            # self.update_current_neighbours()
             #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
 
             if self.calc_objective() < best_sol.calc_objective():
@@ -919,7 +927,7 @@ class SPlexSolution(Solution):
         if step_function in ['best', 'first']:
             for node1 in range(1, len(self.weights)):
                 for node2 in range(node1 + 1, len(self.weights)):
-                    self.clusters = dcopy(initial_clusters)
+                    # self.clusters = dcopy(initial_clusters) moved at the end so only called when we modify it.
                     clust_1 = [index for index, sublist in enumerate(self.clusters) if node1 in sublist][0] # What cluster the first node is in.
                     clust_2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the second node is in.
                     if clust_1 != clust_2:
@@ -930,10 +938,10 @@ class SPlexSolution(Solution):
 
                         # Reset and recompute
                         self.edges_modified = []
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours()
 
                         self.construct_all_splex()
-                        self.update_current_neighbours()
+                        # self.update_current_neighbours()
 
                         if self.calc_objective() < best_sol.calc_objective():
                             # Means we found a better solution
@@ -941,6 +949,8 @@ class SPlexSolution(Solution):
                             best_sol = self.copy()
                             if step_function == 'first':
                                 return better_found
+                        self.clusters = dcopy(initial_clusters)
+
             self.copy_from(best_sol)
             return better_found
         elif step_function == 'random':
@@ -964,11 +974,11 @@ class SPlexSolution(Solution):
             #print(f"Now we have clusters:\n\t{self.clusters}")
 
             self.edges_modified = []
-            self.update_current_neighbours()
+            # self.update_current_neighbours()
             #print(f"The neighbours are now:\n\t{self.current_neighbours}") 
             #print(f"Which should be equal to the initial ones:\n\t{self.initial_neighbors}")
             self.construct_all_splex()
-            self.update_current_neighbours()
+            # self.update_current_neighbours()
             #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
             if self.calc_objective() < best_sol.calc_objective():
                 best_sol = self.copy()
@@ -976,69 +986,7 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
-    
 
-    def ls_join_clusters(self, step_function = 'best') -> bool:
-        """
-        Performs local search where the neighbour of one solution is given as the solution but with two clusters being joined together
-        """
-        best_sol = self.copy()
-        better_found = False
-
-        initial_clusters = dcopy(self.clusters)
-        
-        if step_function in ['best', 'first']:
-            # Consider all possible pairs of clusters to be joined together
-            for ind1, clust1 in enumerate(initial_clusters):
-                for ind2, clust2 in enumerate(initial_clusters[ind1+1:]):
-                    self.clusters = dcopy(initial_clusters) # For simplicity
-                    self.clusters.remove(clust1)
-                    self.clusters.remove(clust2)
-                    self.clusters.append(clust1 + clust2)
-                    #print(f"Now we have clusters: {self.clusters}")
-                    
-                    self.edges_modified = []
-                    self.update_current_neighbours()
-                    self.construct_all_splex()
-                    self.update_current_neighbours()
-                    #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
-
-                    #print(f"The best solution has value {best_sol.calc_objective()}")
-                    #print(f"Our solution has values {self.calc_objective()}")   
-                    if self.calc_objective() < best_sol.calc_objective():
-                        # Means we found a better solution
-                        better_found = True
-                        best_sol = self.copy()
-                        if step_function == 'first':
-                            return better_found
-            self.copy_from(best_sol)
-            return better_found
-        
-        elif step_function == 'random':
-            # Select two clusters at random and join them 
-            ind1 = random.randint(0, len(self.clusters)-1)
-            ind2 = random.randint(0, len(self.clusters)-1)
-            while ind1 == ind2:
-                ind2 = random.randint(0, len(self.clusters)-1)
-            clust1 = self.clusters[ind1]
-            clust2 = self.clusters[ind2]
-
-            self.clusters.remove(clust1)
-            self.clusters.remove(clust2)
-            self.clusters.append(clust1 + clust2)
-            #print(f"Now we have clusters: {self.clusters}")
-
-            self.edges_modified = []
-            self.update_current_neighbours()
-            self.construct_all_splex()
-            self.update_current_neighbours()
-            #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
-            if self.calc_objective() < best_sol.calc_objective():
-                best_sol = self.copy()
-                return True
-            else:
-                self.copy_from(best_sol)
-                return False
 
 if __name__ == '__main__':
     parser = get_settings_parser()
@@ -1050,16 +998,12 @@ if __name__ == '__main__':
     #for clust in spi_sol.clusters:
     #    print(f"Cluster has lenght {len(clust)}")
     print(f"Greedy solution has value: {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
-    # print(f"We are given clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
-    # print(f"Solution after the greedy randomized heuristic is:\n\t{spi_sol.edges_modified}")
-    #print(f"Non-delta LS: Did we find a better solution: {spi_sol.ls_move1node(step_function='best')}")
-    #print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
-    time_start = time.time()
-    # print(f"Now we have clusters:\n\t{spi_sol.clusters}\nSolution Edges:\n\t{spi_sol.edges_modified}")
-    # print(f"Solution after the LS procedure:\n\t{spi_sol.edges_modified}")
-    #Utilities.write_solution('trial.txt', spi_sol.edges_modified, spi_sol.problem_instance)
 
-    print(f"Delta LS: Did we find a better solution: {spi_sol.ls_move1node_simplified(step_function='best')}")
+    time_start = time.time()
+    print(f"move1node_simplified: Did we find a better solution: {spi_sol.ls_move1node_simplified(step_function='best')}")
     print(f"It has value {spi_sol.calc_objective()} and is valid? {spi_sol.check()}")
     print(f"It took {time.time() - time_start}")
+
+   
+    
 
