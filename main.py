@@ -17,6 +17,8 @@ from SPlexInstance import SPlexInstance
 
 parser = get_settings_parser()
 
+start_time = 0
+
 def custom_settings():
     parser.add_argument("inputfile", type=str, help='instance file path')
     parser.add_argument("--alg", type=str, default="c", help='(heuristic) c: construction, rc: random construction, ls: local search, grasp, vnd, gvns)')
@@ -29,21 +31,33 @@ def custom_settings():
     parser.add_argument("--iterations", type=int, default=5, help='iterations, for e.g. grasp')
 
 def construction(solution: SPlexSolution, k):
+    start_time = time.time()
     solution.construct_deterministic(k=k)
-    pass
+    runtime = time.time() - start_time
+    score = solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+
 
 def rand_construction(solution: SPlexSolution, k, alpha, beta):
+    start_time = time.time()
     solution.construct_randomized(k=k, alpha=alpha, beta=beta)
-    pass
+    runtime = time.time() - start_time
+    score = solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
 
 def local_seach(solution: SPlexSolution, k, alpha, beta, step):
+    start_time = time.time()
     par = {"k": k, "alpha": alpha, "beta": beta}
     ls = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
                         [])
     ls.run()
+    runtime = time.time() - start_time
+    score = solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
 
 def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
+    start_time = time.time()
     par = {"k": k, "alpha": alpha, "beta": beta}
     best_score = float("inf")
     best_solution = None
@@ -59,8 +73,12 @@ def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
         if new_score < best_score:
             best_score = new_score
             best_solution = new_solution
+    runtime = time.time() - start_time
+    score = best_solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {best_solution.check()}")
 
 def vnd(solution: SPlexSolution, k, alpha, beta, step):
+    start_time = time.time()
     par = {"k": k, "alpha": alpha, "beta": beta}
     vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
@@ -68,8 +86,12 @@ def vnd(solution: SPlexSolution, k, alpha, beta, step):
                          Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
                         [])
     vnd.run()
+    runtime = time.time() - start_time
+    score = solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
 
 def gvns(solution: SPlexSolution, k, alpha, beta, step):
+    start_time = time.time()
     par = {"k": k, "alpha": alpha, "beta": beta}
     gvns = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
@@ -77,6 +99,9 @@ def gvns(solution: SPlexSolution, k, alpha, beta, step):
                          Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
                         [Method("shake_join_clusters", SPlexSolution.shake_join_clusters, None )])
     gvns.run()
+    runtime = time.time() - start_time
+    score = solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
 
 def run(args, solution: SPlexSolution):
     if args.alg == "c":
@@ -97,8 +122,5 @@ if __name__ == '__main__':
     parse_settings()
     spi = SPlexInstance(settings.inputfile)
     sol = SPlexSolution(spi)
-    start_time = time.time()
     run(settings, sol)
-    runtime = time.time() - start_time
-    score = sol.calc_objective()
-    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {sol.check()}")
+    
