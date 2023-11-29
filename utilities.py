@@ -10,6 +10,8 @@ class Utilities:
             m = int(graph_params[2])
             weights = numpy.zeros((n + 1, n + 1), numpy.int8) # add 1 because input file starts nodes with 1 (not 0)
             weights_given_graph = numpy.zeros((n + 1, n + 1), numpy.int8) # add 1 because input file starts nodes with 1 (not 0)
+            remove_costs = numpy.zeros((n + 1, n + 1), numpy.int8) # add 1 because input file starts nodes with 1 (not 0)
+            add_costs = numpy.zeros((n + 1, n + 1), numpy.int8) # add 1 because input file starts nodes with 1 (not 0)
             neighbors_given_graph = dict.fromkeys(range(1,n + 1))
             for k, _ in neighbors_given_graph.items(): 
                 neighbors_given_graph[k] = []
@@ -20,9 +22,15 @@ class Utilities:
                 if e == 1:
                     weights_given_graph[a][b] = w
                     weights_given_graph[b][a] = w
+                    remove_costs[a][b] = w
+                    remove_costs[b][a] = w
                     neighbors_given_graph[a].append(b)
                     neighbors_given_graph[b].append(a)
-        return({"s": s, "n": n, "m": m, "weights": weights, "weights_given_graph": weights_given_graph, "neighbors_given_graph": neighbors_given_graph})
+                else:
+                    add_costs[a][b] = w
+                    add_costs[b][a] = w
+        return({"s": s, "n": n, "m": m, "weights": weights, "weights_given_graph": weights_given_graph, 
+                "neighbors_given_graph": neighbors_given_graph, "remove_costs": remove_costs, "add_costs": add_costs})
 
 
     @staticmethod

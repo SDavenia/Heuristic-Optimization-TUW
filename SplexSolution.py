@@ -119,11 +119,10 @@ class SPlexSolution(Solution):
         self.edges_modified = []
         self.update_current_neighbours()
     
-    def construct_set_initial(self, k, alpha, cluster_size_cap):
+    def construct_set_initial(self, k, alpha):
         """
         Selects the initial k nodes for the clusters with a level of randomization alpha
         Returns sorted_nodes which is required for the construction.
-        cluster_size_cap 
         """        
 
         # Obtain a list of nodes with weight of their edges, and sort in decreasing order
@@ -155,7 +154,7 @@ class SPlexSolution(Solution):
                 selected_node = RCL.pop(random.randint(0, len(RCL)-1)) # Choose at random a node from the candidate list.
             sorted_nodes = [x for x in sorted_nodes if x[0] != selected_node]
             selected_nodes.append(selected_node)
-            neighbors_selected_nodes += self.initial_neighbors[selected_node][:int(cluster_size_cap)] # Add neighours of that node to it while also capping the first 50
+            neighbors_selected_nodes += self.initial_neighbors[selected_node] # Add neighours of that node to it while also capping the first 50
 
         #print(f"Selected nodes: {selected_nodes}")
         # Initialize the clusters
@@ -163,7 +162,7 @@ class SPlexSolution(Solution):
             self.clusters.append([node])
         return sorted_nodes
     
-    def construct_assign_nodes(self, k, beta, unassigned_nodes, max_cluster_size):
+    def construct_assign_nodes(self, k, beta, unassigned_nodes):
         node_similarity_to_cluster = {x[0]:[float('-inf')] * k for x in unassigned_nodes} # Dictionary with node: (dist_clust_1, ..., dist_clust_k)
         
         # Compute initial similarity to each cluster for each node
@@ -216,7 +215,8 @@ class SPlexSolution(Solution):
             if beta == 1:
                 node_assigned = max(node_similarity_to_cluster, key=lambda k: max(node_similarity_to_cluster[k]))  # Node with highest similarity chosen deterministically (first in list)
                 best_clusters = sorted(enumerate(node_similarity_to_cluster[node_assigned]), key=itemgetter(1), reverse=True)
-                all_ranks += [(x[0], x[1], node_assigned) for x in best_clusters]
+                #all_ranks += [(x[0], x[1], node_assigned) for x in best_clusters]
+                all_ranks.append((node_assigned, best_clusters[0][0]))
             else:
                 pair_assigned = RCL_pairs.pop(random.randint(0, len(RCL_pairs)-1))
                 node_assigned = pair_assigned[0]
@@ -236,13 +236,8 @@ class SPlexSolution(Solution):
                     else:
                         node_similarity_to_cluster[node][cluster_assigned] = numpy.subtract(node_similarity_to_cluster[node][cluster_assigned], self.weights[node, node_assigned])
         if beta == 1:
-            unassigned = [x[0] for x in unassigned_nodes]
-            all_ranks = [(x[2], x[0]) for x in sorted(all_ranks, key=itemgetter(1), reverse=True)]
             for node, cluster in all_ranks:
-                if (node in unassigned) and len(self.clusters[cluster]) < max_cluster_size:
-                    self.clusters[cluster].append(node)
-                    unassigned.remove(node)
-            assert(unassigned == [])
+                self.clusters[cluster].append(node)
 
         #print(f"Final clusters:\n\t{self.clusters}")
 
@@ -324,7 +319,7 @@ class SPlexSolution(Solution):
     
 
 
-    def construct_randomized(self, k, alpha= 1, beta= 1, cluster_size_cap = 30):
+    def construct_randomized(self, k, alpha= 1, beta= 1):
         """ 
         Construction algorithm to build a solution:
             - k: number of clusters to obtain
@@ -332,17 +327,16 @@ class SPlexSolution(Solution):
             - beta: specifies degree of randomization when selecting next node to add to cluster
         """
         # Select initial clusters and extract unassigned nodes
-        unassigned_nodes = self.construct_set_initial(k, alpha, cluster_size_cap)
+        unassigned_nodes = self.construct_set_initial(k, alpha)
         # Assign all nodes to some cluster
-        self.construct_assign_nodes(k, beta, unassigned_nodes, cluster_size_cap)
+        self.construct_assign_nodes(k, beta, unassigned_nodes)
         # Convert the decided clusters into an s-plex        
         self.construct_all_splex()
         # self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
     
-    def construct_deterministic(self, k, cluster_size_cap= 30):
+    def construct_deterministic(self, k):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
-        return self.construct_randomized(k, alpha=1, beta=1, cluster_size_cap=cluster_size_cap) # or something similar where alpha is a probabilistic parameter
-    
+
     def ls_move1node_faster(self, step_function = "best") -> bool:
         """
         Performs one iteration of local search using the moving of one node from one cluster to another
@@ -476,7 +470,7 @@ class SPlexSolution(Solution):
                             # Means we found a better solution
                             better_found = True
                             best_sol = self.copy()
-                            best_sol_value = delta + delta_basline
+                            best_sol_value = delta + delta_baseline
                             if step_function == 'first':
                                 return better_found
      
@@ -817,19 +811,22 @@ class SPlexSolution(Solution):
                 return False
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
-        result.changed = self.ls_move1node_faster(par)
+        print(f"Start Move1: current score: {self.calc_objective()}")
+        result.changed = self.ls_move1node_simplified(par)
 
     def local_search_swap2nodes(self, par = None, result = Result()) -> None:
+        print(f"Start Swap2: current score: {self.calc_objective()}")
         result.changed = self.ls_swap2nodes(par)
 
     def local_search_join_clusters(self, par = None, result = Result()) -> None:
+        print(f"Start Join: current score: {self.calc_objective()}")
         result.changed = self.ls_join_clusters(par)
 
     def ch_construct_randomized(self, par, result):
-        self.construct_randomized(k=par, alpha=0.5, beta=0.5, cluster_size_cap=(self.inst.n/par)*25)    
+        self.construct_randomized(k=par, alpha=0.5, beta=0.5)    
     
     def ch_construct(self, par, result):
-        self.construct_randomized(k=par, alpha=1, beta=1, cluster_size_cap=(self.inst.n/par)*25)
+        self.construct_randomized(k=par, alpha=1, beta=1)
 
     def ls_move1node(self, step_function = "best") -> bool:
         """

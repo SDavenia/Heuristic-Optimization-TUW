@@ -24,13 +24,13 @@ def custom_settings():
     parser.add_argument("--ls_step", type=str, default="best", help='(local search step function) f: first, b: best, r: random')
 
 def construction(solution: SPlexSolution):
-    k = 100
-    solution.construct_deterministic(k=k, cluster_size_cap=(sol.inst.n/k)*25)
+    k = 3
+    solution.construct_deterministic(k=k)
     pass
 
 def rand_construction(solution: SPlexSolution):
     k = 100
-    solution.construct_randomized(k=k, alpha=0.5, beta=0.5, cluster_size_cap=(sol.inst.n/k)*25)
+    solution.construct_randomized(k=k, alpha=0.5, beta=0.5)
     pass
 
 def local_seach(solution: SPlexSolution):
@@ -44,7 +44,7 @@ def grasp(solution: SPlexSolution):
     pass
 
 def vnd(solution: SPlexSolution):
-    k = 100
+    k = 150
     vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
                         [Method("local_search_move1node", SPlexSolution.local_search_move1node,"best"), 
                          Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes,"best"), 

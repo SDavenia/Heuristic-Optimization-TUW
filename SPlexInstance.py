@@ -28,6 +28,8 @@ class SPlexInstance:
         self.weights = graph["weights"]
         self.weights_given_graph = graph["weights_given_graph"]     # Redundant, might remove it later
         self.neighbors_given_graph = graph["neighbors_given_graph"]
+        self.remove_costs = graph["remove_costs"]
+        self.add_costs = graph["add_costs"]
         
         # Extract problem instance which we will have to write in solution file.
         pattern = r'.*/(.*?)\..*$'
