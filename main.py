@@ -26,6 +26,7 @@ def custom_settings():
     parser.add_argument("--alpha", type=float, default=0.5, help='randomization for cluster initialization')
     parser.add_argument("--beta", type=float, default=0.5, help='randomization for cluster assignment')
     parser.add_argument("--step", type=str, default="first", help='step function selection')
+    parser.add_argument("--iterations", type=int, default=5, help='iterations, for e.g. grasp')
 
 def construction(solution: SPlexSolution, k):
     solution.construct_deterministic(k=k)
@@ -37,14 +38,27 @@ def rand_construction(solution: SPlexSolution, k, alpha, beta):
 
 def local_seach(solution: SPlexSolution, k, alpha, beta, step):
     par = {"k": k, "alpha": alpha, "beta": beta}
-    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+    ls = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
                         [])
-    vnd.run()
+    ls.run()
 
-def grasp(solution: SPlexSolution, k, alpha, beta, step):
+def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
     par = {"k": k, "alpha": alpha, "beta": beta}
-    pass
+    best_score = float("inf")
+    best_solution = None
+    for i in range(iterations):
+        print(f"GRAPS iteration {i} of {iterations}")
+        new_solution = solution.copy()
+        ls = GVNS(new_solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
+                        [])
+        ls.run()
+        new_score = new_solution.calc_objective()
+        print(f"GRASP iteration finished. score: {new_score}, best: {best_score}")
+        if new_score < best_score:
+            best_score = new_score
+            best_solution = new_solution
 
 def vnd(solution: SPlexSolution, k, alpha, beta, step):
     par = {"k": k, "alpha": alpha, "beta": beta}
@@ -57,7 +71,12 @@ def vnd(solution: SPlexSolution, k, alpha, beta, step):
 
 def gvns(solution: SPlexSolution, k, alpha, beta, step):
     par = {"k": k, "alpha": alpha, "beta": beta}
-    pass
+    gvns = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
+                         Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step), 
+                         Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
+                        [Method("shake_join_clusters", SPlexSolution.shake_join_clusters, None )])
+    gvns.run()
 
 def run(args, solution: SPlexSolution):
     if args.alg == "c":
@@ -67,7 +86,7 @@ def run(args, solution: SPlexSolution):
     elif args.alg == "ls":
         local_seach(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "grasp":
-        grasp(solution, args.k, args.alpha, args.beta, args.step)
+        grasp(solution, args.k, args.alpha, args.beta, args.step, args.iterations)
     elif args.alg == "vnd":
         vnd(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "gvns":

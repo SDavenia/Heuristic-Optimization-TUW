@@ -76,7 +76,6 @@ class SPlexSolution(Solution):
                 self.current_neighbours[edge[1]].append(edge[0])
                 self.current_neighbours[edge[0]].append(edge[1])
 
-
     def check(self):
         # We check if all our clusters are s-plexes and if there are no edges between them
         self.update_current_neighbours() # Ensure we are on the right updates
@@ -315,9 +314,6 @@ class SPlexSolution(Solution):
                 # Have to update potential edges to only consider the nodes which are yet not satisfied
                 potential_edges = [item for item in potential_edges if item[0][0] in nodes_not_satisfied or item[0][1] in nodes_not_satisfied]
                 # print(f"Potential edges: {potential_edges}")
-
-    
-
 
     def construct_randomized(self, k, alpha= 1, beta= 1):
         """ 
@@ -578,7 +574,6 @@ class SPlexSolution(Solution):
                 self.copy_from(best_sol)
                 return False
 
-
     def ls_move1node_simplified(self, step_function = "best") -> bool:
         """
         Performs one iteration of local search using the moving of one node from one cluster to another
@@ -809,6 +804,24 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
+
+    def shake_move1node(self, par = None, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Shaking Move1: current score: {self.calc_objective()}")
+        result.changed = self.ls_move1node_simplified("random")
+        print(f"End Shaking Move1: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
+
+    def shake_swap2nodes(self, par = None, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Shaking Swap2: current score: {self.calc_objective()}")
+        result.changed = self.ls_swap2nodes("random")
+        print(f"End Shaking Swap2: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
+
+    def shake_join_clusters(self, par = None, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Shaking Join: current score: {self.calc_objective()}")
+        result.changed = self.ls_join_clusters("random")
+        print(f"End Shaking Join: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
         start_time = time.time()
