@@ -811,22 +811,28 @@ class SPlexSolution(Solution):
                 return False
 
     def local_search_move1node(self, par = None, result = Result()) -> None:
-        print(f"Start Move1: current score: {self.calc_objective()}")
+        start_time = time.time()
+        print(f"Start Move1: current score: {self.calc_objective()}, step: {par}")
         result.changed = self.ls_move1node_simplified(par)
+        print(f"End Move1: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
 
     def local_search_swap2nodes(self, par = None, result = Result()) -> None:
-        print(f"Start Swap2: current score: {self.calc_objective()}")
+        start_time = time.time()
+        print(f"Start Swap2: current score: {self.calc_objective()}, step: {par}")
         result.changed = self.ls_swap2nodes(par)
+        print(f"End Swap2: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
 
     def local_search_join_clusters(self, par = None, result = Result()) -> None:
-        print(f"Start Join: current score: {self.calc_objective()}")
+        start_time = time.time()
+        print(f"Start Join: current score: {self.calc_objective()}, step: {par}")
         result.changed = self.ls_join_clusters(par)
+        print(f"End Join: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
 
     def ch_construct_randomized(self, par, result):
-        self.construct_randomized(k=par, alpha=0.5, beta=0.5)    
+        self.construct_randomized(k=par["k"], alpha=par["alpha"], beta=par["beta"])    
     
     def ch_construct(self, par, result):
-        self.construct_randomized(k=par, alpha=1, beta=1)
+        self.construct_randomized(k=par["k"], alpha=1, beta=1)
 
     def ls_move1node(self, step_function = "best") -> bool:
         """

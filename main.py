@@ -25,6 +25,7 @@ def custom_settings():
     parser.add_argument("-k", type=int, default=5, help='construction initial cluster size')
     parser.add_argument("--alpha", type=float, default=0.5, help='randomization for cluster initialization')
     parser.add_argument("--beta", type=float, default=0.5, help='randomization for cluster assignment')
+    parser.add_argument("--step", type=str, default="first", help='step function selection')
 
 def construction(solution: SPlexSolution, k):
     solution.construct_deterministic(k=k)
@@ -34,25 +35,28 @@ def rand_construction(solution: SPlexSolution, k, alpha, beta):
     solution.construct_randomized(k=k, alpha=alpha, beta=beta)
     pass
 
-def local_seach(solution: SPlexSolution, k, alpha, beta):
-    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
-                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"first")], 
+def local_seach(solution: SPlexSolution, k, alpha, beta, step):
+    par = {"k": k, "alpha": alpha, "beta": beta}
+    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
                         [])
     vnd.run()
 
-def grasp(solution: SPlexSolution, k, alpha, beta):
+def grasp(solution: SPlexSolution, k, alpha, beta, step):
+    par = {"k": k, "alpha": alpha, "beta": beta}
     pass
 
-def vnd(solution: SPlexSolution, k, alpha, beta):
-    k = 2
-    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized,k)], 
-                        [Method("local_search_move1node", SPlexSolution.local_search_move1node,"best"), 
-                         Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes,"best"), 
-                         Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters,"best")], 
+def vnd(solution: SPlexSolution, k, alpha, beta, step):
+    par = {"k": k, "alpha": alpha, "beta": beta}
+    vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
+                         Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step), 
+                         Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
                         [])
     vnd.run()
 
-def gvns(solution: SPlexSolution, k, alpha, beta):
+def gvns(solution: SPlexSolution, k, alpha, beta, step):
+    par = {"k": k, "alpha": alpha, "beta": beta}
     pass
 
 def run(args, solution: SPlexSolution):
@@ -61,13 +65,13 @@ def run(args, solution: SPlexSolution):
     elif args.alg == "rc":
         rand_construction(solution, args.k, args.alpha, args.beta)
     elif args.alg == "ls":
-        local_seach(solution, args.k, args.alpha, args.beta)
+        local_seach(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "grasp":
-        grasp(solution, args.k, args.alpha, args.beta)
+        grasp(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "vnd":
-        vnd(solution, args.k, args.alpha, args.beta)
+        vnd(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "gvns":
-        gvns(solution, args.k, args.alpha, args.beta)
+        gvns(solution, args.k, args.alpha, args.beta, args.step)
 
 if __name__ == '__main__':
     custom_settings()    
