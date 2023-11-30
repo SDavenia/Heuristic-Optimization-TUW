@@ -31,7 +31,12 @@ class SPlexInstance:
         self.remove_costs = graph["remove_costs"]
         self.add_costs = graph["add_costs"]
         
-        # Extract problem instance which we will have to write in solution file.
-        pattern = r'.*/(.*?)\..*$'
-        self.problem_instance = re.sub(pattern, r'\1', filename)
+        # Extract problem instance and data folder which we will have to write in solution file.
+        # Extract problem type (inst_competition, etc...)
+        # Extract problem instance 
+        pattern = r'data/([^/]+)/([^/]+)\.txt'
+        match = re.match(pattern, filename)
+
+        self.instance_type = match.group(1)
+        self.problem_instance = match.group(2)
     

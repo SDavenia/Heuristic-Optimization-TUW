@@ -51,6 +51,7 @@ class SPlexSolution(Solution):
 
         # Needed for writing to file
         self.problem_instance = inst.problem_instance
+        self.instance_type = inst.instance_type
 
     def calc_objective(self)->int:
         cost = 0

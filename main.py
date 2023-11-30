@@ -24,7 +24,7 @@ def custom_settings():
     parser.add_argument("--alg", type=str, default="c", help='(heuristic) c: construction, rc: random construction, ls: local search, grasp, vnd, gvns)')
     parser.add_argument("--nh", type=str, default="m1", help='(local search neighborhood) m1: move 1 node, s2: swap 2 nodes, sc: split clusters, jc: join clusters')
     parser.add_argument("--ls_step", type=str, default="best", help='(local search step function) f: first, b: best, r: random')
-    parser.add_argument("-k", type=int, default=5, help='construction initial cluster size')
+    parser.add_argument("--k", type=int, default=5, help='construction initial cluster size')
     parser.add_argument("--alpha", type=float, default=0.5, help='randomization for cluster initialization')
     parser.add_argument("--beta", type=float, default=0.5, help='randomization for cluster assignment')
     parser.add_argument("--step", type=str, default="first", help='step function selection')
@@ -36,7 +36,6 @@ def construction(solution: SPlexSolution, k):
     runtime = time.time() - start_time
     score = solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
-
 
 def rand_construction(solution: SPlexSolution, k, alpha, beta):
     start_time = time.time()

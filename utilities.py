@@ -34,7 +34,7 @@ class Utilities:
 
 
     @staticmethod
-    def write_solution(filename, solution, header):
+    def write_solution(instance_type, problem_instance, algorithm, solution):
         """
         Takes as input a 
             - filename where to write solution (in a form like "instance_type/instance_name.txt")
@@ -42,9 +42,9 @@ class Utilities:
         Writes a file containing a header which should be the instance name and the number of edges in solution.
         This file is written to solutions/instance_type/instance_name.txt
         """
-        filename = 'solutions/' + filename
+        filename = 'solutions/' + instance_type + '/' + algorithm + '/' + problem_instance + '.txt'
         with open(filename, 'w') as file_:
-            file_.write(header + "\n")
+            file_.write(problem_instance + "\n")
             for item in solution:
                 item = str(item).replace("[", "").replace("]", "").replace(",", "")
                 file_.write(item + '\n')
