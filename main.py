@@ -67,7 +67,7 @@ def local_seach(solution: SPlexSolution, k, alpha, beta, step, nh):
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
     Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='ls', solution=solution.edges_modified)
 
-def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
+def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations, nh):
     start_time = time.time()
     par = {"k": k, "alpha": alpha, "beta": beta}
     best_score = float("inf")
@@ -78,9 +78,16 @@ def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
             break
         print(f"GRASP iteration {i+1} of {iterations}")
         new_solution = solution.copy()
-        ls = GVNS(new_solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+        
+        if nh == 's2':
+            ls = GVNS(new_solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step)], 
                         [])
+        elif nh == 'jc':
+            ls = GVNS(new_solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_swap2nodes", SPlexSolution.local_search_join_clusters, step)], 
+                        [])
+
         ls.run()
         new_score = new_solution.calc_objective()
         print(f"GRASP iteration finished. score: {new_score}, best: {best_score}")
@@ -131,7 +138,7 @@ def run(args, solution: SPlexSolution):
         local_seach(solution, args.k, args.alpha, args.beta, args.step, args.nh)
     elif args.alg == "grasp":
         settings.mh_ttime = mh_ttime_orig / args.iterations
-        grasp(solution, args.k, args.alpha, args.beta, args.step, args.iterations)
+        grasp(solution, args.k, args.alpha, args.beta, args.step, args.iterations, args.nh)
     elif args.alg == "vnd":
         vnd(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "gvns":
