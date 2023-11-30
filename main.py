@@ -46,11 +46,20 @@ def rand_construction(solution: SPlexSolution, k, alpha, beta):
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
     Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='rand_construction', solution=solution.edges_modified)
 
-def local_seach(solution: SPlexSolution, k, alpha, beta, step):
+def local_seach(solution: SPlexSolution, k, alpha, beta, step, nh):
     start_time = time.time()
     par = {"k": k, "alpha": alpha, "beta": beta}
-    ls = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+    if nh == 'm1':
+        ls = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
+                        [])
+    elif nh == 's2':
+        ls = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_swap2nodes, step)], 
+                        [])
+    elif nh == 'jc':
+        ls = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
+                        [Method("local_search_move1node", SPlexSolution.local_search_join_clusters, step)], 
                         [])
     ls.run()
     runtime = time.time() - start_time
@@ -119,7 +128,7 @@ def run(args, solution: SPlexSolution):
     elif args.alg == "rc":
         rand_construction(solution, args.k, args.alpha, args.beta)
     elif args.alg == "ls":
-        local_seach(solution, args.k, args.alpha, args.beta, args.step)
+        local_seach(solution, args.k, args.alpha, args.beta, args.step, args.nh)
     elif args.alg == "grasp":
         settings.mh_ttime = mh_ttime_orig / args.iterations
         grasp(solution, args.k, args.alpha, args.beta, args.step, args.iterations)
