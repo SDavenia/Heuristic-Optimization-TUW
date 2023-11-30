@@ -24,7 +24,7 @@ def custom_settings():
     parser.add_argument("inputfile", type=str, help='instance file path')
     parser.add_argument("--alg", type=str, default="c", help='(heuristic) c: construction, rc: random construction, ls: local search, grasp, vnd, gvns)')
     parser.add_argument("--nh", type=str, default="m1", help='(local search neighborhood) m1: move 1 node, s2: swap 2 nodes, sc: split clusters, jc: join clusters')
-    parser.add_argument("--k", type=int, default=5, help='construction initial cluster size')
+    parser.add_argument("-k", type=int, default=5, help='construction initial cluster size')
     parser.add_argument("--alpha", type=float, default=0.5, help='randomization for cluster initialization')
     parser.add_argument("--beta", type=float, default=0.5, help='randomization for cluster assignment')
     parser.add_argument("--step", type=str, default="first", help='step function selection')
@@ -89,7 +89,8 @@ def vnd(solution: SPlexSolution, k, alpha, beta, step):
     vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
                          Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step), 
-                         Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
+                         #Method("local_search_move1node", SPlexSolution.local_search_move1node, step)
+                         ], 
                         [])
     vnd.run()
     runtime = time.time() - start_time
@@ -103,8 +104,9 @@ def gvns(solution: SPlexSolution, k, alpha, beta, step):
     gvns = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
                          Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step), 
-                         Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
-                        [Method("shake_join_clusters", SPlexSolution.shake_join_clusters, None )])
+                         #Method("local_search_move1node", SPlexSolution.local_search_move1node, step)
+                         ], 
+                        [Method("shake_swap2nodes", SPlexSolution.shake_swap2nodes, None )])
     gvns.run()
     runtime = time.time() - start_time
     score = solution.calc_objective()
