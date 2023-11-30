@@ -1,0 +1,2021 @@
+GVNS
+data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8345403671264648
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11235451698303223
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17253, changed: True, time: 0.0693819522857666
+Start Join: current score: 17253, step: first
+End Join: current score: 17253, changed: False, time: 1.8301012516021729
+Start Swap2: current score: 17253, step: first
+End Swap2: current score: 17204, changed: True, time: 0.11227917671203613
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.06693005561828613
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8318803310394287
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11152029037475586
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17236, changed: True, time: 0.07009410858154297
+Start Join: current score: 17236, step: first
+End Join: current score: 17236, changed: False, time: 1.8127520084381104
+Start Swap2: current score: 17236, step: first
+End Swap2: current score: 17187, changed: True, time: 0.10940694808959961
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17241, changed: True, time: 0.07040095329284668
+Start Join: current score: 17241, step: first
+End Join: current score: 17241, changed: False, time: 1.814835786819458
+Start Swap2: current score: 17241, step: first
+End Swap2: current score: 17188, changed: True, time: 0.10457801818847656
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17273, changed: True, time: 0.07054853439331055
+Start Join: current score: 17273, step: first
+End Join: current score: 17273, changed: False, time: 1.8215179443359375
+Start Swap2: current score: 17273, step: first
+End Swap2: current score: 17224, changed: True, time: 0.1051335334777832
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17268, changed: True, time: 0.07027697563171387
+Start Join: current score: 17268, step: first
+End Join: current score: 17268, changed: False, time: 1.8167471885681152
+Start Swap2: current score: 17268, step: first
+End Swap2: current score: 17219, changed: True, time: 0.10480594635009766
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07264566421508789
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8359992504119873
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.10550308227539062
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07284688949584961
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8208417892456055
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.10587811470031738
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07359766960144043
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8147785663604736
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11039972305297852
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07291078567504883
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8186595439910889
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11082935333251953
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.0721273422241211
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8190147876739502
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11158299446105957
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17287, changed: True, time: 0.06995081901550293
+Start Join: current score: 17287, step: first
+End Join: current score: 17287, changed: False, time: 1.816236972808838
+Start Swap2: current score: 17287, step: first
+End Swap2: current score: 17242, changed: True, time: 0.11242008209228516
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17274, changed: True, time: 0.06996989250183105
+Start Join: current score: 17274, step: first
+End Join: current score: 17274, changed: False, time: 1.8198585510253906
+Start Swap2: current score: 17274, step: first
+End Swap2: current score: 17225, changed: True, time: 0.11036109924316406
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17280, changed: True, time: 0.06990194320678711
+Start Join: current score: 17280, step: first
+End Join: current score: 17280, changed: False, time: 1.8179504871368408
+Start Swap2: current score: 17280, step: first
+End Swap2: current score: 17229, changed: True, time: 0.11136937141418457
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17278, changed: True, time: 0.07042193412780762
+Start Join: current score: 17278, step: first
+End Join: current score: 17278, changed: False, time: 1.8244483470916748
+Start Swap2: current score: 17278, step: first
+End Swap2: current score: 17229, changed: True, time: 0.11224365234375
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.06769347190856934
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8228943347930908
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11176753044128418
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17286, changed: True, time: 0.07004475593566895
+Start Join: current score: 17286, step: first
+End Join: current score: 17286, changed: False, time: 1.814727783203125
+Start Swap2: current score: 17286, step: first
+End Swap2: current score: 17237, changed: True, time: 0.11095881462097168
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17234, changed: True, time: 0.07000184059143066
+Start Join: current score: 17234, step: first
+End Join: current score: 17234, changed: False, time: 1.8129844665527344
+Start Swap2: current score: 17234, step: first
+End Swap2: current score: 17185, changed: True, time: 0.10463809967041016
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17257, changed: True, time: 0.07067728042602539
+Start Join: current score: 17257, step: first
+End Join: current score: 17257, changed: False, time: 1.8077170848846436
+Start Swap2: current score: 17257, step: first
+End Swap2: current score: 17245, changed: True, time: 0.07079434394836426
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07258033752441406
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8193249702453613
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11085939407348633
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.0719902515411377
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8150990009307861
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11175870895385742
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.06735372543334961
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8156402111053467
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.1123046875
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17243, changed: True, time: 0.06983184814453125
+Start Join: current score: 17243, step: first
+End Join: current score: 17243, changed: False, time: 1.8104112148284912
+Start Swap2: current score: 17243, step: first
+End Swap2: current score: 17187, changed: True, time: 0.1097114086151123
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17225, changed: True, time: 0.06997442245483398
+Start Join: current score: 17225, step: first
+End Join: current score: 17225, changed: False, time: 1.8233773708343506
+Start Swap2: current score: 17225, step: first
+End Swap2: current score: 17176, changed: True, time: 0.11079716682434082
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17285, changed: True, time: 0.07027244567871094
+Start Join: current score: 17285, step: first
+End Join: current score: 17285, changed: False, time: 1.8258295059204102
+Start Swap2: current score: 17285, step: first
+End Swap2: current score: 17236, changed: True, time: 0.11328673362731934
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.06802606582641602
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8226947784423828
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11053252220153809
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.06801676750183105
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8263015747070312
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.1052558422088623
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17276, changed: True, time: 0.07037663459777832
+Start Join: current score: 17276, step: first
+End Join: current score: 17276, changed: False, time: 1.8159561157226562
+Start Swap2: current score: 17276, step: first
+End Swap2: current score: 17227, changed: True, time: 0.10494327545166016
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.06791830062866211
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8360073566436768
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.10525083541870117
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17279, changed: True, time: 0.07561588287353516
+Start Join: current score: 17279, step: first
+End Join: current score: 17279, changed: False, time: 1.839585542678833
+Start Swap2: current score: 17279, step: first
+End Swap2: current score: 17230, changed: True, time: 0.10527968406677246
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07289934158325195
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8373682498931885
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.10619521141052246
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17290, changed: False, time: 0.07473134994506836
+Start Join: current score: 17290, step: first
+End Join: current score: 17290, changed: False, time: 1.8246080875396729
+Start Swap2: current score: 17290, step: first
+End Swap2: current score: 17241, changed: True, time: 0.11145329475402832
+Start Shaking Swap2: current score: 17290
+End Shaking Swap2: current score: 17288, changed: True, time: 0.0755913257598877
+Runtime: 67.53857254981995
+Score: 17290
+Solution check: True
+data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.75447702407837
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.1661062240600586
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44384, changed: True, time: 0.15718793869018555
+Start Join: current score: 44384, step: first
+End Join: current score: 44384, changed: False, time: 9.680914402008057
+Start Swap2: current score: 44384, step: first
+End Swap2: current score: 44309, changed: True, time: 0.1650700569152832
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44389, changed: True, time: 0.1594386100769043
+Start Join: current score: 44389, step: first
+End Join: current score: 44389, changed: False, time: 9.718931436538696
+Start Swap2: current score: 44389, step: first
+End Swap2: current score: 44302, changed: True, time: 0.1688683032989502
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.1579740047454834
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.778106212615967
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.16857218742370605
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.15358924865722656
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.754625082015991
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.16553831100463867
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.15285634994506836
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.799887657165527
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.17125153541564941
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.16089963912963867
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.788517713546753
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.1689615249633789
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44357, changed: True, time: 0.1590137481689453
+Start Join: current score: 44357, step: first
+End Join: current score: 44357, changed: False, time: 9.686670303344727
+Start Swap2: current score: 44357, step: first
+End Swap2: current score: 44270, changed: True, time: 0.1650996208190918
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44388, changed: True, time: 0.15889525413513184
+Start Join: current score: 44388, step: first
+End Join: current score: 44388, changed: False, time: 9.752638816833496
+Start Swap2: current score: 44388, step: first
+End Swap2: current score: 44303, changed: True, time: 0.169541597366333
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.15784144401550293
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.814481735229492
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.1711292266845703
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44341, changed: True, time: 0.15951871871948242
+Start Join: current score: 44341, step: first
+End Join: current score: 44341, changed: False, time: 9.723400592803955
+Start Swap2: current score: 44341, step: first
+End Swap2: current score: 44247, changed: True, time: 0.16533684730529785
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44378, changed: True, time: 0.16014790534973145
+Start Join: current score: 44378, step: first
+End Join: current score: 44378, changed: False, time: 9.787758588790894
+Start Swap2: current score: 44378, step: first
+End Swap2: current score: 44299, changed: True, time: 0.16874432563781738
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44401, changed: True, time: 0.16502070426940918
+Start Join: current score: 44401, step: first
+End Join: current score: 44401, changed: False, time: 9.728629350662231
+Start Swap2: current score: 44401, step: first
+End Swap2: current score: 44314, changed: True, time: 0.16977167129516602
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44334, changed: True, time: 0.15879392623901367
+Start Join: current score: 44334, step: first
+End Join: current score: 44334, changed: False, time: 9.696072816848755
+Start Swap2: current score: 44334, step: first
+End Swap2: current score: 44233, changed: True, time: 0.16372036933898926
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44387, changed: True, time: 0.1607210636138916
+Start Join: current score: 44387, step: first
+End Join: current score: 44387, changed: False, time: 9.711366891860962
+Start Swap2: current score: 44387, step: first
+End Swap2: current score: 44300, changed: True, time: 0.16495656967163086
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.16210556030273438
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.810317039489746
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.17065668106079102
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44403, changed: True, time: 0.1595003604888916
+Start Join: current score: 44403, step: first
+End Join: current score: 44403, changed: False, time: 9.747925281524658
+Start Swap2: current score: 44403, step: first
+End Swap2: current score: 44316, changed: True, time: 0.1650857925415039
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44389, changed: True, time: 0.16044282913208008
+Start Join: current score: 44389, step: first
+End Join: current score: 44389, changed: False, time: 9.829140663146973
+Start Swap2: current score: 44389, step: first
+End Swap2: current score: 44302, changed: True, time: 0.16486024856567383
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.16146564483642578
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.794487714767456
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.1716022491455078
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44395, changed: True, time: 0.15900540351867676
+Start Join: current score: 44395, step: first
+End Join: current score: 44395, changed: False, time: 9.71900749206543
+Start Swap2: current score: 44395, step: first
+End Swap2: current score: 44308, changed: True, time: 0.16461491584777832
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44392, changed: True, time: 0.15931487083435059
+Start Join: current score: 44392, step: first
+End Join: current score: 44392, changed: False, time: 9.72314715385437
+Start Swap2: current score: 44392, step: first
+End Swap2: current score: 44305, changed: True, time: 0.16890716552734375
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44367, changed: True, time: 0.16502904891967773
+Start Join: current score: 44367, step: first
+End Join: current score: 44367, changed: False, time: 9.703216791152954
+Start Swap2: current score: 44367, step: first
+End Swap2: current score: 44284, changed: True, time: 0.16811370849609375
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44364, changed: True, time: 0.15771937370300293
+Start Join: current score: 44364, step: first
+End Join: current score: 44364, changed: False, time: 9.670938968658447
+Start Swap2: current score: 44364, step: first
+End Swap2: current score: 44275, changed: True, time: 0.16440701484680176
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44396, changed: True, time: 0.16016292572021484
+Start Join: current score: 44396, step: first
+End Join: current score: 44396, changed: False, time: 9.830398321151733
+Start Swap2: current score: 44396, step: first
+End Swap2: current score: 44309, changed: True, time: 0.17024827003479004
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44363, changed: True, time: 0.16542410850524902
+Start Join: current score: 44363, step: first
+End Join: current score: 44363, changed: False, time: 9.821946620941162
+Start Swap2: current score: 44363, step: first
+End Swap2: current score: 44276, changed: True, time: 0.17109441757202148
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44394, changed: True, time: 0.1593325138092041
+Start Join: current score: 44394, step: first
+End Join: current score: 44394, changed: False, time: 9.748595476150513
+Start Swap2: current score: 44394, step: first
+End Swap2: current score: 44307, changed: True, time: 0.1648852825164795
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.15524077415466309
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.839559555053711
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.16560101509094238
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44403, changed: True, time: 0.16771984100341797
+Start Join: current score: 44403, step: first
+End Join: current score: 44403, changed: False, time: 9.759232997894287
+Start Swap2: current score: 44403, step: first
+End Swap2: current score: 44321, changed: True, time: 0.17062783241271973
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.15287566184997559
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.749669790267944
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.16525864601135254
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44371, changed: True, time: 0.16019225120544434
+Start Join: current score: 44371, step: first
+End Join: current score: 44371, changed: False, time: 9.738441467285156
+Start Swap2: current score: 44371, step: first
+End Swap2: current score: 44290, changed: True, time: 0.17003488540649414
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44360, changed: True, time: 0.16516876220703125
+Start Join: current score: 44360, step: first
+End Join: current score: 44360, changed: False, time: 9.724426031112671
+Start Swap2: current score: 44360, step: first
+End Swap2: current score: 44270, changed: True, time: 0.16904163360595703
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44331, changed: True, time: 0.15762925148010254
+Start Join: current score: 44331, step: first
+End Join: current score: 44331, changed: False, time: 9.692698955535889
+Start Swap2: current score: 44331, step: first
+End Swap2: current score: 44244, changed: True, time: 0.16454124450683594
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.15384149551391602
+Start Join: current score: 44405, step: first
+End Join: current score: 44405, changed: False, time: 9.811734914779663
+Start Swap2: current score: 44405, step: first
+End Swap2: current score: 44318, changed: True, time: 0.1705169677734375
+Start Shaking Swap2: current score: 44405
+End Shaking Swap2: current score: 44405, changed: False, time: 0.16041874885559082
+Runtime: 336.44355511665344
+Score: 44405
+Solution check: True
+data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4523792266845703
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.0383913516998291
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023645639419555664
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44239139556884766
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03473067283630371
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023759126663208008
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4424855709075928
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03877973556518555
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7761, changed: True, time: 0.02499246597290039
+Start Join: current score: 7761, step: first
+End Join: current score: 7761, changed: False, time: 0.4444544315338135
+Start Swap2: current score: 7761, step: first
+End Swap2: current score: 7759, changed: True, time: 0.06549954414367676
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7738, changed: True, time: 0.024858951568603516
+Start Join: current score: 7738, step: first
+End Join: current score: 7738, changed: False, time: 0.43640613555908203
+Start Swap2: current score: 7738, step: first
+End Swap2: current score: 7736, changed: True, time: 0.03467154502868652
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7755, changed: True, time: 0.024891138076782227
+Start Join: current score: 7755, step: first
+End Join: current score: 7755, changed: False, time: 0.4391469955444336
+Start Swap2: current score: 7755, step: first
+End Swap2: current score: 7753, changed: True, time: 0.03828620910644531
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7724, changed: True, time: 0.024839401245117188
+Start Join: current score: 7724, step: first
+End Join: current score: 7724, changed: False, time: 0.43414974212646484
+Start Swap2: current score: 7724, step: first
+End Swap2: current score: 7714, changed: True, time: 0.03415107727050781
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.024143218994140625
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.446216344833374
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.0380856990814209
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7771, changed: True, time: 0.02491021156311035
+Start Join: current score: 7771, step: first
+End Join: current score: 7771, changed: False, time: 0.43949460983276367
+Start Swap2: current score: 7771, step: first
+End Swap2: current score: 7770, changed: True, time: 0.025499343872070312
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023715734481811523
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4444596767425537
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03481602668762207
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7755, changed: True, time: 0.024756669998168945
+Start Join: current score: 7755, step: first
+End Join: current score: 7755, changed: False, time: 0.4359467029571533
+Start Swap2: current score: 7755, step: first
+End Swap2: current score: 7751, changed: True, time: 0.03432345390319824
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.026774168014526367
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.43996119499206543
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03452754020690918
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.02402043342590332
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44176602363586426
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03527975082397461
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7753, changed: True, time: 0.025145292282104492
+Start Join: current score: 7753, step: first
+End Join: current score: 7753, changed: False, time: 0.4377148151397705
+Start Swap2: current score: 7753, step: first
+End Swap2: current score: 7750, changed: True, time: 0.02564692497253418
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023752927780151367
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44127631187438965
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03781700134277344
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.02440333366394043
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44357752799987793
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.034662485122680664
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.02402639389038086
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4413414001464844
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03825855255126953
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023654937744140625
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44156885147094727
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03491783142089844
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023828744888305664
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4518120288848877
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.035387277603149414
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7715, changed: True, time: 0.025052785873413086
+Start Join: current score: 7715, step: first
+End Join: current score: 7715, changed: False, time: 0.4422938823699951
+Start Swap2: current score: 7715, step: first
+End Swap2: current score: 7713, changed: True, time: 0.03513073921203613
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.026963472366333008
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44928860664367676
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03542065620422363
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7765, changed: True, time: 0.025250911712646484
+Start Join: current score: 7765, step: first
+End Join: current score: 7765, changed: False, time: 0.43529200553894043
+Start Swap2: current score: 7765, step: first
+End Swap2: current score: 7763, changed: True, time: 0.034133195877075195
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7750, changed: True, time: 0.02776479721069336
+Start Join: current score: 7750, step: first
+End Join: current score: 7750, changed: False, time: 0.4340236186981201
+Start Swap2: current score: 7750, step: first
+End Swap2: current score: 7748, changed: True, time: 0.03412795066833496
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7726, changed: True, time: 0.02525615692138672
+Start Join: current score: 7726, step: first
+End Join: current score: 7726, changed: False, time: 0.43623924255371094
+Start Swap2: current score: 7726, step: first
+End Swap2: current score: 7724, changed: True, time: 0.03737616539001465
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.024085283279418945
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4417121410369873
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03509402275085449
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023695707321166992
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44109630584716797
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03822469711303711
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7721, changed: True, time: 0.02478957176208496
+Start Join: current score: 7721, step: first
+End Join: current score: 7721, changed: False, time: 0.4355893135070801
+Start Swap2: current score: 7721, step: first
+End Swap2: current score: 7719, changed: True, time: 0.0345761775970459
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7757, changed: True, time: 0.02484893798828125
+Start Join: current score: 7757, step: first
+End Join: current score: 7757, changed: False, time: 0.4417722225189209
+Start Swap2: current score: 7757, step: first
+End Swap2: current score: 7751, changed: True, time: 0.08035802841186523
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.0269472599029541
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4412875175476074
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03483152389526367
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023948192596435547
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.4408135414123535
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.03482794761657715
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.023888826370239258
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44496655464172363
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.034983158111572266
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.02365708351135254
+Start Join: current score: 7774, step: first
+End Join: current score: 7774, changed: False, time: 0.44090819358825684
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7772, changed: True, time: 0.037944793701171875
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7762, changed: True, time: 0.02491307258605957
+Start Join: current score: 7762, step: first
+End Join: current score: 7762, changed: False, time: 0.4405503273010254
+Start Swap2: current score: 7762, step: first
+End Swap2: current score: 7757, changed: True, time: 0.03479266166687012
+Start Shaking Swap2: current score: 7774
+End Shaking Swap2: current score: 7774, changed: False, time: 0.02374887466430664
+Runtime: 17.26027798652649
+Score: 7774
+Solution check: True
+data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3534471988677979
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05257463455200195
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12789, changed: True, time: 0.051244258880615234
+Start Join: current score: 12789, step: first
+End Join: current score: 12789, changed: False, time: 1.353255271911621
+Start Swap2: current score: 12789, step: first
+End Swap2: current score: 12786, changed: True, time: 0.052547454833984375
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05031561851501465
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3555917739868164
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05669093132019043
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12801, changed: True, time: 0.051816701889038086
+Start Join: current score: 12801, step: first
+End Join: current score: 12801, changed: False, time: 1.3428959846496582
+Start Swap2: current score: 12801, step: first
+End Swap2: current score: 12787, changed: True, time: 0.051839590072631836
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.04991579055786133
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3497588634490967
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05671072006225586
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12771, changed: True, time: 0.05117177963256836
+Start Join: current score: 12771, step: first
+End Join: current score: 12771, changed: False, time: 1.3459529876708984
+Start Swap2: current score: 12771, step: first
+End Swap2: current score: 12759, changed: True, time: 0.052153825759887695
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05519843101501465
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3541381359100342
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05257105827331543
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.04966092109680176
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3591015338897705
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05263328552246094
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12777, changed: True, time: 0.05518388748168945
+Start Join: current score: 12777, step: first
+End Join: current score: 12777, changed: False, time: 1.3416695594787598
+Start Swap2: current score: 12777, step: first
+End Swap2: current score: 12772, changed: True, time: 0.05237388610839844
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12773, changed: True, time: 0.051834821701049805
+Start Join: current score: 12773, step: first
+End Join: current score: 12773, changed: False, time: 1.344994068145752
+Start Swap2: current score: 12773, step: first
+End Swap2: current score: 12759, changed: True, time: 0.05224752426147461
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05017995834350586
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.354262113571167
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05210232734680176
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12790, changed: True, time: 0.051569461822509766
+Start Join: current score: 12790, step: first
+End Join: current score: 12790, changed: False, time: 1.3542563915252686
+Start Swap2: current score: 12790, step: first
+End Swap2: current score: 12776, changed: True, time: 0.0568692684173584
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.04999542236328125
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.357100486755371
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05247664451599121
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05384707450866699
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3482720851898193
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05654335021972656
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12737, changed: True, time: 0.05145573616027832
+Start Join: current score: 12737, step: first
+End Join: current score: 12737, changed: False, time: 1.3376853466033936
+Start Swap2: current score: 12737, step: first
+End Swap2: current score: 12730, changed: True, time: 0.052080631256103516
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12780, changed: True, time: 0.05570721626281738
+Start Join: current score: 12780, step: first
+End Join: current score: 12780, changed: False, time: 1.3438003063201904
+Start Swap2: current score: 12780, step: first
+End Swap2: current score: 12773, changed: True, time: 0.05264639854431152
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05017518997192383
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3521418571472168
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05224752426147461
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12776, changed: True, time: 0.055338382720947266
+Start Join: current score: 12776, step: first
+End Join: current score: 12776, changed: False, time: 1.3358705043792725
+Start Swap2: current score: 12776, step: first
+End Swap2: current score: 12762, changed: True, time: 0.052576303482055664
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.04976344108581543
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.347822666168213
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05638313293457031
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05010676383972168
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3680229187011719
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05230879783630371
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12735, changed: True, time: 0.05150318145751953
+Start Join: current score: 12735, step: first
+End Join: current score: 12735, changed: False, time: 1.3343026638031006
+Start Swap2: current score: 12735, step: first
+End Swap2: current score: 12721, changed: True, time: 0.056154727935791016
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05001640319824219
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3620502948760986
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.052582740783691406
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.053478240966796875
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.352046251296997
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.056937217712402344
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12800, changed: True, time: 0.0518488883972168
+Start Join: current score: 12800, step: first
+End Join: current score: 12800, changed: False, time: 1.3570799827575684
+Start Swap2: current score: 12800, step: first
+End Swap2: current score: 12784, changed: True, time: 0.0527346134185791
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05426478385925293
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.352156400680542
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05248522758483887
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12757, changed: True, time: 0.05171799659729004
+Start Join: current score: 12757, step: first
+End Join: current score: 12757, changed: False, time: 1.3386192321777344
+Start Swap2: current score: 12757, step: first
+End Swap2: current score: 12743, changed: True, time: 0.05194735527038574
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05348801612854004
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3493664264678955
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.05271577835083008
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12780, changed: True, time: 0.05122566223144531
+Start Join: current score: 12780, step: first
+End Join: current score: 12780, changed: False, time: 1.3723862171173096
+Start Swap2: current score: 12780, step: first
+End Swap2: current score: 12774, changed: True, time: 0.05601334571838379
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12791, changed: True, time: 0.052062034606933594
+Start Join: current score: 12791, step: first
+End Join: current score: 12791, changed: False, time: 1.3504316806793213
+Start Swap2: current score: 12791, step: first
+End Swap2: current score: 12777, changed: True, time: 0.05222749710083008
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12801, changed: True, time: 0.051515817642211914
+Start Join: current score: 12801, step: first
+End Join: current score: 12801, changed: False, time: 1.3502857685089111
+Start Swap2: current score: 12801, step: first
+End Swap2: current score: 12786, changed: True, time: 0.0568995475769043
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12786, changed: True, time: 0.05172443389892578
+Start Join: current score: 12786, step: first
+End Join: current score: 12786, changed: False, time: 1.3588528633117676
+Start Swap2: current score: 12786, step: first
+End Swap2: current score: 12772, changed: True, time: 0.0527644157409668
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12804, changed: False, time: 0.05383944511413574
+Start Join: current score: 12804, step: first
+End Join: current score: 12804, changed: False, time: 1.3482451438903809
+Start Swap2: current score: 12804, step: first
+End Swap2: current score: 12790, changed: True, time: 0.056707143783569336
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12786, changed: True, time: 0.05189847946166992
+Start Join: current score: 12786, step: first
+End Join: current score: 12786, changed: False, time: 1.341155767440796
+Start Swap2: current score: 12786, step: first
+End Swap2: current score: 12760, changed: True, time: 0.05225849151611328
+Start Shaking Swap2: current score: 12804
+End Shaking Swap2: current score: 12794, changed: True, time: 0.055974721908569336
+Runtime: 49.117249727249146
+Score: 12804
+Solution check: True
+data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5165555477142334
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11180830001831055
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20868, changed: True, time: 0.07098507881164551
+Start Join: current score: 20868, step: first
+End Join: current score: 20868, changed: False, time: 2.5112640857696533
+Start Swap2: current score: 20868, step: first
+End Swap2: current score: 20861, changed: True, time: 0.11183500289916992
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.0692591667175293
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.522783041000366
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11144709587097168
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06917953491210938
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5171351432800293
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.10490274429321289
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06987762451171875
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5171291828155518
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.10544157028198242
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20880, changed: True, time: 0.07788348197937012
+Start Join: current score: 20880, step: first
+End Join: current score: 20880, changed: False, time: 2.503692388534546
+Start Swap2: current score: 20880, step: first
+End Swap2: current score: 20875, changed: True, time: 0.10490584373474121
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20872, changed: True, time: 0.07713794708251953
+Start Join: current score: 20872, step: first
+End Join: current score: 20872, changed: False, time: 2.494091510772705
+Start Swap2: current score: 20872, step: first
+End Swap2: current score: 20867, changed: True, time: 0.11123514175415039
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07556605339050293
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5025484561920166
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11243462562561035
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07722902297973633
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.516563892364502
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11377429962158203
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07403063774108887
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5125019550323486
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11331057548522949
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06849050521850586
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5055785179138184
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11233925819396973
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06844425201416016
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.516003131866455
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11311864852905273
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20864, changed: True, time: 0.07109880447387695
+Start Join: current score: 20864, step: first
+End Join: current score: 20864, changed: False, time: 2.483393907546997
+Start Swap2: current score: 20864, step: first
+End Swap2: current score: 20859, changed: True, time: 0.11255502700805664
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06869983673095703
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.4980337619781494
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11009860038757324
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20883, changed: True, time: 0.07184886932373047
+Start Join: current score: 20883, step: first
+End Join: current score: 20883, changed: False, time: 2.490509033203125
+Start Swap2: current score: 20883, step: first
+End Swap2: current score: 20865, changed: True, time: 0.14168286323547363
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.0687253475189209
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5054869651794434
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11313557624816895
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20881, changed: True, time: 0.07182550430297852
+Start Join: current score: 20881, step: first
+End Join: current score: 20881, changed: False, time: 2.505598783493042
+Start Swap2: current score: 20881, step: first
+End Swap2: current score: 20876, changed: True, time: 0.11169838905334473
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20858, changed: True, time: 0.07169699668884277
+Start Join: current score: 20858, step: first
+End Join: current score: 20858, changed: False, time: 2.4997000694274902
+Start Swap2: current score: 20858, step: first
+End Swap2: current score: 20853, changed: True, time: 0.10349416732788086
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06951379776000977
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5139596462249756
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.10458612442016602
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06939172744750977
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.515077590942383
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.10520482063293457
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20889, changed: True, time: 0.07808780670166016
+Start Join: current score: 20889, step: first
+End Join: current score: 20889, changed: False, time: 2.489720582962036
+Start Swap2: current score: 20889, step: first
+End Swap2: current score: 20878, changed: True, time: 0.11035370826721191
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.0755455493927002
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.492128849029541
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11106109619140625
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20838, changed: True, time: 0.07925891876220703
+Start Join: current score: 20838, step: first
+End Join: current score: 20838, changed: False, time: 2.468414545059204
+Start Swap2: current score: 20838, step: first
+End Swap2: current score: 20833, changed: True, time: 0.11010074615478516
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20882, changed: True, time: 0.07831692695617676
+Start Join: current score: 20882, step: first
+End Join: current score: 20882, changed: False, time: 2.4989287853240967
+Start Swap2: current score: 20882, step: first
+End Swap2: current score: 20864, changed: True, time: 0.14233613014221191
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07541441917419434
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.493138074874878
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.1112828254699707
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07582259178161621
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5079352855682373
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11234140396118164
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07586860656738281
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5008339881896973
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.1119232177734375
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.07442355155944824
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.497631311416626
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.110626220703125
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06842541694641113
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.502102851867676
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.1118772029876709
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06841015815734863
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.5005946159362793
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.11298871040344238
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20875, changed: True, time: 0.07172799110412598
+Start Join: current score: 20875, step: first
+End Join: current score: 20875, changed: False, time: 2.488715887069702
+Start Swap2: current score: 20875, step: first
+End Swap2: current score: 20870, changed: True, time: 0.10913538932800293
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20858, changed: True, time: 0.07201576232910156
+Start Join: current score: 20858, step: first
+End Join: current score: 20858, changed: False, time: 2.5074381828308105
+Start Swap2: current score: 20858, step: first
+End Swap2: current score: 20856, changed: True, time: 0.1039578914642334
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06985116004943848
+Start Join: current score: 20890, step: first
+End Join: current score: 20890, changed: False, time: 2.505981206893921
+Start Swap2: current score: 20890, step: first
+End Swap2: current score: 20885, changed: True, time: 0.10462594032287598
+Start Shaking Swap2: current score: 20890
+End Shaking Swap2: current score: 20890, changed: False, time: 0.06960439682006836
+Runtime: 90.42724418640137
+Score: 20890
+Solution check: True
+data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7581753730773926
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.042968034744262695
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.013617515563964844
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.754465341567993
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.045597076416015625
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011082649230957031
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.771813154220581
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04578566551208496
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011011838912963867
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.757561445236206
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04595208168029785
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011240005493164062
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7539846897125244
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.042951107025146484
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3174, changed: True, time: 0.011883735656738281
+Start Join: current score: 3174, step: first
+End Join: current score: 3166, changed: True, time: 2.75900936126709
+Start Swap2: current score: 3174, step: first
+End Swap2: current score: 3173, changed: True, time: 0.0429987907409668
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.01134347915649414
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.750270128250122
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04305601119995117
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011083126068115234
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.762333393096924
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.043108224868774414
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3174, changed: True, time: 0.011713981628417969
+Start Join: current score: 3174, step: first
+End Join: current score: 3166, changed: True, time: 2.7593886852264404
+Start Swap2: current score: 3174, step: first
+End Swap2: current score: 3173, changed: True, time: 0.04333758354187012
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011205434799194336
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.758875846862793
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04294300079345703
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3165, changed: True, time: 0.01441049575805664
+Start Join: current score: 3165, step: first
+End Join: current score: 3157, changed: True, time: 2.75561261177063
+Start Swap2: current score: 3165, step: first
+End Swap2: current score: 3158, changed: True, time: 0.13823866844177246
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.013990163803100586
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.752978563308716
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04581952095031738
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011222124099731445
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7461326122283936
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.045705318450927734
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3173, changed: True, time: 0.011942863464355469
+Start Join: current score: 3173, step: first
+End Join: current score: 3165, changed: True, time: 2.7558860778808594
+Start Swap2: current score: 3173, step: first
+End Swap2: current score: 3172, changed: True, time: 0.04585385322570801
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.01123952865600586
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7532362937927246
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04294157028198242
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.01123809814453125
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.758380174636841
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.042822837829589844
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3173, changed: True, time: 0.011718273162841797
+Start Join: current score: 3173, step: first
+End Join: current score: 3165, changed: True, time: 2.7543039321899414
+Start Swap2: current score: 3173, step: first
+End Swap2: current score: 3172, changed: True, time: 0.04308271408081055
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011337995529174805
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7477164268493652
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.042952775955200195
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3167, changed: True, time: 0.011836528778076172
+Start Join: current score: 3167, step: first
+End Join: current score: 3159, changed: True, time: 2.753117322921753
+Start Swap2: current score: 3167, step: first
+End Swap2: current score: 3166, changed: True, time: 0.045839786529541016
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3174, changed: True, time: 0.011809587478637695
+Start Join: current score: 3174, step: first
+End Join: current score: 3166, changed: True, time: 2.7537083625793457
+Start Swap2: current score: 3174, step: first
+End Swap2: current score: 3172, changed: True, time: 0.04209756851196289
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011108160018920898
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.751699209213257
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04563140869140625
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011230707168579102
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.74800443649292
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04581427574157715
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011192560195922852
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.758042812347412
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04292559623718262
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011187314987182617
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7544732093811035
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.042986392974853516
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011366128921508789
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.761188268661499
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04299521446228027
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011181354522705078
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7665774822235107
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04297900199890137
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3174, changed: True, time: 0.011726140975952148
+Start Join: current score: 3174, step: first
+End Join: current score: 3171, changed: True, time: 2.758366584777832
+Start Swap2: current score: 3174, step: first
+End Swap2: current score: 3173, changed: True, time: 0.04294228553771973
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011079072952270508
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7547547817230225
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.043126821517944336
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011068582534790039
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.759876012802124
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04556918144226074
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011348724365234375
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7531778812408447
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.045772552490234375
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.01114201545715332
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7568140029907227
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04552745819091797
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.011046886444091797
+Start Join: current score: 3175, step: first
+End Join: current score: 3167, changed: True, time: 2.7535297870635986
+Start Swap2: current score: 3175, step: first
+End Swap2: current score: 3174, changed: True, time: 0.04303765296936035
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3165, changed: True, time: 0.011918783187866211
+Start Join: current score: 3165, step: first
+End Join: current score: 3157, changed: True, time: 2.7525932788848877
+Start Swap2: current score: 3165, step: first
+End Swap2: current score: 3164, changed: True, time: 0.043005943298339844
+Start Shaking Swap2: current score: 3175
+End Shaking Swap2: current score: 3175, changed: False, time: 0.01129150390625
+Runtime: 93.59897899627686
+Score: 3175
+Solution check: True
+data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6667952537536621
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.030695438385009766
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8766, changed: True, time: 0.02974247932434082
+Start Join: current score: 8766, step: first
+End Join: current score: 8766, changed: False, time: 0.6786313056945801
+Start Swap2: current score: 8766, step: first
+End Swap2: current score: 8747, changed: True, time: 0.0309298038482666
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8756, changed: True, time: 0.030296802520751953
+Start Join: current score: 8756, step: first
+End Join: current score: 8756, changed: False, time: 0.6847572326660156
+Start Swap2: current score: 8756, step: first
+End Swap2: current score: 8735, changed: True, time: 0.030878067016601562
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.028577804565429688
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6844029426574707
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.030687808990478516
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.0289306640625
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6805412769317627
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03227376937866211
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.029107093811035156
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6802022457122803
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.030874252319335938
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8747, changed: True, time: 0.03045344352722168
+Start Join: current score: 8747, step: first
+End Join: current score: 8747, changed: False, time: 0.6785829067230225
+Start Swap2: current score: 8747, step: first
+End Swap2: current score: 8733, changed: True, time: 0.030794858932495117
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.028685331344604492
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6794474124908447
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03074359893798828
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8740, changed: True, time: 0.029911279678344727
+Start Join: current score: 8740, step: first
+End Join: current score: 8740, changed: False, time: 0.6730480194091797
+Start Swap2: current score: 8740, step: first
+End Swap2: current score: 8714, changed: True, time: 0.030966758728027344
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8758, changed: True, time: 0.03021383285522461
+Start Join: current score: 8758, step: first
+End Join: current score: 8758, changed: False, time: 0.6769843101501465
+Start Swap2: current score: 8758, step: first
+End Swap2: current score: 8732, changed: True, time: 0.03094959259033203
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.02907276153564453
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6764142513275146
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03414154052734375
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8732, changed: True, time: 0.03006601333618164
+Start Join: current score: 8732, step: first
+End Join: current score: 8732, changed: False, time: 0.669607400894165
+Start Swap2: current score: 8732, step: first
+End Swap2: current score: 8730, changed: True, time: 0.058762550354003906
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8767, changed: True, time: 0.03028130531311035
+Start Join: current score: 8767, step: first
+End Join: current score: 8767, changed: False, time: 0.677842378616333
+Start Swap2: current score: 8767, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03112173080444336
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8756, changed: True, time: 0.029860496520996094
+Start Join: current score: 8756, step: first
+End Join: current score: 8756, changed: False, time: 0.6728475093841553
+Start Swap2: current score: 8756, step: first
+End Swap2: current score: 8730, changed: True, time: 0.030603647232055664
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.028627872467041016
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6783788204193115
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.031012296676635742
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.02878284454345703
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6741988658905029
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.030858278274536133
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.028589248657226562
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6749582290649414
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03087592124938965
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8709, changed: True, time: 0.02973651885986328
+Start Join: current score: 8709, step: first
+End Join: current score: 8709, changed: False, time: 0.6696557998657227
+Start Swap2: current score: 8709, step: first
+End Swap2: current score: 8683, changed: True, time: 0.03066873550415039
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8739, changed: True, time: 0.029964447021484375
+Start Join: current score: 8739, step: first
+End Join: current score: 8739, changed: False, time: 0.6681756973266602
+Start Swap2: current score: 8739, step: first
+End Swap2: current score: 8713, changed: True, time: 0.034250736236572266
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8720, changed: True, time: 0.0298616886138916
+Start Join: current score: 8720, step: first
+End Join: current score: 8720, changed: False, time: 0.6637210845947266
+Start Swap2: current score: 8720, step: first
+End Swap2: current score: 8701, changed: True, time: 0.0337681770324707
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8740, changed: True, time: 0.029961347579956055
+Start Join: current score: 8740, step: first
+End Join: current score: 8740, changed: False, time: 0.6724305152893066
+Start Swap2: current score: 8740, step: first
+End Swap2: current score: 8714, changed: True, time: 0.03704380989074707
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.028879880905151367
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6714205741882324
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.0347900390625
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.029038190841674805
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6729559898376465
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.034351348876953125
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.028952836990356445
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6753747463226318
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03450632095336914
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8738, changed: True, time: 0.03024148941040039
+Start Join: current score: 8738, step: first
+End Join: current score: 8738, changed: False, time: 0.6752157211303711
+Start Swap2: current score: 8738, step: first
+End Swap2: current score: 8712, changed: True, time: 0.03413510322570801
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8747, changed: True, time: 0.03005504608154297
+Start Join: current score: 8747, step: first
+End Join: current score: 8747, changed: False, time: 0.6776564121246338
+Start Swap2: current score: 8747, step: first
+End Swap2: current score: 8722, changed: True, time: 0.034073829650878906
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8741, changed: True, time: 0.030289173126220703
+Start Join: current score: 8741, step: first
+End Join: current score: 8741, changed: False, time: 0.6660943031311035
+Start Swap2: current score: 8741, step: first
+End Swap2: current score: 8717, changed: True, time: 0.030729293823242188
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8712, changed: True, time: 0.02995777130126953
+Start Join: current score: 8712, step: first
+End Join: current score: 8712, changed: False, time: 0.6660671234130859
+Start Swap2: current score: 8712, step: first
+End Swap2: current score: 8685, changed: True, time: 0.030618667602539062
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.03145265579223633
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6786172389984131
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.03105783462524414
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8760, changed: True, time: 0.03278779983520508
+Start Join: current score: 8760, step: first
+End Join: current score: 8760, changed: False, time: 0.6725022792816162
+Start Swap2: current score: 8760, step: first
+End Swap2: current score: 8734, changed: True, time: 0.030854463577270508
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.031946420669555664
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6730577945709229
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.030885696411132812
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8728, changed: True, time: 0.0333552360534668
+Start Join: current score: 8728, step: first
+End Join: current score: 8728, changed: False, time: 0.66524338722229
+Start Swap2: current score: 8728, step: first
+End Swap2: current score: 8702, changed: True, time: 0.030642271041870117
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.03188490867614746
+Start Join: current score: 8768, step: first
+End Join: current score: 8768, changed: False, time: 0.6749246120452881
+Start Swap2: current score: 8768, step: first
+End Swap2: current score: 8742, changed: True, time: 0.031028270721435547
+Start Shaking Swap2: current score: 8768
+End Shaking Swap2: current score: 8768, changed: False, time: 0.031975746154785156
+Runtime: 25.06866192817688
+Score: 8768
+Solution check: True
+data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5332589149475098
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8387508392333984
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57941, changed: True, time: 0.2667570114135742
+Start Join: current score: 57941, step: first
+End Join: current score: 54164, changed: True, time: 0.5214202404022217
+Start Swap2: current score: 57941, step: first
+End Swap2: current score: 57937, changed: True, time: 0.8277149200439453
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57902, changed: True, time: 0.2711207866668701
+Start Join: current score: 57902, step: first
+End Join: current score: 54124, changed: True, time: 0.52274489402771
+Start Swap2: current score: 57902, step: first
+End Swap2: current score: 57898, changed: True, time: 0.8472900390625
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2625467777252197
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5297174453735352
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8545575141906738
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.26740217208862305
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.543705940246582
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8621253967285156
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57943, changed: True, time: 0.26152729988098145
+Start Join: current score: 57943, step: first
+End Join: current score: 54234, changed: True, time: 0.5301365852355957
+Start Swap2: current score: 57943, step: first
+End Swap2: current score: 57941, changed: True, time: 0.8514230251312256
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57947, changed: True, time: 0.26413941383361816
+Start Join: current score: 57947, step: first
+End Join: current score: 54176, changed: True, time: 0.5352096557617188
+Start Swap2: current score: 57947, step: first
+End Swap2: current score: 57940, changed: True, time: 0.2727963924407959
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.25595784187316895
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5269548892974854
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8496179580688477
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57896, changed: True, time: 0.27251100540161133
+Start Join: current score: 57896, step: first
+End Join: current score: 54176, changed: True, time: 0.5278685092926025
+Start Swap2: current score: 57896, step: first
+End Swap2: current score: 57887, changed: True, time: 1.1160027980804443
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2565932273864746
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5403070449829102
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.832158088684082
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57924, changed: True, time: 0.2669227123260498
+Start Join: current score: 57924, step: first
+End Join: current score: 54165, changed: True, time: 0.5270891189575195
+Start Swap2: current score: 57924, step: first
+End Swap2: current score: 57922, changed: True, time: 0.26979899406433105
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2643158435821533
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5360112190246582
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8528947830200195
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2517740726470947
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5287537574768066
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8580193519592285
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.25343942642211914
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5387039184570312
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8513057231903076
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2568683624267578
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.541374921798706
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.834477424621582
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.25577354431152344
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5233311653137207
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8300726413726807
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2530186176300049
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5258147716522217
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8518831729888916
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.269528865814209
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5282504558563232
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8482632637023926
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57901, changed: True, time: 0.27435779571533203
+Start Join: current score: 57901, step: first
+End Join: current score: 54052, changed: True, time: 0.5201249122619629
+Start Swap2: current score: 57901, step: first
+End Swap2: current score: 57897, changed: True, time: 0.8491897583007812
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.25098133087158203
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5288805961608887
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8682634830474854
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57907, changed: True, time: 0.26261210441589355
+Start Join: current score: 57907, step: first
+End Join: current score: 54176, changed: True, time: 0.5305213928222656
+Start Swap2: current score: 57907, step: first
+End Swap2: current score: 57906, changed: True, time: 0.8368849754333496
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2577226161956787
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.539752721786499
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8361146450042725
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57942, changed: True, time: 0.27044177055358887
+Start Join: current score: 57942, step: first
+End Join: current score: 54163, changed: True, time: 0.5266158580780029
+Start Swap2: current score: 57942, step: first
+End Swap2: current score: 57927, changed: True, time: 1.124636173248291
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57924, changed: True, time: 0.2731785774230957
+Start Join: current score: 57924, step: first
+End Join: current score: 54234, changed: True, time: 0.5402748584747314
+Start Swap2: current score: 57924, step: first
+End Swap2: current score: 57917, changed: True, time: 0.26549267768859863
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.25940442085266113
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5219628810882568
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.840083122253418
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57851, changed: True, time: 0.2635650634765625
+Start Join: current score: 57851, step: first
+End Join: current score: 54074, changed: True, time: 0.5230677127838135
+Start Swap2: current score: 57851, step: first
+End Swap2: current score: 57850, changed: True, time: 0.8336014747619629
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2571380138397217
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5279278755187988
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8559513092041016
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57918, changed: True, time: 0.27241039276123047
+Start Join: current score: 57918, step: first
+End Join: current score: 54141, changed: True, time: 0.5279378890991211
+Start Swap2: current score: 57918, step: first
+End Swap2: current score: 57913, changed: True, time: 0.28119516372680664
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57884, changed: True, time: 0.2637948989868164
+Start Join: current score: 57884, step: first
+End Join: current score: 54084, changed: True, time: 0.536482572555542
+Start Swap2: current score: 57884, step: first
+End Swap2: current score: 57880, changed: True, time: 0.8343758583068848
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57945, changed: True, time: 0.27021074295043945
+Start Join: current score: 57945, step: first
+End Join: current score: 54168, changed: True, time: 0.5210115909576416
+Start Swap2: current score: 57945, step: first
+End Swap2: current score: 57939, changed: True, time: 0.8376312255859375
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.25728869438171387
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5247318744659424
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.836428165435791
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57930, changed: True, time: 0.2752866744995117
+Start Join: current score: 57930, step: first
+End Join: current score: 54153, changed: True, time: 0.5244529247283936
+Start Swap2: current score: 57930, step: first
+End Swap2: current score: 57923, changed: True, time: 0.8358004093170166
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.263690710067749
+Start Join: current score: 57953, step: first
+End Join: current score: 54176, changed: True, time: 0.5311167240142822
+Start Swap2: current score: 57953, step: first
+End Swap2: current score: 57949, changed: True, time: 0.8547203540802002
+Start Shaking Swap2: current score: 57953
+End Shaking Swap2: current score: 57953, changed: False, time: 0.2520740032196045
+Runtime: 58.934786796569824
+Score: 57953
+Solution check: True
+data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.38996410369873
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3481824398040771
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66569, changed: True, time: 1.3173134326934814
+Start Join: current score: 66569, step: first
+End Join: current score: 58764, changed: True, time: 10.359273672103882
+Start Swap2: current score: 66569, step: first
+End Swap2: current score: 66558, changed: True, time: 3.656909227371216
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.307382583618164
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.434312582015991
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3429489135742188
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66550, changed: True, time: 1.3369793891906738
+Start Join: current score: 66550, step: first
+End Join: current score: 58535, changed: True, time: 10.22669267654419
+Start Swap2: current score: 66550, step: first
+End Swap2: current score: 66546, changed: True, time: 1.3340015411376953
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3164656162261963
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.461236715316772
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.328230381011963
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66568, changed: True, time: 1.313741683959961
+Start Join: current score: 66568, step: first
+End Join: current score: 58764, changed: True, time: 10.38631534576416
+Start Swap2: current score: 66568, step: first
+End Swap2: current score: 66565, changed: True, time: 2.497100830078125
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66573, changed: True, time: 1.3367838859558105
+Start Join: current score: 66573, step: first
+End Join: current score: 58692, changed: True, time: 10.428819417953491
+Start Swap2: current score: 66573, step: first
+End Swap2: current score: 66569, changed: True, time: 2.495999813079834
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3161351680755615
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.438403129577637
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3501567840576172
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66608, changed: True, time: 1.3376903533935547
+Start Join: current score: 66608, step: first
+End Join: current score: 58752, changed: True, time: 10.426137447357178
+Start Swap2: current score: 66608, step: first
+End Swap2: current score: 66590, changed: True, time: 1.325930118560791
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66572, changed: True, time: 1.3196110725402832
+Start Join: current score: 66572, step: first
+End Join: current score: 58779, changed: True, time: 10.443634271621704
+Start Swap2: current score: 66572, step: first
+End Swap2: current score: 66556, changed: True, time: 1.3347797393798828
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66628, changed: True, time: 1.3411433696746826
+Start Join: current score: 66628, step: first
+End Join: current score: 58521, changed: True, time: 10.28680157661438
+Start Swap2: current score: 66628, step: first
+End Swap2: current score: 66610, changed: True, time: 1.3454124927520752
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3200633525848389
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.434935808181763
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3555848598480225
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66649, changed: True, time: 1.336731195449829
+Start Join: current score: 66649, step: first
+End Join: current score: 58986, changed: True, time: 10.713869571685791
+Start Swap2: current score: 66649, step: first
+End Swap2: current score: 66634, changed: True, time: 1.3366703987121582
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66637, changed: True, time: 1.3322620391845703
+Start Join: current score: 66637, step: first
+End Join: current score: 58725, changed: True, time: 10.34459114074707
+Start Swap2: current score: 66637, step: first
+End Swap2: current score: 66613, changed: True, time: 1.3488719463348389
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66641, changed: True, time: 1.3381109237670898
+Start Join: current score: 66641, step: first
+End Join: current score: 58714, changed: True, time: 10.394607305526733
+Start Swap2: current score: 66641, step: first
+End Swap2: current score: 66627, changed: True, time: 1.345991849899292
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66634, changed: True, time: 1.337651014328003
+Start Join: current score: 66634, step: first
+End Join: current score: 58763, changed: True, time: 10.468191862106323
+Start Swap2: current score: 66634, step: first
+End Swap2: current score: 66614, changed: True, time: 1.327052354812622
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66650, changed: True, time: 1.3318467140197754
+Start Join: current score: 66650, step: first
+End Join: current score: 58620, changed: True, time: 10.336591005325317
+Start Swap2: current score: 66650, step: first
+End Swap2: current score: 66635, changed: True, time: 1.3513104915618896
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3283324241638184
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.440243244171143
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3318767547607422
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66618, changed: True, time: 1.3377697467803955
+Start Join: current score: 66618, step: first
+End Join: current score: 58682, changed: True, time: 10.370856761932373
+Start Swap2: current score: 66618, step: first
+End Swap2: current score: 66605, changed: True, time: 1.350348949432373
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66629, changed: True, time: 1.342270851135254
+Start Join: current score: 66629, step: first
+End Join: current score: 58761, changed: True, time: 10.547142744064331
+Start Swap2: current score: 66629, step: first
+End Swap2: current score: 66615, changed: True, time: 1.3466241359710693
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66606, changed: True, time: 1.3290503025054932
+Start Join: current score: 66606, step: first
+End Join: current score: 58720, changed: True, time: 10.452306747436523
+Start Swap2: current score: 66606, step: first
+End Swap2: current score: 66590, changed: True, time: 1.3568153381347656
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3258445262908936
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.416219711303711
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3433918952941895
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66647, changed: True, time: 1.335378885269165
+Start Join: current score: 66647, step: first
+End Join: current score: 58872, changed: True, time: 10.473684787750244
+Start Swap2: current score: 66647, step: first
+End Swap2: current score: 66645, changed: True, time: 1.3455276489257812
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.331286907196045
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.426323413848877
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.349435567855835
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66628, changed: True, time: 1.340818166732788
+Start Join: current score: 66628, step: first
+End Join: current score: 58947, changed: True, time: 10.658759832382202
+Start Swap2: current score: 66628, step: first
+End Swap2: current score: 66608, changed: True, time: 1.3276071548461914
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66647, changed: True, time: 1.3222501277923584
+Start Join: current score: 66647, step: first
+End Join: current score: 58790, changed: True, time: 10.412366390228271
+Start Swap2: current score: 66647, step: first
+End Swap2: current score: 66642, changed: True, time: 1.3494689464569092
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66565, changed: True, time: 1.3438832759857178
+Start Join: current score: 66565, step: first
+End Join: current score: 58653, changed: True, time: 10.320353746414185
+Start Swap2: current score: 66565, step: first
+End Swap2: current score: 66554, changed: True, time: 1.3308465480804443
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66598, changed: True, time: 1.3458917140960693
+Start Join: current score: 66598, step: first
+End Join: current score: 59049, changed: True, time: 10.674270629882812
+Start Swap2: current score: 66598, step: first
+End Swap2: current score: 66587, changed: True, time: 1.3515684604644775
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66586, changed: True, time: 1.3372924327850342
+Start Join: current score: 66586, step: first
+End Join: current score: 58716, changed: True, time: 10.424659013748169
+Start Swap2: current score: 66586, step: first
+End Swap2: current score: 66571, changed: True, time: 1.335181713104248
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3241331577301025
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.428425073623657
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3457911014556885
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.333158254623413
+Start Join: current score: 66653, step: first
+End Join: current score: 58769, changed: True, time: 10.407782077789307
+Start Swap2: current score: 66653, step: first
+End Swap2: current score: 66639, changed: True, time: 1.3461229801177979
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66644, changed: True, time: 1.3407504558563232
+Start Join: current score: 66644, step: first
+End Join: current score: 58521, changed: True, time: 10.279630422592163
+Start Swap2: current score: 66644, step: first
+End Swap2: current score: 66632, changed: True, time: 1.3624980449676514
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66612, changed: True, time: 1.3354458808898926
+Start Join: current score: 66612, step: first
+End Join: current score: 59046, changed: True, time: 10.635506629943848
+Start Swap2: current score: 66612, step: first
+End Swap2: current score: 66592, changed: True, time: 1.3387315273284912
+Start Shaking Swap2: current score: 66653
+End Shaking Swap2: current score: 66653, changed: False, time: 1.3300812244415283
+Runtime: 446.63768458366394
+Score: 66653
+Solution check: True
+data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36124610900878906
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.055428504943847656
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05768752098083496
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3630397319793701
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05564117431640625
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6931, changed: True, time: 0.052995920181274414
+Start Join: current score: 6931, step: first
+End Join: current score: 4784, changed: True, time: 0.3627128601074219
+Start Swap2: current score: 6931, step: first
+End Swap2: current score: 6884, changed: True, time: 0.05327010154724121
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6972, changed: True, time: 0.05782032012939453
+Start Join: current score: 6972, step: first
+End Join: current score: 4784, changed: True, time: 0.3614218235015869
+Start Swap2: current score: 6972, step: first
+End Swap2: current score: 6939, changed: True, time: 0.05600118637084961
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.0537564754486084
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3639051914215088
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05548405647277832
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6982, changed: True, time: 0.05437445640563965
+Start Join: current score: 6982, step: first
+End Join: current score: 4784, changed: True, time: 0.3690028190612793
+Start Swap2: current score: 6982, step: first
+End Swap2: current score: 6945, changed: True, time: 0.05560708045959473
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6966, changed: True, time: 0.054434776306152344
+Start Join: current score: 6966, step: first
+End Join: current score: 4777, changed: True, time: 0.36598992347717285
+Start Swap2: current score: 6966, step: first
+End Swap2: current score: 6961, changed: True, time: 0.1718001365661621
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05371403694152832
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3660142421722412
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05567431449890137
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05257821083068848
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36274147033691406
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05532264709472656
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.06044459342956543
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3634171485900879
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05541086196899414
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6978, changed: True, time: 0.054323434829711914
+Start Join: current score: 6978, step: first
+End Join: current score: 4776, changed: True, time: 0.36223816871643066
+Start Swap2: current score: 6978, step: first
+End Swap2: current score: 6945, changed: True, time: 0.05485391616821289
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6903, changed: True, time: 0.055646657943725586
+Start Join: current score: 6903, step: first
+End Join: current score: 4784, changed: True, time: 0.3637564182281494
+Start Swap2: current score: 6903, step: first
+End Swap2: current score: 6886, changed: True, time: 0.05382561683654785
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05378246307373047
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36418676376342773
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.055429935455322266
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6974, changed: True, time: 0.05415797233581543
+Start Join: current score: 6974, step: first
+End Join: current score: 4791, changed: True, time: 0.365389347076416
+Start Swap2: current score: 6974, step: first
+End Swap2: current score: 6946, changed: True, time: 0.05517578125
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6897, changed: True, time: 0.05350446701049805
+Start Join: current score: 6897, step: first
+End Join: current score: 4777, changed: True, time: 0.36637163162231445
+Start Swap2: current score: 6897, step: first
+End Swap2: current score: 6848, changed: True, time: 0.5481646060943604
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.06104707717895508
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3642594814300537
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05536770820617676
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05314278602600098
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3640174865722656
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05554986000061035
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05437421798706055
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3634641170501709
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05528831481933594
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05320239067077637
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3640625476837158
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05541872978210449
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6936, changed: True, time: 0.05401039123535156
+Start Join: current score: 6936, step: first
+End Join: current score: 4784, changed: True, time: 0.36600446701049805
+Start Swap2: current score: 6936, step: first
+End Swap2: current score: 6911, changed: True, time: 0.05476713180541992
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05412483215332031
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3639364242553711
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05555081367492676
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05310964584350586
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36432456970214844
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05831718444824219
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.0540008544921875
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36256837844848633
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05544877052307129
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05471372604370117
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.364574670791626
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05876040458679199
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6870, changed: True, time: 0.05337858200073242
+Start Join: current score: 6870, step: first
+End Join: current score: 4784, changed: True, time: 0.36392688751220703
+Start Swap2: current score: 6870, step: first
+End Swap2: current score: 6846, changed: True, time: 0.054054975509643555
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.054472923278808594
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3637712001800537
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05572915077209473
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.054103851318359375
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36495542526245117
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05554366111755371
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6968, changed: True, time: 0.05463838577270508
+Start Join: current score: 6968, step: first
+End Join: current score: 4784, changed: True, time: 0.36336231231689453
+Start Swap2: current score: 6968, step: first
+End Swap2: current score: 6929, changed: True, time: 0.05550050735473633
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.0557558536529541
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.36353588104248047
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.055526018142700195
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6952, changed: True, time: 0.054141998291015625
+Start Join: current score: 6952, step: first
+End Join: current score: 4791, changed: True, time: 0.36173367500305176
+Start Swap2: current score: 6952, step: first
+End Swap2: current score: 6927, changed: True, time: 0.055117130279541016
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05788254737854004
+Start Join: current score: 6989, step: first
+End Join: current score: 4784, changed: True, time: 0.3664059638977051
+Start Swap2: current score: 6989, step: first
+End Swap2: current score: 6956, changed: True, time: 0.05584096908569336
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6899, changed: True, time: 0.05422401428222656
+Start Join: current score: 6899, step: first
+End Join: current score: 4792, changed: True, time: 0.3616454601287842
+Start Swap2: current score: 6899, step: first
+End Swap2: current score: 6873, changed: True, time: 0.054778099060058594
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6965, changed: True, time: 0.05446124076843262
+Start Join: current score: 6965, step: first
+End Join: current score: 4784, changed: True, time: 0.369645357131958
+Start Swap2: current score: 6965, step: first
+End Swap2: current score: 6934, changed: True, time: 0.05523872375488281
+Start Shaking Swap2: current score: 6989
+End Shaking Swap2: current score: 6989, changed: False, time: 0.05362844467163086
+Runtime: 17.137656450271606
+Score: 6989
+Solution check: True

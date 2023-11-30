@@ -1,0 +1,1240 @@
+data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 17161, step: first
+End Join: current score: 17161, changed: False, time: 1.973139762878418
+GRASP iteration finished. score: 17161, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 17159, step: first
+End Join: current score: 17159, changed: False, time: 1.7851800918579102
+GRASP iteration finished. score: 17159, best: 17161
+GRASP iteration 3 of 30
+Start Join: current score: 17215, step: first
+End Join: current score: 17215, changed: False, time: 1.8779208660125732
+GRASP iteration finished. score: 17215, best: 17159
+GRASP iteration 4 of 30
+Start Join: current score: 17002, step: first
+End Join: current score: 17002, changed: False, time: 1.642655849456787
+GRASP iteration finished. score: 17002, best: 17159
+GRASP iteration 5 of 30
+Start Join: current score: 17218, step: first
+End Join: current score: 17194, changed: True, time: 0.7930459976196289
+GRASP iteration finished. score: 17218, best: 17002
+GRASP iteration 6 of 30
+Start Join: current score: 17431, step: first
+End Join: current score: 17431, changed: False, time: 2.2504172325134277
+GRASP iteration finished. score: 17431, best: 17002
+GRASP iteration 7 of 30
+Start Join: current score: 16915, step: first
+End Join: current score: 16915, changed: False, time: 1.698493242263794
+GRASP iteration finished. score: 16915, best: 17002
+GRASP iteration 8 of 30
+Start Join: current score: 17090, step: first
+End Join: current score: 17090, changed: False, time: 1.7385790348052979
+GRASP iteration finished. score: 17090, best: 16915
+GRASP iteration 9 of 30
+Start Join: current score: 17228, step: first
+End Join: current score: 17228, changed: False, time: 2.0280163288116455
+GRASP iteration finished. score: 17228, best: 16915
+GRASP iteration 10 of 30
+Start Join: current score: 17401, step: first
+End Join: current score: 17401, changed: False, time: 1.9954931735992432
+GRASP iteration finished. score: 17401, best: 16915
+GRASP iteration 11 of 30
+Start Join: current score: 17388, step: first
+End Join: current score: 17349, changed: True, time: 2.334217071533203
+GRASP iteration finished. score: 17388, best: 16915
+GRASP iteration 12 of 30
+Start Join: current score: 17164, step: first
+End Join: current score: 17145, changed: True, time: 1.3487670421600342
+GRASP iteration finished. score: 17164, best: 16915
+GRASP iteration 13 of 30
+Start Join: current score: 17201, step: first
+End Join: current score: 17201, changed: False, time: 1.7427895069122314
+GRASP iteration finished. score: 17201, best: 16915
+GRASP iteration 14 of 30
+Start Join: current score: 17052, step: first
+End Join: current score: 17052, changed: False, time: 1.809448003768921
+GRASP iteration finished. score: 17052, best: 16915
+GRASP iteration 15 of 30
+Start Join: current score: 16999, step: first
+End Join: current score: 16999, changed: False, time: 1.6441385746002197
+GRASP iteration finished. score: 16999, best: 16915
+GRASP iteration 16 of 30
+Start Join: current score: 17132, step: first
+End Join: current score: 17107, changed: True, time: 0.16183209419250488
+GRASP iteration finished. score: 17132, best: 16915
+GRASP iteration 17 of 30
+Start Join: current score: 17214, step: first
+End Join: current score: 17214, changed: False, time: 1.9803435802459717
+GRASP iteration finished. score: 17214, best: 16915
+GRASP iteration 18 of 30
+Start Join: current score: 16906, step: first
+End Join: current score: 16865, changed: True, time: 0.495161771774292
+GRASP iteration finished. score: 16906, best: 16915
+GRASP iteration 19 of 30
+Start Join: current score: 17172, step: first
+End Join: current score: 17172, changed: False, time: 1.6211597919464111
+GRASP iteration finished. score: 17172, best: 16906
+GRASP iteration 20 of 30
+Start Join: current score: 17387, step: first
+End Join: current score: 17387, changed: False, time: 2.2739758491516113
+GRASP iteration finished. score: 17387, best: 16906
+GRASP iteration 21 of 30
+Start Join: current score: 17698, step: first
+End Join: current score: 17698, changed: False, time: 2.379733085632324
+GRASP iteration finished. score: 17698, best: 16906
+GRASP iteration 22 of 30
+Start Join: current score: 17378, step: first
+End Join: current score: 17378, changed: False, time: 2.3988022804260254
+GRASP iteration finished. score: 17378, best: 16906
+GRASP iteration 23 of 30
+Start Join: current score: 17273, step: first
+End Join: current score: 17272, changed: True, time: 1.0307605266571045
+GRASP iteration finished. score: 17273, best: 16906
+GRASP iteration 24 of 30
+Start Join: current score: 17103, step: first
+End Join: current score: 17058, changed: True, time: 1.1292953491210938
+GRASP iteration finished. score: 17103, best: 16906
+GRASP iteration 25 of 30
+Start Join: current score: 17135, step: first
+End Join: current score: 17128, changed: True, time: 1.7833454608917236
+GRASP iteration finished. score: 17135, best: 16906
+GRASP iteration 26 of 30
+Start Join: current score: 17294, step: first
+End Join: current score: 17294, changed: False, time: 2.3460378646850586
+GRASP iteration finished. score: 17294, best: 16906
+GRASP iteration 27 of 30
+Start Join: current score: 17307, step: first
+End Join: current score: 17281, changed: True, time: 0.641157865524292
+GRASP iteration finished. score: 17307, best: 16906
+GRASP iteration 28 of 30
+Start Join: current score: 17385, step: first
+End Join: current score: 17266, changed: True, time: 0.839921236038208
+GRASP iteration finished. score: 17385, best: 16906
+GRASP iteration 29 of 30
+Start Join: current score: 17149, step: first
+End Join: current score: 17149, changed: False, time: 1.7661209106445312
+GRASP iteration finished. score: 17149, best: 16906
+GRASP iteration 30 of 30
+Start Join: current score: 17154, step: first
+End Join: current score: 17154, changed: False, time: 2.0024969577789307
+GRASP iteration finished. score: 17154, best: 16906
+Runtime: 54.84161829948425
+Score: 16906
+Solution check: True
+data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 44602, step: first
+End Join: current score: 44602, changed: False, time: 9.673910856246948
+GRASP iteration finished. score: 44602, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 44521, step: first
+End Join: current score: 44521, changed: False, time: 9.40402865409851
+GRASP iteration finished. score: 44521, best: 44602
+GRASP iteration 3 of 30
+Start Join: current score: 44932, step: first
+End Join: current score: 44932, changed: False, time: 12.040377855300903
+GRASP iteration finished. score: 44932, best: 44521
+GRASP iteration 4 of 30
+Start Join: current score: 45374, step: first
+End Join: current score: 45374, changed: False, time: 11.513314962387085
+GRASP iteration finished. score: 45374, best: 44521
+GRASP iteration 5 of 30
+Start Join: current score: 45904, step: first
+End Join: current score: 45904, changed: False, time: 10.882449865341187
+GRASP iteration finished. score: 45904, best: 44521
+GRASP iteration 6 of 30
+Start Join: current score: 44751, step: first
+End Join: current score: 44751, changed: False, time: 10.721962451934814
+GRASP iteration finished. score: 44751, best: 44521
+GRASP iteration 7 of 30
+Start Join: current score: 44729, step: first
+End Join: current score: 44729, changed: False, time: 10.676900386810303
+GRASP iteration finished. score: 44729, best: 44521
+GRASP iteration 8 of 30
+Start Join: current score: 44676, step: first
+End Join: current score: 44676, changed: False, time: 9.860341787338257
+GRASP iteration finished. score: 44676, best: 44521
+GRASP iteration 9 of 30
+Start Join: current score: 44907, step: first
+End Join: current score: 44907, changed: False, time: 10.550050020217896
+GRASP iteration finished. score: 44907, best: 44521
+GRASP iteration 10 of 30
+Start Join: current score: 45127, step: first
+End Join: current score: 45127, changed: False, time: 10.380905151367188
+GRASP iteration finished. score: 45127, best: 44521
+GRASP iteration 11 of 30
+Start Join: current score: 44081, step: first
+End Join: current score: 44081, changed: False, time: 9.649470567703247
+GRASP iteration finished. score: 44081, best: 44521
+GRASP iteration 12 of 30
+Start Join: current score: 44019, step: first
+End Join: current score: 44019, changed: False, time: 9.492431640625
+GRASP iteration finished. score: 44019, best: 44081
+GRASP iteration 13 of 30
+Start Join: current score: 45503, step: first
+End Join: current score: 45503, changed: False, time: 10.821932315826416
+GRASP iteration finished. score: 45503, best: 44019
+GRASP iteration 14 of 30
+Start Join: current score: 45077, step: first
+End Join: current score: 45077, changed: False, time: 11.786845207214355
+GRASP iteration finished. score: 45077, best: 44019
+GRASP iteration 15 of 30
+Start Join: current score: 44634, step: first
+End Join: current score: 44632, changed: True, time: 9.846612930297852
+GRASP iteration finished. score: 44634, best: 44019
+GRASP iteration 16 of 30
+Start Join: current score: 44952, step: first
+End Join: current score: 44952, changed: False, time: 10.146069526672363
+GRASP iteration finished. score: 44952, best: 44019
+GRASP iteration 17 of 30
+Start Join: current score: 44932, step: first
+End Join: current score: 44932, changed: False, time: 9.777981519699097
+GRASP iteration finished. score: 44932, best: 44019
+GRASP iteration 18 of 30
+Start Join: current score: 45088, step: first
+End Join: current score: 45088, changed: False, time: 10.605640172958374
+GRASP iteration finished. score: 45088, best: 44019
+GRASP iteration 19 of 30
+Start Join: current score: 45365, step: first
+End Join: current score: 45365, changed: False, time: 10.57521390914917
+GRASP iteration finished. score: 45365, best: 44019
+GRASP iteration 20 of 30
+Start Join: current score: 44433, step: first
+End Join: current score: 44433, changed: False, time: 10.779417991638184
+GRASP iteration finished. score: 44433, best: 44019
+GRASP iteration 21 of 30
+Start Join: current score: 44522, step: first
+End Join: current score: 44522, changed: False, time: 9.521308898925781
+GRASP iteration finished. score: 44522, best: 44019
+GRASP iteration 22 of 30
+Start Join: current score: 44190, step: first
+End Join: current score: 44190, changed: False, time: 10.870196104049683
+GRASP iteration finished. score: 44190, best: 44019
+GRASP iteration 23 of 30
+Start Join: current score: 44641, step: first
+End Join: current score: 44641, changed: False, time: 9.56093955039978
+GRASP iteration finished. score: 44641, best: 44019
+GRASP iteration 24 of 30
+Start Join: current score: 45041, step: first
+End Join: current score: 45041, changed: False, time: 11.017005443572998
+GRASP iteration finished. score: 45041, best: 44019
+GRASP iteration 25 of 30
+Start Join: current score: 44606, step: first
+End Join: current score: 44606, changed: False, time: 11.212760210037231
+GRASP iteration finished. score: 44606, best: 44019
+GRASP iteration 26 of 30
+Start Join: current score: 44557, step: first
+End Join: current score: 44557, changed: False, time: 10.27381420135498
+GRASP iteration finished. score: 44557, best: 44019
+GRASP iteration 27 of 30
+Start Join: current score: 45140, step: first
+End Join: current score: 45140, changed: False, time: 10.778954267501831
+GRASP iteration finished. score: 45140, best: 44019
+GRASP iteration 28 of 30
+Start Join: current score: 45102, step: first
+End Join: current score: 45102, changed: False, time: 10.14430570602417
+GRASP iteration finished. score: 45102, best: 44019
+GRASP iteration 29 of 30
+Start Join: current score: 45614, step: first
+End Join: current score: 45614, changed: False, time: 11.591613531112671
+GRASP iteration finished. score: 45614, best: 44019
+GRASP iteration 30 of 30
+Start Join: current score: 44343, step: first
+End Join: current score: 44343, changed: False, time: 9.615120649337769
+GRASP iteration finished. score: 44343, best: 44019
+Runtime: 328.7912185192108
+Score: 44019
+Solution check: True
+data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 7957, step: first
+End Join: current score: 7955, changed: True, time: 0.4643826484680176
+GRASP iteration finished. score: 7957, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 7820, step: first
+End Join: current score: 7820, changed: False, time: 0.4663383960723877
+GRASP iteration finished. score: 7820, best: 7957
+GRASP iteration 3 of 30
+Start Join: current score: 7703, step: first
+End Join: current score: 7703, changed: False, time: 0.44990110397338867
+GRASP iteration finished. score: 7703, best: 7820
+GRASP iteration 4 of 30
+Start Join: current score: 7841, step: first
+End Join: current score: 7841, changed: False, time: 0.5171287059783936
+GRASP iteration finished. score: 7841, best: 7703
+GRASP iteration 5 of 30
+Start Join: current score: 7814, step: first
+End Join: current score: 7814, changed: False, time: 0.42453575134277344
+GRASP iteration finished. score: 7814, best: 7703
+GRASP iteration 6 of 30
+Start Join: current score: 7684, step: first
+End Join: current score: 7641, changed: True, time: 0.3056638240814209
+GRASP iteration finished. score: 7684, best: 7703
+GRASP iteration 7 of 30
+Start Join: current score: 7668, step: first
+End Join: current score: 7668, changed: False, time: 0.4116513729095459
+GRASP iteration finished. score: 7668, best: 7684
+GRASP iteration 8 of 30
+Start Join: current score: 7845, step: first
+End Join: current score: 7833, changed: True, time: 0.21674704551696777
+GRASP iteration finished. score: 7845, best: 7668
+GRASP iteration 9 of 30
+Start Join: current score: 7830, step: first
+End Join: current score: 7788, changed: True, time: 0.29659342765808105
+GRASP iteration finished. score: 7830, best: 7668
+GRASP iteration 10 of 30
+Start Join: current score: 7899, step: first
+End Join: current score: 7899, changed: False, time: 0.474989652633667
+GRASP iteration finished. score: 7899, best: 7668
+GRASP iteration 11 of 30
+Start Join: current score: 7772, step: first
+End Join: current score: 7772, changed: False, time: 0.4509701728820801
+GRASP iteration finished. score: 7772, best: 7668
+GRASP iteration 12 of 30
+Start Join: current score: 7979, step: first
+End Join: current score: 7979, changed: False, time: 0.4476475715637207
+GRASP iteration finished. score: 7979, best: 7668
+GRASP iteration 13 of 30
+Start Join: current score: 7757, step: first
+End Join: current score: 7757, changed: False, time: 0.47492361068725586
+GRASP iteration finished. score: 7757, best: 7668
+GRASP iteration 14 of 30
+Start Join: current score: 7696, step: first
+End Join: current score: 7696, changed: False, time: 0.4593791961669922
+GRASP iteration finished. score: 7696, best: 7668
+GRASP iteration 15 of 30
+Start Join: current score: 7766, step: first
+End Join: current score: 7766, changed: False, time: 0.45445752143859863
+GRASP iteration finished. score: 7766, best: 7668
+GRASP iteration 16 of 30
+Start Join: current score: 7925, step: first
+End Join: current score: 7925, changed: False, time: 0.4814741611480713
+GRASP iteration finished. score: 7925, best: 7668
+GRASP iteration 17 of 30
+Start Join: current score: 7811, step: first
+End Join: current score: 7791, changed: True, time: 0.31227898597717285
+GRASP iteration finished. score: 7811, best: 7668
+GRASP iteration 18 of 30
+Start Join: current score: 7806, step: first
+End Join: current score: 7805, changed: True, time: 0.41062211990356445
+GRASP iteration finished. score: 7806, best: 7668
+GRASP iteration 19 of 30
+Start Join: current score: 7708, step: first
+End Join: current score: 7708, changed: False, time: 0.4972224235534668
+GRASP iteration finished. score: 7708, best: 7668
+GRASP iteration 20 of 30
+Start Join: current score: 7912, step: first
+End Join: current score: 7899, changed: True, time: 0.2822682857513428
+GRASP iteration finished. score: 7912, best: 7668
+GRASP iteration 21 of 30
+Start Join: current score: 7756, step: first
+End Join: current score: 7756, changed: False, time: 0.47376394271850586
+GRASP iteration finished. score: 7756, best: 7668
+GRASP iteration 22 of 30
+Start Join: current score: 7813, step: first
+End Join: current score: 7813, changed: False, time: 0.44988560676574707
+GRASP iteration finished. score: 7813, best: 7668
+GRASP iteration 23 of 30
+Start Join: current score: 8057, step: first
+End Join: current score: 8057, changed: False, time: 0.5513720512390137
+GRASP iteration finished. score: 8057, best: 7668
+GRASP iteration 24 of 30
+Start Join: current score: 7707, step: first
+End Join: current score: 7703, changed: True, time: 0.2917468547821045
+GRASP iteration finished. score: 7707, best: 7668
+GRASP iteration 25 of 30
+Start Join: current score: 7791, step: first
+End Join: current score: 7738, changed: True, time: 0.25962138175964355
+GRASP iteration finished. score: 7791, best: 7668
+GRASP iteration 26 of 30
+Start Join: current score: 7816, step: first
+End Join: current score: 7816, changed: False, time: 0.4547913074493408
+GRASP iteration finished. score: 7816, best: 7668
+GRASP iteration 27 of 30
+Start Join: current score: 7839, step: first
+End Join: current score: 7839, changed: False, time: 0.45954394340515137
+GRASP iteration finished. score: 7839, best: 7668
+GRASP iteration 28 of 30
+Start Join: current score: 7655, step: first
+End Join: current score: 7620, changed: True, time: 0.03837704658508301
+GRASP iteration finished. score: 7655, best: 7668
+GRASP iteration 29 of 30
+Start Join: current score: 7804, step: first
+End Join: current score: 7804, changed: False, time: 0.48311281204223633
+GRASP iteration finished. score: 7804, best: 7655
+GRASP iteration 30 of 30
+Start Join: current score: 7935, step: first
+End Join: current score: 7935, changed: False, time: 0.5278339385986328
+GRASP iteration finished. score: 7935, best: 7655
+Runtime: 14.49579119682312
+Score: 7655
+Solution check: True
+data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 12257, step: first
+End Join: current score: 12257, changed: False, time: 1.1687655448913574
+GRASP iteration finished. score: 12257, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 12499, step: first
+End Join: current score: 12499, changed: False, time: 1.2686829566955566
+GRASP iteration finished. score: 12499, best: 12257
+GRASP iteration 3 of 30
+Start Join: current score: 12665, step: first
+End Join: current score: 12665, changed: False, time: 1.2508995532989502
+GRASP iteration finished. score: 12665, best: 12257
+GRASP iteration 4 of 30
+Start Join: current score: 12780, step: first
+End Join: current score: 12780, changed: False, time: 1.3089375495910645
+GRASP iteration finished. score: 12780, best: 12257
+GRASP iteration 5 of 30
+Start Join: current score: 12449, step: first
+End Join: current score: 12449, changed: False, time: 1.17720365524292
+GRASP iteration finished. score: 12449, best: 12257
+GRASP iteration 6 of 30
+Start Join: current score: 12673, step: first
+End Join: current score: 12673, changed: False, time: 1.3796508312225342
+GRASP iteration finished. score: 12673, best: 12257
+GRASP iteration 7 of 30
+Start Join: current score: 12820, step: first
+End Join: current score: 12820, changed: False, time: 1.247424840927124
+GRASP iteration finished. score: 12820, best: 12257
+GRASP iteration 8 of 30
+Start Join: current score: 12698, step: first
+End Join: current score: 12698, changed: False, time: 1.2437937259674072
+GRASP iteration finished. score: 12698, best: 12257
+GRASP iteration 9 of 30
+Start Join: current score: 12501, step: first
+End Join: current score: 12501, changed: False, time: 1.2132747173309326
+GRASP iteration finished. score: 12501, best: 12257
+GRASP iteration 10 of 30
+Start Join: current score: 12758, step: first
+End Join: current score: 12758, changed: False, time: 1.3305070400238037
+GRASP iteration finished. score: 12758, best: 12257
+GRASP iteration 11 of 30
+Start Join: current score: 12502, step: first
+End Join: current score: 12502, changed: False, time: 1.2925543785095215
+GRASP iteration finished. score: 12502, best: 12257
+GRASP iteration 12 of 30
+Start Join: current score: 12479, step: first
+End Join: current score: 12479, changed: False, time: 1.158984899520874
+GRASP iteration finished. score: 12479, best: 12257
+GRASP iteration 13 of 30
+Start Join: current score: 12707, step: first
+End Join: current score: 12707, changed: False, time: 1.1791090965270996
+GRASP iteration finished. score: 12707, best: 12257
+GRASP iteration 14 of 30
+Start Join: current score: 12741, step: first
+End Join: current score: 12741, changed: False, time: 1.2322402000427246
+GRASP iteration finished. score: 12741, best: 12257
+GRASP iteration 15 of 30
+Start Join: current score: 12656, step: first
+End Join: current score: 12656, changed: False, time: 1.1653296947479248
+GRASP iteration finished. score: 12656, best: 12257
+GRASP iteration 16 of 30
+Start Join: current score: 12702, step: first
+End Join: current score: 12702, changed: False, time: 1.32149338722229
+GRASP iteration finished. score: 12702, best: 12257
+GRASP iteration 17 of 30
+Start Join: current score: 12913, step: first
+End Join: current score: 12913, changed: False, time: 1.3457484245300293
+GRASP iteration finished. score: 12913, best: 12257
+GRASP iteration 18 of 30
+Start Join: current score: 13036, step: first
+End Join: current score: 13036, changed: False, time: 1.4260056018829346
+GRASP iteration finished. score: 13036, best: 12257
+GRASP iteration 19 of 30
+Start Join: current score: 12335, step: first
+End Join: current score: 12335, changed: False, time: 1.4146451950073242
+GRASP iteration finished. score: 12335, best: 12257
+GRASP iteration 20 of 30
+Start Join: current score: 12833, step: first
+End Join: current score: 12833, changed: False, time: 1.3760833740234375
+GRASP iteration finished. score: 12833, best: 12257
+GRASP iteration 21 of 30
+Start Join: current score: 12480, step: first
+End Join: current score: 12480, changed: False, time: 1.2258069515228271
+GRASP iteration finished. score: 12480, best: 12257
+GRASP iteration 22 of 30
+Start Join: current score: 12578, step: first
+End Join: current score: 12578, changed: False, time: 1.2159044742584229
+GRASP iteration finished. score: 12578, best: 12257
+GRASP iteration 23 of 30
+Start Join: current score: 12609, step: first
+End Join: current score: 12609, changed: False, time: 1.2194197177886963
+GRASP iteration finished. score: 12609, best: 12257
+GRASP iteration 24 of 30
+Start Join: current score: 12914, step: first
+End Join: current score: 12914, changed: False, time: 1.3740148544311523
+GRASP iteration finished. score: 12914, best: 12257
+GRASP iteration 25 of 30
+Start Join: current score: 12824, step: first
+End Join: current score: 12824, changed: False, time: 1.5468003749847412
+GRASP iteration finished. score: 12824, best: 12257
+GRASP iteration 26 of 30
+Start Join: current score: 12573, step: first
+End Join: current score: 12573, changed: False, time: 1.3613080978393555
+GRASP iteration finished. score: 12573, best: 12257
+GRASP iteration 27 of 30
+Start Join: current score: 12586, step: first
+End Join: current score: 12586, changed: False, time: 1.2698168754577637
+GRASP iteration finished. score: 12586, best: 12257
+GRASP iteration 28 of 30
+Start Join: current score: 12279, step: first
+End Join: current score: 12279, changed: False, time: 1.1324241161346436
+GRASP iteration finished. score: 12279, best: 12257
+GRASP iteration 29 of 30
+Start Join: current score: 13223, step: first
+End Join: current score: 13223, changed: False, time: 1.5301234722137451
+GRASP iteration finished. score: 13223, best: 12257
+GRASP iteration 30 of 30
+Start Join: current score: 12471, step: first
+End Join: current score: 12471, changed: False, time: 1.3029155731201172
+GRASP iteration finished. score: 12471, best: 12257
+Runtime: 42.46126914024353
+Score: 12257
+Solution check: True
+data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 21198, step: first
+End Join: current score: 21198, changed: False, time: 2.5068068504333496
+GRASP iteration finished. score: 21198, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 21178, step: first
+End Join: current score: 21178, changed: False, time: 2.4143545627593994
+GRASP iteration finished. score: 21178, best: 21198
+GRASP iteration 3 of 30
+Start Join: current score: 21297, step: first
+End Join: current score: 21297, changed: False, time: 2.758460283279419
+GRASP iteration finished. score: 21297, best: 21178
+GRASP iteration 4 of 30
+Start Join: current score: 20953, step: first
+End Join: current score: 20953, changed: False, time: 2.3643646240234375
+GRASP iteration finished. score: 20953, best: 21178
+GRASP iteration 5 of 30
+Start Join: current score: 20786, step: first
+End Join: current score: 20786, changed: False, time: 2.2413957118988037
+GRASP iteration finished. score: 20786, best: 20953
+GRASP iteration 6 of 30
+Start Join: current score: 21033, step: first
+End Join: current score: 21033, changed: False, time: 2.3355488777160645
+GRASP iteration finished. score: 21033, best: 20786
+GRASP iteration 7 of 30
+Start Join: current score: 21510, step: first
+End Join: current score: 21510, changed: False, time: 2.8941023349761963
+GRASP iteration finished. score: 21510, best: 20786
+GRASP iteration 8 of 30
+Start Join: current score: 21419, step: first
+End Join: current score: 21419, changed: False, time: 2.725841760635376
+GRASP iteration finished. score: 21419, best: 20786
+GRASP iteration 9 of 30
+Start Join: current score: 21382, step: first
+End Join: current score: 21382, changed: False, time: 2.7091760635375977
+GRASP iteration finished. score: 21382, best: 20786
+GRASP iteration 10 of 30
+Start Join: current score: 21274, step: first
+End Join: current score: 21274, changed: False, time: 2.688652753829956
+GRASP iteration finished. score: 21274, best: 20786
+GRASP iteration 11 of 30
+Start Join: current score: 21268, step: first
+End Join: current score: 21268, changed: False, time: 2.501343011856079
+GRASP iteration finished. score: 21268, best: 20786
+GRASP iteration 12 of 30
+Start Join: current score: 21135, step: first
+End Join: current score: 21135, changed: False, time: 2.735776662826538
+GRASP iteration finished. score: 21135, best: 20786
+GRASP iteration 13 of 30
+Start Join: current score: 21236, step: first
+End Join: current score: 21236, changed: False, time: 2.600226640701294
+GRASP iteration finished. score: 21236, best: 20786
+GRASP iteration 14 of 30
+Start Join: current score: 21352, step: first
+End Join: current score: 21352, changed: False, time: 2.5351603031158447
+GRASP iteration finished. score: 21352, best: 20786
+GRASP iteration 15 of 30
+Start Join: current score: 21505, step: first
+End Join: current score: 21505, changed: False, time: 3.097640037536621
+GRASP iteration finished. score: 21505, best: 20786
+GRASP iteration 16 of 30
+Start Join: current score: 21014, step: first
+End Join: current score: 21014, changed: False, time: 2.333106756210327
+GRASP iteration finished. score: 21014, best: 20786
+GRASP iteration 17 of 30
+Start Join: current score: 21080, step: first
+End Join: current score: 21080, changed: False, time: 2.568484306335449
+GRASP iteration finished. score: 21080, best: 20786
+GRASP iteration 18 of 30
+Start Join: current score: 21195, step: first
+End Join: current score: 21195, changed: False, time: 2.810631513595581
+GRASP iteration finished. score: 21195, best: 20786
+GRASP iteration 19 of 30
+Start Join: current score: 21147, step: first
+End Join: current score: 21147, changed: False, time: 2.594217538833618
+GRASP iteration finished. score: 21147, best: 20786
+GRASP iteration 20 of 30
+Start Join: current score: 20972, step: first
+End Join: current score: 20972, changed: False, time: 2.707660436630249
+GRASP iteration finished. score: 20972, best: 20786
+GRASP iteration 21 of 30
+Start Join: current score: 21727, step: first
+End Join: current score: 21727, changed: False, time: 3.659219980239868
+GRASP iteration finished. score: 21727, best: 20786
+GRASP iteration 22 of 30
+Start Join: current score: 21293, step: first
+End Join: current score: 21293, changed: False, time: 2.9156854152679443
+GRASP iteration finished. score: 21293, best: 20786
+GRASP iteration 23 of 30
+Start Join: current score: 21394, step: first
+End Join: current score: 21394, changed: False, time: 2.898686647415161
+GRASP iteration finished. score: 21394, best: 20786
+GRASP iteration 24 of 30
+Start Join: current score: 20939, step: first
+End Join: current score: 20939, changed: False, time: 2.431889295578003
+GRASP iteration finished. score: 20939, best: 20786
+GRASP iteration 25 of 30
+Start Join: current score: 20867, step: first
+End Join: current score: 20867, changed: False, time: 2.725355386734009
+GRASP iteration finished. score: 20867, best: 20786
+GRASP iteration 26 of 30
+Start Join: current score: 20965, step: first
+End Join: current score: 20965, changed: False, time: 2.395005702972412
+GRASP iteration finished. score: 20965, best: 20786
+GRASP iteration 27 of 30
+Start Join: current score: 21511, step: first
+End Join: current score: 21511, changed: False, time: 2.7775120735168457
+GRASP iteration finished. score: 21511, best: 20786
+GRASP iteration 28 of 30
+Start Join: current score: 20617, step: first
+End Join: current score: 20617, changed: False, time: 2.390352964401245
+GRASP iteration finished. score: 20617, best: 20786
+GRASP iteration 29 of 30
+Start Join: current score: 20902, step: first
+End Join: current score: 20902, changed: False, time: 2.6014058589935303
+GRASP iteration finished. score: 20902, best: 20617
+GRASP iteration 30 of 30
+Start Join: current score: 21099, step: first
+End Join: current score: 21099, changed: False, time: 2.6534922122955322
+GRASP iteration finished. score: 21099, best: 20617
+Runtime: 85.92046475410461
+Score: 20617
+Solution check: True
+data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 3218, step: first
+End Join: current score: 3217, changed: True, time: 3.5519604682922363
+GRASP iteration finished. score: 3218, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 3241, step: first
+End Join: current score: 3239, changed: True, time: 3.1699681282043457
+GRASP iteration finished. score: 3241, best: 3218
+GRASP iteration 3 of 30
+Start Join: current score: 3235, step: first
+End Join: current score: 3232, changed: True, time: 2.7684271335601807
+GRASP iteration finished. score: 3235, best: 3218
+GRASP iteration 4 of 30
+Start Join: current score: 3236, step: first
+End Join: current score: 3234, changed: True, time: 1.458526372909546
+GRASP iteration finished. score: 3236, best: 3218
+GRASP iteration 5 of 30
+Start Join: current score: 3226, step: first
+End Join: current score: 3224, changed: True, time: 1.8139452934265137
+GRASP iteration finished. score: 3226, best: 3218
+GRASP iteration 6 of 30
+Start Join: current score: 3100, step: first
+End Join: current score: 3099, changed: True, time: 1.482459545135498
+GRASP iteration finished. score: 3100, best: 3218
+GRASP iteration 7 of 30
+Start Join: current score: 3338, step: first
+End Join: current score: 3337, changed: True, time: 2.8099560737609863
+GRASP iteration finished. score: 3338, best: 3100
+GRASP iteration 8 of 30
+Start Join: current score: 3283, step: first
+End Join: current score: 3280, changed: True, time: 2.297414779663086
+GRASP iteration finished. score: 3283, best: 3100
+GRASP iteration 9 of 30
+Start Join: current score: 3261, step: first
+End Join: current score: 3260, changed: True, time: 1.8800201416015625
+GRASP iteration finished. score: 3261, best: 3100
+GRASP iteration 10 of 30
+Start Join: current score: 3260, step: first
+End Join: current score: 3256, changed: True, time: 2.1651782989501953
+GRASP iteration finished. score: 3260, best: 3100
+GRASP iteration 11 of 30
+Start Join: current score: 3102, step: first
+End Join: current score: 3092, changed: True, time: 2.5208771228790283
+GRASP iteration finished. score: 3102, best: 3100
+GRASP iteration 12 of 30
+Start Join: current score: 3259, step: first
+End Join: current score: 3254, changed: True, time: 2.6317577362060547
+GRASP iteration finished. score: 3259, best: 3100
+GRASP iteration 13 of 30
+Start Join: current score: 3161, step: first
+End Join: current score: 3159, changed: True, time: 1.6755247116088867
+GRASP iteration finished. score: 3161, best: 3100
+GRASP iteration 14 of 30
+Start Join: current score: 3184, step: first
+End Join: current score: 3177, changed: True, time: 0.7362771034240723
+GRASP iteration finished. score: 3184, best: 3100
+GRASP iteration 15 of 30
+Start Join: current score: 3244, step: first
+End Join: current score: 3243, changed: True, time: 3.0782089233398438
+GRASP iteration finished. score: 3244, best: 3100
+GRASP iteration 16 of 30
+Start Join: current score: 3333, step: first
+End Join: current score: 3332, changed: True, time: 3.5716476440429688
+GRASP iteration finished. score: 3333, best: 3100
+GRASP iteration 17 of 30
+Start Join: current score: 3296, step: first
+End Join: current score: 3295, changed: True, time: 2.4601516723632812
+GRASP iteration finished. score: 3296, best: 3100
+GRASP iteration 18 of 30
+Start Join: current score: 3346, step: first
+End Join: current score: 3342, changed: True, time: 1.9066510200500488
+GRASP iteration finished. score: 3346, best: 3100
+GRASP iteration 19 of 30
+Start Join: current score: 3234, step: first
+End Join: current score: 3233, changed: True, time: 3.3308908939361572
+GRASP iteration finished. score: 3234, best: 3100
+GRASP iteration 20 of 30
+Start Join: current score: 3259, step: first
+End Join: current score: 3258, changed: True, time: 3.210681915283203
+GRASP iteration finished. score: 3259, best: 3100
+GRASP iteration 21 of 30
+Start Join: current score: 3239, step: first
+End Join: current score: 3233, changed: True, time: 2.078791618347168
+GRASP iteration finished. score: 3239, best: 3100
+GRASP iteration 22 of 30
+Start Join: current score: 3294, step: first
+End Join: current score: 3293, changed: True, time: 3.0656840801239014
+GRASP iteration finished. score: 3294, best: 3100
+GRASP iteration 23 of 30
+Start Join: current score: 3228, step: first
+End Join: current score: 3227, changed: True, time: 0.7013156414031982
+GRASP iteration finished. score: 3228, best: 3100
+GRASP iteration 24 of 30
+Start Join: current score: 3292, step: first
+End Join: current score: 3291, changed: True, time: 2.489577293395996
+GRASP iteration finished. score: 3292, best: 3100
+GRASP iteration 25 of 30
+Start Join: current score: 3195, step: first
+End Join: current score: 3194, changed: True, time: 1.4551646709442139
+GRASP iteration finished. score: 3195, best: 3100
+GRASP iteration 26 of 30
+Start Join: current score: 3202, step: first
+End Join: current score: 3198, changed: True, time: 0.9430620670318604
+GRASP iteration finished. score: 3202, best: 3100
+GRASP iteration 27 of 30
+Start Join: current score: 3362, step: first
+End Join: current score: 3360, changed: True, time: 0.5243890285491943
+GRASP iteration finished. score: 3362, best: 3100
+GRASP iteration 28 of 30
+Start Join: current score: 3168, step: first
+End Join: current score: 3165, changed: True, time: 3.1983418464660645
+GRASP iteration finished. score: 3168, best: 3100
+GRASP iteration 29 of 30
+Start Join: current score: 3317, step: first
+End Join: current score: 3316, changed: True, time: 1.540818214416504
+GRASP iteration finished. score: 3317, best: 3100
+GRASP iteration 30 of 30
+Start Join: current score: 3387, step: first
+End Join: current score: 3375, changed: True, time: 1.7629711627960205
+GRASP iteration finished. score: 3387, best: 3100
+Runtime: 76.02178859710693
+Score: 3100
+Solution check: True
+data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 8955, step: first
+End Join: current score: 8955, changed: False, time: 0.7838554382324219
+GRASP iteration finished. score: 8955, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 8973, step: first
+End Join: current score: 8973, changed: False, time: 0.7456643581390381
+GRASP iteration finished. score: 8973, best: 8955
+GRASP iteration 3 of 30
+Start Join: current score: 9014, step: first
+End Join: current score: 8994, changed: True, time: 0.7296273708343506
+GRASP iteration finished. score: 9014, best: 8955
+GRASP iteration 4 of 30
+Start Join: current score: 8848, step: first
+End Join: current score: 8848, changed: False, time: 0.7689473628997803
+GRASP iteration finished. score: 8848, best: 8955
+GRASP iteration 5 of 30
+Start Join: current score: 9047, step: first
+End Join: current score: 9047, changed: False, time: 0.8156778812408447
+GRASP iteration finished. score: 9047, best: 8848
+GRASP iteration 6 of 30
+Start Join: current score: 8700, step: first
+End Join: current score: 8636, changed: True, time: 0.699481725692749
+GRASP iteration finished. score: 8700, best: 8848
+GRASP iteration 7 of 30
+Start Join: current score: 8854, step: first
+End Join: current score: 8854, changed: False, time: 0.7361664772033691
+GRASP iteration finished. score: 8854, best: 8700
+GRASP iteration 8 of 30
+Start Join: current score: 8918, step: first
+End Join: current score: 8918, changed: False, time: 0.6848292350769043
+GRASP iteration finished. score: 8918, best: 8700
+GRASP iteration 9 of 30
+Start Join: current score: 8869, step: first
+End Join: current score: 8869, changed: False, time: 0.7282509803771973
+GRASP iteration finished. score: 8869, best: 8700
+GRASP iteration 10 of 30
+Start Join: current score: 9103, step: first
+End Join: current score: 9103, changed: False, time: 0.8237671852111816
+GRASP iteration finished. score: 9103, best: 8700
+GRASP iteration 11 of 30
+Start Join: current score: 8984, step: first
+End Join: current score: 8984, changed: False, time: 0.7844433784484863
+GRASP iteration finished. score: 8984, best: 8700
+GRASP iteration 12 of 30
+Start Join: current score: 8884, step: first
+End Join: current score: 8884, changed: False, time: 0.7825889587402344
+GRASP iteration finished. score: 8884, best: 8700
+GRASP iteration 13 of 30
+Start Join: current score: 9093, step: first
+End Join: current score: 9093, changed: False, time: 0.8624255657196045
+GRASP iteration finished. score: 9093, best: 8700
+GRASP iteration 14 of 30
+Start Join: current score: 9078, step: first
+End Join: current score: 9078, changed: False, time: 0.8438148498535156
+GRASP iteration finished. score: 9078, best: 8700
+GRASP iteration 15 of 30
+Start Join: current score: 9073, step: first
+End Join: current score: 9073, changed: False, time: 0.8655624389648438
+GRASP iteration finished. score: 9073, best: 8700
+GRASP iteration 16 of 30
+Start Join: current score: 8859, step: first
+End Join: current score: 8859, changed: False, time: 0.7532987594604492
+GRASP iteration finished. score: 8859, best: 8700
+GRASP iteration 17 of 30
+Start Join: current score: 8899, step: first
+End Join: current score: 8899, changed: False, time: 0.7543716430664062
+GRASP iteration finished. score: 8899, best: 8700
+GRASP iteration 18 of 30
+Start Join: current score: 9071, step: first
+End Join: current score: 9071, changed: False, time: 0.7206101417541504
+GRASP iteration finished. score: 9071, best: 8700
+GRASP iteration 19 of 30
+Start Join: current score: 8883, step: first
+End Join: current score: 8883, changed: False, time: 0.7929790019989014
+GRASP iteration finished. score: 8883, best: 8700
+GRASP iteration 20 of 30
+Start Join: current score: 9074, step: first
+End Join: current score: 9074, changed: False, time: 0.7664084434509277
+GRASP iteration finished. score: 9074, best: 8700
+GRASP iteration 21 of 30
+Start Join: current score: 8970, step: first
+End Join: current score: 8970, changed: False, time: 0.7989931106567383
+GRASP iteration finished. score: 8970, best: 8700
+GRASP iteration 22 of 30
+Start Join: current score: 8847, step: first
+End Join: current score: 8847, changed: False, time: 0.7277939319610596
+GRASP iteration finished. score: 8847, best: 8700
+GRASP iteration 23 of 30
+Start Join: current score: 8881, step: first
+End Join: current score: 8881, changed: False, time: 0.7202191352844238
+GRASP iteration finished. score: 8881, best: 8700
+GRASP iteration 24 of 30
+Start Join: current score: 9161, step: first
+End Join: current score: 9161, changed: False, time: 0.8542468547821045
+GRASP iteration finished. score: 9161, best: 8700
+GRASP iteration 25 of 30
+Start Join: current score: 8971, step: first
+End Join: current score: 8971, changed: False, time: 0.7320075035095215
+GRASP iteration finished. score: 8971, best: 8700
+GRASP iteration 26 of 30
+Start Join: current score: 8997, step: first
+End Join: current score: 8997, changed: False, time: 0.7548861503601074
+GRASP iteration finished. score: 8997, best: 8700
+GRASP iteration 27 of 30
+Start Join: current score: 8928, step: first
+End Join: current score: 8928, changed: False, time: 0.7755694389343262
+GRASP iteration finished. score: 8928, best: 8700
+GRASP iteration 28 of 30
+Start Join: current score: 9035, step: first
+End Join: current score: 9032, changed: True, time: 0.46761274337768555
+GRASP iteration finished. score: 9035, best: 8700
+GRASP iteration 29 of 30
+Start Join: current score: 9078, step: first
+End Join: current score: 9078, changed: False, time: 0.8249638080596924
+GRASP iteration finished. score: 9078, best: 8700
+GRASP iteration 30 of 30
+Start Join: current score: 8983, step: first
+End Join: current score: 8983, changed: False, time: 0.7055652141571045
+GRASP iteration finished. score: 8983, best: 8700
+Runtime: 25.66352128982544
+Score: 8700
+Solution check: True
+data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 55717, step: first
+End Join: current score: 51722, changed: True, time: 1.2124629020690918
+GRASP iteration finished. score: 55717, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 55612, step: first
+End Join: current score: 51374, changed: True, time: 0.7319772243499756
+GRASP iteration finished. score: 55612, best: 55717
+GRASP iteration 3 of 30
+Start Join: current score: 52060, step: first
+End Join: current score: 44732, changed: True, time: 2.503143310546875
+GRASP iteration finished. score: 52060, best: 55612
+GRASP iteration 4 of 30
+Start Join: current score: 57839, step: first
+End Join: current score: 54063, changed: True, time: 0.4533207416534424
+GRASP iteration finished. score: 57839, best: 52060
+GRASP iteration 5 of 30
+Start Join: current score: 55331, step: first
+End Join: current score: 51671, changed: True, time: 0.6498560905456543
+GRASP iteration finished. score: 55331, best: 52060
+GRASP iteration 6 of 30
+Start Join: current score: 57664, step: first
+End Join: current score: 54278, changed: True, time: 0.5297975540161133
+GRASP iteration finished. score: 57664, best: 52060
+GRASP iteration 7 of 30
+Start Join: current score: 55290, step: first
+End Join: current score: 52256, changed: True, time: 0.8189389705657959
+GRASP iteration finished. score: 55290, best: 52060
+GRASP iteration 8 of 30
+Start Join: current score: 55585, step: first
+End Join: current score: 50199, changed: True, time: 0.7772278785705566
+GRASP iteration finished. score: 55585, best: 52060
+GRASP iteration 9 of 30
+Start Join: current score: 55764, step: first
+End Join: current score: 50006, changed: True, time: 1.1387994289398193
+GRASP iteration finished. score: 55764, best: 52060
+GRASP iteration 10 of 30
+Start Join: current score: 52220, step: first
+End Join: current score: 43579, changed: True, time: 2.807598352432251
+GRASP iteration finished. score: 52220, best: 52060
+GRASP iteration 11 of 30
+Start Join: current score: 57926, step: first
+End Join: current score: 55143, changed: True, time: 0.46849799156188965
+GRASP iteration finished. score: 57926, best: 52060
+GRASP iteration 12 of 30
+Start Join: current score: 56082, step: first
+End Join: current score: 49938, changed: True, time: 1.0495030879974365
+GRASP iteration finished. score: 56082, best: 52060
+GRASP iteration 13 of 30
+Start Join: current score: 55625, step: first
+End Join: current score: 50845, changed: True, time: 1.1174347400665283
+GRASP iteration finished. score: 55625, best: 52060
+GRASP iteration 14 of 30
+Start Join: current score: 55897, step: first
+End Join: current score: 50074, changed: True, time: 0.922311544418335
+GRASP iteration finished. score: 55897, best: 52060
+GRASP iteration 15 of 30
+Start Join: current score: 55818, step: first
+End Join: current score: 50676, changed: True, time: 1.0232815742492676
+GRASP iteration finished. score: 55818, best: 52060
+GRASP iteration 16 of 30
+Start Join: current score: 57567, step: first
+End Join: current score: 54265, changed: True, time: 0.7982239723205566
+GRASP iteration finished. score: 57567, best: 52060
+GRASP iteration 17 of 30
+Start Join: current score: 57742, step: first
+End Join: current score: 54768, changed: True, time: 0.4968411922454834
+GRASP iteration finished. score: 57742, best: 52060
+GRASP iteration 18 of 30
+Start Join: current score: 52266, step: first
+End Join: current score: 41077, changed: True, time: 2.724201202392578
+GRASP iteration finished. score: 52266, best: 52060
+GRASP iteration 19 of 30
+Start Join: current score: 57646, step: first
+End Join: current score: 53460, changed: True, time: 0.5400936603546143
+GRASP iteration finished. score: 57646, best: 52060
+GRASP iteration 20 of 30
+Start Join: current score: 55141, step: first
+End Join: current score: 49490, changed: True, time: 1.4401130676269531
+GRASP iteration finished. score: 55141, best: 52060
+GRASP iteration 21 of 30
+Start Join: current score: 57567, step: first
+End Join: current score: 52491, changed: True, time: 0.7545754909515381
+GRASP iteration finished. score: 57567, best: 52060
+GRASP iteration 22 of 30
+Start Join: current score: 57867, step: first
+End Join: current score: 54740, changed: True, time: 0.37199997901916504
+GRASP iteration finished. score: 57867, best: 52060
+GRASP iteration 23 of 30
+Start Join: current score: 57919, step: first
+End Join: current score: 53878, changed: True, time: 0.6569919586181641
+GRASP iteration finished. score: 57919, best: 52060
+GRASP iteration 24 of 30
+Start Join: current score: 55964, step: first
+End Join: current score: 51566, changed: True, time: 0.8706755638122559
+GRASP iteration finished. score: 55964, best: 52060
+GRASP iteration 25 of 30
+Start Join: current score: 57956, step: first
+End Join: current score: 54384, changed: True, time: 0.5007226467132568
+GRASP iteration finished. score: 57956, best: 52060
+GRASP iteration 26 of 30
+Start Join: current score: 52330, step: first
+End Join: current score: 43297, changed: True, time: 3.101101875305176
+GRASP iteration finished. score: 52330, best: 52060
+GRASP iteration 27 of 30
+Start Join: current score: 60205, step: first
+End Join: current score: 58594, changed: True, time: 0.25850772857666016
+GRASP iteration finished. score: 60205, best: 52060
+GRASP iteration 28 of 30
+Start Join: current score: 57835, step: first
+End Join: current score: 54432, changed: True, time: 0.4144308567047119
+GRASP iteration finished. score: 57835, best: 52060
+GRASP iteration 29 of 30
+Start Join: current score: 55186, step: first
+End Join: current score: 48882, changed: True, time: 0.9616825580596924
+GRASP iteration finished. score: 55186, best: 52060
+GRASP iteration 30 of 30
+Start Join: current score: 55788, step: first
+End Join: current score: 49830, changed: True, time: 1.1596698760986328
+GRASP iteration finished. score: 55788, best: 52060
+Runtime: 48.776771783828735
+Score: 52060
+Solution check: True
+data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 66654, step: first
+End Join: current score: 58320, changed: True, time: 7.551238059997559
+GRASP iteration finished. score: 66654, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 69580, step: first
+End Join: current score: 64239, changed: True, time: 3.892911911010742
+GRASP iteration finished. score: 69580, best: 66654
+GRASP iteration 3 of 30
+Start Join: current score: 69401, step: first
+End Join: current score: 62646, changed: True, time: 6.338894605636597
+GRASP iteration finished. score: 69401, best: 66654
+GRASP iteration 4 of 30
+Start Join: current score: 70169, step: first
+End Join: current score: 65301, changed: True, time: 2.807265043258667
+GRASP iteration finished. score: 70169, best: 66654
+GRASP iteration 5 of 30
+Start Join: current score: 70225, step: first
+End Join: current score: 65331, changed: True, time: 3.408284902572632
+GRASP iteration finished. score: 70225, best: 66654
+GRASP iteration 6 of 30
+Start Join: current score: 65723, step: first
+End Join: current score: 56474, changed: True, time: 11.843862295150757
+GRASP iteration finished. score: 65723, best: 66654
+GRASP iteration 7 of 30
+Start Join: current score: 69778, step: first
+End Join: current score: 63821, changed: True, time: 3.299344062805176
+GRASP iteration finished. score: 69778, best: 65723
+GRASP iteration 8 of 30
+Start Join: current score: 66608, step: first
+End Join: current score: 58758, changed: True, time: 12.34905481338501
+GRASP iteration finished. score: 66608, best: 65723
+GRASP iteration 9 of 30
+Start Join: current score: 70014, step: first
+End Join: current score: 63040, changed: True, time: 4.233513355255127
+GRASP iteration finished. score: 70014, best: 65723
+GRASP iteration 10 of 30
+Start Join: current score: 69357, step: first
+End Join: current score: 63540, changed: True, time: 3.832118034362793
+GRASP iteration finished. score: 69357, best: 65723
+GRASP iteration 11 of 30
+Start Join: current score: 66441, step: first
+End Join: current score: 58921, changed: True, time: 9.908711194992065
+GRASP iteration finished. score: 66441, best: 65723
+GRASP iteration 12 of 30
+Start Join: current score: 69673, step: first
+End Join: current score: 64198, changed: True, time: 2.620086908340454
+GRASP iteration finished. score: 69673, best: 65723
+GRASP iteration 13 of 30
+Start Join: current score: 66925, step: first
+End Join: current score: 58324, changed: True, time: 10.45589017868042
+GRASP iteration finished. score: 66925, best: 65723
+GRASP iteration 14 of 30
+Start Join: current score: 66990, step: first
+End Join: current score: 57665, changed: True, time: 11.825080394744873
+GRASP iteration finished. score: 66990, best: 65723
+GRASP iteration 15 of 30
+Start Join: current score: 66493, step: first
+End Join: current score: 57700, changed: True, time: 11.090859413146973
+GRASP iteration finished. score: 66493, best: 65723
+GRASP iteration 16 of 30
+Start Join: current score: 69865, step: first
+End Join: current score: 64717, changed: True, time: 3.212221622467041
+GRASP iteration finished. score: 69865, best: 65723
+GRASP iteration 17 of 30
+Start Join: current score: 66639, step: first
+End Join: current score: 57674, changed: True, time: 8.248432636260986
+GRASP iteration finished. score: 66639, best: 65723
+GRASP iteration 18 of 30
+Start Join: current score: 65878, step: first
+End Join: current score: 56931, changed: True, time: 9.757917404174805
+GRASP iteration finished. score: 65878, best: 65723
+GRASP iteration 19 of 30
+Start Join: current score: 68574, step: first
+End Join: current score: 63712, changed: True, time: 5.799947261810303
+GRASP iteration finished. score: 68574, best: 65723
+GRASP iteration 20 of 30
+Start Join: current score: 69479, step: first
+End Join: current score: 63035, changed: True, time: 2.186363458633423
+GRASP iteration finished. score: 69479, best: 65723
+GRASP iteration 21 of 30
+Start Join: current score: 69549, step: first
+End Join: current score: 65020, changed: True, time: 2.857262134552002
+GRASP iteration finished. score: 69549, best: 65723
+GRASP iteration 22 of 30
+Start Join: current score: 66058, step: first
+End Join: current score: 57426, changed: True, time: 11.482162237167358
+GRASP iteration finished. score: 66058, best: 65723
+GRASP iteration 23 of 30
+Start Join: current score: 66575, step: first
+End Join: current score: 57521, changed: True, time: 10.79173755645752
+GRASP iteration finished. score: 66575, best: 65723
+GRASP iteration 24 of 30
+Start Join: current score: 69834, step: first
+End Join: current score: 65259, changed: True, time: 3.9414310455322266
+GRASP iteration finished. score: 69834, best: 65723
+GRASP iteration 25 of 30
+Start Join: current score: 66734, step: first
+End Join: current score: 56611, changed: True, time: 12.411455392837524
+GRASP iteration finished. score: 66734, best: 65723
+GRASP iteration 26 of 30
+Start Join: current score: 66346, step: first
+End Join: current score: 57503, changed: True, time: 16.326140880584717
+GRASP iteration finished. score: 66346, best: 65723
+GRASP iteration 27 of 30
+Start Join: current score: 66483, step: first
+End Join: current score: 57303, changed: True, time: 14.254819631576538
+GRASP iteration finished. score: 66483, best: 65723
+GRASP iteration 28 of 30
+Start Join: current score: 66230, step: first
+End Join: current score: 56756, changed: True, time: 11.583341121673584
+GRASP iteration finished. score: 66230, best: 65723
+GRASP iteration 29 of 30
+Start Join: current score: 66267, step: first
+End Join: current score: 57779, changed: True, time: 13.092474699020386
+GRASP iteration finished. score: 66267, best: 65723
+GRASP iteration 30 of 30
+Start Join: current score: 69638, step: first
+End Join: current score: 63243, changed: True, time: 5.386412858963013
+GRASP iteration finished. score: 69638, best: 65723
+Runtime: 280.07846665382385
+Score: 65723
+Solution check: True
+data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
+GRASP iteration 1 of 30
+Start Join: current score: 7794, step: first
+End Join: current score: 6681, changed: True, time: 0.11180567741394043
+GRASP iteration finished. score: 7794, best: inf
+GRASP iteration 2 of 30
+Start Join: current score: 7326, step: first
+End Join: current score: 4749, changed: True, time: 0.33302760124206543
+GRASP iteration finished. score: 7326, best: 7794
+GRASP iteration 3 of 30
+Start Join: current score: 7075, step: first
+End Join: current score: 4785, changed: True, time: 0.35025644302368164
+GRASP iteration finished. score: 7075, best: 7326
+GRASP iteration 4 of 30
+Start Join: current score: 7046, step: first
+End Join: current score: 4776, changed: True, time: 0.36242032051086426
+GRASP iteration finished. score: 7046, best: 7075
+GRASP iteration 5 of 30
+Start Join: current score: 7195, step: first
+End Join: current score: 4777, changed: True, time: 0.35433006286621094
+GRASP iteration finished. score: 7195, best: 7046
+GRASP iteration 6 of 30
+Start Join: current score: 7051, step: first
+End Join: current score: 4787, changed: True, time: 0.3738424777984619
+GRASP iteration finished. score: 7051, best: 7046
+GRASP iteration 7 of 30
+Start Join: current score: 7262, step: first
+End Join: current score: 4770, changed: True, time: 0.34868574142456055
+GRASP iteration finished. score: 7262, best: 7046
+GRASP iteration 8 of 30
+Start Join: current score: 7860, step: first
+End Join: current score: 6783, changed: True, time: 0.07867670059204102
+GRASP iteration finished. score: 7860, best: 7046
+GRASP iteration 9 of 30
+Start Join: current score: 7340, step: first
+End Join: current score: 4777, changed: True, time: 0.347567081451416
+GRASP iteration finished. score: 7340, best: 7046
+GRASP iteration 10 of 30
+Start Join: current score: 7322, step: first
+End Join: current score: 4762, changed: True, time: 0.3621046543121338
+GRASP iteration finished. score: 7322, best: 7046
+GRASP iteration 11 of 30
+Start Join: current score: 8079, step: first
+End Join: current score: 6656, changed: True, time: 0.07420563697814941
+GRASP iteration finished. score: 8079, best: 7046
+GRASP iteration 12 of 30
+Start Join: current score: 7214, step: first
+End Join: current score: 4777, changed: True, time: 0.3529489040374756
+GRASP iteration finished. score: 7214, best: 7046
+GRASP iteration 13 of 30
+Start Join: current score: 7080, step: first
+End Join: current score: 4784, changed: True, time: 0.35080504417419434
+GRASP iteration finished. score: 7080, best: 7046
+GRASP iteration 14 of 30
+Start Join: current score: 7305, step: first
+End Join: current score: 4778, changed: True, time: 0.37375688552856445
+GRASP iteration finished. score: 7305, best: 7046
+GRASP iteration 15 of 30
+Start Join: current score: 7971, step: first
+End Join: current score: 7122, changed: True, time: 0.08138155937194824
+GRASP iteration finished. score: 7971, best: 7046
+GRASP iteration 16 of 30
+Start Join: current score: 8068, step: first
+End Join: current score: 7053, changed: True, time: 0.09068655967712402
+GRASP iteration finished. score: 8068, best: 7046
+GRASP iteration 17 of 30
+Start Join: current score: 7328, step: first
+End Join: current score: 4771, changed: True, time: 0.3439664840698242
+GRASP iteration finished. score: 7328, best: 7046
+GRASP iteration 18 of 30
+Start Join: current score: 7096, step: first
+End Join: current score: 4762, changed: True, time: 0.34897780418395996
+GRASP iteration finished. score: 7096, best: 7046
+GRASP iteration 19 of 30
+Start Join: current score: 8040, step: first
+End Join: current score: 6910, changed: True, time: 0.08451604843139648
+GRASP iteration finished. score: 8040, best: 7046
+GRASP iteration 20 of 30
+Start Join: current score: 7110, step: first
+End Join: current score: 4777, changed: True, time: 0.3649568557739258
+GRASP iteration finished. score: 7110, best: 7046
+GRASP iteration 21 of 30
+Start Join: current score: 7279, step: first
+End Join: current score: 4778, changed: True, time: 0.3525383472442627
+GRASP iteration finished. score: 7279, best: 7046
+GRASP iteration 22 of 30
+Start Join: current score: 8092, step: first
+End Join: current score: 7179, changed: True, time: 0.08333134651184082
+GRASP iteration finished. score: 8092, best: 7046
+GRASP iteration 23 of 30
+Start Join: current score: 7049, step: first
+End Join: current score: 4762, changed: True, time: 0.34027814865112305
+GRASP iteration finished. score: 7049, best: 7046
+GRASP iteration 24 of 30
+Start Join: current score: 7178, step: first
+End Join: current score: 4784, changed: True, time: 0.34943175315856934
+GRASP iteration finished. score: 7178, best: 7046
+GRASP iteration 25 of 30
+Start Join: current score: 7943, step: first
+End Join: current score: 6940, changed: True, time: 0.08977699279785156
+GRASP iteration finished. score: 7943, best: 7046
+GRASP iteration 26 of 30
+Start Join: current score: 6798, step: first
+End Join: current score: 4778, changed: True, time: 0.33656859397888184
+GRASP iteration finished. score: 6798, best: 7046
+GRASP iteration 27 of 30
+Start Join: current score: 7881, step: first
+End Join: current score: 6842, changed: True, time: 0.08977174758911133
+GRASP iteration finished. score: 7881, best: 6798
+GRASP iteration 28 of 30
+Start Join: current score: 7375, step: first
+End Join: current score: 4770, changed: True, time: 0.35576558113098145
+GRASP iteration finished. score: 7375, best: 6798
+GRASP iteration 29 of 30
+Start Join: current score: 8019, step: first
+End Join: current score: 6947, changed: True, time: 0.06153225898742676
+GRASP iteration finished. score: 8019, best: 6798
+GRASP iteration 30 of 30
+Start Join: current score: 8074, step: first
+End Join: current score: 6981, changed: True, time: 0.10015106201171875
+GRASP iteration finished. score: 8074, best: 6798
+Runtime: 10.28398084640503
+Score: 6798
+Solution check: True

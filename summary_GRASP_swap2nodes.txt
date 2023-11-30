@@ -1,0 +1,1240 @@
+data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 17445, step: first
+End Swap2: current score: 17406, changed: True, time: 0.15064024925231934
+GRASP iteration finished. score: 17445, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 17029, step: first
+End Swap2: current score: 17017, changed: True, time: 0.11980724334716797
+GRASP iteration finished. score: 17029, best: 17445
+GRASP iteration 3 of 30
+Start Swap2: current score: 17303, step: first
+End Swap2: current score: 17300, changed: True, time: 0.26687097549438477
+GRASP iteration finished. score: 17303, best: 17029
+GRASP iteration 4 of 30
+Start Swap2: current score: 17298, step: first
+End Swap2: current score: 17268, changed: True, time: 0.07102227210998535
+GRASP iteration finished. score: 17298, best: 17029
+GRASP iteration 5 of 30
+Start Swap2: current score: 17176, step: first
+End Swap2: current score: 17163, changed: True, time: 0.1045231819152832
+GRASP iteration finished. score: 17176, best: 17029
+GRASP iteration 6 of 30
+Start Swap2: current score: 17100, step: first
+End Swap2: current score: 17062, changed: True, time: 0.07265639305114746
+GRASP iteration finished. score: 17100, best: 17029
+GRASP iteration 7 of 30
+Start Swap2: current score: 17142, step: first
+End Swap2: current score: 17121, changed: True, time: 0.06159615516662598
+GRASP iteration finished. score: 17142, best: 17029
+GRASP iteration 8 of 30
+Start Swap2: current score: 17402, step: first
+End Swap2: current score: 17394, changed: True, time: 0.1461327075958252
+GRASP iteration finished. score: 17402, best: 17029
+GRASP iteration 9 of 30
+Start Swap2: current score: 17083, step: first
+End Swap2: current score: 17064, changed: True, time: 0.06634116172790527
+GRASP iteration finished. score: 17083, best: 17029
+GRASP iteration 10 of 30
+Start Swap2: current score: 16912, step: first
+End Swap2: current score: 16878, changed: True, time: 0.09409809112548828
+GRASP iteration finished. score: 16912, best: 17029
+GRASP iteration 11 of 30
+Start Swap2: current score: 17524, step: first
+End Swap2: current score: 17505, changed: True, time: 0.08684444427490234
+GRASP iteration finished. score: 17524, best: 16912
+GRASP iteration 12 of 30
+Start Swap2: current score: 16997, step: first
+End Swap2: current score: 16992, changed: True, time: 0.2633323669433594
+GRASP iteration finished. score: 16997, best: 16912
+GRASP iteration 13 of 30
+Start Swap2: current score: 17311, step: first
+End Swap2: current score: 17301, changed: True, time: 0.08000969886779785
+GRASP iteration finished. score: 17311, best: 16912
+GRASP iteration 14 of 30
+Start Swap2: current score: 17224, step: first
+End Swap2: current score: 17212, changed: True, time: 0.10571932792663574
+GRASP iteration finished. score: 17224, best: 16912
+GRASP iteration 15 of 30
+Start Swap2: current score: 17286, step: first
+End Swap2: current score: 17266, changed: True, time: 0.0796053409576416
+GRASP iteration finished. score: 17286, best: 16912
+GRASP iteration 16 of 30
+Start Swap2: current score: 17090, step: first
+End Swap2: current score: 17067, changed: True, time: 0.10992980003356934
+GRASP iteration finished. score: 17090, best: 16912
+GRASP iteration 17 of 30
+Start Swap2: current score: 17189, step: first
+End Swap2: current score: 17184, changed: True, time: 0.0687253475189209
+GRASP iteration finished. score: 17189, best: 16912
+GRASP iteration 18 of 30
+Start Swap2: current score: 17307, step: first
+End Swap2: current score: 17286, changed: True, time: 0.06911087036132812
+GRASP iteration finished. score: 17307, best: 16912
+GRASP iteration 19 of 30
+Start Swap2: current score: 17112, step: first
+End Swap2: current score: 17110, changed: True, time: 0.1148841381072998
+GRASP iteration finished. score: 17112, best: 16912
+GRASP iteration 20 of 30
+Start Swap2: current score: 17228, step: first
+End Swap2: current score: 17210, changed: True, time: 0.1975417137145996
+GRASP iteration finished. score: 17228, best: 16912
+GRASP iteration 21 of 30
+Start Swap2: current score: 17256, step: first
+End Swap2: current score: 17246, changed: True, time: 0.10315346717834473
+GRASP iteration finished. score: 17256, best: 16912
+GRASP iteration 22 of 30
+Start Swap2: current score: 17182, step: first
+End Swap2: current score: 17158, changed: True, time: 0.07088875770568848
+GRASP iteration finished. score: 17182, best: 16912
+GRASP iteration 23 of 30
+Start Swap2: current score: 17202, step: first
+End Swap2: current score: 17192, changed: True, time: 0.0643618106842041
+GRASP iteration finished. score: 17202, best: 16912
+GRASP iteration 24 of 30
+Start Swap2: current score: 17073, step: first
+End Swap2: current score: 17071, changed: True, time: 0.09921073913574219
+GRASP iteration finished. score: 17073, best: 16912
+GRASP iteration 25 of 30
+Start Swap2: current score: 17229, step: first
+End Swap2: current score: 17199, changed: True, time: 0.1010446548461914
+GRASP iteration finished. score: 17229, best: 16912
+GRASP iteration 26 of 30
+Start Swap2: current score: 16959, step: first
+End Swap2: current score: 16956, changed: True, time: 0.06405258178710938
+GRASP iteration finished. score: 16959, best: 16912
+GRASP iteration 27 of 30
+Start Swap2: current score: 17269, step: first
+End Swap2: current score: 17207, changed: True, time: 0.10784173011779785
+GRASP iteration finished. score: 17269, best: 16912
+GRASP iteration 28 of 30
+Start Swap2: current score: 17599, step: first
+End Swap2: current score: 17588, changed: True, time: 0.09775805473327637
+GRASP iteration finished. score: 17599, best: 16912
+GRASP iteration 29 of 30
+Start Swap2: current score: 17229, step: first
+End Swap2: current score: 17194, changed: True, time: 0.06770753860473633
+GRASP iteration finished. score: 17229, best: 16912
+GRASP iteration 30 of 30
+Start Swap2: current score: 16931, step: first
+End Swap2: current score: 16929, changed: True, time: 0.06169939041137695
+GRASP iteration finished. score: 16931, best: 16912
+Runtime: 8.913322448730469
+Score: 16912
+Solution check: True
+data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 44872, step: first
+End Swap2: current score: 44850, changed: True, time: 0.3939502239227295
+GRASP iteration finished. score: 44872, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 45140, step: first
+End Swap2: current score: 45135, changed: True, time: 0.3140528202056885
+GRASP iteration finished. score: 45140, best: 44872
+GRASP iteration 3 of 30
+Start Swap2: current score: 44574, step: first
+End Swap2: current score: 44541, changed: True, time: 0.4958827495574951
+GRASP iteration finished. score: 44574, best: 44872
+GRASP iteration 4 of 30
+Start Swap2: current score: 44779, step: first
+End Swap2: current score: 44769, changed: True, time: 0.19030141830444336
+GRASP iteration finished. score: 44779, best: 44574
+GRASP iteration 5 of 30
+Start Swap2: current score: 46333, step: first
+End Swap2: current score: 46302, changed: True, time: 0.2445673942565918
+GRASP iteration finished. score: 46333, best: 44574
+GRASP iteration 6 of 30
+Start Swap2: current score: 44834, step: first
+End Swap2: current score: 44803, changed: True, time: 0.309049129486084
+GRASP iteration finished. score: 44834, best: 44574
+GRASP iteration 7 of 30
+Start Swap2: current score: 44585, step: first
+End Swap2: current score: 44559, changed: True, time: 0.1907823085784912
+GRASP iteration finished. score: 44585, best: 44574
+GRASP iteration 8 of 30
+Start Swap2: current score: 45135, step: first
+End Swap2: current score: 45077, changed: True, time: 0.1997361183166504
+GRASP iteration finished. score: 45135, best: 44574
+GRASP iteration 9 of 30
+Start Swap2: current score: 45273, step: first
+End Swap2: current score: 45235, changed: True, time: 0.35053586959838867
+GRASP iteration finished. score: 45273, best: 44574
+GRASP iteration 10 of 30
+Start Swap2: current score: 44920, step: first
+End Swap2: current score: 44901, changed: True, time: 0.376758337020874
+GRASP iteration finished. score: 44920, best: 44574
+GRASP iteration 11 of 30
+Start Swap2: current score: 45244, step: first
+End Swap2: current score: 45214, changed: True, time: 0.21181058883666992
+GRASP iteration finished. score: 45244, best: 44574
+GRASP iteration 12 of 30
+Start Swap2: current score: 44374, step: first
+End Swap2: current score: 44333, changed: True, time: 0.17888545989990234
+GRASP iteration finished. score: 44374, best: 44574
+GRASP iteration 13 of 30
+Start Swap2: current score: 44788, step: first
+End Swap2: current score: 44742, changed: True, time: 0.18283629417419434
+GRASP iteration finished. score: 44788, best: 44374
+GRASP iteration 14 of 30
+Start Swap2: current score: 44298, step: first
+End Swap2: current score: 44297, changed: True, time: 0.17633533477783203
+GRASP iteration finished. score: 44298, best: 44374
+GRASP iteration 15 of 30
+Start Swap2: current score: 44278, step: first
+End Swap2: current score: 44240, changed: True, time: 0.1770172119140625
+GRASP iteration finished. score: 44278, best: 44298
+GRASP iteration 16 of 30
+Start Swap2: current score: 44988, step: first
+End Swap2: current score: 44979, changed: True, time: 0.18532037734985352
+GRASP iteration finished. score: 44988, best: 44278
+GRASP iteration 17 of 30
+Start Swap2: current score: 44577, step: first
+End Swap2: current score: 44496, changed: True, time: 0.1805422306060791
+GRASP iteration finished. score: 44577, best: 44278
+GRASP iteration 18 of 30
+Start Swap2: current score: 45094, step: first
+End Swap2: current score: 45064, changed: True, time: 0.1901538372039795
+GRASP iteration finished. score: 45094, best: 44278
+GRASP iteration 19 of 30
+Start Swap2: current score: 45041, step: first
+End Swap2: current score: 45006, changed: True, time: 0.22192811965942383
+GRASP iteration finished. score: 45041, best: 44278
+GRASP iteration 20 of 30
+Start Swap2: current score: 46845, step: first
+End Swap2: current score: 46838, changed: True, time: 0.29539060592651367
+GRASP iteration finished. score: 46845, best: 44278
+GRASP iteration 21 of 30
+Start Swap2: current score: 45271, step: first
+End Swap2: current score: 45267, changed: True, time: 0.21438336372375488
+GRASP iteration finished. score: 45271, best: 44278
+GRASP iteration 22 of 30
+Start Swap2: current score: 44462, step: first
+End Swap2: current score: 44458, changed: True, time: 0.1981818675994873
+GRASP iteration finished. score: 44462, best: 44278
+GRASP iteration 23 of 30
+Start Swap2: current score: 44333, step: first
+End Swap2: current score: 44315, changed: True, time: 0.1831376552581787
+GRASP iteration finished. score: 44333, best: 44278
+GRASP iteration 24 of 30
+Start Swap2: current score: 44990, step: first
+End Swap2: current score: 44967, changed: True, time: 0.21299338340759277
+GRASP iteration finished. score: 44990, best: 44278
+GRASP iteration 25 of 30
+Start Swap2: current score: 44381, step: first
+End Swap2: current score: 44378, changed: True, time: 0.33489155769348145
+GRASP iteration finished. score: 44381, best: 44278
+GRASP iteration 26 of 30
+Start Swap2: current score: 44125, step: first
+End Swap2: current score: 44099, changed: True, time: 0.3820831775665283
+GRASP iteration finished. score: 44125, best: 44278
+GRASP iteration 27 of 30
+Start Swap2: current score: 45207, step: first
+End Swap2: current score: 45200, changed: True, time: 0.6357152462005615
+GRASP iteration finished. score: 45207, best: 44125
+GRASP iteration 28 of 30
+Start Swap2: current score: 44762, step: first
+End Swap2: current score: 44748, changed: True, time: 0.1925187110900879
+GRASP iteration finished. score: 44762, best: 44125
+GRASP iteration 29 of 30
+Start Swap2: current score: 44413, step: first
+End Swap2: current score: 44394, changed: True, time: 0.25702333450317383
+GRASP iteration finished. score: 44413, best: 44125
+GRASP iteration 30 of 30
+Start Swap2: current score: 44705, step: first
+End Swap2: current score: 44687, changed: True, time: 0.20032191276550293
+GRASP iteration finished. score: 44705, best: 44125
+Runtime: 24.312239408493042
+Score: 44125
+Solution check: True
+data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 7820, step: first
+End Swap2: current score: 7811, changed: True, time: 0.026796340942382812
+GRASP iteration finished. score: 7820, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 7553, step: first
+End Swap2: current score: 7552, changed: True, time: 0.02541661262512207
+GRASP iteration finished. score: 7553, best: 7820
+GRASP iteration 3 of 30
+Start Swap2: current score: 7923, step: first
+End Swap2: current score: 7911, changed: True, time: 0.05361461639404297
+GRASP iteration finished. score: 7923, best: 7553
+GRASP iteration 4 of 30
+Start Swap2: current score: 7704, step: first
+End Swap2: current score: 7703, changed: True, time: 0.024618148803710938
+GRASP iteration finished. score: 7704, best: 7553
+GRASP iteration 5 of 30
+Start Swap2: current score: 8142, step: first
+End Swap2: current score: 8140, changed: True, time: 0.10447835922241211
+GRASP iteration finished. score: 8142, best: 7553
+GRASP iteration 6 of 30
+Start Swap2: current score: 7748, step: first
+End Swap2: current score: 7713, changed: True, time: 0.026562213897705078
+GRASP iteration finished. score: 7748, best: 7553
+GRASP iteration 7 of 30
+Start Swap2: current score: 7824, step: first
+End Swap2: current score: 7818, changed: True, time: 0.02683258056640625
+GRASP iteration finished. score: 7824, best: 7553
+GRASP iteration 8 of 30
+Start Swap2: current score: 7624, step: first
+End Swap2: current score: 7606, changed: True, time: 0.048995018005371094
+GRASP iteration finished. score: 7624, best: 7553
+GRASP iteration 9 of 30
+Start Swap2: current score: 7843, step: first
+End Swap2: current score: 7830, changed: True, time: 0.03838825225830078
+GRASP iteration finished. score: 7843, best: 7553
+GRASP iteration 10 of 30
+Start Swap2: current score: 7658, step: first
+End Swap2: current score: 7612, changed: True, time: 0.02439403533935547
+GRASP iteration finished. score: 7658, best: 7553
+GRASP iteration 11 of 30
+Start Swap2: current score: 7924, step: first
+End Swap2: current score: 7923, changed: True, time: 0.03412818908691406
+GRASP iteration finished. score: 7924, best: 7553
+GRASP iteration 12 of 30
+Start Swap2: current score: 7832, step: first
+End Swap2: current score: 7816, changed: True, time: 0.0366213321685791
+GRASP iteration finished. score: 7832, best: 7553
+GRASP iteration 13 of 30
+Start Swap2: current score: 7710, step: first
+End Swap2: current score: 7709, changed: True, time: 0.04019808769226074
+GRASP iteration finished. score: 7710, best: 7553
+GRASP iteration 14 of 30
+Start Swap2: current score: 7796, step: first
+End Swap2: current score: 7753, changed: True, time: 0.026075124740600586
+GRASP iteration finished. score: 7796, best: 7553
+GRASP iteration 15 of 30
+Start Swap2: current score: 8007, step: first
+End Swap2: current score: 7994, changed: True, time: 0.026764392852783203
+GRASP iteration finished. score: 8007, best: 7553
+GRASP iteration 16 of 30
+Start Swap2: current score: 7848, step: first
+End Swap2: current score: 7843, changed: True, time: 0.026834487915039062
+GRASP iteration finished. score: 7848, best: 7553
+GRASP iteration 17 of 30
+Start Swap2: current score: 7797, step: first
+End Swap2: current score: 7773, changed: True, time: 0.02642035484313965
+GRASP iteration finished. score: 7797, best: 7553
+GRASP iteration 18 of 30
+Start Swap2: current score: 7727, step: first
+End Swap2: current score: 7717, changed: True, time: 0.03191518783569336
+GRASP iteration finished. score: 7727, best: 7553
+GRASP iteration 19 of 30
+Start Swap2: current score: 7988, step: first
+End Swap2: current score: 7981, changed: True, time: 0.0404052734375
+GRASP iteration finished. score: 7988, best: 7553
+GRASP iteration 20 of 30
+Start Swap2: current score: 7854, step: first
+End Swap2: current score: 7841, changed: True, time: 0.0412750244140625
+GRASP iteration finished. score: 7854, best: 7553
+GRASP iteration 21 of 30
+Start Swap2: current score: 7747, step: first
+End Swap2: current score: 7746, changed: True, time: 0.03427267074584961
+GRASP iteration finished. score: 7747, best: 7553
+GRASP iteration 22 of 30
+Start Swap2: current score: 7719, step: first
+End Swap2: current score: 7698, changed: True, time: 0.03112030029296875
+GRASP iteration finished. score: 7719, best: 7553
+GRASP iteration 23 of 30
+Start Swap2: current score: 7668, step: first
+End Swap2: current score: 7660, changed: True, time: 0.026165485382080078
+GRASP iteration finished. score: 7668, best: 7553
+GRASP iteration 24 of 30
+Start Swap2: current score: 7932, step: first
+End Swap2: current score: 7911, changed: True, time: 0.026803970336914062
+GRASP iteration finished. score: 7932, best: 7553
+GRASP iteration 25 of 30
+Start Swap2: current score: 7774, step: first
+End Swap2: current score: 7759, changed: True, time: 0.04528212547302246
+GRASP iteration finished. score: 7774, best: 7553
+GRASP iteration 26 of 30
+Start Swap2: current score: 7684, step: first
+End Swap2: current score: 7663, changed: True, time: 0.13171863555908203
+GRASP iteration finished. score: 7684, best: 7553
+GRASP iteration 27 of 30
+Start Swap2: current score: 7625, step: first
+End Swap2: current score: 7620, changed: True, time: 0.023340940475463867
+GRASP iteration finished. score: 7625, best: 7553
+GRASP iteration 28 of 30
+Start Swap2: current score: 7904, step: first
+End Swap2: current score: 7895, changed: True, time: 0.03886866569519043
+GRASP iteration finished. score: 7904, best: 7553
+GRASP iteration 29 of 30
+Start Swap2: current score: 8001, step: first
+End Swap2: current score: 7987, changed: True, time: 0.030416011810302734
+GRASP iteration finished. score: 8001, best: 7553
+GRASP iteration 30 of 30
+Start Swap2: current score: 7975, step: first
+End Swap2: current score: 7967, changed: True, time: 0.026127099990844727
+GRASP iteration finished. score: 7975, best: 7553
+Runtime: 3.5334043502807617
+Score: 7553
+Solution check: True
+data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 12340, step: first
+End Swap2: current score: 12337, changed: True, time: 0.08861279487609863
+GRASP iteration finished. score: 12340, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 12559, step: first
+End Swap2: current score: 12528, changed: True, time: 0.06948566436767578
+GRASP iteration finished. score: 12559, best: 12340
+GRASP iteration 3 of 30
+Start Swap2: current score: 12625, step: first
+End Swap2: current score: 12624, changed: True, time: 0.24635004997253418
+GRASP iteration finished. score: 12625, best: 12340
+GRASP iteration 4 of 30
+Start Swap2: current score: 12875, step: first
+End Swap2: current score: 12839, changed: True, time: 0.050606489181518555
+GRASP iteration finished. score: 12875, best: 12340
+GRASP iteration 5 of 30
+Start Swap2: current score: 12497, step: first
+End Swap2: current score: 12496, changed: True, time: 0.1716620922088623
+GRASP iteration finished. score: 12497, best: 12340
+GRASP iteration 6 of 30
+Start Swap2: current score: 12382, step: first
+End Swap2: current score: 12364, changed: True, time: 0.13611650466918945
+GRASP iteration finished. score: 12382, best: 12340
+GRASP iteration 7 of 30
+Start Swap2: current score: 12998, step: first
+End Swap2: current score: 12985, changed: True, time: 0.05349850654602051
+GRASP iteration finished. score: 12998, best: 12340
+GRASP iteration 8 of 30
+Start Swap2: current score: 12965, step: first
+End Swap2: current score: 12944, changed: True, time: 0.05957603454589844
+GRASP iteration finished. score: 12965, best: 12340
+GRASP iteration 9 of 30
+Start Swap2: current score: 13039, step: first
+End Swap2: current score: 12995, changed: True, time: 0.14198064804077148
+GRASP iteration finished. score: 13039, best: 12340
+GRASP iteration 10 of 30
+Start Swap2: current score: 12532, step: first
+End Swap2: current score: 12529, changed: True, time: 0.09849047660827637
+GRASP iteration finished. score: 12532, best: 12340
+GRASP iteration 11 of 30
+Start Swap2: current score: 12844, step: first
+End Swap2: current score: 12825, changed: True, time: 0.057325124740600586
+GRASP iteration finished. score: 12844, best: 12340
+GRASP iteration 12 of 30
+Start Swap2: current score: 12500, step: first
+End Swap2: current score: 12482, changed: True, time: 0.1848745346069336
+GRASP iteration finished. score: 12500, best: 12340
+GRASP iteration 13 of 30
+Start Swap2: current score: 12708, step: first
+End Swap2: current score: 12650, changed: True, time: 0.05406332015991211
+GRASP iteration finished. score: 12708, best: 12340
+GRASP iteration 14 of 30
+Start Swap2: current score: 12492, step: first
+End Swap2: current score: 12471, changed: True, time: 0.0737602710723877
+GRASP iteration finished. score: 12492, best: 12340
+GRASP iteration 15 of 30
+Start Swap2: current score: 12261, step: first
+End Swap2: current score: 12221, changed: True, time: 0.04744911193847656
+GRASP iteration finished. score: 12261, best: 12340
+GRASP iteration 16 of 30
+Start Swap2: current score: 12750, step: first
+End Swap2: current score: 12683, changed: True, time: 0.07592630386352539
+GRASP iteration finished. score: 12750, best: 12261
+GRASP iteration 17 of 30
+Start Swap2: current score: 12719, step: first
+End Swap2: current score: 12707, changed: True, time: 0.07260632514953613
+GRASP iteration finished. score: 12719, best: 12261
+GRASP iteration 18 of 30
+Start Swap2: current score: 12484, step: first
+End Swap2: current score: 12463, changed: True, time: 0.04787755012512207
+GRASP iteration finished. score: 12484, best: 12261
+GRASP iteration 19 of 30
+Start Swap2: current score: 12779, step: first
+End Swap2: current score: 12722, changed: True, time: 0.05388236045837402
+GRASP iteration finished. score: 12779, best: 12261
+GRASP iteration 20 of 30
+Start Swap2: current score: 12408, step: first
+End Swap2: current score: 12387, changed: True, time: 0.0431370735168457
+GRASP iteration finished. score: 12408, best: 12261
+GRASP iteration 21 of 30
+Start Swap2: current score: 12587, step: first
+End Swap2: current score: 12563, changed: True, time: 0.04746675491333008
+GRASP iteration finished. score: 12587, best: 12261
+GRASP iteration 22 of 30
+Start Swap2: current score: 12541, step: first
+End Swap2: current score: 12509, changed: True, time: 0.047661542892456055
+GRASP iteration finished. score: 12541, best: 12261
+GRASP iteration 23 of 30
+Start Swap2: current score: 12376, step: first
+End Swap2: current score: 12356, changed: True, time: 0.04410696029663086
+GRASP iteration finished. score: 12376, best: 12261
+GRASP iteration 24 of 30
+Start Swap2: current score: 12014, step: first
+End Swap2: current score: 12008, changed: True, time: 0.04110407829284668
+GRASP iteration finished. score: 12014, best: 12261
+GRASP iteration 25 of 30
+Start Swap2: current score: 12826, step: first
+End Swap2: current score: 12818, changed: True, time: 0.04730105400085449
+GRASP iteration finished. score: 12826, best: 12014
+GRASP iteration 26 of 30
+Start Swap2: current score: 12974, step: first
+End Swap2: current score: 12956, changed: True, time: 0.08177614212036133
+GRASP iteration finished. score: 12974, best: 12014
+GRASP iteration 27 of 30
+Start Swap2: current score: 12982, step: first
+End Swap2: current score: 12977, changed: True, time: 0.05592060089111328
+GRASP iteration finished. score: 12982, best: 12014
+GRASP iteration 28 of 30
+Start Swap2: current score: 12661, step: first
+End Swap2: current score: 12648, changed: True, time: 0.05777716636657715
+GRASP iteration finished. score: 12661, best: 12014
+GRASP iteration 29 of 30
+Start Swap2: current score: 12727, step: first
+End Swap2: current score: 12719, changed: True, time: 0.04818892478942871
+GRASP iteration finished. score: 12727, best: 12014
+GRASP iteration 30 of 30
+Start Swap2: current score: 12352, step: first
+End Swap2: current score: 12319, changed: True, time: 0.0592503547668457
+GRASP iteration finished. score: 12352, best: 12014
+Runtime: 6.543067932128906
+Score: 12014
+Solution check: True
+data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 21577, step: first
+End Swap2: current score: 21558, changed: True, time: 0.19575977325439453
+GRASP iteration finished. score: 21577, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 21290, step: first
+End Swap2: current score: 21280, changed: True, time: 0.24774169921875
+GRASP iteration finished. score: 21290, best: 21577
+GRASP iteration 3 of 30
+Start Swap2: current score: 21393, step: first
+End Swap2: current score: 21382, changed: True, time: 0.142195463180542
+GRASP iteration finished. score: 21393, best: 21290
+GRASP iteration 4 of 30
+Start Swap2: current score: 21370, step: first
+End Swap2: current score: 21351, changed: True, time: 0.26656222343444824
+GRASP iteration finished. score: 21370, best: 21290
+GRASP iteration 5 of 30
+Start Swap2: current score: 21197, step: first
+End Swap2: current score: 21175, changed: True, time: 0.09481167793273926
+GRASP iteration finished. score: 21197, best: 21290
+GRASP iteration 6 of 30
+Start Swap2: current score: 21293, step: first
+End Swap2: current score: 21274, changed: True, time: 0.08779549598693848
+GRASP iteration finished. score: 21293, best: 21197
+GRASP iteration 7 of 30
+Start Swap2: current score: 20906, step: first
+End Swap2: current score: 20891, changed: True, time: 0.4795951843261719
+GRASP iteration finished. score: 20906, best: 21197
+GRASP iteration 8 of 30
+Start Swap2: current score: 21484, step: first
+End Swap2: current score: 21462, changed: True, time: 0.08324337005615234
+GRASP iteration finished. score: 21484, best: 20906
+GRASP iteration 9 of 30
+Start Swap2: current score: 20834, step: first
+End Swap2: current score: 20824, changed: True, time: 0.06978869438171387
+GRASP iteration finished. score: 20834, best: 20906
+GRASP iteration 10 of 30
+Start Swap2: current score: 21082, step: first
+End Swap2: current score: 21068, changed: True, time: 0.09087538719177246
+GRASP iteration finished. score: 21082, best: 20834
+GRASP iteration 11 of 30
+Start Swap2: current score: 20818, step: first
+End Swap2: current score: 20796, changed: True, time: 0.1301882266998291
+GRASP iteration finished. score: 20818, best: 20834
+GRASP iteration 12 of 30
+Start Swap2: current score: 20998, step: first
+End Swap2: current score: 20981, changed: True, time: 0.12314844131469727
+GRASP iteration finished. score: 20998, best: 20818
+GRASP iteration 13 of 30
+Start Swap2: current score: 20682, step: first
+End Swap2: current score: 20649, changed: True, time: 0.20612549781799316
+GRASP iteration finished. score: 20682, best: 20818
+GRASP iteration 14 of 30
+Start Swap2: current score: 21347, step: first
+End Swap2: current score: 21322, changed: True, time: 0.19489812850952148
+GRASP iteration finished. score: 21347, best: 20682
+GRASP iteration 15 of 30
+Start Swap2: current score: 20861, step: first
+End Swap2: current score: 20860, changed: True, time: 0.10681653022766113
+GRASP iteration finished. score: 20861, best: 20682
+GRASP iteration 16 of 30
+Start Swap2: current score: 21573, step: first
+End Swap2: current score: 21558, changed: True, time: 0.340137243270874
+GRASP iteration finished. score: 21573, best: 20682
+GRASP iteration 17 of 30
+Start Swap2: current score: 21087, step: first
+End Swap2: current score: 21056, changed: True, time: 0.1610250473022461
+GRASP iteration finished. score: 21087, best: 20682
+GRASP iteration 18 of 30
+Start Swap2: current score: 20909, step: first
+End Swap2: current score: 20904, changed: True, time: 0.2569000720977783
+GRASP iteration finished. score: 20909, best: 20682
+GRASP iteration 19 of 30
+Start Swap2: current score: 21621, step: first
+End Swap2: current score: 21579, changed: True, time: 0.0826270580291748
+GRASP iteration finished. score: 21621, best: 20682
+GRASP iteration 20 of 30
+Start Swap2: current score: 21108, step: first
+End Swap2: current score: 21102, changed: True, time: 0.1143338680267334
+GRASP iteration finished. score: 21108, best: 20682
+GRASP iteration 21 of 30
+Start Swap2: current score: 20792, step: first
+End Swap2: current score: 20787, changed: True, time: 0.08297157287597656
+GRASP iteration finished. score: 20792, best: 20682
+GRASP iteration 22 of 30
+Start Swap2: current score: 21070, step: first
+End Swap2: current score: 21056, changed: True, time: 0.1504971981048584
+GRASP iteration finished. score: 21070, best: 20682
+GRASP iteration 23 of 30
+Start Swap2: current score: 21420, step: first
+End Swap2: current score: 21413, changed: True, time: 0.13580846786499023
+GRASP iteration finished. score: 21420, best: 20682
+GRASP iteration 24 of 30
+Start Swap2: current score: 21146, step: first
+End Swap2: current score: 21105, changed: True, time: 0.08797192573547363
+GRASP iteration finished. score: 21146, best: 20682
+GRASP iteration 25 of 30
+Start Swap2: current score: 21084, step: first
+End Swap2: current score: 21074, changed: True, time: 0.3979029655456543
+GRASP iteration finished. score: 21084, best: 20682
+GRASP iteration 26 of 30
+Start Swap2: current score: 21075, step: first
+End Swap2: current score: 21040, changed: True, time: 0.12267017364501953
+GRASP iteration finished. score: 21075, best: 20682
+GRASP iteration 27 of 30
+Start Swap2: current score: 21132, step: first
+End Swap2: current score: 21128, changed: True, time: 0.0808558464050293
+GRASP iteration finished. score: 21132, best: 20682
+GRASP iteration 28 of 30
+Start Swap2: current score: 20814, step: first
+End Swap2: current score: 20798, changed: True, time: 0.07207274436950684
+GRASP iteration finished. score: 20814, best: 20682
+GRASP iteration 29 of 30
+Start Swap2: current score: 21349, step: first
+End Swap2: current score: 21342, changed: True, time: 0.16728949546813965
+GRASP iteration finished. score: 21349, best: 20682
+GRASP iteration 30 of 30
+Start Swap2: current score: 20949, step: first
+End Swap2: current score: 20919, changed: True, time: 0.0744473934173584
+GRASP iteration finished. score: 20949, best: 20682
+Runtime: 11.700840950012207
+Score: 20682
+Solution check: True
+data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 3457, step: first
+End Swap2: current score: 3453, changed: True, time: 0.023936033248901367
+GRASP iteration finished. score: 3457, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 3206, step: first
+End Swap2: current score: 3203, changed: True, time: 0.034224510192871094
+GRASP iteration finished. score: 3206, best: 3457
+GRASP iteration 3 of 30
+Start Swap2: current score: 3199, step: first
+End Swap2: current score: 3191, changed: True, time: 0.01834869384765625
+GRASP iteration finished. score: 3199, best: 3206
+GRASP iteration 4 of 30
+Start Swap2: current score: 3239, step: first
+End Swap2: current score: 3235, changed: True, time: 0.03954124450683594
+GRASP iteration finished. score: 3239, best: 3199
+GRASP iteration 5 of 30
+Start Swap2: current score: 3230, step: first
+End Swap2: current score: 3226, changed: True, time: 0.031195402145385742
+GRASP iteration finished. score: 3230, best: 3199
+GRASP iteration 6 of 30
+Start Swap2: current score: 3290, step: first
+End Swap2: current score: 3289, changed: True, time: 0.01854228973388672
+GRASP iteration finished. score: 3290, best: 3199
+GRASP iteration 7 of 30
+Start Swap2: current score: 3245, step: first
+End Swap2: current score: 3243, changed: True, time: 0.0331575870513916
+GRASP iteration finished. score: 3245, best: 3199
+GRASP iteration 8 of 30
+Start Swap2: current score: 3266, step: first
+End Swap2: current score: 3261, changed: True, time: 0.031130075454711914
+GRASP iteration finished. score: 3266, best: 3199
+GRASP iteration 9 of 30
+Start Swap2: current score: 3208, step: first
+End Swap2: current score: 3207, changed: True, time: 0.01737499237060547
+GRASP iteration finished. score: 3208, best: 3199
+GRASP iteration 10 of 30
+Start Swap2: current score: 3372, step: first
+End Swap2: current score: 3358, changed: True, time: 0.023910999298095703
+GRASP iteration finished. score: 3372, best: 3199
+GRASP iteration 11 of 30
+Start Swap2: current score: 3215, step: first
+End Swap2: current score: 3214, changed: True, time: 0.01765155792236328
+GRASP iteration finished. score: 3215, best: 3199
+GRASP iteration 12 of 30
+Start Swap2: current score: 3236, step: first
+End Swap2: current score: 3235, changed: True, time: 0.03047966957092285
+GRASP iteration finished. score: 3236, best: 3199
+GRASP iteration 13 of 30
+Start Swap2: current score: 3243, step: first
+End Swap2: current score: 3236, changed: True, time: 0.013195514678955078
+GRASP iteration finished. score: 3243, best: 3199
+GRASP iteration 14 of 30
+Start Swap2: current score: 3161, step: first
+End Swap2: current score: 3159, changed: True, time: 0.13882827758789062
+GRASP iteration finished. score: 3161, best: 3199
+GRASP iteration 15 of 30
+Start Swap2: current score: 3240, step: first
+End Swap2: current score: 3238, changed: True, time: 0.018290042877197266
+GRASP iteration finished. score: 3240, best: 3161
+GRASP iteration 16 of 30
+Start Swap2: current score: 3170, step: first
+End Swap2: current score: 3167, changed: True, time: 0.02122974395751953
+GRASP iteration finished. score: 3170, best: 3161
+GRASP iteration 17 of 30
+Start Swap2: current score: 3178, step: first
+End Swap2: current score: 3177, changed: True, time: 0.02191329002380371
+GRASP iteration finished. score: 3178, best: 3161
+GRASP iteration 18 of 30
+Start Swap2: current score: 3238, step: first
+End Swap2: current score: 3236, changed: True, time: 0.05272531509399414
+GRASP iteration finished. score: 3238, best: 3161
+GRASP iteration 19 of 30
+Start Swap2: current score: 3230, step: first
+End Swap2: current score: 3226, changed: True, time: 0.34336376190185547
+GRASP iteration finished. score: 3230, best: 3161
+GRASP iteration 20 of 30
+Start Swap2: current score: 3332, step: first
+End Swap2: current score: 3331, changed: True, time: 0.013249635696411133
+GRASP iteration finished. score: 3332, best: 3161
+GRASP iteration 21 of 30
+Start Swap2: current score: 3199, step: first
+End Swap2: current score: 3197, changed: True, time: 0.039498329162597656
+GRASP iteration finished. score: 3199, best: 3161
+GRASP iteration 22 of 30
+Start Swap2: current score: 3222, step: first
+End Swap2: current score: 3207, changed: True, time: 0.03528261184692383
+GRASP iteration finished. score: 3222, best: 3161
+GRASP iteration 23 of 30
+Start Swap2: current score: 3450, step: first
+End Swap2: current score: 3446, changed: True, time: 0.014484405517578125
+GRASP iteration finished. score: 3450, best: 3161
+GRASP iteration 24 of 30
+Start Swap2: current score: 3269, step: first
+End Swap2: current score: 3266, changed: True, time: 0.027152061462402344
+GRASP iteration finished. score: 3269, best: 3161
+GRASP iteration 25 of 30
+Start Swap2: current score: 3210, step: first
+End Swap2: current score: 3207, changed: True, time: 0.048128366470336914
+GRASP iteration finished. score: 3210, best: 3161
+GRASP iteration 26 of 30
+Start Swap2: current score: 3223, step: first
+End Swap2: current score: 3218, changed: True, time: 0.01801156997680664
+GRASP iteration finished. score: 3223, best: 3161
+GRASP iteration 27 of 30
+Start Swap2: current score: 3141, step: first
+End Swap2: current score: 3140, changed: True, time: 0.021628856658935547
+GRASP iteration finished. score: 3141, best: 3161
+GRASP iteration 28 of 30
+Start Swap2: current score: 3211, step: first
+End Swap2: current score: 3209, changed: True, time: 0.022534847259521484
+GRASP iteration finished. score: 3211, best: 3141
+GRASP iteration 29 of 30
+Start Swap2: current score: 3219, step: first
+End Swap2: current score: 3216, changed: True, time: 0.03420758247375488
+GRASP iteration finished. score: 3219, best: 3141
+GRASP iteration 30 of 30
+Start Swap2: current score: 3253, step: first
+End Swap2: current score: 3250, changed: True, time: 0.051435232162475586
+GRASP iteration finished. score: 3253, best: 3141
+Runtime: 11.21359133720398
+Score: 3141
+Solution check: True
+data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 9227, step: first
+End Swap2: current score: 9203, changed: True, time: 0.041208505630493164
+GRASP iteration finished. score: 9227, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 9138, step: first
+End Swap2: current score: 9128, changed: True, time: 0.06359124183654785
+GRASP iteration finished. score: 9138, best: 9227
+GRASP iteration 3 of 30
+Start Swap2: current score: 9002, step: first
+End Swap2: current score: 8997, changed: True, time: 0.05353975296020508
+GRASP iteration finished. score: 9002, best: 9138
+GRASP iteration 4 of 30
+Start Swap2: current score: 8928, step: first
+End Swap2: current score: 8898, changed: True, time: 0.03297233581542969
+GRASP iteration finished. score: 8928, best: 9002
+GRASP iteration 5 of 30
+Start Swap2: current score: 9034, step: first
+End Swap2: current score: 9029, changed: True, time: 0.2552173137664795
+GRASP iteration finished. score: 9034, best: 8928
+GRASP iteration 6 of 30
+Start Swap2: current score: 9207, step: first
+End Swap2: current score: 9190, changed: True, time: 0.05878043174743652
+GRASP iteration finished. score: 9207, best: 8928
+GRASP iteration 7 of 30
+Start Swap2: current score: 8950, step: first
+End Swap2: current score: 8915, changed: True, time: 0.03268289566040039
+GRASP iteration finished. score: 8950, best: 8928
+GRASP iteration 8 of 30
+Start Swap2: current score: 9025, step: first
+End Swap2: current score: 9016, changed: True, time: 0.06293368339538574
+GRASP iteration finished. score: 9025, best: 8928
+GRASP iteration 9 of 30
+Start Swap2: current score: 8881, step: first
+End Swap2: current score: 8865, changed: True, time: 0.04034280776977539
+GRASP iteration finished. score: 8881, best: 8928
+GRASP iteration 10 of 30
+Start Swap2: current score: 9033, step: first
+End Swap2: current score: 9031, changed: True, time: 0.037630319595336914
+GRASP iteration finished. score: 9033, best: 8881
+GRASP iteration 11 of 30
+Start Swap2: current score: 8833, step: first
+End Swap2: current score: 8803, changed: True, time: 0.07882142066955566
+GRASP iteration finished. score: 8833, best: 8881
+GRASP iteration 12 of 30
+Start Swap2: current score: 9096, step: first
+End Swap2: current score: 9086, changed: True, time: 0.20144963264465332
+GRASP iteration finished. score: 9096, best: 8833
+GRASP iteration 13 of 30
+Start Swap2: current score: 9000, step: first
+End Swap2: current score: 8974, changed: True, time: 0.04776930809020996
+GRASP iteration finished. score: 9000, best: 8833
+GRASP iteration 14 of 30
+Start Swap2: current score: 8958, step: first
+End Swap2: current score: 8935, changed: True, time: 0.04016304016113281
+GRASP iteration finished. score: 8958, best: 8833
+GRASP iteration 15 of 30
+Start Swap2: current score: 8865, step: first
+End Swap2: current score: 8862, changed: True, time: 0.04360175132751465
+GRASP iteration finished. score: 8865, best: 8833
+GRASP iteration 16 of 30
+Start Swap2: current score: 8883, step: first
+End Swap2: current score: 8856, changed: True, time: 0.05247354507446289
+GRASP iteration finished. score: 8883, best: 8833
+GRASP iteration 17 of 30
+Start Swap2: current score: 8925, step: first
+End Swap2: current score: 8923, changed: True, time: 0.032361507415771484
+GRASP iteration finished. score: 8925, best: 8833
+GRASP iteration 18 of 30
+Start Swap2: current score: 8761, step: first
+End Swap2: current score: 8748, changed: True, time: 0.06712722778320312
+GRASP iteration finished. score: 8761, best: 8833
+GRASP iteration 19 of 30
+Start Swap2: current score: 8823, step: first
+End Swap2: current score: 8821, changed: True, time: 0.07702803611755371
+GRASP iteration finished. score: 8823, best: 8761
+GRASP iteration 20 of 30
+Start Swap2: current score: 8952, step: first
+End Swap2: current score: 8938, changed: True, time: 0.03302764892578125
+GRASP iteration finished. score: 8952, best: 8761
+GRASP iteration 21 of 30
+Start Swap2: current score: 8961, step: first
+End Swap2: current score: 8958, changed: True, time: 0.05932760238647461
+GRASP iteration finished. score: 8961, best: 8761
+GRASP iteration 22 of 30
+Start Swap2: current score: 8874, step: first
+End Swap2: current score: 8833, changed: True, time: 0.054985761642456055
+GRASP iteration finished. score: 8874, best: 8761
+GRASP iteration 23 of 30
+Start Swap2: current score: 9016, step: first
+End Swap2: current score: 9004, changed: True, time: 0.13228631019592285
+GRASP iteration finished. score: 9016, best: 8761
+GRASP iteration 24 of 30
+Start Swap2: current score: 8711, step: first
+End Swap2: current score: 8694, changed: True, time: 0.04640841484069824
+GRASP iteration finished. score: 8711, best: 8761
+GRASP iteration 25 of 30
+Start Swap2: current score: 8810, step: first
+End Swap2: current score: 8796, changed: True, time: 0.15703725814819336
+GRASP iteration finished. score: 8810, best: 8711
+GRASP iteration 26 of 30
+Start Swap2: current score: 8967, step: first
+End Swap2: current score: 8936, changed: True, time: 0.19026494026184082
+GRASP iteration finished. score: 8967, best: 8711
+GRASP iteration 27 of 30
+Start Swap2: current score: 8865, step: first
+End Swap2: current score: 8857, changed: True, time: 0.04253196716308594
+GRASP iteration finished. score: 8865, best: 8711
+GRASP iteration 28 of 30
+Start Swap2: current score: 9061, step: first
+End Swap2: current score: 9020, changed: True, time: 0.035239458084106445
+GRASP iteration finished. score: 9061, best: 8711
+GRASP iteration 29 of 30
+Start Swap2: current score: 8838, step: first
+End Swap2: current score: 8830, changed: True, time: 0.05282711982727051
+GRASP iteration finished. score: 8838, best: 8711
+GRASP iteration 30 of 30
+Start Swap2: current score: 8957, step: first
+End Swap2: current score: 8956, changed: True, time: 0.05191826820373535
+GRASP iteration finished. score: 8957, best: 8711
+Runtime: 5.286525249481201
+Score: 8711
+Solution check: True
+data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 52967, step: first
+End Swap2: current score: 52894, changed: True, time: 0.49452662467956543
+GRASP iteration finished. score: 52967, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 59286, step: first
+End Swap2: current score: 59260, changed: True, time: 0.2535371780395508
+GRASP iteration finished. score: 59286, best: 52967
+GRASP iteration 3 of 30
+Start Swap2: current score: 56058, step: first
+End Swap2: current score: 56055, changed: True, time: 0.9508047103881836
+GRASP iteration finished. score: 56058, best: 52967
+GRASP iteration 4 of 30
+Start Swap2: current score: 55633, step: first
+End Swap2: current score: 55590, changed: True, time: 0.34361743927001953
+GRASP iteration finished. score: 55633, best: 52967
+GRASP iteration 5 of 30
+Start Swap2: current score: 55091, step: first
+End Swap2: current score: 55023, changed: True, time: 0.32374119758605957
+GRASP iteration finished. score: 55091, best: 52967
+GRASP iteration 6 of 30
+Start Swap2: current score: 52579, step: first
+End Swap2: current score: 52541, changed: True, time: 0.916346549987793
+GRASP iteration finished. score: 52579, best: 52967
+GRASP iteration 7 of 30
+Start Swap2: current score: 57805, step: first
+End Swap2: current score: 57804, changed: True, time: 0.45841383934020996
+GRASP iteration finished. score: 57805, best: 52579
+GRASP iteration 8 of 30
+Start Swap2: current score: 57458, step: first
+End Swap2: current score: 57413, changed: True, time: 0.9609155654907227
+GRASP iteration finished. score: 57458, best: 52579
+GRASP iteration 9 of 30
+Start Swap2: current score: 55719, step: first
+End Swap2: current score: 55676, changed: True, time: 0.31997179985046387
+GRASP iteration finished. score: 55719, best: 52579
+GRASP iteration 10 of 30
+Start Swap2: current score: 55672, step: first
+End Swap2: current score: 55659, changed: True, time: 5.970999717712402
+GRASP iteration finished. score: 55672, best: 52579
+GRASP iteration 11 of 30
+Start Swap2: current score: 52094, step: first
+End Swap2: current score: 52036, changed: True, time: 0.5097284317016602
+GRASP iteration finished. score: 52094, best: 52579
+GRASP iteration 12 of 30
+Start Swap2: current score: 55490, step: first
+End Swap2: current score: 55475, changed: True, time: 1.5167853832244873
+GRASP iteration finished. score: 55490, best: 52094
+GRASP iteration 13 of 30
+Start Swap2: current score: 55608, step: first
+End Swap2: current score: 55555, changed: True, time: 1.4222230911254883
+GRASP iteration finished. score: 55608, best: 52094
+GRASP iteration 14 of 30
+Start Swap2: current score: 52663, step: first
+End Swap2: current score: 52639, changed: True, time: 0.5755569934844971
+GRASP iteration finished. score: 52663, best: 52094
+GRASP iteration 15 of 30
+Start Swap2: current score: 55278, step: first
+End Swap2: current score: 55265, changed: True, time: 1.291330337524414
+GRASP iteration finished. score: 55278, best: 52094
+GRASP iteration 16 of 30
+Start Swap2: current score: 55854, step: first
+End Swap2: current score: 55834, changed: True, time: 0.5242316722869873
+GRASP iteration finished. score: 55854, best: 52094
+GRASP iteration 17 of 30
+Start Swap2: current score: 58026, step: first
+End Swap2: current score: 58011, changed: True, time: 0.4068624973297119
+GRASP iteration finished. score: 58026, best: 52094
+GRASP iteration 18 of 30
+Start Swap2: current score: 57772, step: first
+End Swap2: current score: 57747, changed: True, time: 0.5532183647155762
+GRASP iteration finished. score: 57772, best: 52094
+GRASP iteration 19 of 30
+Start Swap2: current score: 56061, step: first
+End Swap2: current score: 56036, changed: True, time: 1.5291836261749268
+GRASP iteration finished. score: 56061, best: 52094
+GRASP iteration 20 of 30
+Start Swap2: current score: 58931, step: first
+End Swap2: current score: 58906, changed: True, time: 0.24190402030944824
+GRASP iteration finished. score: 58931, best: 52094
+GRASP iteration 21 of 30
+Start Swap2: current score: 57279, step: first
+End Swap2: current score: 57272, changed: True, time: 0.39079880714416504
+GRASP iteration finished. score: 57279, best: 52094
+GRASP iteration 22 of 30
+Start Swap2: current score: 59109, step: first
+End Swap2: current score: 59075, changed: True, time: 0.25626134872436523
+GRASP iteration finished. score: 59109, best: 52094
+GRASP iteration 23 of 30
+Start Swap2: current score: 57485, step: first
+End Swap2: current score: 57459, changed: True, time: 0.28875255584716797
+GRASP iteration finished. score: 57485, best: 52094
+GRASP iteration 24 of 30
+Start Swap2: current score: 57754, step: first
+End Swap2: current score: 57740, changed: True, time: 0.5425794124603271
+GRASP iteration finished. score: 57754, best: 52094
+GRASP iteration 25 of 30
+Start Swap2: current score: 52501, step: first
+End Swap2: current score: 52428, changed: True, time: 0.5229370594024658
+GRASP iteration finished. score: 52501, best: 52094
+GRASP iteration 26 of 30
+Start Swap2: current score: 55555, step: first
+End Swap2: current score: 55549, changed: True, time: 0.36832594871520996
+GRASP iteration finished. score: 55555, best: 52094
+GRASP iteration 27 of 30
+Start Swap2: current score: 55488, step: first
+End Swap2: current score: 55483, changed: True, time: 0.619612455368042
+GRASP iteration finished. score: 55488, best: 52094
+GRASP iteration 28 of 30
+Start Swap2: current score: 55864, step: first
+End Swap2: current score: 55811, changed: True, time: 0.8022065162658691
+GRASP iteration finished. score: 55864, best: 52094
+GRASP iteration 29 of 30
+Start Swap2: current score: 55768, step: first
+End Swap2: current score: 55730, changed: True, time: 0.5297577381134033
+GRASP iteration finished. score: 55768, best: 52094
+GRASP iteration 30 of 30
+Start Swap2: current score: 52715, step: first
+End Swap2: current score: 52667, changed: True, time: 0.5156009197235107
+GRASP iteration finished. score: 52715, best: 52094
+Runtime: 42.583163261413574
+Score: 52094
+Solution check: True
+data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 66363, step: first
+End Swap2: current score: 66358, changed: True, time: 1.3365497589111328
+GRASP iteration finished. score: 66363, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 70268, step: first
+End Swap2: current score: 70231, changed: True, time: 0.6625664234161377
+GRASP iteration finished. score: 70268, best: 66363
+GRASP iteration 3 of 30
+Start Swap2: current score: 69685, step: first
+End Swap2: current score: 69631, changed: True, time: 1.1783487796783447
+GRASP iteration finished. score: 69685, best: 66363
+GRASP iteration 4 of 30
+Start Swap2: current score: 69720, step: first
+End Swap2: current score: 69713, changed: True, time: 0.6800987720489502
+GRASP iteration finished. score: 69720, best: 66363
+GRASP iteration 5 of 30
+Start Swap2: current score: 70078, step: first
+End Swap2: current score: 70023, changed: True, time: 1.1791341304779053
+GRASP iteration finished. score: 70078, best: 66363
+GRASP iteration 6 of 30
+Start Swap2: current score: 66339, step: first
+End Swap2: current score: 66277, changed: True, time: 3.778210401535034
+GRASP iteration finished. score: 66339, best: 66363
+GRASP iteration 7 of 30
+Start Swap2: current score: 70012, step: first
+End Swap2: current score: 69999, changed: True, time: 0.7011644840240479
+GRASP iteration finished. score: 70012, best: 66339
+GRASP iteration 8 of 30
+Start Swap2: current score: 66344, step: first
+End Swap2: current score: 66334, changed: True, time: 2.7435824871063232
+GRASP iteration finished. score: 66344, best: 66339
+GRASP iteration 9 of 30
+Start Swap2: current score: 66277, step: first
+End Swap2: current score: 66231, changed: True, time: 4.329861164093018
+GRASP iteration finished. score: 66277, best: 66339
+GRASP iteration 10 of 30
+Start Swap2: current score: 70459, step: first
+End Swap2: current score: 70449, changed: True, time: 4.963378190994263
+GRASP iteration finished. score: 70459, best: 66277
+GRASP iteration 11 of 30
+Start Swap2: current score: 66335, step: first
+End Swap2: current score: 66310, changed: True, time: 11.64885139465332
+GRASP iteration finished. score: 66335, best: 66277
+GRASP iteration 12 of 30
+Start Swap2: current score: 65691, step: first
+End Swap2: current score: 65681, changed: True, time: 1.4187726974487305
+GRASP iteration finished. score: 65691, best: 66277
+GRASP iteration 13 of 30
+Start Swap2: current score: 69938, step: first
+End Swap2: current score: 69931, changed: True, time: 1.6812927722930908
+GRASP iteration finished. score: 69938, best: 65691
+GRASP iteration 14 of 30
+Start Swap2: current score: 69813, step: first
+End Swap2: current score: 69812, changed: True, time: 2.212028980255127
+GRASP iteration finished. score: 69813, best: 65691
+GRASP iteration 15 of 30
+Start Swap2: current score: 69718, step: first
+End Swap2: current score: 69707, changed: True, time: 1.741084098815918
+GRASP iteration finished. score: 69718, best: 65691
+GRASP iteration 16 of 30
+Start Swap2: current score: 69950, step: first
+End Swap2: current score: 69924, changed: True, time: 1.250521183013916
+GRASP iteration finished. score: 69950, best: 65691
+GRASP iteration 17 of 30
+Start Swap2: current score: 66133, step: first
+End Swap2: current score: 66116, changed: True, time: 9.203505516052246
+GRASP iteration finished. score: 66133, best: 65691
+GRASP iteration 18 of 30
+Start Swap2: current score: 69885, step: first
+End Swap2: current score: 69882, changed: True, time: 2.894087791442871
+GRASP iteration finished. score: 69885, best: 65691
+GRASP iteration 19 of 30
+Start Swap2: current score: 66695, step: first
+End Swap2: current score: 66639, changed: True, time: 2.838087558746338
+GRASP iteration finished. score: 66695, best: 65691
+GRASP iteration 20 of 30
+Start Swap2: current score: 69869, step: first
+End Swap2: current score: 69848, changed: True, time: 1.1944644451141357
+GRASP iteration finished. score: 69869, best: 65691
+GRASP iteration 21 of 30
+Start Swap2: current score: 69998, step: first
+End Swap2: current score: 69955, changed: True, time: 0.7061858177185059
+GRASP iteration finished. score: 69998, best: 65691
+GRASP iteration 22 of 30
+Start Swap2: current score: 66187, step: first
+End Swap2: current score: 66173, changed: True, time: 3.129826068878174
+GRASP iteration finished. score: 66187, best: 65691
+GRASP iteration 23 of 30
+Start Swap2: current score: 69754, step: first
+End Swap2: current score: 69737, changed: True, time: 1.1883533000946045
+GRASP iteration finished. score: 69754, best: 65691
+GRASP iteration 24 of 30
+Start Swap2: current score: 67082, step: first
+End Swap2: current score: 67010, changed: True, time: 1.4462556838989258
+GRASP iteration finished. score: 67082, best: 65691
+GRASP iteration 25 of 30
+Start Swap2: current score: 71827, step: first
+End Swap2: current score: 71819, changed: True, time: 0.7480776309967041
+GRASP iteration finished. score: 71827, best: 65691
+GRASP iteration 26 of 30
+Start Swap2: current score: 66469, step: first
+End Swap2: current score: 66385, changed: True, time: 1.445249080657959
+GRASP iteration finished. score: 66469, best: 65691
+GRASP iteration 27 of 30
+Start Swap2: current score: 66789, step: first
+End Swap2: current score: 66781, changed: True, time: 3.63529634475708
+GRASP iteration finished. score: 66789, best: 65691
+GRASP iteration 28 of 30
+Start Swap2: current score: 69480, step: first
+End Swap2: current score: 69460, changed: True, time: 60.006612062454224
+GRASP iteration finished. score: 69480, best: 65691
+GRASP iteration 29 of 30
+Start Swap2: current score: 66202, step: first
+End Swap2: current score: 66137, changed: True, time: 1.3731348514556885
+GRASP iteration finished. score: 66202, best: 65691
+GRASP iteration 30 of 30
+Start Swap2: current score: 66600, step: first
+End Swap2: current score: 66541, changed: True, time: 1.512193202972412
+GRASP iteration finished. score: 66600, best: 65691
+Runtime: 174.46277475357056
+Score: 65691
+Solution check: True
+data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
+GRASP iteration 1 of 30
+Start Swap2: current score: 7975, step: first
+End Swap2: current score: 7967, changed: True, time: 0.03520846366882324
+GRASP iteration finished. score: 7975, best: inf
+GRASP iteration 2 of 30
+Start Swap2: current score: 7987, step: first
+End Swap2: current score: 7982, changed: True, time: 0.04992222785949707
+GRASP iteration finished. score: 7987, best: 7975
+GRASP iteration 3 of 30
+Start Swap2: current score: 7010, step: first
+End Swap2: current score: 6987, changed: True, time: 0.0875391960144043
+GRASP iteration finished. score: 7010, best: 7975
+GRASP iteration 4 of 30
+Start Swap2: current score: 8090, step: first
+End Swap2: current score: 8060, changed: True, time: 0.04493212699890137
+GRASP iteration finished. score: 8090, best: 7010
+GRASP iteration 5 of 30
+Start Swap2: current score: 7802, step: first
+End Swap2: current score: 7783, changed: True, time: 0.04872941970825195
+GRASP iteration finished. score: 7802, best: 7010
+GRASP iteration 6 of 30
+Start Swap2: current score: 7787, step: first
+End Swap2: current score: 7782, changed: True, time: 0.5244846343994141
+GRASP iteration finished. score: 7787, best: 7010
+GRASP iteration 7 of 30
+Start Swap2: current score: 7105, step: first
+End Swap2: current score: 7102, changed: True, time: 0.13226866722106934
+GRASP iteration finished. score: 7105, best: 7010
+GRASP iteration 8 of 30
+Start Swap2: current score: 7139, step: first
+End Swap2: current score: 7120, changed: True, time: 0.05326366424560547
+GRASP iteration finished. score: 7139, best: 7010
+GRASP iteration 9 of 30
+Start Swap2: current score: 7054, step: first
+End Swap2: current score: 7035, changed: True, time: 0.09323716163635254
+GRASP iteration finished. score: 7054, best: 7010
+GRASP iteration 10 of 30
+Start Swap2: current score: 7115, step: first
+End Swap2: current score: 7102, changed: True, time: 0.054490089416503906
+GRASP iteration finished. score: 7115, best: 7010
+GRASP iteration 11 of 30
+Start Swap2: current score: 7954, step: first
+End Swap2: current score: 7923, changed: True, time: 0.04931998252868652
+GRASP iteration finished. score: 7954, best: 7010
+GRASP iteration 12 of 30
+Start Swap2: current score: 8026, step: first
+End Swap2: current score: 8012, changed: True, time: 0.035242319107055664
+GRASP iteration finished. score: 8026, best: 7010
+GRASP iteration 13 of 30
+Start Swap2: current score: 7224, step: first
+End Swap2: current score: 7186, changed: True, time: 0.0588994026184082
+GRASP iteration finished. score: 7224, best: 7010
+GRASP iteration 14 of 30
+Start Swap2: current score: 8105, step: first
+End Swap2: current score: 8086, changed: True, time: 0.058217763900756836
+GRASP iteration finished. score: 8105, best: 7010
+GRASP iteration 15 of 30
+Start Swap2: current score: 7108, step: first
+End Swap2: current score: 7068, changed: True, time: 0.1261146068572998
+GRASP iteration finished. score: 7108, best: 7010
+GRASP iteration 16 of 30
+Start Swap2: current score: 7336, step: first
+End Swap2: current score: 7293, changed: True, time: 0.05806565284729004
+GRASP iteration finished. score: 7336, best: 7010
+GRASP iteration 17 of 30
+Start Swap2: current score: 7132, step: first
+End Swap2: current score: 7119, changed: True, time: 0.16459345817565918
+GRASP iteration finished. score: 7132, best: 7010
+GRASP iteration 18 of 30
+Start Swap2: current score: 8106, step: first
+End Swap2: current score: 8061, changed: True, time: 0.03446650505065918
+GRASP iteration finished. score: 8106, best: 7010
+GRASP iteration 19 of 30
+Start Swap2: current score: 8027, step: first
+End Swap2: current score: 8020, changed: True, time: 0.1295461654663086
+GRASP iteration finished. score: 8027, best: 7010
+GRASP iteration 20 of 30
+Start Swap2: current score: 8059, step: first
+End Swap2: current score: 8002, changed: True, time: 0.050740957260131836
+GRASP iteration finished. score: 8059, best: 7010
+GRASP iteration 21 of 30
+Start Swap2: current score: 7030, step: first
+End Swap2: current score: 6985, changed: True, time: 0.09572792053222656
+GRASP iteration finished. score: 7030, best: 7010
+GRASP iteration 22 of 30
+Start Swap2: current score: 8052, step: first
+End Swap2: current score: 8012, changed: True, time: 0.04166984558105469
+GRASP iteration finished. score: 8052, best: 7010
+GRASP iteration 23 of 30
+Start Swap2: current score: 8054, step: first
+End Swap2: current score: 8025, changed: True, time: 0.03533744812011719
+GRASP iteration finished. score: 8054, best: 7010
+GRASP iteration 24 of 30
+Start Swap2: current score: 7017, step: first
+End Swap2: current score: 7007, changed: True, time: 2.022691011428833
+GRASP iteration finished. score: 7017, best: 7010
+GRASP iteration 25 of 30
+Start Swap2: current score: 7443, step: first
+End Swap2: current score: 7418, changed: True, time: 0.05525684356689453
+GRASP iteration finished. score: 7443, best: 7010
+GRASP iteration 26 of 30
+Start Swap2: current score: 7987, step: first
+End Swap2: current score: 7967, changed: True, time: 0.0352785587310791
+GRASP iteration finished. score: 7987, best: 7010
+GRASP iteration 27 of 30
+Start Swap2: current score: 7115, step: first
+End Swap2: current score: 7070, changed: True, time: 0.06538796424865723
+GRASP iteration finished. score: 7115, best: 7010
+GRASP iteration 28 of 30
+Start Swap2: current score: 7219, step: first
+End Swap2: current score: 7202, changed: True, time: 0.054396629333496094
+GRASP iteration finished. score: 7219, best: 7010
+GRASP iteration 29 of 30
+Start Swap2: current score: 7950, step: first
+End Swap2: current score: 7936, changed: True, time: 0.20606184005737305
+GRASP iteration finished. score: 7950, best: 7010
+GRASP iteration 30 of 30
+Start Swap2: current score: 7933, step: first
+End Swap2: current score: 7880, changed: True, time: 0.04064822196960449
+GRASP iteration finished. score: 7933, best: 7010
+Runtime: 7.0916008949279785
+Score: 7010
+Solution check: True

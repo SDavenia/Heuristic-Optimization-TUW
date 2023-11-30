@@ -994,22 +994,22 @@ class SPlexSolution(Solution):
             return better_found
         elif step_function == 'random':
             # Pick a node at random and move it to another cluster at random and see if it improved
-            node1 = random.randint(1, len(self.weights))
-            node2 = random.randint(1, len(self.weights))
+            node1 = random.randint(1, len(self.weights)-1)
+            node2 = random.randint(1, len(self.weights)-1)
 
-            clust1 = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # What cluster the first node is in.
-            clust2 = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # What cluster the first node is in.
+            clust1 = [index for index, sublist in enumerate(self.clusters) if node1 in sublist][0] # What cluster the first node is in.
+            clust2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the first node is in.
 
             while clust2 == clust1:
                 node2 = random.randint(1, len(self.weights))
-                clust2 = [index for index, sublist in enumerate(self.clusters) if node in sublist][0] # What cluster the first node is in.
+                clust2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the first node is in.
 
             # Swap the nodes and recompute the clusters
             
-            self.clusters[clust_1].remove(node1)
-            self.clusters[clust_2].remove(node2)
-            self.clusters[clust_1].append(node2)
-            self.clusters[clust_2].append(node1)
+            self.clusters[clust1].remove(node1)
+            self.clusters[clust2].remove(node2)
+            self.clusters[clust1].append(node2)
+            self.clusters[clust2].append(node1)
             #print(f"Now we have clusters:\n\t{self.clusters}")
 
             self.edges_modified = []
@@ -1020,7 +1020,7 @@ class SPlexSolution(Solution):
             # self.update_current_neighbours()
             #print(f"The edges modified are now:\n\t{self.edges_modified}\nAnd our solution has value:\n\t{self.calc_objective()}")
             new_objective = self.calc_objective()
-            if new_objective < best_sol_value():
+            if new_objective < best_sol_value:
                 best_sol = self.copy()
                 best_sol_value = new_objective
                 return True

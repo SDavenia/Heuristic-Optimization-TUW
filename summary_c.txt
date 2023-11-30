@@ -1,0 +1,30 @@
+Runtime: 0.09737539291381836
+Score: 14766
+Solution check: True
+Runtime: 0.38901567459106445
+Score: 42188
+Solution check: True
+Runtime: 0.03147387504577637
+Score: 6400
+Solution check: True
+Runtime: 0.06149911880493164
+Score: 10935
+Solution check: True
+Runtime: 0.10920047760009766
+Score: 19049
+Solution check: True
+Runtime: 0.2430276870727539
+Score: 1371
+Solution check: True
+Runtime: 0.04052233695983887
+Score: 7435
+Solution check: True
+Runtime: 0.6559937000274658
+Score: 51773
+Solution check: True
+Runtime: 0.9818582534790039
+Score: 62394
+Solution check: True
+Runtime: 0.029590606689453125
+Score: 6930
+Solution check: True

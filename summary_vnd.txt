@@ -1,0 +1,81 @@
+VND
+data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
+Start Join: current score: 17314, step: first
+End Join: current score: 17314, changed: False, time: 2.1466541290283203
+Start Swap2: current score: 17314, step: first
+End Swap2: current score: 17298, changed: True, time: 0.1652534008026123
+Runtime: 2.49532151222229
+Score: 17314
+Solution check: True
+data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
+Start Join: current score: 44869, step: first
+End Join: current score: 44869, changed: False, time: 10.332022905349731
+Start Swap2: current score: 44869, step: first
+End Swap2: current score: 44835, changed: True, time: 0.18618154525756836
+Runtime: 11.031055212020874
+Score: 44869
+Solution check: True
+data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
+Start Join: current score: 7891, step: first
+End Join: current score: 7891, changed: False, time: 0.49457383155822754
+Start Swap2: current score: 7891, step: first
+End Swap2: current score: 7887, changed: True, time: 0.06473374366760254
+Runtime: 0.6354608535766602
+Score: 7891
+Solution check: True
+data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
+Start Join: current score: 12315, step: first
+End Join: current score: 12315, changed: False, time: 1.202714204788208
+Start Swap2: current score: 12315, step: first
+End Swap2: current score: 12309, changed: True, time: 0.050144195556640625
+Runtime: 1.3806586265563965
+Score: 12315
+Solution check: True
+data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
+Start Join: current score: 21329, step: first
+End Join: current score: 21329, changed: False, time: 2.8180904388427734
+Start Swap2: current score: 21329, step: first
+End Swap2: current score: 21302, changed: True, time: 0.18193531036376953
+Runtime: 3.2235517501831055
+Score: 21329
+Solution check: True
+data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
+Start Join: current score: 3331, step: first
+End Join: current score: 3327, changed: True, time: 3.0158965587615967
+Start Swap2: current score: 3331, step: first
+End Swap2: current score: 3328, changed: True, time: 0.0231325626373291
+Runtime: 3.376971483230591
+Score: 3331
+Solution check: True
+data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
+Start Join: current score: 8792, step: first
+End Join: current score: 8792, changed: False, time: 0.7082219123840332
+Start Swap2: current score: 8792, step: first
+End Swap2: current score: 8780, changed: True, time: 0.031525373458862305
+Runtime: 0.8347725868225098
+Score: 8792
+Solution check: True
+data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
+Start Join: current score: 52254, step: first
+End Join: current score: 44177, changed: True, time: 2.575371742248535
+Start Swap2: current score: 52254, step: first
+End Swap2: current score: 52244, changed: True, time: 0.8751022815704346
+Runtime: 4.235275506973267
+Score: 52254
+Solution check: True
+data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
+Start Join: current score: 69978, step: first
+End Join: current score: 65562, changed: True, time: 2.877744436264038
+Start Swap2: current score: 69978, step: first
+End Swap2: current score: 69947, changed: True, time: 4.992376804351807
+Runtime: 8.894663095474243
+Score: 69978
+Solution check: True
+data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
+Start Join: current score: 8048, step: first
+End Join: current score: 6797, changed: True, time: 0.08836746215820312
+Start Swap2: current score: 8048, step: first
+End Swap2: current score: 8046, changed: True, time: 0.040149688720703125
+Runtime: 0.2055814266204834
+Score: 8048
+Solution check: True
