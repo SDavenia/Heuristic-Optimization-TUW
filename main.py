@@ -24,7 +24,6 @@ def custom_settings():
     parser.add_argument("inputfile", type=str, help='instance file path')
     parser.add_argument("--alg", type=str, default="c", help='(heuristic) c: construction, rc: random construction, ls: local search, grasp, vnd, gvns)')
     parser.add_argument("--nh", type=str, default="m1", help='(local search neighborhood) m1: move 1 node, s2: swap 2 nodes, sc: split clusters, jc: join clusters')
-    parser.add_argument("--ls_step", type=str, default="best", help='(local search step function) f: first, b: best, r: random')
     parser.add_argument("--k", type=int, default=5, help='construction initial cluster size')
     parser.add_argument("--alpha", type=float, default=0.5, help='randomization for cluster initialization')
     parser.add_argument("--beta", type=float, default=0.5, help='randomization for cluster assignment')
@@ -117,6 +116,7 @@ def run(args, solution: SPlexSolution):
     elif args.alg == "ls":
         local_seach(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "grasp":
+        settings.mh_ttime = mh_ttime_orig / args.iterations
         grasp(solution, args.k, args.alpha, args.beta, args.step, args.iterations)
     elif args.alg == "vnd":
         vnd(solution, args.k, args.alpha, args.beta, args.step)
@@ -127,6 +127,7 @@ if __name__ == '__main__':
     custom_settings()    
     parse_settings()
     spi = SPlexInstance(settings.inputfile)
+    mh_ttime_orig = settings.mh_ttime
     sol = SPlexSolution(spi)
     run(settings, sol)
     

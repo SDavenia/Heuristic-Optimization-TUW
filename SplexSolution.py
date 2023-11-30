@@ -639,7 +639,7 @@ class SPlexSolution(Solution):
                                 delta -= self.weights[edge[0], edge[1]]
                                 self.edges_modified.remove(edge)
                         #print(f"Preliminary manipulation 2 took {time.time() - time5}")
-                        
+
                         #time7 = time.time()
                         # Append new node
                         self.clusters[dest_clust].append(node)
