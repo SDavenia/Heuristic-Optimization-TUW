@@ -64,6 +64,9 @@ def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
     best_score = float("inf")
     best_solution = None
     for i in range(iterations):
+        current_time = time.time()
+        if current_time - start_time > 900:
+            break
         print(f"GRASP iteration {i+1} of {iterations}")
         new_solution = solution.copy()
         ls = GVNS(new_solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 

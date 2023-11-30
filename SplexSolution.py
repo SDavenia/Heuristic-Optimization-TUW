@@ -340,18 +340,23 @@ class SPlexSolution(Solution):
         Returns True if an improevd solution is found.
         Should be faster than the previous implementation
         """
+        start_time_ls = time.time()
         best_sol = self.copy()
         best_sol_value = self.calc_objective()
         better_found = False
         
         if step_function in ['best', 'first']:
-            time1 = time.time()
             initial_clusters = dcopy(self.clusters)
             initial_edges_modified = dcopy(self.edges_modified)
             initial_value = self.calc_objective() # Needed for how delta is evaluated and how we move through
             # print(f"Initialization took {time.time() - time1}s")
             
             for node in range(1, len(self.weights)):
+                current_time = time.time()
+                if current_time - start_time_ls > 900:
+                    self.copy_from(best_sol)
+                    return better_found
+
                 # time2 = time.time()
                 delta_baseline = initial_value
                 self.clusters = dcopy(initial_clusters)
@@ -594,6 +599,7 @@ class SPlexSolution(Solution):
         best_sol = self.copy()
         best_sol_value = self.calc_objective()
         better_found = False
+        start_time_ls = time.time()
         
         if step_function in ['best', 'first']:
             initial_clusters = dcopy(self.clusters)
@@ -601,6 +607,10 @@ class SPlexSolution(Solution):
             initial_value = self.calc_objective() # Needed for how delta is evaluated and how we move through
             
             for node in range(1, len(self.weights)):
+                current_time = time.time()
+                if current_time - start_time_ls > 900:
+                    self.copy_from(best_sol)
+                    return better_found
                 # time2 = time.time()
                 delta_baseline = initial_value
                 self.clusters = dcopy(initial_clusters)
@@ -946,11 +956,16 @@ class SPlexSolution(Solution):
         best_sol_value = self.calc_objective()
         better_found = False
         initial_clusters = dcopy(self.clusters)
+        start_time_ls = time.time()
 
         # Consider all pairs of nodes and swap them
         if step_function in ['best', 'first']:
             for node1 in range(1, len(self.weights)):
                 for node2 in range(node1 + 1, len(self.weights)):
+                    current_time = time.time()
+                    if current_time - start_time_ls > 900:
+                        self.copy_from(best_sol)
+                        return better_found
                     # self.clusters = dcopy(initial_clusters) moved at the end so only called when we modify it.
                     clust_1 = [index for index, sublist in enumerate(self.clusters) if node1 in sublist][0] # What cluster the first node is in.
                     clust_2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the second node is in.
@@ -1021,12 +1036,18 @@ class SPlexSolution(Solution):
         best_sol_value = self.calc_objective()
         better_found = False
 
+        start_time_ls = time.time()
+
         initial_clusters = dcopy(self.clusters)
         
         if step_function in ['best', 'first']:
             # Consider all possible pairs of clusters to be joined together
             for ind1, clust1 in enumerate(initial_clusters):
                 for ind2, clust2 in enumerate(initial_clusters[ind1+1:]):
+                    current_time = time.time()
+                    if current_time - start_time_ls > 900:
+                        self.copy_form(best_sol)
+                        return better_found
                     self.clusters = dcopy(initial_clusters) # For simplicity
                     self.clusters.remove(clust1)
                     self.clusters.remove(clust2)
