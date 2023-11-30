@@ -39,7 +39,7 @@ do
                 # Run Python script multiple times and capture output
                 for ((measurement=1; measurement<=num_measurements; measurement++))
                 do
-                    python_output=$(python main.py "$file" --alg rc --alpha "$alpha_prob" --beta "$beta_prob" -k "$k_value")
+                    python_output=$(python main.py "$file" --alg rc --alpha "$alpha_prob" --beta "$beta_prob" --k "$k_value")
 
                     # Extract runtime and score from the Python script output (modify as needed)
                     runtime=$(echo "$python_output" | grep "Runtime:" | awk '{print $2}')

@@ -14,6 +14,7 @@ from pymhlib.gvns import GVNS
 from SplexSolution import SPlexSolution
 from SPlexInstance import SPlexInstance
 
+from utilities import Utilities
 
 parser = get_settings_parser()
 
@@ -36,6 +37,7 @@ def construction(solution: SPlexSolution, k):
     runtime = time.time() - start_time
     score = solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='det_construction', solution=solution.edges_modified)
 
 def rand_construction(solution: SPlexSolution, k, alpha, beta):
     start_time = time.time()
@@ -43,6 +45,7 @@ def rand_construction(solution: SPlexSolution, k, alpha, beta):
     runtime = time.time() - start_time
     score = solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='rand_construction', solution=solution.edges_modified)
 
 def local_seach(solution: SPlexSolution, k, alpha, beta, step):
     start_time = time.time()
@@ -54,6 +57,7 @@ def local_seach(solution: SPlexSolution, k, alpha, beta, step):
     runtime = time.time() - start_time
     score = solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='ls', solution=solution.edges_modified)
 
 def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
     start_time = time.time()
@@ -75,6 +79,7 @@ def grasp(solution: SPlexSolution, k, alpha, beta, step, iterations):
     runtime = time.time() - start_time
     score = best_solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {best_solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='grasp', solution=best_solution.edges_modified)
 
 def vnd(solution: SPlexSolution, k, alpha, beta, step):
     start_time = time.time()
@@ -88,6 +93,7 @@ def vnd(solution: SPlexSolution, k, alpha, beta, step):
     runtime = time.time() - start_time
     score = solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='vnd', solution=solution.edges_modified)
 
 def gvns(solution: SPlexSolution, k, alpha, beta, step):
     start_time = time.time()
@@ -101,6 +107,7 @@ def gvns(solution: SPlexSolution, k, alpha, beta, step):
     runtime = time.time() - start_time
     score = solution.calc_objective()
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='gvns', solution=solution.edges_modified)
 
 def run(args, solution: SPlexSolution):
     if args.alg == "c":
