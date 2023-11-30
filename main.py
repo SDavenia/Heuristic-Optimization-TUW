@@ -86,7 +86,8 @@ def vnd(solution: SPlexSolution, k, alpha, beta, step):
     vnd = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
                          Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step), 
-                         Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
+                         #Method("local_search_move1node", SPlexSolution.local_search_move1node, step)
+                         ], 
                         [])
     vnd.run()
     runtime = time.time() - start_time
@@ -100,8 +101,9 @@ def gvns(solution: SPlexSolution, k, alpha, beta, step):
     gvns = GVNS(solution,[Method("random_construction", SPlexSolution.ch_construct_randomized, par)], 
                         [Method("local_search_join_clusters", SPlexSolution.local_search_join_clusters, step), 
                          Method("local_search_swap2nodes", SPlexSolution.local_search_swap2nodes, step), 
-                         Method("local_search_move1node", SPlexSolution.local_search_move1node, step)], 
-                        [Method("shake_join_clusters", SPlexSolution.shake_join_clusters, None )])
+                         #Method("local_search_move1node", SPlexSolution.local_search_move1node, step)
+                         ], 
+                        [Method("shake_swap2nodes", SPlexSolution.shake_swap2nodes, None )])
     gvns.run()
     runtime = time.time() - start_time
     score = solution.calc_objective()
