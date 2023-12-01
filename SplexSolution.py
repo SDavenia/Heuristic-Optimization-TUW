@@ -33,7 +33,7 @@ class SPlexSolution(Solution):
         - clusters: set of clusters of the solution.
         - edges_modified: solution representation, contains what edges were removed/added from the initial list
     """
-    to_maximise = False
+    to_maximize = False
     
     def __init__(self, inst: SPlexInstance = None):
         super().__init__()
