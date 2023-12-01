@@ -1,40 +1,40 @@
-data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
-Runtime: 0.11669421195983887
-Score: 17290
+data/inst_test/heur006_n_180_m_6067.txt, 36, .40, 1.00
+Runtime: 0.06141924858093262
+Score: 14220
 Solution check: True
-data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
-Runtime: 0.3377692699432373
-Score: 45168
+data/inst_test/heur014_n_300_m_14191.txt, 60, .40, 1.00
+Runtime: 0.23154664039611816
+Score: 40736
 Solution check: True
-data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
-Runtime: 0.04598236083984375
-Score: 7837
+data/inst_test/heur003_n_120_m_2588.txt, 24, .40, 1.00
+Runtime: 0.025627613067626953
+Score: 6355
 Solution check: True
-data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
-Runtime: 0.0848383903503418
-Score: 12710
+data/inst_test/heur005_n_160_m_4015.txt, 32, .40, 1.00
+Runtime: 0.0448307991027832
+Score: 9812
 Solution check: True
-data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
-Runtime: 0.14041757583618164
-Score: 21199
+data/inst_test/heur007_n_200_m_6731.txt, 40, .40, 1.00
+Runtime: 0.0733940601348877
+Score: 17058
 Solution check: True
-data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
-Runtime: 0.310136079788208
-Score: 3277
+data/inst_test/heur008_n_250_m_1045.txt, 50, .40, 1.00
+Runtime: 0.21776223182678223
+Score: 2232
 Solution check: True
-data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
-Runtime: 0.07105040550231934
-Score: 9445
+data/inst_test/heur004_n_140_m_3014.txt, 28, .40, 1.00
+Runtime: 0.03502154350280762
+Score: 7461
 Solution check: True
-data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
-Runtime: 0.53157639503479
-Score: 52500
+data/inst_test/heur013_n_250_m_22395.txt, 50, .40, 1.00
+Runtime: 0.4433310031890869
+Score: 43556
 Solution check: True
-data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
-Runtime: 1.5202932357788086
-Score: 66156
+data/inst_test/heur019_n_300_m_28765.txt, 60, .40, 1.00
+Runtime: 0.22519922256469727
+Score: 57787
 Solution check: True
-data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
-Runtime: 0.057221412658691406
-Score: 7081
+data/inst_test/heur002_n_100_m_3274.txt, 20, .40, 1.00
+Runtime: 0.04207730293273926
+Score: 3645
 Solution check: True

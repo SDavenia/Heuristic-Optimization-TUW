@@ -1,60 +1,60 @@
-data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
-Start Move1: current score: 16952, step: first
-End Move1: current score: 16952, changed: False, time: 12.477056503295898
-Runtime: 12.636163711547852
-Score: 16952
+data/inst_test/heur006_n_180_m_6067.txt, 36, .40, 1.00
+Start Move1: current score: 14966, step: first
+End Move1: current score: 14966, changed: False, time: 11.733421802520752
+Runtime: 11.838064193725586
+Score: 14966
 Solution check: True
-data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
-Start Move1: current score: 44690, step: first
-End Move1: current score: 44690, changed: False, time: 112.67948389053345
-Runtime: 113.15636348724365
-Score: 44690
+data/inst_test/heur014_n_300_m_14191.txt, 60, .40, 1.00
+Start Move1: current score: 41059, step: first
+End Move1: current score: 41059, changed: False, time: 174.33456754684448
+Runtime: 174.8970799446106
+Score: 41059
 Solution check: True
-data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
-Start Move1: current score: 7773, step: first
-End Move1: current score: 7773, changed: False, time: 2.670872926712036
-Runtime: 2.7397236824035645
-Score: 7773
+data/inst_test/heur003_n_120_m_2588.txt, 24, .40, 1.00
+Start Move1: current score: 6441, step: first
+End Move1: current score: 6441, changed: False, time: 2.6314504146575928
+Runtime: 2.6801371574401855
+Score: 6441
 Solution check: True
-data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
-Start Move1: current score: 12435, step: first
-End Move1: current score: 12435, changed: False, time: 8.58041262626648
-Runtime: 8.70145034790039
-Score: 12435
+data/inst_test/heur005_n_160_m_4015.txt, 32, .40, 1.00
+Start Move1: current score: 10150, step: first
+End Move1: current score: 10142, changed: True, time: 1.7802941799163818
+Runtime: 1.8670709133148193
+Score: 10150
 Solution check: True
-data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
-Start Move1: current score: 21424, step: first
-End Move1: current score: 21424, changed: False, time: 25.012880325317383
-Runtime: 25.219735145568848
-Score: 21424
+data/inst_test/heur007_n_200_m_6731.txt, 40, .40, 1.00
+Start Move1: current score: 18143, step: first
+End Move1: current score: 18143, changed: False, time: 18.801810264587402
+Runtime: 18.931098461151123
+Score: 18143
 Solution check: True
-data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
-Start Move1: current score: 3261, step: first
-End Move1: current score: 3261, changed: False, time: 4.168105840682983
-Runtime: 4.497617721557617
-Score: 3261
+data/inst_test/heur008_n_250_m_1045.txt, 50, .40, 1.00
+Start Move1: current score: 2139, step: first
+End Move1: current score: 2139, changed: False, time: 3.6657001972198486
+Runtime: 3.893095016479492
+Score: 2139
 Solution check: True
-data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
-Start Move1: current score: 9089, step: first
-End Move1: current score: 9089, changed: False, time: 4.721780061721802
-Runtime: 4.811316728591919
-Score: 9089
+data/inst_test/heur004_n_140_m_3014.txt, 28, .40, 1.00
+Start Move1: current score: 6681, step: first
+End Move1: current score: 6681, changed: False, time: 2.9003989696502686
+Runtime: 2.9536452293395996
+Score: 6681
 Solution check: True
-data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
-Start Move1: current score: 55507, step: first
-End Move1: current score: 55507, changed: False, time: 90.20264172554016
-Runtime: 90.70772290229797
-Score: 55507
+data/inst_test/heur013_n_250_m_22395.txt, 50, .40, 1.00
+Start Move1: current score: 52057, step: first
+End Move1: current score: 52057, changed: False, time: 62.68673610687256
+Runtime: 63.01239991188049
+Score: 52057
 Solution check: True
-data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
-Start Move1: current score: 69538, step: first
-End Move1: current score: 69538, changed: False, time: 230.3370816707611
-Runtime: 231.24636244773865
-Score: 69538
+data/inst_test/heur019_n_300_m_28765.txt, 60, .40, 1.00
+Start Move1: current score: 56197, step: first
+End Move1: current score: 56197, changed: False, time: 155.8710925579071
+Runtime: 156.55039310455322
+Score: 56197
 Solution check: True
-data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
-Start Move1: current score: 7224, step: first
-End Move1: current score: 7224, changed: False, time: 2.8598949909210205
-Runtime: 2.9418821334838867
-Score: 7224
+data/inst_test/heur002_n_100_m_3274.txt, 20, .40, 1.00
+Start Move1: current score: 4846, step: first
+End Move1: current score: 4834, changed: True, time: 0.2260279655456543
+Runtime: 0.26925230026245117
+Score: 4846
 Solution check: True

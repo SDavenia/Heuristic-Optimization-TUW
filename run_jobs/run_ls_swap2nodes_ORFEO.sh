@@ -22,8 +22,8 @@ file_list=($(find "$inst_test_dir" -type f -name "*.txt"))
 # Extract all instances
 paths=("${file_list[@]}")
 
-alpha=0.4
-beta=1
+alpha=40
+beta=100
 k=20 # 20 % of nodes
 for file in "${paths[@]}"
 do

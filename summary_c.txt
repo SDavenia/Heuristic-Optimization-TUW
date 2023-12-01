@@ -1,30 +1,30 @@
-Runtime: 0.09737539291381836
+Runtime: 0.09818100929260254
 Score: 14766
 Solution check: True
-Runtime: 0.38901567459106445
+Runtime: 0.39871859550476074
 Score: 42188
 Solution check: True
-Runtime: 0.03147387504577637
+Runtime: 0.031925201416015625
 Score: 6400
 Solution check: True
-Runtime: 0.06149911880493164
+Runtime: 0.06141304969787598
 Score: 10935
 Solution check: True
-Runtime: 0.10920047760009766
+Runtime: 0.10998845100402832
 Score: 19049
 Solution check: True
-Runtime: 0.2430276870727539
+Runtime: 0.2447519302368164
 Score: 1371
 Solution check: True
-Runtime: 0.04052233695983887
+Runtime: 0.04162311553955078
 Score: 7435
 Solution check: True
-Runtime: 0.6559937000274658
+Runtime: 0.6677961349487305
 Score: 51773
 Solution check: True
-Runtime: 0.9818582534790039
+Runtime: 0.9986345767974854
 Score: 62394
 Solution check: True
-Runtime: 0.029590606689453125
+Runtime: 0.02981734275817871
 Score: 6930
 Solution check: True

@@ -1,60 +1,60 @@
-data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
-Start Swap2: current score: 16895, step: first
-End Swap2: current score: 16870, changed: True, time: 0.07089042663574219
-Runtime: 0.2465376853942871
-Score: 16895
+data/inst_test/heur006_n_180_m_6067.txt, 36, .40, 1.00
+Start Swap2: current score: 14799, step: first
+End Swap2: current score: 14798, changed: True, time: 0.14821600914001465
+Runtime: 0.2758641242980957
+Score: 14799
 Solution check: True
-data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
-Start Swap2: current score: 44424, step: first
-End Swap2: current score: 44420, changed: True, time: 0.3288533687591553
-Runtime: 0.8509097099304199
-Score: 44424
+data/inst_test/heur014_n_300_m_14191.txt, 60, .40, 1.00
+Start Swap2: current score: 39981, step: first
+End Swap2: current score: 39967, changed: True, time: 22.46176242828369
+Runtime: 22.817017078399658
+Score: 39981
 Solution check: True
-data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
-Start Swap2: current score: 8035, step: first
-End Swap2: current score: 8016, changed: True, time: 0.04623746871948242
-Runtime: 0.1282041072845459
-Score: 8035
+data/inst_test/heur003_n_120_m_2588.txt, 24, .40, 1.00
+Start Swap2: current score: 6116, step: first
+End Swap2: current score: 6109, changed: True, time: 0.08483147621154785
+Runtime: 0.13711214065551758
+Score: 6116
 Solution check: True
-data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
-Start Swap2: current score: 12295, step: first
-End Swap2: current score: 12268, changed: True, time: 0.19388580322265625
-Runtime: 0.32056593894958496
-Score: 12295
+data/inst_test/heur005_n_160_m_4015.txt, 32, .40, 1.00
+Start Swap2: current score: 10741, step: first
+End Swap2: current score: 10703, changed: True, time: 0.2668266296386719
+Runtime: 0.35923218727111816
+Score: 10741
 Solution check: True
-data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
-Start Swap2: current score: 21060, step: first
-End Swap2: current score: 21058, changed: True, time: 0.35519981384277344
-Runtime: 0.5736408233642578
-Score: 21060
+data/inst_test/heur007_n_200_m_6731.txt, 40, .40, 1.00
+Start Swap2: current score: 18655, step: first
+End Swap2: current score: 18650, changed: True, time: 0.10067129135131836
+Runtime: 0.2657480239868164
+Score: 18655
 Solution check: True
-data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
-Start Swap2: current score: 3300, step: first
-End Swap2: current score: 3295, changed: True, time: 0.042443275451660156
-Runtime: 0.36513352394104004
-Score: 3300
+data/inst_test/heur008_n_250_m_1045.txt, 50, .40, 1.00
+Start Swap2: current score: 1835, step: first
+End Swap2: current score: 1834, changed: True, time: 1.0947816371917725
+Runtime: 1.3118045330047607
+Score: 1835
 Solution check: True
-data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
-Start Swap2: current score: 9128, step: first
-End Swap2: current score: 9114, changed: True, time: 0.03542304039001465
-Runtime: 0.13429760932922363
-Score: 9128
+data/inst_test/heur004_n_140_m_3014.txt, 28, .40, 1.00
+Start Swap2: current score: 6503, step: first
+End Swap2: current score: 6495, changed: True, time: 2.4260470867156982
+Runtime: 2.48494553565979
+Score: 6503
 Solution check: True
-data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
-Start Swap2: current score: 55366, step: first
-End Swap2: current score: 55356, changed: True, time: 0.32215070724487305
-Runtime: 0.856053352355957
-Score: 55366
+data/inst_test/heur013_n_250_m_22395.txt, 50, .40, 1.00
+Start Swap2: current score: 43556, step: first
+End Swap2: current score: 43539, changed: True, time: 3.560490369796753
+Runtime: 4.200711727142334
+Score: 43556
 Solution check: True
-data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
-Start Swap2: current score: 69899, step: first
-End Swap2: current score: 69859, changed: True, time: 1.1581382751464844
-Runtime: 2.1227807998657227
-Score: 69899
+data/inst_test/heur019_n_300_m_28765.txt, 60, .40, 1.00
+Start Swap2: current score: 53235, step: first
+End Swap2: current score: 53219, changed: True, time: 1.3303029537200928
+Runtime: 1.829031229019165
+Score: 53235
 Solution check: True
-data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
-Start Swap2: current score: 8121, step: first
-End Swap2: current score: 8087, changed: True, time: 0.03521466255187988
-Runtime: 0.1058499813079834
-Score: 8121
+data/inst_test/heur002_n_100_m_3274.txt, 20, .40, 1.00
+Start Swap2: current score: 5914, step: first
+End Swap2: current score: 5837, changed: True, time: 0.029422283172607422
+Runtime: 0.07897400856018066
+Score: 5914
 Solution check: True

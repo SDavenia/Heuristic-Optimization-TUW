@@ -1,60 +1,60 @@
-data/inst_test/heur006_n_180_m_6067.txt, 36, 0, .01
-Start Join: current score: 17288, step: first
-End Join: current score: 17288, changed: False, time: 2.228698492050171
-Runtime: 2.40360689163208
-Score: 17288
+data/inst_test/heur006_n_180_m_6067.txt, 36, .40, 1.00
+Start Join: current score: 14832, step: first
+End Join: current score: 14819, changed: True, time: 2.2631783485412598
+Runtime: 2.4153518676757812
+Score: 14832
 Solution check: True
-data/inst_test/heur014_n_300_m_14191.txt, 60, 0, .01
-Start Join: current score: 44488, step: first
-End Join: current score: 44488, changed: False, time: 9.668128967285156
-Runtime: 10.139949083328247
-Score: 44488
+data/inst_test/heur014_n_300_m_14191.txt, 60, .40, 1.00
+Start Join: current score: 40508, step: first
+End Join: current score: 40508, changed: False, time: 26.722684144973755
+Runtime: 27.25482988357544
+Score: 40508
 Solution check: True
-data/inst_test/heur003_n_120_m_2588.txt, 24, 0, .01
-Start Join: current score: 7903, step: first
-End Join: current score: 7903, changed: False, time: 0.46849489212036133
-Runtime: 0.5371482372283936
-Score: 7903
+data/inst_test/heur003_n_120_m_2588.txt, 24, .40, 1.00
+Start Join: current score: 6577, step: first
+End Join: current score: 6577, changed: False, time: 0.4928901195526123
+Runtime: 0.5410962104797363
+Score: 6577
 Solution check: True
-data/inst_test/heur005_n_160_m_4015.txt, 32, 0, .01
-Start Join: current score: 12636, step: first
-End Join: current score: 12636, changed: False, time: 1.2043583393096924
-Runtime: 1.3264679908752441
-Score: 12636
+data/inst_test/heur005_n_160_m_4015.txt, 32, .40, 1.00
+Start Join: current score: 10297, step: first
+End Join: current score: 9913, changed: True, time: 1.0341770648956299
+Runtime: 1.1209707260131836
+Score: 10297
 Solution check: True
-data/inst_test/heur007_n_200_m_6731.txt, 40, 0, .01
-Start Join: current score: 21441, step: first
-End Join: current score: 21441, changed: False, time: 3.0680248737335205
-Runtime: 3.279536724090576
-Score: 21441
+data/inst_test/heur007_n_200_m_6731.txt, 40, .40, 1.00
+Start Join: current score: 17550, step: first
+End Join: current score: 17550, changed: False, time: 4.325609445571899
+Runtime: 4.502758264541626
+Score: 17550
 Solution check: True
-data/inst_test/heur008_n_250_m_1045.txt, 50, 0, .01
-Start Join: current score: 3289, step: first
-End Join: current score: 3278, changed: True, time: 3.1623153686523438
-Runtime: 3.4971399307250977
-Score: 3289
+data/inst_test/heur008_n_250_m_1045.txt, 50, .40, 1.00
+Start Join: current score: 1991, step: first
+End Join: current score: 1952, changed: True, time: 0.12847661972045898
+Runtime: 0.3531804084777832
+Score: 1991
 Solution check: True
-data/inst_test/heur004_n_140_m_3014.txt, 28, 0, .01
-Start Join: current score: 8923, step: first
-End Join: current score: 8923, changed: False, time: 0.7508292198181152
-Runtime: 0.8407158851623535
-Score: 8923
+data/inst_test/heur004_n_140_m_3014.txt, 28, .40, 1.00
+Start Join: current score: 7022, step: first
+End Join: current score: 6983, changed: True, time: 0.10855531692504883
+Runtime: 0.16848969459533691
+Score: 7022
 Solution check: True
-data/inst_test/heur013_n_250_m_22395.txt, 50, 0, .01
-Start Join: current score: 57766, step: first
-End Join: current score: 54269, changed: True, time: 0.5573933124542236
-Runtime: 1.0356414318084717
-Score: 57766
+data/inst_test/heur013_n_250_m_22395.txt, 50, .40, 1.00
+Start Join: current score: 48732, step: first
+End Join: current score: 39048, changed: True, time: 1.3709521293640137
+Runtime: 1.9661970138549805
+Score: 48732
 Solution check: True
-data/inst_test/heur019_n_300_m_28765.txt, 60, 0, .01
-Start Join: current score: 66670, step: first
-End Join: current score: 56519, changed: True, time: 13.68580150604248
-Runtime: 15.416794061660767
-Score: 66670
+data/inst_test/heur019_n_300_m_28765.txt, 60, .40, 1.00
+Start Join: current score: 48343, step: first
+End Join: current score: 29171, changed: True, time: 5.710134506225586
+Runtime: 6.617926836013794
+Score: 48343
 Solution check: True
-data/inst_test/heur002_n_100_m_3274.txt, 20, 0, .01
-Start Join: current score: 7317, step: first
-End Join: current score: 4769, changed: True, time: 0.34421300888061523
-Runtime: 0.44441795349121094
-Score: 7317
+data/inst_test/heur002_n_100_m_3274.txt, 20, .40, 1.00
+Start Join: current score: 4915, step: first
+End Join: current score: 4799, changed: True, time: 0.35062432289123535
+Runtime: 0.40757226943969727
+Score: 4915
 Solution check: True
