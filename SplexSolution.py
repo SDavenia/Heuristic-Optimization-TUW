@@ -1001,7 +1001,7 @@ class SPlexSolution(Solution):
             clust2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the first node is in.
 
             while clust2 == clust1:
-                node2 = random.randint(1, len(self.weights))
+                node2 = random.randint(1, len(self.weights)-1)
                 clust2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the first node is in.
 
             # Swap the nodes and recompute the clusters
