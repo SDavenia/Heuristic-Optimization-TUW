@@ -330,6 +330,7 @@ class SPlexSolution(Solution):
         # Convert the decided clusters into an s-plex        
         self.construct_all_splex()
         # self.update_current_neighbours() # Called to update current neighbours as well given the solution found so far
+        self.invalidate()
     
     def construct_deterministic(self, k):
         return self.construct_randomized(k, alpha=1, beta=1) # or something similar where alpha is a probabilistic parameter
@@ -818,6 +819,14 @@ class SPlexSolution(Solution):
                 self.copy_from(best_sol)
                 return False
 
+    def shaking(self, par, _result):
+        """Scheduler method that performs shaking by flipping par random positions."""
+        if par == 0:
+            # hack for running local search using GVNS implementation class
+            return
+        else:
+            pass  # TODO real shaking
+        
     def shake_move1node(self, par = None, result = Result()) -> None:
         start_time = time.time()
         print(f"Start Shaking Move1: current score: {self.calc_objective()}")
@@ -965,6 +974,7 @@ class SPlexSolution(Solution):
                     current_time = time.time()
                     if current_time - start_time_ls > 900:
                         self.copy_from(best_sol)
+                        self.invalidate()
                         return better_found
                     # self.clusters = dcopy(initial_clusters) moved at the end so only called when we modify it.
                     clust_1 = [index for index, sublist in enumerate(self.clusters) if node1 in sublist][0] # What cluster the first node is in.
@@ -985,12 +995,14 @@ class SPlexSolution(Solution):
                         if self.calc_objective() < best_sol_value:
                             # Means we found a better solution
                             better_found = True
+                            self.invalidate()
                             best_sol_value = self.calc_objective()
                             best_sol = self.copy()
                             if step_function == 'first':
                                 return better_found
                         self.clusters = dcopy(initial_clusters)
             self.copy_from(best_sol)
+            self.invalidate()
             return better_found
         elif step_function == 'random':
             # Pick a node at random and move it to another cluster at random and see if it improved
@@ -1005,7 +1017,6 @@ class SPlexSolution(Solution):
                 clust2 = [index for index, sublist in enumerate(self.clusters) if node2 in sublist][0] # What cluster the first node is in.
 
             # Swap the nodes and recompute the clusters
-            
             self.clusters[clust1].remove(node1)
             self.clusters[clust2].remove(node2)
             self.clusters[clust1].append(node2)
@@ -1023,9 +1034,11 @@ class SPlexSolution(Solution):
             if new_objective < best_sol_value:
                 best_sol = self.copy()
                 best_sol_value = new_objective
+                self.invalidate()
                 return True
             else:
                 self.copy_from(best_sol)
+                self.invalidate()
                 return False
     
     def ls_join_clusters(self, step_function = 'best') -> bool:
@@ -1047,6 +1060,7 @@ class SPlexSolution(Solution):
                     current_time = time.time()
                     if current_time - start_time_ls > 900:
                         self.copy_form(best_sol)
+                        self.invalidate()
                         return better_found
                     self.clusters = dcopy(initial_clusters) # For simplicity
                     self.clusters.remove(clust1)
@@ -1066,8 +1080,10 @@ class SPlexSolution(Solution):
                         better_found = True
                         best_sol = self.copy()
                         if step_function == 'first':
+                            self.invalidate()
                             return better_found
             self.copy_from(best_sol)
+            self.invalidate()
             return better_found
         elif step_function == 'random':
             # Select two clusters at random and join them 
@@ -1092,6 +1108,7 @@ class SPlexSolution(Solution):
             if new_objective < best_sol_value:
                 best_sol_value = new_objective
                 best_sol = self.copy()
+                self.invalidate()
                 return True
             else:
                 self.copy_from(best_sol)
