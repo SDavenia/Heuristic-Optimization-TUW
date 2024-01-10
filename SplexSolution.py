@@ -1,6 +1,7 @@
 from pymhlib.solution import Solution, TObj
 from pymhlib.settings import get_settings_parser
 from pymhlib.scheduler import Result
+from pymhlib.alns import ALNS
 import time
 from SPlexInstance import SPlexInstance
 
@@ -52,6 +53,9 @@ class SPlexSolution(Solution):
         # Needed for writing to file
         self.problem_instance = inst.problem_instance
         self.instance_type = inst.instance_type
+
+        self.alns_destroyed_nodes = []
+        self.alns_destroyed_cluster_nodes = []
 
     def calc_objective(self)->int:
         cost = 0
@@ -1113,6 +1117,89 @@ class SPlexSolution(Solution):
             else:
                 self.copy_from(best_sol)
                 return False
+
+    def destroy_random_nodes(self, par = None, result = Result()) -> None:
+        start_time = time.time()
+        if self.alns_destroyed_nodes != []: # check if last ALNS repair run finished
+            print(f"There are non-repaired nodes in the ALNS list!")
+            return
+        print(f"Start Destroy random nodes")
+        destroy_sample_count = ALNS.get_number_to_destroy(self.inst.n)
+        print(f"ALNS remove {destroy_sample_count} nodes from clusters")
+        nodes_to_destroy = random.sample(range(1,self.inst.n), destroy_sample_count)
+        for i in nodes_to_destroy: #select a random node to remove from a cluster
+            for clust_index, clust in enumerate(self.clusters):
+                if i in clust:
+                    clust.remove(i)
+                    self.alns_destroyed_nodes.append([i,clust_index])
+                    break
+        self.invalidate()
+        print(f"End Destroy: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
+
+    def destroy_to_new_cluster(self, par = None, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Destroy to new cluster")
+        destroy_sample_count = ALNS.get_number_to_destroy(self.inst.n)
+        print(f"ALNS remove {destroy_sample_count} nodes from clusters")
+        nodes_to_destroy = random.sample(range(1,self.inst.n), destroy_sample_count)
+        for i in nodes_to_destroy: #select a random node to remove from a cluster
+            for clust in self.clusters:
+                if i in clust:
+                    clust.remove(i)
+                    break
+        self.clusters.append(nodes_to_destroy)
+        self.invalidate()
+        print(f"End Destroy: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
+
+    def destroy_worst_clusters(self, par = None, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Destroy worst cluster")
+        score = []
+        for clust_index, clust in enumerate(self.clusters):
+            clust_score = 0
+            for edge in self.edges_modified:
+                if edge[0] in clust or edge[1] in clust:
+                    clust_score += self.weights[edge[0], edge[1]]
+            score.append([clust_index, clust_score])
+        list.sort(score, key= lambda x:x[1], reverse= True)
+        self.alns_destroyed_cluster_nodes = self.clusters[score[0][0]]
+        self.clusters.pop(score[0][0])
+        self.invalidate()
+        print(f"End Destroy: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
+
+    def repair(self, par, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Repair: current score: {self.calc_objective()}")
+        if len(self.clusters) == 0:
+            # All clusters have been deleted, start with a new random construction
+            self.construct_randomized(par["k"], par["alpha"], par["beta"])
+            return
+        while self.alns_destroyed_nodes:
+            score = []
+            node, initial_clust_index = self.alns_destroyed_nodes.pop()
+            for clust_index, clust in enumerate(self.clusters):
+                if clust_index == initial_clust_index:
+                    score.append([clust_index, float('-inf')])
+                    continue
+                given_weight_to_new_cluster = [x for i,x in enumerate(self.inst.weights_given_graph[node]) if i in clust]
+                score.append([clust_index, numpy.sum(given_weight_to_new_cluster)])
+            list.sort(score, key= lambda x:x[1], reverse= True)
+            self.clusters[score[0][0]].append(node)
+        
+        while self.alns_destroyed_cluster_nodes:
+            score = []
+            node = self.alns_destroyed_cluster_nodes.pop()
+            for clust_index, clust in enumerate(self.clusters):
+                given_weight_to_new_cluster = [x for i,x in enumerate(self.inst.weights_given_graph[node]) if i in clust]
+                score.append([clust_index, numpy.sum(given_weight_to_new_cluster)])
+            list.sort(score, key= lambda x:x[1], reverse= True)
+            self.clusters[score[0][0]].append(node)
+
+        self.edges_modified = []
+        self.construct_all_splex()
+        print(self.check())
+        self.invalidate()
+        print(f"End Repair: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
 
 if __name__ == '__main__':
     parser = get_settings_parser()

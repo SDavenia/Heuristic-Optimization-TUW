@@ -11,6 +11,7 @@ from pymhlib.scheduler import Method, Scheduler
 from pymhlib.settings import get_settings_parser, settings, parse_settings
 from pymhlib.solution import Solution
 from pymhlib.gvns import GVNS
+from pymhlib.alns import ALNS
 from SplexSolution import SPlexSolution
 from SPlexInstance import SPlexInstance
 
@@ -22,7 +23,7 @@ start_time = 0
 
 def custom_settings():
     parser.add_argument("inputfile", type=str, help='instance file path')
-    parser.add_argument("--alg", type=str, default="c", help='(heuristic) c: construction, rc: random construction, ls: local search, grasp, vnd, gvns)')
+    parser.add_argument("--alg", type=str, default="c", help='(heuristic) c: construction, rc: random construction, ls: local search, grasp, vnd, gvns, alns)')
     parser.add_argument("--nh", type=str, default="m1", help='(local search neighborhood) m1: move 1 node, s2: swap 2 nodes, sc: split clusters, jc: join clusters')
     parser.add_argument("-k", type=int, default=5, help='construction initial cluster size')
     parser.add_argument("--alpha", type=float, default=0.5, help='randomization for cluster initialization')
@@ -129,6 +130,20 @@ def gvns(solution: SPlexSolution, k, alpha, beta, step):
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
     Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='gvns', solution=solution.edges_modified)
 
+def alns(solution: SPlexSolution, k, alpha, beta):
+    start_time = time.time()
+    par = {"k": k, "alpha": alpha, "beta": beta}
+    alns = ALNS(solution, [Method("random_construction", SPlexSolution.ch_construct_randomized, par)],
+                        [Method("destroy_random_nodes", SPlexSolution.destroy_random_nodes, None),
+                         Method("destroy_worst_cluster", SPlexSolution.destroy_worst_clusters, None),
+                         Method("destroy_to_new_cluster", SPlexSolution.destroy_to_new_cluster, None)],
+                        [Method("repair", SPlexSolution.repair, par)])
+    alns.run()
+    runtime = time.time() - start_time
+    score = solution.calc_objective()
+    print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
+    Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='alns', solution=solution.edges_modified)
+
 def run(args, solution: SPlexSolution):
     if args.alg == "c":
         construction(solution, args.k)
@@ -143,6 +158,8 @@ def run(args, solution: SPlexSolution):
         vnd(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "gvns":
         gvns(solution, args.k, args.alpha, args.beta, args.step)
+    elif args.alg == "alns":
+        alns(solution, args.k, args.alpha, args.beta)
 
 if __name__ == '__main__':
     custom_settings()    
