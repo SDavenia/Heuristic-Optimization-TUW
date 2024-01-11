@@ -41,6 +41,8 @@ class GeneticAlgorithm():
         self.selection_method=selection_method
         self.join_p_param = join_p_param
 
+        self.max_fitness = int(np.sum(problem_instance.weights)/2)
+
     def generate_initial_population(self):
         """
         Generate initial population with variable size
@@ -102,8 +104,9 @@ class GeneticAlgorithm():
         """
         Returns the index of two elements from the population to use for recombination, which are selected according fitness roulette.
         """
-        den = 1/sum(self.population_values)
-        selection_probabilities = [self.population_values[i] * den for i in range(self.n_solutions)]
+        fitness = [self.max_fitness - self.population_values[i]]
+        den = 1/sum(fitness)
+        selection_probabilities = [fitness[i] * den for i in range(self.n_solutions)]
         selected = np.random.choice(np.arange(0, self.n_solutions), size = 2, p = selection_probabilities, replace=False)
         return selected[0], selected[1]
     
