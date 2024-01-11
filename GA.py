@@ -21,25 +21,25 @@ class GeneticAlgorithm():
         - perc_replace: what percentage of the original population should be replaced.
         - selection: if fp uses fitness proportional selection, if lr it uses linear ranking with alpha=2, beta=0
     """
-    def __init__(self, problem_instance, n_solutions, k, alpha, beta, selection_method, perc_replace, avg_joins):
+    def __init__(self, problem_instance, n_solutions, k, alpha, beta, selection_method, perc_replace, join_p_param):
         self.problem_instance = problem_instance
         self.n_solutions = n_solutions
 
         self.population = [None] * self.n_solutions
         self.population_values = [None] * self.n_solutions
 
-        self.children = [None] * self.n_solutions # Assuming we generate again the whole population
-        self.children_values = [None] * self.n_solutions
-
-        self.initial_n_clusters = [None] * self.n_solutions # Stores the initial number of clusters in the solutions
-
         self.alpha = alpha
         self.beta = beta
         self.k = k
         self.perc_replace = perc_replace
 
+        self.children = [None] * int(self.n_solutions * self.perc_replace)
+        self.children_values = [None] * int(self.n_solutions * self.perc_replace)
+
+        self.initial_n_clusters = [None] * self.n_solutions
+
         self.selection_method=selection_method
-        self.avg_joins = avg_joins
+        self.join_p_param = join_p_param
 
     def generate_initial_population(self):
         """
@@ -54,7 +54,9 @@ class GeneticAlgorithm():
         # Evaluate the initial population and sort it accordingly.
         self.evaluate_population()
         self.sort_population()
-        self.initial_n_clusters = [len(clust) for ind in self.n_solutions for clust in self.children[ind].clusters]
+
+        # Store the initial number of clusters for each solution.
+        self.initial_n_clusters = [len(self.population[ind].clusters) for ind in range(self.n_solutions)]
 
         # Store the best value and the best solution: not needed cause they always improve
         # self.best_value = self.population_values[0]
@@ -123,7 +125,7 @@ class GeneticAlgorithm():
         """
         # self.children = [SPlexSolution(self.problem_instance) for i in range(self.n_solutions)] # Initialize children population
         # Generate all new individuals
-        for ind in range(self.n_solutions):
+        for ind in range(int(self.n_solutions * self.perc_replace)):
             # Select two parents
             p0, p1 = self.select_fitness_prop()
             clusters_p0 = dp(self.population[p0].clusters)
@@ -158,53 +160,89 @@ class GeneticAlgorithm():
             # print(len(set([x for sublist in self.children[ind].clusters for x in sublist])))
     
     def mutate(self):
-        for ind in range(self.n_solutions):
-            cluster_lengths = [len(clust) for clust in self.children[ind].clusters]
-            n_clust = len(cluster_lengths)
-            # If the number of clusters is much larger than the initial number of clusters, consider joining.
-
-
-    def mutate(self):
         """
         Randomly join clusters:
         Since the recombination operator tends to lead to a larger number of clusters with mutation we join some of those.
-        Join some clusters with probability
+        Join some clusters favouring smaller clusters
         """
+        for ind in range(int(self.n_solutions * self.perc_replace)):
+            # Extract the current number of clusters in the children
+            n_clusters = len(self.children[ind].clusters) # number of clusters in the child
+            cluster_lengths = [len(clust) for clust in self.children[ind].clusters] # List containing number of nodes in each cluster
+            n_nodes = sum(cluster_lengths)
+
+            # Consider joining if the number of clusters is greater than the original number of clusters.
+            if n_clusters > self.initial_n_clusters[ind]:
+                # Join clusters with a probability that is proportional to their size.
+                #join_prob = [self.join_p_param/n_clusters * n_nodes/l_clust for l_clust in cluster_lengths]
+                # join_prob = [self.join_p_param * (1-clust_n/n_nodes) * (n_clusters - self.initial_n_clusters[ind])/n_nodes for clust_n in cluster_lengths] # clust_n: number of nodes in that cluster
+                # join_prob = [self.join_p_param * (1-clust_n/n_nodes) for clust_n in cluster_lengths] # clust_n: number of nodes in that cluster
+
+                join_prob = [np.exp(-(clust_n/n_nodes)*self.join_p_param) for clust_n in cluster_lengths] # clust_n: number of nodes in that cluster
+                join_prob = [x if x < 1 else 1 for x in join_prob]                
+                
+                to_join = list(np.random.binomial(1, join_prob, size=n_clusters))
+                to_join_idx = [index for index, value in enumerate(to_join) if value != 0]
+
+                to_join_len = [cluster_lengths[i] for i in to_join_idx]
+                
+                # For computational efficiency reasons we prevent the joining leading to large clusters
+                #  if len(to_join_idx) > 1:
+                if len(to_join_idx) > 1 and sum(to_join_len) < 0.4 * n_nodes:
+                    new_clust = []
+                    # print(f"clusters before:\n{self.children[ind].clusters}")
+                    for idx in sorted(to_join_idx, reverse=True):
+                        new_clust += self.children[ind].clusters[idx]
+                        del self.children[ind].clusters[idx]
+                    self.children[ind].clusters.append(new_clust)
+
+
+    """def mutate_simple(self):
+        #Randomly join clusters:
+        #Since the recombination operator tends to lead to a larger number of clusters with mutation we join some of those.
+        #Join some clusters with probability
+        
         for ind in range(self.n_solutions):
             cluster_lengths = [len(clust) for clust in self.children[ind].clusters]
             n_clust = len(cluster_lengths)
-            join_prob = self.avg_joins/n_clust # 2/Number of clusters: On average they get joined
-            # Iterate through all clusters and select which ones have to be joined
-            to_join = list(np.random.binomial(1, join_prob, size=n_clust)) # Select which entries have to be joined
-            to_join_idx = [index for index, value in enumerate(to_join) if value != 0]
-            # print(f"Vector:{to_join}\nPositions:{to_join_idx}")
-            
-            if len(to_join_idx) > 1:
-                new_clust = []
-                # print(f"clusters before:\n{self.children[ind].clusters}")
-                for idx in sorted(to_join_idx, reverse=True):
-                    new_clust += self.children[ind].clusters[idx]
-                    del self.children[ind].clusters[idx]
-                self.children[ind].clusters.append(new_clust)
-                # print(f"clusters after:\n{self.children[ind].clusters}")
+            n_nodes = sum(cluster_lengths)
+            # Only consider joining if the number of clusters is greater than 2.
+            if n_clust > 2:
+                join_prob = self.avg_joins/n_clust # 2/Number of clusters: On average two clusters get joined
+                # Iterate through all clusters and select which ones have to be joined
+                to_join = list(np.random.binomial(1, join_prob, size=n_clust)) # Select which entries have to be joined
+                to_join_idx = [index for index, value in enumerate(to_join) if value != 0]
+                # print(f"Vector:{to_join}\nPositions:{to_join_idx}")
+                
+                if len(to_join_idx) > 1:
+                    new_clust = []
+                    # print(f"clusters before:\n{self.children[ind].clusters}")
+                    for idx in sorted(to_join_idx, reverse=True):
+                        new_clust += self.children[ind].clusters[idx]
+                        del self.children[ind].clusters[idx]
+                    self.children[ind].clusters.append(new_clust)
+                    # print(f"clusters after:\n{self.children[ind].clusters}")"""
     
     def construct_children_splex(self):
         """
         Constructs the s-plexes based on the children assignment of counts.
         The s-plexes are built using the same heuristic as before.
         """
-        for ind in range(self.n_solutions):
+        for ind in range(int(self.n_solutions * self.perc_replace)):
             self.children[ind].construct_all_splex()
             # print(f"Valid: {self.children[ind].check()}\nValue: {self.children[ind].calc_objective()}")
 
-    def replace(self, perc_replace = 0.8):
+    def replace(self):
         """
         - p: what percentage of the population should be replaced.
         Replaces the worst 80% of the initial population with the best 80% of the children population and sorts it again.
         Assumes that self.population and self.children are sorted and sorts the final population
         """
-        new_population = self.population[0:int((1-perc_replace)*len(self.population))]
-        new_population += self.children[int((1-perc_replace)*len(self.population)):]
+        to_replace = int(self.n_solutions * self.perc_replace)
+        to_keep = self.n_solutions - to_replace
+        new_population = self.population[0:to_keep]
+        new_population += self.children
+        new_population = self.population[0:self.n_solutions]
         self.population = new_population
         self.evaluate_population()
         self.sort_population()
@@ -216,22 +254,22 @@ class GeneticAlgorithm():
         self.recombine()
         self.mutate()
         self.construct_children_splex()
-        self.evaluate_children()
-        self.sort_children()
+        #self.evaluate_children()
+        #self.sort_children()
         self.replace()
     
     def evolve_n_steps(self, n):
         start_time = time.time()
         for i in range(n):
-            print(f"Iteration: {i}")
+            # print(f"Iteration: {i}")
             self.evolve_1_step()
             current_time = time.time() - start_time
             if current_time >= 15 * 60:
                 print(f"Exceeded time limit")
                 break
         total_time = time.time() - start_time
-        print(f"Time for {n} steps: {total_time}s")
-        print(f"Average time per step: {total_time/n}s")
+        #print(f"Time for {n} steps: {total_time}s")
+        #print(f"Average time per step: {total_time/n}s")
 
           
 
@@ -242,7 +280,7 @@ class GeneticAlgorithm():
         (alpha, beta, k): {(self.alpha, self.beta, self.k)}
         Selection method: {self.selection_method}
         Replacement percentage: {self.perc_replace*100}%
-        Average_joins: {self.avg_joins}
+        Join parameter: {self.join_p_param}
         """
 
 if __name__ == '__main__':
@@ -255,19 +293,29 @@ if __name__ == '__main__':
     parser.add_argument("--n_solutions", type=int, default=5, help='number of solutions to be included in the population.')
     parser.add_argument("--perc_replace", type=float, default = 0.8, help = 'percentage of solutions that should be replaced.')
     parser.add_argument("--selection_method", type=str, default='fp', help='selection method for GA. lr: linear ranking, fp: fitness proportional selection.')
-    parser.add_argument("--avg_joins", type=int, default=1, help='Average number of clusters that will be joined during mutation')
+    parser.add_argument("--join_p_param", type=float, default=20, help='Tuning of joinin probability for mutation')
 
     args = parser.parse_args()
     spi = SPlexInstance(args.inputfile)
-    GA_instance = GeneticAlgorithm(problem_instance=spi, n_solutions=args.n_solutions, k=args.k, alpha=args.alpha, beta=args.beta, selection_method=args.selection_method, perc_replace=args.perc_replace, avg_joins=args.avg_joins)
-    print(GA_instance)
+    GA_instance = GeneticAlgorithm(problem_instance=spi, n_solutions=args.n_solutions, k=args.k, alpha=args.alpha, beta=args.beta, selection_method=args.selection_method, perc_replace=args.perc_replace, join_p_param=args.join_p_param)
+    # print(GA_instance)
     GA_instance.generate_initial_population()
-    GA_instance.initial_n_clusters
-    """print(f"Top 10 Initial values:\n{GA_instance.population_values[0:10]}\n")
+    initial_best_value = GA_instance.population_values[0]
+    #print(f"Initial number of clusters: {GA_instance.initial_n_clusters}")
+    #print(f"Top 10 Initial values:\n{GA_instance.population_values[0:10]}\n")
+    initial_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
+    #print(f"The initial solutions have clusters of these size:\n{initial_pop_clusters_number}")
+    
     GA_instance.evolve_n_steps(n=args.iterations)
-    print(f"Top 10 Final values:\n{GA_instance.population_values[0:10]}\n")
+    #print(f"Top 10 Final values:\n{GA_instance.population_values[0:10]}\n")
     final_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
-    print(f"The final solutions have clusters of these size:\n{final_pop_clusters_number}")"""
+    #print(f"The final solutions have clusters of these size:\n{final_pop_clusters_number}")
+    current_best_value = GA_instance.population_values[0]
+    changed = False
+    if current_best_value < initial_best_value:
+        changed = True
+    #print(f"Score: {current_best_value}\nChanged: {changed}")
+    
 
 
     
