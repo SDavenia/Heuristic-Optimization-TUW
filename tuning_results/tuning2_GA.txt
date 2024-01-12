@@ -1,0 +1,42 @@
+tuning2
+data/inst_tuning2/heur045_n_300_m_6293.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 1.86e+04  : 1     : 03:11 (m:s)     
+Random seeding    : 1.505e+04 : 65    : 02:34:51 (h:m:s)
+Local sampling    : 1.456e+04 : 64    : 03:34:32 (h:m:s)
+Duplicates        : -         : 26    : -               
+----------------  : ----      : ----  : ----            
+Total             : 1.456e+04 : 156   : 31:29 (m:s)     
+========================================================
+{'n_solutions': 20, 'alpha': 0.1, 'beta': 1.0, 'k_perc_n': 0.2, 'k_perc_mn': 0.3, 'selection_method': 'lr', 'perc_replace': 0.7, 'join_p_param': 20}
+data/inst_tuning2/heur044_n_300_m_3234.txt
+Runtime: 30m
+====================== Summary ======================
+Mode              : Best f : Steps : Time            
+----------------  : ----   : ----  : ----            
+Initial solution  : 8739   : 1     : 04:49 (m:s)     
+Random seeding    : 6390   : 83    : 02:11:59 (h:m:s)
+Local sampling    : 6298   : 43    : 02:57:39 (h:m:s)
+Duplicates        : -      : 9     : -               
+----------------  : ----   : ----  : ----            
+Total             : 6298   : 136   : 26:51 (m:s)     
+=====================================================
+{'n_solutions': 10, 'alpha': 0.3, 'beta': 1.0, 'k_perc_n': 0.2, 'k_perc_mn': 0.2, 'selection_method': 'fp', 'perc_replace': 0.9, 'join_p_param': 30}
+Exceeded time limit
+Exceeded time limit
+data/inst_tuning2/heur043_n_300_m_12914.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 3.848e+04 : 1     : 08:37 (m:s)     
+Random seeding    : 2.768e+04 : 28    : 02:05:11 (h:m:s)
+Local sampling    : 2.407e+04 : 30    : 04:00:28 (h:m:s)
+Duplicates        : -         : 6     : -               
+----------------  : ----      : ----  : ----            
+Total             : 2.407e+04 : 65    : 31:55 (m:s)     
+========================================================
+{'n_solutions': 20, 'alpha': 0.1, 'beta': 1.0, 'k_perc_n': 0.2, 'k_perc_mn': 0.3, 'selection_method': 'fp', 'perc_replace': 0.8, 'join_p_param': 30}

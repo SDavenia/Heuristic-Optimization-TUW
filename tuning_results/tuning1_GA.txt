@@ -1,0 +1,42 @@
+tuning1
+data/inst_tuning1/heur040_n_300_m_13358.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 3.912e+04 : 1     : 09:10 (m:s)     
+Random seeding    : 1.29e+04  : 27    : 01:48:34 (h:m:s)
+Local sampling    : 9694      : 55    : 04:12:27 (h:m:s)
+Duplicates        : -         : 19    : -               
+----------------  : ----      : ----  : ----            
+Total             : 9694      : 102   : 31:18 (m:s)     
+========================================================
+{'n_solutions': 20, 'alpha': 0.2, 'beta': 1.0, 'k_perc_n': 0.2, 'k_perc_mn': 0.2, 'selection_method': 'lr', 'perc_replace': 0.9, 'join_p_param': 10}
+data/inst_tuning1/heur041_n_300_m_17492.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 5.141e+04 : 1     : 04:05 (m:s)     
+Random seeding    : 1.722e+04 : 36    : 01:55:31 (h:m:s)
+Local sampling    : 1.305e+04 : 103   : 04:01:25 (h:m:s)
+Duplicates        : -         : 60    : -               
+----------------  : ----      : ----  : ----            
+Total             : 1.305e+04 : 200   : 30:21 (m:s)     
+========================================================
+{'n_solutions': 20, 'alpha': 0.2, 'beta': 1.0, 'k_perc_n': 0.2, 'k_perc_mn': 0.4, 'selection_method': 'fp', 'perc_replace': 0.7, 'join_p_param': 40}
+data/inst_tuning1/heur042_n_300_m_5764.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 1.631e+04 : 1     : 03:13 (m:s)     
+Random seeding    : 2586      : 51    : 02:13:28 (h:m:s)
+Local sampling    : 2169      : 85    : 04:02:26 (h:m:s)
+Duplicates        : -         : 62    : -               
+----------------  : ----      : ----  : ----            
+Total             : 2169      : 199   : 31:60 (m:s)     
+========================================================
+{'n_solutions': 10, 'alpha': 0.3, 'beta': 1.0, 'k_perc_n': 0.15, 'k_perc_mn': 0.3, 'selection_method': 'lr', 'perc_replace': 0.7, 'join_p_param': 10}
+Exceeded time limit
+Exceeded time limit

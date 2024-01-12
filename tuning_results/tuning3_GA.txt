@@ -1,0 +1,40 @@
+tuning3
+data/inst_tuning3/heur047_n_300_m_20096.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 5.702e+04 : 1     : 05:06 (m:s)     
+Random seeding    : 4.959e+04 : 41    : 01:57:32 (h:m:s)
+Local sampling    : 4.685e+04 : 101   : 04:12:04 (h:m:s)
+Duplicates        : -         : 63    : -               
+----------------  : ----      : ----  : ----            
+Total             : 4.685e+04 : 206   : 31:28 (m:s)     
+========================================================
+{'n_solutions': 10, 'alpha': 0.1, 'beta': 1.0, 'k_perc_n': 0.1, 'k_perc_mn': 0.1, 'selection_method': 'lr', 'perc_replace': 0.9, 'join_p_param': 20}
+data/inst_tuning3/heur046_n_300_m_13150.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 3.846e+04 : 1     : 02:14 (m:s)     
+Random seeding    : 3.458e+04 : 48    : 01:58:15 (h:m:s)
+Local sampling    : 3.367e+04 : 78    : 04:47:41 (h:m:s)
+Duplicates        : -         : 53    : -               
+----------------  : ----      : ----  : ----            
+Total             : 3.367e+04 : 180   : 34:41 (m:s)     
+========================================================
+{'n_solutions': 20, 'alpha': 0.1, 'beta': 1.0, 'k_perc_n': 0.1, 'k_perc_mn': 0.5, 'selection_method': 'lr', 'perc_replace': 0.7, 'join_p_param': 20}
+data/inst_tuning3/heur048_n_300_m_14666.txt
+Runtime: 30m
+======================== Summary =======================
+Mode              : Best f    : Steps : Time            
+----------------  : ----      : ----  : ----            
+Initial solution  : 4.523e+04 : 1     : 01:58 (m:s)     
+Random seeding    : 3.946e+04 : 48    : 01:41:46 (h:m:s)
+Local sampling    : 3.873e+04 : 95    : 04:16:34 (h:m:s)
+Duplicates        : -         : 38    : -               
+----------------  : ----      : ----  : ----            
+Total             : 3.873e+04 : 182   : 30:22 (m:s)     
+========================================================
+{'n_solutions': 20, 'alpha': 0.3, 'beta': 1.0, 'k_perc_n': 0.2, 'k_perc_mn': 0.1, 'selection_method': 'fp', 'perc_replace': 0.9, 'join_p_param': 20}
