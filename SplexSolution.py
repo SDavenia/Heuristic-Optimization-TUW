@@ -1201,6 +1201,45 @@ class SPlexSolution(Solution):
         self.invalidate()
         print(f"End Repair: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
 
+    def repair_to_random_new_cluster(self, par, result = Result()) -> None:
+        start_time = time.time()
+        print(f"Start Repair to new cluster: current score: {self.calc_objective()}")
+        if len(self.clusters) == 0:
+            # All clusters have been deleted, start with a new random construction
+            self.construct_randomized(par["k"], par["alpha"], par["beta"])
+            return
+        unassigned_nodes = [x[0] for x in self.alns_destroyed_nodes] + self.alns_destroyed_cluster_nodes
+        if not unassigned_nodes:
+            return
+        scores = []
+        for node in unassigned_nodes:
+            score = 0
+            for neighbor in unassigned_nodes:
+                if neighbor == node:
+                    continue
+                score += self.inst.weights_given_graph[node][neighbor]
+            scores.append([node, score])
+        list.sort(scores, key= lambda x:x[1], reverse= True)
+
+        new_cluster = [x[0] for x in scores[0:int(par["join_rate"]*len(unassigned_nodes))]]
+        self.clusters.append(new_cluster)
+
+        for node in [x[0] for x in scores[int(par["join_rate"]*len(unassigned_nodes)):]]:
+            score = []
+            for clust_index, clust in enumerate(self.clusters):
+                given_weight_to_new_cluster = [x for i,x in enumerate(self.inst.weights_given_graph[node]) if i in clust]
+                score.append([clust_index, numpy.sum(given_weight_to_new_cluster)])
+            list.sort(score, key= lambda x:x[1], reverse= True)
+            self.clusters[score[0][0]].append(node)
+
+        self.alns_destroyed_cluster_nodes = []
+        self.alns_destroyed_nodes = []
+        self.edges_modified = []
+        self.construct_all_splex()
+        print(self.check())
+        self.invalidate()
+        print(f"End Repair: current score: {self.calc_objective()}, changed: {result.changed}, time: {time.time()-start_time}")
+
 if __name__ == '__main__':
     parser = get_settings_parser()
     parser.add_argument("inputfile")

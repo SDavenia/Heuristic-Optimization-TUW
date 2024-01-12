@@ -30,6 +30,7 @@ def custom_settings():
     parser.add_argument("--beta", type=float, default=0.5, help='randomization for cluster assignment')
     parser.add_argument("--step", type=str, default="first", help='step function selection')
     parser.add_argument("--iterations", type=int, default=5, help='iterations, for e.g. grasp')
+    parser.add_argument("--jr", type=float, default=0.5, help='join rate for ALNS repair')
 
 def construction(solution: SPlexSolution, k):
     start_time = time.time()
@@ -130,14 +131,15 @@ def gvns(solution: SPlexSolution, k, alpha, beta, step):
     print(f"Runtime: {runtime}\nScore: {score}\nSolution check: {solution.check()}")
     Utilities.write_solution(solution.instance_type, solution.problem_instance, algorithm='gvns', solution=solution.edges_modified)
 
-def alns(solution: SPlexSolution, k, alpha, beta):
+def alns(solution: SPlexSolution, k, alpha, beta, join_rate):
     start_time = time.time()
-    par = {"k": k, "alpha": alpha, "beta": beta}
+    par = {"k": k, "alpha": alpha, "beta": beta, "join_rate": join_rate}
     alns = ALNS(solution, [Method("random_construction", SPlexSolution.ch_construct_randomized, par)],
                         [Method("destroy_random_nodes", SPlexSolution.destroy_random_nodes, None),
                          Method("destroy_worst_cluster", SPlexSolution.destroy_worst_clusters, None),
                          Method("destroy_to_new_cluster", SPlexSolution.destroy_to_new_cluster, None)],
-                        [Method("repair", SPlexSolution.repair, par)])
+                        [Method("repair", SPlexSolution.repair, par),
+                         Method("repair_to_random_new_cluster", SPlexSolution.repair_to_random_new_cluster, par)])
     alns.run()
     runtime = time.time() - start_time
     score = solution.calc_objective()
@@ -159,7 +161,7 @@ def run(args, solution: SPlexSolution):
     elif args.alg == "gvns":
         gvns(solution, args.k, args.alpha, args.beta, args.step)
     elif args.alg == "alns":
-        alns(solution, args.k, args.alpha, args.beta)
+        alns(solution, args.k, args.alpha, args.beta, args.jr)
 
 if __name__ == '__main__':
     custom_settings()    
