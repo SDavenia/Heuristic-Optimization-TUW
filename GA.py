@@ -8,8 +8,8 @@ from copy import deepcopy as dp
 import numpy as np
 import random
 import time
+from utilities import Utilities
 
-from Utilities import write_solution
 
 class GeneticAlgorithm():
     """
@@ -66,7 +66,6 @@ class GeneticAlgorithm():
         # self.best_value = self.population_values[0]
         # self.best_solution = self.population[0]
 
-    
     def sort_population(self):
         """
         Given the current values of the population, it re-orders the solutions accordingly, so that in position 1 we have the best solution and so on.
@@ -264,19 +263,49 @@ class GeneticAlgorithm():
         self.replace()
     
     def evolve_n_steps(self, n):
+        self.initial_best_value = self.population_values[0]
+        self.genetic_improved = False
+        self.current_generation_best_value = self.population_values[0]
+        self.best_value = self.population_values[0]
+        self.best_sol = dp(self.population[0])
+
+        no_improvement = 0
         start_time = time.time()
         for i in range(n):
-            # print(f"Iteration: {i}")
             self.evolve_1_step()
+            # Implement a mechanism for re-generating initial population if no improvement over initial solution after 10 iterations
+            if GA_instance.population_values[0] < self.current_generation_best_value:
+                self.current_generation_best_value = GA_instance.population_values[0]
+                self.genetic_improved = True # meaning a child solution is better than the initially generated ones.
+                no_improvement = 0
+            else:
+                no_improvement += 1
+            
+            if no_improvement == 10:  # After 10 consecutve non-improvements
+                print(f"Re-generating initial solutions")
+                no_improvement = 0
+                
+                if GA_instance.population_values[0] < self.best_value:
+                    self.best_value = GA_instance.population_values[0]
+                    self.best_sol = dp(self.population[0])
+                
+                self.generate_initial_population()
+                self.current_generation_best_value = self.population_values[0]
+            
             current_time = time.time() - start_time
             if current_time >= 15 * 60:
                 print(f"Exceeded time limit")
                 break
-        total_time = time.time() - start_time
-        #print(f"Time for {n} steps: {total_time}s")
-        #print(f"Average time per step: {total_time/n}s")
+        
+        if GA_instance.population_values[0] < self.best_value:
+            self.best_value = GA_instance.population_values[0]
+            self.best_sol = dp(self.population[0])
 
-          
+   
+        total_time = time.time() - start_time
+        print(f"Time for {n} steps: {total_time}s")
+        print(f"Average time per step: {total_time/n}s")
+    
 
     def __str__(self):
         return f"""
@@ -305,7 +334,7 @@ if __name__ == '__main__':
     GA_instance = GeneticAlgorithm(problem_instance=spi, n_solutions=args.n_solutions, k=args.k, alpha=args.alpha, beta=args.beta, selection_method=args.selection_method, perc_replace=args.perc_replace, join_p_param=args.join_p_param)
     # print(GA_instance)
     GA_instance.generate_initial_population()
-    initial_best_value = GA_instance.population_values[0]
+    #initial_best_value = GA_instance.population_values[0]
     #print(f"Initial number of clusters: {GA_instance.initial_n_clusters}")
     #print(f"Top 10 Initial values:\n{GA_instance.population_values[0:10]}\n")
     # initial_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
@@ -315,11 +344,12 @@ if __name__ == '__main__':
     #print(f"Top 10 Final values:\n{GA_instance.population_values[0:10]}\n")
     # final_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
     #print(f"The final solutions have clusters of these size:\n{final_pop_clusters_number}")
-    current_best_value = GA_instance.population_values[0]
+    # current_best_value = GA_instance.population_values[0]
     changed = False
-    if current_best_value < initial_best_value:
+    if GA_instance.best_value < GA_instance.initial_best_value:
         changed = True
-    print(f"Score: {current_best_value}\nChanged: {changed}")
+    print(f"Score: {GA_instance.best_value}\nChanged: {changed}\nChanged actual: {GA_instance.genetic_improved}")
+    Utilities.write_solution(GA_instance.population[0].instance_type, GA_instance.population[0].problem_instance, algorithm='ga', solution=GA_instance.best_sol.edges_modified)
     #print(f"Score: {current_best_value}\nChanged: {changed}")
     # Write best solution to folder
 

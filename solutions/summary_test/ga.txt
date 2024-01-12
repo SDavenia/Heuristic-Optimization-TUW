@@ -1,0 +1,500 @@
+data/inst_test/heur006_n_180_m_6067.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 29.136836528778076s
+Average time per step: 0.7284209132194519s
+Score: 13262
+Changed: True
+Changed actual: False
+data/inst_test/heur014_n_300_m_14191.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 325.76801466941833s
+Average time per step: 8.144200366735458s
+Score: 37824
+Changed: False
+Changed actual: False
+data/inst_test/heur003_n_120_m_2588.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 9.499057531356812s
+Average time per step: 0.2374764382839203s
+Score: 5599
+Changed: True
+Changed actual: False
+data/inst_test/heur005_n_160_m_4015.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 17.88469409942627s
+Average time per step: 0.44711735248565676s
+Score: 9070
+Changed: False
+Changed actual: True
+data/inst_test/heur007_n_200_m_6731.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 41.78848958015442s
+Average time per step: 1.0447122395038604s
+Score: 16421
+Changed: False
+Changed actual: False
+data/inst_test/heur008_n_250_m_1045.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 97.33690309524536s
+Average time per step: 2.433422577381134s
+Score: 1460
+Changed: True
+Changed actual: False
+data/inst_test/heur004_n_140_m_3014.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 11.229493856430054s
+Average time per step: 0.2807373464107513s
+Score: 6281
+Changed: True
+Changed actual: False
+data/inst_test/heur013_n_250_m_22395.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 293.052538394928s
+Average time per step: 7.3263134598732s
+Score: 32772
+Changed: False
+Changed actual: True
+data/inst_test/heur019_n_300_m_28765.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 383.6385450363159s
+Average time per step: 9.590963625907898s
+Score: 41535
+Changed: False
+Changed actual: False
+data/inst_test/heur002_n_100_m_3274.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 12.540306329727173s
+Average time per step: 0.31350765824317933s
+Score: 2384
+Changed: True
+Changed actual: False
+data/inst_test/heur006_n_180_m_6067.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 28.494272232055664s
+Average time per step: 0.7123568058013916s
+Score: 13191
+Changed: True
+Changed actual: True
+data/inst_test/heur014_n_300_m_14191.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 285.8117604255676s
+Average time per step: 7.145294010639191s
+Score: 38783
+Changed: True
+Changed actual: False
+data/inst_test/heur003_n_120_m_2588.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 8.965445518493652s
+Average time per step: 0.2241361379623413s
+Score: 5639
+Changed: False
+Changed actual: False
+data/inst_test/heur005_n_160_m_4015.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 17.478225231170654s
+Average time per step: 0.43695563077926636s
+Score: 9138
+Changed: True
+Changed actual: False
+data/inst_test/heur007_n_200_m_6731.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 41.63372349739075s
+Average time per step: 1.0408430874347687s
+Score: 16542
+Changed: True
+Changed actual: False
+data/inst_test/heur008_n_250_m_1045.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 73.81519889831543s
+Average time per step: 1.8453799724578857s
+Score: 1507
+Changed: True
+Changed actual: False
+data/inst_test/heur004_n_140_m_3014.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 11.067837238311768s
+Average time per step: 0.2766959309577942s
+Score: 6261
+Changed: True
+Changed actual: False
+data/inst_test/heur013_n_250_m_22395.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 591.8571443557739s
+Average time per step: 14.796428608894349s
+Score: 22307
+Changed: True
+Changed actual: False
+data/inst_test/heur019_n_300_m_28765.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 397.5105171203613s
+Average time per step: 9.937762928009032s
+Score: 42791
+Changed: True
+Changed actual: False
+data/inst_test/heur002_n_100_m_3274.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 13.510308980941772s
+Average time per step: 0.3377577245235443s
+Score: 2772
+Changed: True
+Changed actual: False
+data/inst_test/heur006_n_180_m_6067.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 28.98616600036621s
+Average time per step: 0.7246541500091552s
+Score: 13076
+Changed: True
+Changed actual: False
+data/inst_test/heur014_n_300_m_14191.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 294.3336615562439s
+Average time per step: 7.358341538906098s
+Score: 38809
+Changed: True
+Changed actual: False
+data/inst_test/heur003_n_120_m_2588.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 9.198489427566528s
+Average time per step: 0.2299622356891632s
+Score: 5718
+Changed: False
+Changed actual: True
+data/inst_test/heur005_n_160_m_4015.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 17.895005464553833s
+Average time per step: 0.4473751366138458s
+Score: 9210
+Changed: True
+Changed actual: False
+data/inst_test/heur007_n_200_m_6731.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 43.0021858215332s
+Average time per step: 1.07505464553833s
+Score: 16295
+Changed: True
+Changed actual: False
+data/inst_test/heur008_n_250_m_1045.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 97.52986216545105s
+Average time per step: 2.4382465541362763s
+Score: 1531
+Changed: True
+Changed actual: True
+data/inst_test/heur004_n_140_m_3014.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 11.19826340675354s
+Average time per step: 0.2799565851688385s
+Score: 6440
+Changed: True
+Changed actual: False
+data/inst_test/heur013_n_250_m_22395.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 335.2519221305847s
+Average time per step: 8.381298053264619s
+Score: 22443
+Changed: False
+Changed actual: False
+data/inst_test/heur019_n_300_m_28765.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 417.7121744155884s
+Average time per step: 10.44280436038971s
+Score: 43402
+Changed: True
+Changed actual: False
+data/inst_test/heur002_n_100_m_3274.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 14.789566278457642s
+Average time per step: 0.36973915696144105s
+Score: 2547
+Changed: True
+Changed actual: False
+data/inst_test/heur006_n_180_m_6067.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 29.721787214279175s
+Average time per step: 0.7430446803569793s
+Score: 12716
+Changed: True
+Changed actual: False
+data/inst_test/heur014_n_300_m_14191.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 247.53466963768005s
+Average time per step: 6.188366740942001s
+Score: 38440
+Changed: True
+Changed actual: False
+data/inst_test/heur003_n_120_m_2588.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 8.568056583404541s
+Average time per step: 0.21420141458511352s
+Score: 5466
+Changed: True
+Changed actual: False
+data/inst_test/heur005_n_160_m_4015.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 16.1419575214386s
+Average time per step: 0.403548938035965s
+Score: 9070
+Changed: True
+Changed actual: False
+data/inst_test/heur007_n_200_m_6731.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 37.67307686805725s
+Average time per step: 0.9418269217014312s
+Score: 16576
+Changed: True
+Changed actual: False
+data/inst_test/heur008_n_250_m_1045.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 90.32090926170349s
+Average time per step: 2.2580227315425874s
+Score: 1517
+Changed: True
+Changed actual: True
+data/inst_test/heur004_n_140_m_3014.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 10.142637491226196s
+Average time per step: 0.2535659372806549s
+Score: 6119
+Changed: True
+Changed actual: False
+data/inst_test/heur013_n_250_m_22395.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 352.04878282546997s
+Average time per step: 8.80121957063675s
+Score: 27147
+Changed: True
+Changed actual: False
+data/inst_test/heur019_n_300_m_28765.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 426.32366847991943s
+Average time per step: 10.658091711997987s
+Score: 37109
+Changed: False
+Changed actual: False
+data/inst_test/heur002_n_100_m_3274.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 12.320773363113403s
+Average time per step: 0.3080193340778351s
+Score: 2502
+Changed: True
+Changed actual: False
+data/inst_test/heur006_n_180_m_6067.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 27.075427770614624s
+Average time per step: 0.6768856942653656s
+Score: 12747
+Changed: False
+Changed actual: False
+data/inst_test/heur014_n_300_m_14191.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 255.69380044937134s
+Average time per step: 6.3923450112342834s
+Score: 38639
+Changed: False
+Changed actual: False
+data/inst_test/heur003_n_120_m_2588.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 8.465258121490479s
+Average time per step: 0.21163145303726197s
+Score: 5699
+Changed: True
+Changed actual: False
+data/inst_test/heur005_n_160_m_4015.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 15.839486837387085s
+Average time per step: 0.3959871709346771s
+Score: 9110
+Changed: True
+Changed actual: False
+data/inst_test/heur007_n_200_m_6731.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 39.5315043926239s
+Average time per step: 0.9882876098155975s
+Score: 16097
+Changed: True
+Changed actual: False
+data/inst_test/heur008_n_250_m_1045.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 77.7133891582489s
+Average time per step: 1.9428347289562224s
+Score: 1421
+Changed: True
+Changed actual: False
+data/inst_test/heur004_n_140_m_3014.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 10.280050992965698s
+Average time per step: 0.2570012748241425s
+Score: 6274
+Changed: False
+Changed actual: True
+data/inst_test/heur013_n_250_m_22395.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 409.7173445224762s
+Average time per step: 10.242933613061904s
+Score: 25861
+Changed: True
+Changed actual: False
+data/inst_test/heur019_n_300_m_28765.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 375.1860775947571s
+Average time per step: 9.379651939868927s
+Score: 23839
+Changed: True
+Changed actual: True
+data/inst_test/heur002_n_100_m_3274.txt
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Re-generating initial solutions
+Time for 40 steps: 11.106352090835571s
+Average time per step: 0.2776588022708893s
+Score: 2597
+Changed: True
+Changed actual: False
