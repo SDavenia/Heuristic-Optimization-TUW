@@ -37,8 +37,8 @@ if __name__ == '__main__':
 
     search = pyhopper.Search(
         n_solutions = pyhopper.int(10, 20, multiple_of=10),
-        alpha = pyhopper.choice([0.05, 0.10, 0.15]),
-        beta = pyhopper.float(0.1, 1.0, "0.1f"),
+        alpha = pyhopper.float(0.1, 0.5, "0.1f"),
+        beta = pyhopper.float(0.5, 1.0, "0.1f"),
         k_perc_n = pyhopper.choice([0.1, 0.15, 0.20]),
         k_perc_mn = pyhopper.float(0.1, 0.5, "0.1f"),
         selection_method = pyhopper.choice(["lr","fp"]),

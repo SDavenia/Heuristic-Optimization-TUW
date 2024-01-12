@@ -9,6 +9,8 @@ import numpy as np
 import random
 import time
 
+from Utilities import write_solution
+
 class GeneticAlgorithm():
     """
     Implementation of a GA class for the S-plex editing problem.
@@ -104,7 +106,7 @@ class GeneticAlgorithm():
         """
         Returns the index of two elements from the population to use for recombination, which are selected according fitness roulette.
         """
-        fitness = [self.max_fitness - self.population_values[i]]
+        fitness = [self.max_fitness - self.population_values[i] for i in range(self.n_solutions)]
         den = 1/sum(fitness)
         selection_probabilities = [fitness[i] * den for i in range(self.n_solutions)]
         selected = np.random.choice(np.arange(0, self.n_solutions), size = 2, p = selection_probabilities, replace=False)
@@ -306,26 +308,20 @@ if __name__ == '__main__':
     initial_best_value = GA_instance.population_values[0]
     #print(f"Initial number of clusters: {GA_instance.initial_n_clusters}")
     #print(f"Top 10 Initial values:\n{GA_instance.population_values[0:10]}\n")
-    initial_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
+    # initial_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
     #print(f"The initial solutions have clusters of these size:\n{initial_pop_clusters_number}")
     
     GA_instance.evolve_n_steps(n=args.iterations)
     #print(f"Top 10 Final values:\n{GA_instance.population_values[0:10]}\n")
-    final_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
+    # final_pop_clusters_number = [len(GA_instance.population[i].clusters) for i in range(GA_instance.n_solutions)]
     #print(f"The final solutions have clusters of these size:\n{final_pop_clusters_number}")
     current_best_value = GA_instance.population_values[0]
     changed = False
     if current_best_value < initial_best_value:
         changed = True
+    print(f"Score: {current_best_value}\nChanged: {changed}")
     #print(f"Score: {current_best_value}\nChanged: {changed}")
-    
-
-
-    
-    
-   
-# python GA.py 'data/inst_competition/heur049_n_300_m_17695.txt' -k 60 --iterations 5 --n_solutions 20 --selection_method 'lr' --perc_replace 0.8 --avg_joins 3
-    
+    # Write best solution to folder
 
 
 
